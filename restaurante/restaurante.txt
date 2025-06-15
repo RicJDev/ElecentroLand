@@ -1,0 +1,207 @@
+Algoritmo Restaurante
+
+Inicio
+  Var opc: Entero;
+  
+  // Desayuno
+  Opcion: Entero;
+  Desayuno, Cuenta_Pan = 0, Desa_Pan = 0, Cuenta_Pat_Hue_Toci = 0, Desa_Pat_Hue_Toci = 0, Cuenta_Sand = 0, Sandwiches = 0, Cuenta_Cachapas = 0, Cachapas = 0, Cuenta_Empanadas = 0, Empanadas = 0: Entero;
+  Cantidad_Panqueques = 40, Cantidad_Patatas = 30, Cantidad_Huevos = 20, Cantidad_Jamon = 40, Cantidad_Pan = 50, Cantidad_Cachapas = 30, Cantidad_Empanadas = 40, Cantidad_Waffles = 20, Cantidad: Entero;
+  
+  // Se utiliza tanto para el desayuno como para la cena
+  Cantidad_Tocineta = 60: Entero;
+  
+  // Almuerzo
+  Var Opc1, Opc2, Opc3, Opc4, Opc5, Opc6, Opc_Selec1 = 0, Opc_Selec2 = 0, Opc_Selec3 = 0, Opc_Selec4 = 0, Opc_Selec5 = 0, Opc_Selec6 = 0, Dinero_Opc1 = 0, Dinero_Opc2 = 0, Dinero_Opc3 = 0, Dinero_Opc4 = 0, Dinero_Opc5 = 0, Dinero_Opc6 = 0, Opc_menu_Almuerzo, Dinero_Todas_Opcs: Entero;
+  Cantidad_Cesar = 40, Vino_Blanco = 30, Cantidad_Cebolla = 30, Cantidad_Tomate = 30, Vinotinto = 40, Cantidad_Bistec_Res = 45, Bourbon = 35, Cantidad_Chuletas_Cerdo = 50, John_Collins = 40, Cantidad_Pasta = 37, Estracto_Picha = 45, Cantidad_Guanábana = 40, Whisky_Maravilla = 50: Entero;
+  Var R: Booleana;
+  
+  // Cena
+  Var Cantidad_Sushi = 40, Cantidad_Soya = 35, Cantidad_Pan_Hamburguesas = 50, Cantidad_Pollo = 45, Cantidad_Carne = 40, Cantidad_Papas = 50, Cantidad_Pizzas = 50, Cantidad_Pepperoni = 50, Cantidad_Queso = 40, CocaCola = 45, Pepsi = 45, Justy = 45: Entero;
+  Var opc, personas_agenda, opc_combo, contC1 = 0, contC2 = 0, contC3 = 0, contC4 = 0, contC5 = 0, contC6 = 0: Entero, Cuenta: Real;
+  
+  Repetir
+    bienvenida(opcion);
+    Mostrar << bienvenida;
+    
+    Si (Opcion = 1) Entonces;
+      Repetir
+        menu_desayuno();  // Faltan un chingo de variables. Hay que definir cuales son variables de entrada y salida o entrada/salida
+        
+        Mostrar << "Desea añadir algo más a su menú?, 1: Sí, 0: No ";
+        Leer >> R;
+        Hasta (R = 0);
+      Fin_Repetir
+    Fin_Si
+    
+    Si (Opcion = 2) Entonces;
+      Repetir
+        menu_almuerzo();  // Lo mismo. Falta saber cuales son de entrada y cuales de salida o entrada/salida
+        Mostrar << "Desea añadir algo más a su menú?, 1: Sí, 0: No ";
+        Leer >> R;
+        Hasta (R = 0);
+      Fin_Repetir
+      
+      Dinero_Todas_Opcs = Dinero_Opc1 + Dinero_Opc2 + Dinero_Opc3 + Dinero_Opc4 + Dinero_Opc5 + Dinero_Opc6;
+      
+      Mostrar << "Este es el dinero acumulado por cada una de las opciones";
+      Mostrar << "Opcion 1: ", Dinero_Opc1;
+      Mostrar << "Opcion 2: ", Dinero_Opc2;
+      Mostrar << "Opcion 3: ", Dinero_Opc3;
+      Mostrar << "Opcion 4: ", Dinero_Opc4;
+      Mostrar << "Opcion 5: ", Dinero_Opc5;
+      Mostrar << "Opcion 6: ", Dinero_Opc6;
+      Mostrar << "Para un total de todas las opciones de: ", Dinero_Todas_Opcs;
+    Fin_Si
+    
+    Si (Opcion = 3) Entonces;
+      // Cena
+      
+      // Menú de entrada
+      Mostrar << "Elija una opción para agendar";
+      Mostrar << "1: Si usted desea agendar con anticipación";
+      Mostrar << "NOTA: al agendar con nosotros con anticipación tendrá un 15% de descuento del precio normal";
+      Mostrar << "2: Si usted no desea agendar con anticipación";
+      Leer >> opc;
+      
+      // validacion del menu
+      Mientras (opc < 1 OR opc > 2) Hacer;
+        Mostrar << "Error en datos, vuelva a intentar";
+        Leer >> opc;
+      Fin_Mientras
+      
+      // condicional de la opcion 1
+      
+      Si (opc = 1) Entonces;
+        Mostrar << "¿Cuántas personas desean agendar con usted?";
+        Leer >> personas_agenda;
+        
+        // validacion
+        
+        Mientras (personas_agenda < 1) Hacer;
+          Mostrar << "Error en datos, vuelva a intentar";
+          Leer >> personas_agenda;
+        Fin_Mientras
+        
+        // menu principal
+        Repetir
+          menu_cena();
+          Mostrar << menu_cena;
+
+          Mostrar << "Estimado cliente, su cuenta asciende a: ", cuenta;
+          Mostrar << "¿Desea ordenar otro combo?, 1: Sí, 0: No ";
+          Leer >> R;
+          Hasta (R = 0);
+        Fin_Repetir
+        
+        Sino 
+        // menu principal
+        Repetir
+          Mostrar << "Por favor elija su orden";
+          Mostrar << "Estimado Cliente usted ha seleccionado la opción de agendar con anticipación, por lo que usted posee un 15% de descuento";
+          Mostrar << "Combo 1: Sushi Tempura o frio con salsa de soya, y Coca Cola 6$";
+          Mostrar << "Combo 2: Hamburguesa de Pollo con papas a la francesa y Justy 8$";
+          Mostrar << "Combo 3: Hamburguesa de Carne con papas a la francesa y Pepsi 5$";
+          Mostrar << "Combo 4: Pizza pequeña de pepperoni y queso con Coca Cola 1L 7$";
+          Mostrar << "Combo 5: Pizza mediana de pepperoni y queso con Pepsi 1L 10$";
+          Mostrar << "Combo 6: Pizza grande de pepperoni, queso y tocineta con Coca Cola 2L 15$";
+          Leer >> opc_combo;
+          
+          // validacion
+          Mientras (opc_combo < 1 OR opc_combo > 6) Hacer;
+            Mostrar << "Error, intente nuevamente";
+            Leer >> opc_combo;
+          Fin_Mientras
+          
+          En_Caso (opc_combo > 0) Sea;
+            Caso (opc_combo = 1);
+              Mostrar << "¿Cuántas unidades quiere ordenar?";
+              Leer >> Cantidad;
+              
+              Mientras (Cantidad > Cantidad_Sushi OR Cantidad > Cantidad_Soya OR Cantidad > CocaCola) Hacer;
+                Mostrar << "Solo hay ", Cantidad_Sushi, "Sushis y ", Cantidad_Soya, "Salsas de soya y ", CocaCola, " Refrescos de Coca Cola disponibles";
+                Leer >> Cantidad;
+              Fin_Mientras
+              
+              Cuenta = Cuenta + (Cantidad * 6);
+              contC1 = conC1 + 1;  // contador de combo
+              Cantidad_Sushi = Cantidad_Sushi – Cantidad;
+              Cantidad_Soya = Cantidad_Soya – Cantidad;
+              CocaCola = CocaCola – Cantidad;
+            Caso (opc_combo = 2);
+              Mostrar << "¿Cuántas unidades quiere ordenar?";
+              Leer >> Cantidad;
+              
+              Mientras (Cantidad > Cantidad_Pan_Hamburguesas OR Cantidad > Cantidad_Pollo OR Cantidad > Cantidad_Papas OR Cantidad > Justy) Hacer;
+                Mostrar << "Solo hay ", Cantidad_Pan_Hamburguesas, "Panes de Hamburguesas, ", Cantidad_Pollo, "Pollos ", Cantidad_Papas, "Papas a la francesa y ", Justy, "Jugos de Justy disponibles";
+                Leer >> Cantidad;
+              Fin_Mientras
+              
+              Cuenta = Cuenta + (Cantidad * 8);
+              contC2 = contC2 + 1;  // contador de combo
+              Cantidad_Pan_Hamburguesas = Cantidad_Pan_Hamburguesas – Cantidad;
+              Cantidad_Pollo = Cantidad_Pollo – Cantidad;
+              Cantidad_Papas = Cantidad_Papas – Cantidad;
+              Justy = Justy – Cantidad;
+            Caso (opc_combo = 3);
+              Mientras (Cantidad > Cantidad_Pan_Hamburguesas OR Cantidad > Cantidad_Carne OR Cantidad > Cantidad_Papas OR Cantidad > Pepsi) Hacer;
+                Mostrar << "Solo hay ", Cantidad_Pan_Hamburguesas, "Panes de Hamburguesas, ", Cantidad_Carne, "Carnes ", Cantidad_Papas, "Papas a la francesa y ", Pepsi, "Refrescos de Pepsi disponibles";
+                Leer >> Cantidad;
+              Fin_Mientras
+              
+              Cuenta = Cuenta + (Cantidad * 5);
+              contC3 = contC3 + 1;  // contador de combo
+              Cantidad_Pan_Hamburguesas = Cantidad_Pan_Hamburguesas – Cantidad;
+              Cantidad_Carne = Cantidad_Carne – Cantidad;
+              Cantidad_Papas = Cantidad_Papas – Cantidad;
+              Pepsi = Pepsi – Cantidad;
+            Caso (opc_combo = 4);
+              Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > CocaCola) Hacer;
+                Mostrar << "Solo hay ", Cantidad_Pizzas, "Pizzas, ", Cantidad_Pepperoni, "Pepperonis ", Cantidad_Queso, "Quesos y ", CocaCola, "Refrescos de Coca Cola disponibles";
+                Leer >> Cantidad;
+              Fin_Mientras
+              
+              Cuenta = Cuenta + (Cantidad * 7);
+              contC4 = contC4 + 1;  // Contador de combo
+              Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
+              Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
+              Cantidad_Queso = Cantidad_Queso – Cantidad;
+              CocaCola = CocaCola – Cantidad;
+            Caso (opc_combo = 5);
+              Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > Pepsi) Hacer;
+                Mostrar << "Solo hay ", Cantidad_Pizzas, " de masa de Pizzas, ", Cantidad_Pepperoni, " de Pepperonis ", Cantidad_Queso, "de Quesos y ", Pepsi, "Refrescos de Pepsi disponibles";
+                Leer >> Cantidad;
+              Fin_Mientras
+              
+              Cuenta = Cuenta + (Cantidad * 10);
+              contC5 = contC5 + 1;  // Contador de combo
+              Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
+              Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
+              Cantidad_Queso = Cantidad_Queso – Cantidad;
+              Pepsi = Pepsi – Cantidad;
+            Otro_Caso
+              Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > Cantidad_Tocineta OR Cantidad > CocaCola) Hacer;
+                Mostrar << "Solo hay ", Cantidad_Pizzas, "Masas de Pizzas, ", Cantidad_Pepperoni, " de Pepperonis ", Cantidad_Queso, " de Quesos ", Cantidad_Tocineta, " de Tocinetas y ", CocaCola, " Refrescos de Coca Cola disponibles";
+                Leer >> Cantidad;
+              Fin_Mientras
+              
+              Cuenta = Cuenta + (Cantidad * 15);
+              contC6 = contC6 + 1;  // Contador de combo
+              Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
+              Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
+              Cantidad_Queso = Cantidad_Queso – Cantidad;
+              Cantidad_Tocineta = Cantidad_Tocineta – Cantidad;
+              CocaCola = CocaCola – Cantidad;
+          Fin_Caso
+        Fin_Si
+        
+        Mostrar << "Estimado usuario, su cuenta asciende a: ", Cuenta;
+        Mostrar << "¿Desea ordenar otro combo?, 1: Sí, 0: No ";
+        Leer >> R;
+        Hasta (R = 0);
+      Fin_Repetir
+    Fin_Si
+    
+    Hasta (R = 4);
+  Fin_Repetir
+Fin

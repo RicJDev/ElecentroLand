@@ -1,0 +1,16 @@
+Procedimiento bienvenida(E/S: opcion);
+Inicio
+  Mostrar << "Bienvenido a nuestro restaurante Sabores Elecentro";
+  Mostrar << "A continuación el Menú del Restaurante, elija el de su preferencia.";
+  Mostrar << "1: Desayunos";
+  Mostrar << "2: Almuerzos";
+  Mostrar << "3: Cenas";
+  Mostrar << "4: Salir";
+  
+  Leer >> opcion;
+  
+  Mientras (Opcion < 1 OR Opcion > 4) Hacer;
+    Mostrar << "Error en datos, solo se permiten valores entre 1 y 4";
+    Leer >> Opcion;
+  Fin_Mientras
+Fin_Procedimiento
