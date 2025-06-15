@@ -1,0 +1,46 @@
+Opcion: Entero; // Permite saber si lo que desea el usuario es desayuno, almuerzo o cena
+
+// Desayuno
+
+Desayuno,  // Determina cual es el desayuno a elegir
+
+Cuenta_Pan = 0, // precio a pagar por la cantidad del item
+Desa_Pan = 0, // contador del item
+
+Cuenta_Pat_Hue_Toci = 0, // precio a pagar por la cantidad del item
+Desa_Pat_Hue_Toci = 0, // contador del item
+
+Cuenta_Sand = 0, // precio a pagar por la cantidad del item
+Sandwiches = 0, // contador del item
+
+Cuenta_Cachapas = 0, // precio a pagar por la cantidad del item
+Cachapas = 0, // contador del item
+
+Cuenta_Empanadas = 0, // precio a pagar por la cantidad del item
+Empanadas = 0: Entero; // contador del item
+
+// inventario disponible
+
+Cantidad_Panqueques = 40,
+Cantidad_Patatas = 30,
+Cantidad_Huevos = 20, 
+Cantidad_Jamon = 40, 
+Cantidad_Pan = 50, 
+Cantidad_Cachapas = 30, 
+Cantidad_Empanadas = 40, 
+Cantidad_Waffles = 20, Cantidad: Entero;
+
+// Se utiliza tanto para el desayuno como para la cena
+Cantidad_Tocineta = 60: Entero;
+
+//Almuerzo
+
+Var opc: Entero;
+Var Opc1, Opc2, Opc3, Opc4, Opc5, Opc6, Opc_Selec1 = 0, Opc_Selec2 = 0, Opc_Selec3 = 0, Opc_Selec4 = 0, Opc_Selec5 = 0, Opc_Selec6 = 0, Dinero_Opc1 = 0, Dinero_Opc2 = 0, Dinero_Opc3 = 0, Dinero_Opc4 = 0, Dinero_Opc5 = 0, Dinero_Opc6 = 0, Opc_menu_Almuerzo, Dinero_Todas_Opcs: Entero;
+Var Cantidad_Cesar = 40, Vino_Blanco = 30, Cantidad_Cebolla = 30, Cantidad_Tomate = 30, Vinotinto = 40, Cantidad_Bistec_Res = 45, Bourbon = 35, Cantidad_Chuletas_Cerdo = 50, John_Collins = 40, Cantidad_Pasta = 37, Estracto_Picha = 45, Cantidad_Guanábana = 40, Whisky_Maravilla = 50: Entero;
+Var R: Booleana;
+
+//Cena
+
+Var Cantidad_Sushi = 40, Cantidad_Soya = 35, Cantidad_Pan_Hamburguesas = 50, Cantidad_Pollo = 45, Cantidad_Carne = 40, Cantidad_Papas = 50, Cantidad_Pizzas = 50, Cantidad_Pepperoni = 50, Cantidad_Queso = 40, CocaCola = 45, Pepsi = 45, Justy = 45: Entero;
+Var opc, personas_agenda, opc_combo, contC1 = 0, contC2 = 0, contC3 = 0, contC4 = 0, contC5 = 0, contC6 = 0: Entero, Cuenta: Real

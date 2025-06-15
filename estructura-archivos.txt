@@ -1,0 +1,33 @@
+MENU PRINCIPAL
+  - Restaurante
+    - Menus
+      - Desayuno
+      - Almuerzo
+      - Cena
+    - Reservaciones
+
+  - Hotel
+    - Reservaciones
+    - Sistema de gestion de habitaciones
+
+  - Casino
+    - Sistema de fichas
+    - Jueguitos
+      - Blackjack
+      - Ruleta
+      - Los dados
+      - Tragamonedas
+      - Baccarat
+    - Sistema de cuentas
+      - Autenticacion
+      - Base de datos
+      - Usuarios y contrasenas
+    - Premios (tiendita que Ricardo no ha terminado)
+
+  - Bar
+    - Snacks
+    - Drinks
+
+EN COMUN
+  - Caja
+  - Verificacion de pagos

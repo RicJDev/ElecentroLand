@@ -1,0 +1,80 @@
+Algoritmo Tiendita de regalos
+
+Inicio
+  var seguir = 1: Booleana;
+  var precio_regalo: Real;
+  var opcion_tienda, opcion_regalos, opcion_dinero: Entero;
+  
+  var cantidad_fichas = 20, fichas_canjeo, total_fichas_canjeadas = 0: Entero;
+  var cantidad_dinero = 100.00, dinero_canjeado, total_dinero_canjeado = 0: Real;
+  
+  // Stock de regalos
+  var regalo1 = 20, regalo2 = 10, regalo3 = 23, regalo4 = 4, regalo5 = 12, regalo6 = 9, regalo7 = 21, regalo8 = 7, regalo9 = 90, regalo10 = 2: Entero;
+  
+  // Contadores de regalos
+  var cont_regalo1 = 0, cont_regalo2 = 0, cont_regalo3 = 0, cont_regalo4 = 0, cont_regalo5 = 0, cont_regalo6 = 0, cont_regalo7 = 0, cont_regalo8 = 0, cont_regalo9 = 0, cont_regalo10 = 0: Entero;
+  
+  Mostrar << "Bienvenido a la tiendita!";
+  Mostrar << "Esta es la cantidad de fichas que tienes: ", cantidad_fichas;
+  
+  Si (cantidad_fichas < 1) Entonces;
+    Mostrar << "No tienes fichas. Deseas comprar mas?";
+  Fin_Si
+  
+  Mientras (seguir = 1) Hacer;
+    Mostrar << "Bienvenido a la tiendita de regalos. Elige una opcion";
+    Mostrar << "1. Canjear fichas por dinero. ";
+    Mostrar << "2. Canjear dinero por fichas. ";
+    Mostrar << "3. Canjear fichas por premios(son bonitos, valen la pena)";
+    Mostrar << "4. Salir de la tiendita. ";
+    Leer >> opcion_tienda;
+    
+    Mientras (opcion_tienda < 1 OR opcion_tienda > 3) Hacer;
+      Mostrar << "Eeeh, bro. Solo te he dado tres opciones. Revisa";
+      Leer >> opcion_tienda;
+    Fin_Mientras
+    
+    En_Caso (opcion_tienda > 0) Sea;
+      Caso (opcion_tienda = 1);
+        // Canjear por billetes 🤑
+        
+        Mostrar << "Dime cuantas fichas quieres canjear. ";
+        Leer >> fichas_canjeo;
+        
+        Mientras (fichas_canjeo < 1 OR fichas_canjeo > cantidad_fichas) Hacer;
+          Mostrar << "No puedes canjear menos de una ficha. Tampoco puedes canjear mas de las que tienes. ";
+          Leer >> fichas_canjeo;
+        Fin_Mientras
+        
+        dinero_canjeado = fichas_canjeo * 2.00;
+        
+        Mostrar << "Has abonado ", dinero_canjeado, " en tu cuenta!";
+        
+        total_dinero_canjeado = total_dinero_canjeado + dinero_canjeado;
+        cantidad_fichas = cantidad_fichas - fichas_canjeo;
+      Caso (opcion_tienda = 2);
+        // Canjear por fichas 🎲
+        
+        // ...
+      Caso (opcion_tienda = 3);
+        // Canjear por regalos 🎁
+        
+        // ...
+      Otro_Caso
+        Mostrar << "Saliendo de la tiendita. Bye...";
+        seguir = 0;
+    Fin_Caso
+  Fin_Mientras
+Fin
+
+Funcion hacer_algo(a: Entero): Cadena;
+Inicio
+  var resultado: Cadena;
+  
+  En_Caso (a > 0) Sea;
+    Caso (a = 2);
+      resultado = "Eeeeh, si (a = g)  entonces maestro. Un 2!";
+  Fin_Caso
+  
+  Devolver (resultado);
+Fin_Funcion

@@ -1,0 +1,76 @@
+Algoritmo Taquilla
+
+// 1. agregar usuario a la base de datos en caso de no estar registrado
+// 2. obtener su id para identificarlo
+// 3. solicitar contrasena para permitirle el acceso
+// 4. mostrarle su saldo disponible en fichas
+// 5. darle opcion de comprar fichas
+
+Inicio
+  var nombre, telefono, usuario: Cadena;
+  var edad, id_cliente: Entero;
+  var existe_usuario, desea_registrar: Booleano;
+  
+  // ...
+  
+  Mostrar << "HOLA, QUERIDO! Dime tu usuario";
+  Leer >> usuario;
+  
+  existe_usuario = chequear_usuario(usuario);
+  
+  Mientras (existe_usuario = 0) Hacer;
+    Mostrar << "Ese usuario no existe";
+    Mostrar << "Deseas registrarte? (1: si, 0: no)";
+    Leer >> desea_registrar;
+    
+    Si (desea_registrar = 1) Entonces;
+      registro(nombre, edad, telefono, id_cliente, usuario);
+      existe_usuario = chequear_usuario(usuario);
+    Fin_Si
+    
+    Si (desea_registrar = 0) Entonces;
+      Mostrar << "Ingrese el usuario, por favor";
+      Leer >> usuario;
+      
+      existe_usuario = chequear_usuario(usuario);
+    Fin_Si
+  Fin_Mientras
+  
+  Mostrar << registro;
+  
+  // ...
+Fin
+
+Procedimiento registro(E/S: nombre, edad, telefono, S: id_cliente, usuario);
+Inicio
+  Mostrar << "Ingrese su nombre";
+  Leer >> nombre;
+  Mostrar << "Ingrese su edad";
+  Leer >> edad;
+  Mostrar << "Ingrese su numero de telefono";
+  Leer >> telefono;
+  
+  Mientras (edad < 18) Hacer;
+    Mostrar << "No admitimos menores de edad en el casino";
+    Leer >> edad;
+  Fin_Mientras
+  
+  Mostrar << "Ingresa un nombre de usuario";
+  Leer >> usuario;
+  
+  mandar_a_la_db(nombre, edad, telefono, id_cliente, usuario);
+Fin_Procedimiento
+
+Procedimiento mandar_a_la_db(E: nombre, edad, telefono, S: id_cliente, usuario);
+Inicio
+  // ...
+Fin_Procedimiento
+
+Funcion chequear_usuario(usuario): Booleano;
+Inicio
+  var resultado: Booleano;
+  
+  // ...
+  
+  Devolver (resultado);
+Fin_Funcion
