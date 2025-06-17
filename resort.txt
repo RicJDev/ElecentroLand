@@ -1,0 +1,37 @@
+Algoritmo Resort
+
+Inicio
+  Repetir
+    Mostrar << "¡Bienvenido al Resort ElecentroLand!, ingrese a dónde quiere ir";
+    Mostrar << "1: Casino";
+    Mostrar << "2: Hotel";
+    Mostrar << "3: Restaurante";
+    Mostrar << "4: Bar";
+    Mostrar << "5: Salir";
+    Leer >> Opcion_Menu;
+
+    Mientras (Opcion_Menu < 1 OR Opcion_Menu > 5) Hacer;
+      Mostrar << "Opción inválida, intente nuevamente";
+      Leer >> Opcion_Menu;
+    Fin_Mientras
+
+    En_Caso (Opcion_Menu > 0) Sea;
+      Caso (Opcion_Menu = 1);
+        Casino(Opcion_Juegos);
+        Mostrar << Casino;
+      Caso (Opcion_Menu = 2);
+        Hotel();
+        Mostrar << Hotel;
+      Caso (Opcion_Menu = 3);
+        Restaurante(Opcion);
+        Mostrar << Restaurante;
+      Caso (Opcion_Menu = 4);
+        Bar(Opcion_Inv, Opcion_Clientes);
+        Mostrar << Bar;
+      Otro_Caso
+        R = 0;
+    Fin_Caso
+
+    Hasta (R = 0);
+  Fin_Repetir
+Fin

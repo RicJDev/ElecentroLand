@@ -1,46 +1,159 @@
-Opcion: Entero; // Permite saber si lo que desea el usuario es desayuno, almuerzo o cena
+LISTADO DE TODAS LAS VARIABLES
 
-// Desayuno
+//Variables pertenecientes al procedimiento del Bar
 
-Desayuno,  // Determina cual es el desayuno a elegir
+Opcion_Inv: Es una variable de tipo entero que pertenece al
+procedimiento del bar y es la que guarda la elección del cliente a que tipo de
+producto desea ordenar, 1 para alimentos o 2 para bebidas, se valida con un
+ciclo repetitivo mientras, para que no sea menor a 1 ni mayor a 2,
+dependiendo de la elección se abre otro menú con los productos de dicho
+inventario.
+Opcion_Clientes: Es una variable de tipo entero que pertenece al
+procedimiento del bar y es la que guarda que eligió el cliente tanto en los
+alimentos o en las bebidas, se valida con un ciclo repetitivo mientras para
+que no sea menor a 1 ni mayor a 4 ,dependiendo de la opción seleccionada
+se abren condicionales para calcular la factura del cliente y cuántos
+productos ordenó.
+Var Cuenta_Clientes = 0: Es la variable que pertenece al procedimiento
+del bar que guarda la factura del cliente dependiendo de la cantidad de pedidos
+que haya hecho, se multiplica la cantidad de dicho alimento o bebida que haya
+pedido por el precio del producto en cuestión eso se guarda en esta variable y
+le dice al cliente de cuánto es su factura.
+Cantidad_Cerveza = 50, Cantidad_Vino = 35, Cantidad_Vodka = 40,
+Cantidad_Coctel = 45, Cantidad_Papas = 50, Cantidad_Hamb = 40,
+Cantidad_Emp = 30, Cantidad_Sand = 45: Todas estas variables son de tipo
+entero y pertenecen al procedimiento del bar, es su respectivo inventario,
+dependiendo del alimento o bebida seleccionado y la cantidad que haya
+decidido ordenar el cliente, se decrementa la respectiva variable que
+corresponda a dicho alimento o bebida en el inventario, si llega a 0 no podrá
+ordenar más alimentos o bebidas de ese producto, por lo que tendrá que
+esperar al siguiente día a que se rellene el inventario.
+Total_Ingresos: Esta variable es de tipo entero y guarda cuánto fue el
+total de ingresos que se recaudó al final del día en el bar.
+R: Es una variable de tipo booleano e indica si quiere ordenar otro
+producto tanto en alimentos como bebidas, 1 si desea seguir ordenando
+productos de alimentos, 0 si desea ordenar productos de bebidas.
 
-Cuenta_Pan = 0, // precio a pagar por la cantidad del item
-Desa_Pan = 0, // contador del item
+//Variables del Restaurante
 
-Cuenta_Pat_Hue_Toci = 0, // precio a pagar por la cantidad del item
-Desa_Pat_Hue_Toci = 0, // contador del item
+Opcion: Es una variable de tipo entero que pertenece al procedimiento del
+restaurante que elige entre si es desayuno, almuerzo o cena. Se abren
+condicionales para saber si eligió 1 para desayuno, 2 para almuerzo y 3 para
+cena, además se hace la validación por si no el usuario no ingresa ninguno
+de estas tres opciones.
 
-Cuenta_Sand = 0, // precio a pagar por la cantidad del item
-Sandwiches = 0, // contador del item
+//Estas variables pertenecen al procedimiento del Desayuno
 
-Cuenta_Cachapas = 0, // precio a pagar por la cantidad del item
-Cachapas = 0, // contador del item
+Desayuno: Es la variable del restaurante que elige el desayuno que prefiere
+el cliente, se abren condicionales dependiendo de si es 1, 2, 3, 4, 5 y 6 para
+determinar cuál eligió el usuario
+Cuenta_Pan = 0, Cuenta_Pat_Hue_Toci = 0, Cuenta_Sand = 0,
+Cuenta_Sand = 0, Cuenta_Cachapas = 0, Cuenta_Empanadas = 0: Estas
+variables se encuentran en el procedimiento del desayuno del procedimiento
+del Restaurante y son de tipo Real, estas variables guardan la factura de
+cada desayuno, dependiendo de la cantidad que eligió el usuario de ese
+desayuno, se multiplica la cantidad por el precio y se le suma a la variable de
+cuenta en cuestión, al finalizar dicha condición se le dice al usuario cuánto es
+la cuenta de su pedido.
+Desa_Pan = 0, Desa_Pat_Hue_Toci = 0, Sandwiches = 0, Cachapas =
+0, Empanadas = 0: Estas variables son de tipo entero y son contadores de
+los desayunos en cuestión, cada vez que se elige un desayuno, dicha
+variable se le suma 1 al contador para saber cuántas veces fue elegido dicho
+desayuno, al final se comparan todas estas variables para ver cual fue la
+más rentable del día.
+Cantidad_Panqueques = 40, Cantidad_Patatas = 30,
+Cantidad_Huevos = 20, Cantidad_Jamon = 40, Cantidad_Pan = 50,
+Cantidad_Cachapas = 30, Cantidad_Empanadas = 40, Cantidad_Waffles =
+20: Todas estas variables pertenecen al procedimiento del desayuno que a la
+vez esta dentro del procedimiento del restaurante. Son de tipo Entero y están
+predefinidas, son para el inventario del desayuno, al elegir su desayuno el
+contador decrementará por la cantidad de veces que el cliente haya pedido
+dicho desayuno, si hay muchos clientes, en algún momento el inventario se
+debe terminar y por consiguiente, el cliente no podrá elegir dicha opción
+porque se habrán acabado los ingredientes necesarios, si alguno de los
+ingredientes de cierto desayuno llega a faltar, el cliente no podrá elegir dicha
+opción así que tendrá que optar por otra opción, para eso se usa un ciclo
+repetitivo mientras.
+Cantidad: Esta variable es local y es de tipo entero está tanto en el
+procedimiento del desayuno, como en el procedimiento del almuerzo como
+en el procedimiento de la cena, como en el procedimiento del bar, se usa
+para saber cuántos almuerzos, desayunos o cenas o alimentos o bebidas del
+bar quiere ordenar el cliente en cuestión. Esta variable se multiplica por el
+precio que cueste dicho almuerzo, cena o desayuno o bebida o alimento y se
+obtiene la factura del cliente.
 
-Cuenta_Empanadas = 0, // precio a pagar por la cantidad del item
-Empanadas = 0: Entero; // contador del item
+//Se utiliza tanto para el desayuno como para la cena
 
-// inventario disponible
+Cantidad_Tocineta = 60: Es una variable de tipo entero que se utiliza
+para preparar un desayuno que es de patatas con huevo y tocineta y para
+una cena que es una pizza de pepperoni con tocineta. Este ingrediente se
+decrementa cada vez que un cliente elige una de esas opciones,
+dependiendo de la cantidad que el cliente haya ordenado. Si dicho
+ingrediente se termina, no podrá elegir ninguna de estas opciones para su
+desayuno o cena
 
-Cantidad_Panqueques = 40,
-Cantidad_Patatas = 30,
-Cantidad_Huevos = 20, 
-Cantidad_Jamon = 40, 
-Cantidad_Pan = 50, 
-Cantidad_Cachapas = 30, 
-Cantidad_Empanadas = 40, 
-Cantidad_Waffles = 20, Cantidad: Entero;
+//Estas variables pertenecen al procedimiento del Almuerzo
 
-// Se utiliza tanto para el desayuno como para la cena
-Cantidad_Tocineta = 60: Entero;
-
-//Almuerzo
-
-Var opc: Entero;
-Var Opc1, Opc2, Opc3, Opc4, Opc5, Opc6, Opc_Selec1 = 0, Opc_Selec2 = 0, Opc_Selec3 = 0, Opc_Selec4 = 0, Opc_Selec5 = 0, Opc_Selec6 = 0, Dinero_Opc1 = 0, Dinero_Opc2 = 0, Dinero_Opc3 = 0, Dinero_Opc4 = 0, Dinero_Opc5 = 0, Dinero_Opc6 = 0, Opc_menu_Almuerzo, Dinero_Todas_Opcs: Entero;
-Var Cantidad_Cesar = 40, Vino_Blanco = 30, Cantidad_Cebolla = 30, Cantidad_Tomate = 30, Vinotinto = 40, Cantidad_Bistec_Res = 45, Bourbon = 35, Cantidad_Chuletas_Cerdo = 50, John_Collins = 40, Cantidad_Pasta = 37, Estracto_Picha = 45, Cantidad_Guanábana = 40, Whisky_Maravilla = 50: Entero;
+ Var Opc1, Opc2, Opc3, Opc4, Opc5, Opc6: Estas variables son de tipo
+entero y guardan el precio de cada almuerzo en el procedimiento de almuerzo,
+estas variables se usan para calcular cuánto es la factura del cliente
+dependiendo de la cantidad de pedidos que hayan hecho multiplicando el
+precio que es una de estas variables por la cantidad, de ahí sale la factura del
+cliente.
+Opc_Selec1 = 0, Opc_Selec2 = 0, Opc_Selec3 = 0, Opc_Selec4 = 0,
+Opc_Selec5 = 0, Opc_Selec6 = 0: Estas variables son de tipo entero y
+pertenecen al procedimiento del almuerzo y son los contadores de cada
+almuerzo para saber cuál fue el almuerzo más rentable en el día
+Dinero_Opc1 = 0, Dinero_Opc2 = 0, Dinero_Opc3 = 0, Dinero_Opc4 = 0,
+Dinero_Opc5 = 0, Dinero_Opc6 = 0: Estas variables son de tipo entero y
+guardan cuánto fue el dinero recaudado por cada almuerzo y saber cuál fue el
+que más vendió en su totalidad.
+Opc_menu_Almuerzo: Esta variable está dentro del procedimiento del
+almuerzo y se usa para elegir su almuerzo del 1 al 6, se valida con un mientras
+y utiliza condicionales para decir que está en el rango del 1 al 6 dependiendo
+del almuerzo elegido.
+Dinero_Todas_Opcs: Entero;
+ Cantidad_Cesar = 40, Vino_Blanco = 30, Cantidad_Cebolla = 30,
+Cantidad_Tomate = 30, Vinotinto = 40, Cantidad_Bistec_Res = 45, Bourbon =
+35, Cantidad_Chuletas_Cerdo = 50, John_Collins = 40, Cantidad_Pasta = 37,
+Estracto_Picha = 45, Cantidad_Guanábana = 40, Whisky_Maravilla = 50:
+Todas estas variables pertenecen al procedimiento del Almuerzo, el cual está
+dentro del procedimiento del restaurante, estas son de tipo entero y están
+predefinidas, todo esto es el inventario del almuerzo, cada vez que un
+almuerzo es elegido, los ingredientes que correspondan a dicho almuerzo se
+decrementarán según la cantidad de almuerzos que el cliente haya ordenado.
+Si uno de dichos ingredientes se agota, el cliente no podrá ordenar dichos
+almuerzos.
 Var R: Booleana;
 
-//Cena
+//Estas variables pertenecen al procedimiento de la Cena
 
-Var Cantidad_Sushi = 40, Cantidad_Soya = 35, Cantidad_Pan_Hamburguesas = 50, Cantidad_Pollo = 45, Cantidad_Carne = 40, Cantidad_Papas = 50, Cantidad_Pizzas = 50, Cantidad_Pepperoni = 50, Cantidad_Queso = 40, CocaCola = 45, Pepsi = 45, Justy = 45: Entero;
-Var opc, personas_agenda, opc_combo, contC1 = 0, contC2 = 0, contC3 = 0, contC4 = 0, contC5 = 0, contC6 = 0: Entero, Cuenta: Real
+Var Cantidad_Sushi = 40, Cantidad_Soya = 35,
+Cantidad_Pan_Hamburguesas = 50, Cantidad_Pollo = 45, Cantidad_Carne =
+40, Cantidad_Papas = 50, Cantidad_Pizzas = 50, Cantidad_Pepperoni = 50,
+Cantidad_Queso = 40, CocaCola = 45, Pepsi = 45, Justy = 45: Estas
+variables son de tipo Entero y todo esto es el inventario de la cena del
+restaurante, están dentro del procedimiento de la cena que a su vez está
+dentro del procedimiento del restaurante, dependiendo de la cena que el
+cliente haya elegido y de cuantas haya ordenado, los ingredientes que sean
+para dicha cena, se decrementarán según la cantidad que haya ordenado el
+cliente.
+Var opc_cena: Esta variable es de tipo entero y es la que sirve para
+elegir cuál cena desea elegir el usuario, se valida con un ciclo repetitivo
+mientras para que no pueda ser menor a 1 ni mayor a 6 y luego se abren
+condicionales para cada cena que pueda haber elegido el cliente y se hacen
+los cálculos correspondientes.
+opc_agenda: Es una variable de tipo entero y se utiliza para saber si el
+cliente desea agendar con anticipación o no, 1 para Sí, 2 para No, se valida
+con un ciclo repetitivo mientras y dependiendo de su respuesta se abren
+condicionales, si desea agendar con anticipación se le asignará un 15% de
+descuento en sus pedidos de esa noche.
+personas_agenda: Esta variable es de tipo entero y guarda la cantidad
+de personas que desean agendar con anticipación en el restaurante para
+ordenar una cena, si desea agendar con anticipación, se le asignará un
+descuento del 15% en los pedidos que ordene.
+contC1 = 0, contC2 = 0, contC3 = 0, contC4 = 0, contC5 = 0, contC6 =
+0: Estas variables son de tipo entero y son contadores para compararlas al
+final del sistema y saber cuál fue la cena más rentable.
+Cuenta: Es una variable de tipo real y es la que le dice al cliente cuánto
+es su factura dependiendo de la cantidad de cenas que haya ordenado.
