@@ -1,72 +1,102 @@
 Algoritmo Taquilla
 
 Inicio
-  var usuario, contrasena: Cadena;
-  var saldo_fichas, id_usuario: Entero;
+  // Simulacion de base de datos. Capacidad para 100 personas
   
-  // Aqui ira un almacenamiento de los usuarios y de toda su informacion
+  var lista_nombres_casino[100]: Cadena;
+  var lista_contrasenas_casino[100]: Cadena;
+  var lista_edades_casino[100]: Entero;
+  var lista_saldos_fichas[100]: Entero;
   
-  // ...
+  var id_casino: Entero;
+  var nombre_casino: Cadena;
+  var contrasena_casino: Cadena;
+  var edad_casino: Entero;
+  var saldo_fichas_casino: Entero;
   
-  // Iniciamos la sesion
-  iniciar_sesion(usuario, contrasena, id_usuario);
-  Mostrar << iniciar_sesion;
+  var contador_usuarios_casino, i: Entero;
+  var ingresar_nuevo_usuario: Booleano;
+  
+  // Usuarios de simulacion para no tener una data totalmente vacia
+  
+  lista_nombres_casino[1] = "Ricardo el chambeador";
+  lista_contrasenas_casino[1] = "contrasena";
+  lista_edades_casino[1] = 22;
+  lista_saldos_fichas[1] = 0;
+  
+  lista_nombres_casino[2] = "Reiyerd el papa de las apuestas";
+  lista_contrasenas_casino[2] = "contrasena"; // Si, tenemos la misma contrasena
+  lista_edades_casino[2] = 17;
+  lista_saldos_fichas[2] = 0;
+  
+  Para (i = 3 Hasta i = 100) Hacer;
+    lista_nombres_casino[i] = "sin_usuario";
+    lista_contrasenas_casino[i] = "sin_contrasena";
+    lista_edades_casino[i] = 0;
+    lista_saldos_fichas[i] = 0;
+  Fin_Para
+  
+  // Modulo para agregar usuarios
+  
+  registrar_nuevo_usuario(nombre_casino, contrasena_casino);
+  
+  // Modulo para iniciar sesion
 Fin
 
-Procedimiento iniciar_sesion(E/S: usuario, contrasena, S: id_usuario);
+Procedimiento registrar_nuevo_usuario(E/S: lista_nombres_casino, lista_contrasenas_casino, lista_edades_casino, S: id_casino);
 Inicio
-  var opcion_registro = 0: Booleano;
-  id_usuario =  - 1;
+  var registrar_otro = 1: Booleano;
+  var nombre_registro, contrasena_registro: Cadena;
+  var edad_registro: Entero;
   
-  Mientras (id_usuario =  - 1) Hacer;
-    Mostrar << "Ingerese su usuario";
-    Leer >> usuario;
-    Mostrar << "Ingerese su contrasena";
-    Leer >> contrasena;
+  Mientras (registrar_otro = 1) Hacer;
+    Mostrar << "Ingrese su nombre";
+    Leer >> nombre_registro;
     
-    id_usuario = obtener_id(usuario, contrasena);
+    Mientras (nombre_registro = "sin_usuario") Hacer;
+      Mostrar << "Ese nombre no es valido";
+      Leer >> nombre_registro;
+    Fin_Mientras
     
-    Mostrar << "No se pudo iniciar la sesion. Quiere intentar otra vez o registrarse? (1: si, mano. Dale)";
-    Leer >> opcion_registro;
+    Mostrar << "Ingrese su contrasena";
+    Leer >> contrasena_registro;
     
-    Si (opcion_registro = 1) Entonces;
-      registrar_nuevo_usuario(usuario, contrasena, id_usuario);
-      Mostrar << registrar_nuevo_usuario;
-    Fin_Si
+    Mientras (contrasena_registro = "sin_contrasena") Hacer;
+      Mostrar << "Contrasena invalida";
+      Leer >> contrasena_registro;
+    Fin_Mientras
+    
+    Mostrar << "Ingresa tu edad, perro";
+    Leer >> edad_registro;
+
+    Mientras (edad_registro < 18) Hacer
+      Mostrar << "No aceptamos perros menores de edad"
+      Leer >> edad_registro
+    Fin_Mientras
   Fin_Mientras
 
-  // POR HACER:
-  // Mostrar saldo en fichas usando doxxear_usuario para obtener sus datos
-  // Validar que el pendejo no haya cometido una infraccion y haya sido baneado
+  // ???
 Fin_Procedimiento
 
-Procedimiento registrar_nuevo_usuario(E/S: usuario, contrasena, id_usuario);
+Procedimiento iniciar_sesion(E: nombre_casino, contrasena_casino, S: id_casino);
 Inicio
-  // ir al almacenamiento
-  // Verificar que no exista el usuario
   
-  // Si no existe un usuario duplicado, permitir el registro
-  // Registrar la id nueva en id_usuario
 Fin_Procedimiento
 
 Funcion obtener_id(usuario: Cadena, contrasena: Cadena): Entero;
 Inicio
-  var resultado: Entero;
   
   // Esta funcion debera recorrer el almacenamiento hasta encontrar el usuario que se solicita y
   // luego desencriptar la contrasena asociada a ese usuario. En caso de no existir el usuario o no
   // coincidir la contrasena devuelve - 1, una id que obviamente no existe
   
-  resultado =  - 1;
-  
-  Devolver (resultado);
 Fin_Funcion
 
-Procedimiento doxxear_usuario(); // variables por definir
+Procedimiento doxxear_usuario();  // variables por definir
 Inicio
-  // Este procedimiento sirve para obtener todos los datos del usuario, representados de la siguiente manera:
-
-  // OBJETO USUARIO -> Representacion de los datos que manejaremos de un usuario
+  // Este procedimiento sirve para obtener todos los datos del usuario, representados de la siguiente manera: 
+  
+  // OBJETO USUARIO -  > Representacion de los datos que manejaremos de un usuario
   //   id: Entero
   //   Nombre: Cadena
   //   Constrasena: Cadena
@@ -74,6 +104,6 @@ Inicio
   //   Telefono: Cadena
   //   Correo electronico: Cadena
   //   Direccion de habitacion: Cadena
-  //   Persona grata: Booleano -> Util para los baneos
+  //   Persona grata: Booleano -  > Util para los baneos
   //   Saldo en fichas: Entero
 Fin_Procedimiento
