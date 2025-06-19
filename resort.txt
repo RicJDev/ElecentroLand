@@ -1,6 +1,24 @@
 Algoritmo Resort
 
 Inicio
+  // Base de datos del casino
+
+  var casino_i, j_casino: Entero;
+  var esta_en_registro: Booleano;
+  var casino_premios[100][10], casino_nombres[100], casino_contrasenas[100]: Cadena;
+  var casino_edades[100], casino_saldos_fichas[100]: Entero;
+  
+  Para (i_casino = 1 Hasta i_casino = 100) Hacer;
+    casino_nombres[i_casino] = "no_asignado";
+    casino_contrasenas[i_casino] = "no_asignado";
+    casino_edades[i_casino] = 0;
+    casino_saldos_fichas[i_casino] = 0;
+
+    Para (j_casino = 1 Hasta j_casino = 10)
+      casino_premios[i_casino][j_casino] = "sin_premio"
+    Fin_Para
+  Fin_Para
+  
   Repetir
     Mostrar << "¡Bienvenido al Resort ElecentroLand!, ingrese a dónde quiere ir";
     Mostrar << "1: Casino";
@@ -9,15 +27,15 @@ Inicio
     Mostrar << "4: Bar";
     Mostrar << "5: Salir";
     Leer >> Opcion_Menu;
-
+    
     Mientras (Opcion_Menu < 1 OR Opcion_Menu > 5) Hacer;
       Mostrar << "Opción inválida, intente nuevamente";
       Leer >> Opcion_Menu;
     Fin_Mientras
-
+    
     En_Caso (Opcion_Menu > 0) Sea;
       Caso (Opcion_Menu = 1);
-        Casino(Opcion_Juegos);
+        Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino]);
         Mostrar << Casino;
       Caso (Opcion_Menu = 2);
         Hotel();
@@ -31,7 +49,7 @@ Inicio
       Otro_Caso
         R = 0;
     Fin_Caso
-
+    
     Hasta (R = 0);
   Fin_Repetir
 Fin

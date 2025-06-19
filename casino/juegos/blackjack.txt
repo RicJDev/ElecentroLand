@@ -1,0 +1,79 @@
+Procedimiento Blackjack(E: Fichas: Real, E/S: apuesta: Real);
+
+Inicio
+  Repetir
+    Mostrar << "Bienvenido al Blackjack";
+    Mostrar << "Ingrese las fichas que desea apostar";
+    Leer >> apuesta;
+    
+    Mientras (apuesta < Fichas) Hacer;
+      Mostrar << "Ingresa un número menor o igual al número de fichas";
+      Leer >> apuesta;
+    Fin_Mientras
+    
+    Jugador_Carta1 = Aleatorio(1, 12);
+    Jugador_Carta2 = Aleatorio(1, 12);
+    Dealer_Carta1 = Aleatorio(1, 12);
+    Dealer_Carta2 = Aleatorio(1, 12);
+    Suma_Jugador = Jugador_Carta1 + Jugador_Carta2;
+    Suma_Dealer = Dealer_Carta1 + Dealer_Carta2;
+    Carta_Visible = Dealer_Carta1;
+    Mostrar << "Tus cartas son: ", Jugador_Carta1, "y", Jugador_Carta2, "la suma total de puntos es: ", Suma_Jugador;
+    
+    Repetir
+      Mientras (Suma_Jugador < 21) Hacer;
+        Mostrar << "¿Quieres otra carta? 1: Sí, 0: No";
+        Leer >> R;
+        
+        Si (R = 1) Entonces;
+          Jugador_Carta_Extra = Aleatorio(1, 12);
+          Suma_Jugador = Suma_Jugador + Jugador_Carta_Extra;
+          Mostrar << "Recibiste ", Jugador_Carta_Extra, "tu nuevo total es: ", Suma_Jugador;
+        Fin_Si
+      Fin_Mientras
+      
+      Hasta (R = 0);
+    Fin_Repetir
+    
+    Mostrar << "Carta visible del dealer: ", Carta_Visible;
+    
+    Mientras (Suma_Dealer < 17) Hacer;
+      Dealer_Carta_Extra = Aleatorio(1, 12);
+      Suma_Dealer = Suma_Dealer + Dealer_Carta_Extra;
+      Mostrar << "El dealer toma una carta";
+    Fin_Mientras
+    
+    Si (Suma_Jugador > 21) AND (Suma_Dealer <= 21) Entonces;
+      Mostrar << "Te pasaste de 21. Perdiste";
+      Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
+      Fichas = Fichas – apuesta;
+      
+      Sino 
+      Si (Suma_Dealer > 21) AND (Suma_Jugador <= 21) Entonces;
+        Mostrar << "El dealer se ha pasado de 21. ¡Ganaste!";
+        Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
+        Fichas = Fichas + (apuesta * 2);
+        
+        Sino 
+        Si (Suma_Dealer <= 21) AND (Suma_Dealer > Suma_Jugador) Entonces;
+          Mostrar << "El dealer gana con: ", Suma_Dealer, "puntos";
+          Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ",        Suma_Jugador;
+          
+          Sino 
+          Si (Suma_Jugador <= 21) AND (Suma_Jugador > Suma_Dealer) Entonces;
+            Mostrar << "¡Ganaste! con: ", Suma_Jugador, "puntos. El dealer quedó con: ", Suma_Dealer, "puntos.";
+            Fichas = Fichas + (apuesta * 2);
+            
+            Sino 
+            Mostrar << "Empate.";
+          Fin_Si
+        Fin_Si
+      Fin_Si
+    Fin_Si
+
+    Mostrar << "Fichas actuales: ", Fichas;
+    Mostrar << "¿Quieres jugar de nuevo? 1: Sí, 0: No";
+    Leer >> R;
+    Hasta (R = 0);
+  Fin_Repetir
+Fin_Procedimiento

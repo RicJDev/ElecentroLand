@@ -1,7 +1,8 @@
 Algoritmo padre
 
 Inicio
-  var;
+  // Where are the variables?????
+
   Repetir
     Mostrar << "1:Registrar un nuevo cliente";
     Mostrar << "2:Realizar una reserva";

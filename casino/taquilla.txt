@@ -3,11 +3,6 @@ Algoritmo Taquilla
 Inicio
   // Simulacion de base de datos. Capacidad para 100 personas
   
-  var lista_nombres_casino[100]: Cadena;
-  var lista_contrasenas_casino[100]: Cadena;
-  var lista_edades_casino[100]: Entero;
-  var lista_saldos_fichas[100]: Entero;
-  
   var id_casino: Entero;
   var nombre_casino: Cadena;
   var contrasena_casino: Cadena;
@@ -68,15 +63,30 @@ Inicio
     
     Mostrar << "Ingresa tu edad, perro";
     Leer >> edad_registro;
-
-    Mientras (edad_registro < 18) Hacer
-      Mostrar << "No aceptamos perros menores de edad"
-      Leer >> edad_registro
+    
+    Mientras (edad_registro < 18) Hacer;
+      Mostrar << "No aceptamos perros menores de edad";
+      Leer >> edad_registro;
     Fin_Mientras
+    
   Fin_Mientras
-
-  // ???
 Fin_Procedimiento
+
+Funcion obtener_siguiente_id(lista_nombres_casino[100]: Cadena): Entero;
+Inicio
+  var ii = 1: Entero;
+  var siguiente_id = -1: Entero;
+  
+  Mientras (ii <= 100 AND siguiente_id = -1) Hacer;
+    Si(lista_nombres_casino[ii] = "sin_usuario")Entonces;
+      siguiente_id = lista_nombres_casino[ii];
+    Fin_Si
+    
+    ii = ii + 1;
+  Fin_Mientras
+  
+  Devolver (siguiente_id);
+Fin_Funcion
 
 Procedimiento iniciar_sesion(E: nombre_casino, contrasena_casino, S: id_casino);
 Inicio
@@ -96,7 +106,7 @@ Procedimiento doxxear_usuario();  // variables por definir
 Inicio
   // Este procedimiento sirve para obtener todos los datos del usuario, representados de la siguiente manera: 
   
-  // OBJETO USUARIO -  > Representacion de los datos que manejaremos de un usuario
+  // OBJETO USUARIO - > Representacion de los datos que manejaremos de un usuario
   //   id: Entero
   //   Nombre: Cadena
   //   Constrasena: Cadena
@@ -104,6 +114,6 @@ Inicio
   //   Telefono: Cadena
   //   Correo electronico: Cadena
   //   Direccion de habitacion: Cadena
-  //   Persona grata: Booleano -  > Util para los baneos
+  //   Persona grata: Booleano - > Util para los baneos
   //   Saldo en fichas: Entero
 Fin_Procedimiento
