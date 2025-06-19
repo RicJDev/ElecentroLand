@@ -7,29 +7,29 @@ Mostrar<<Eleccion;
 Recoleccion (Apuesta, Seleccion, Modo_Elegido, Multiplicador);
 En Caso (Modo_Elegido > 0) sea;
 	Caso (Modo_Elegido = 1);
-Veces_Jugadas_Modo1 = Veces_Jugadas_Modo1 + 1;
+		Veces_Jugadas_Modo1 = Veces_Jugadas_Modo1 + 1;
 		Mostrar<<Recoleccion;
 		Maximo = 2;
 		Minimo = 1;
 		Número = Aleatorio (Minimo, Maximo);
-Resultado_Apuesta (Seleccionado, Apuesta, Ganancia, Dinero_Actual, Dinero_Ganado, 	Dinero_Perdido);
-Mostrar<<Resultado_Apuesta;
+		Resultado_Apuesta (Seleccionado, Apuesta, Ganancia, Dinero_Actual, Dinero_Ganado, Dinero_Perdido);
+		Mostrar<<Resultado_Apuesta;
 	Caso (Modo_Elegido = 2);
-Veces_Jugadas_Modo2 = Veces_Jugadas_Modo1 + 2;
-Mostrar<<Recoleccion;
+		Veces_Jugadas_Modo2 = Veces_Jugadas_Modo1 + 2;
+		Mostrar<<Recoleccion;
 		Maximo = 32;
 		Minimo = 1;
 		Número = Aleatorio (Minimo, Maximo);
-Resultado_Apuesta (Seleccionado, Apuesta, Ganancia, Dinero_Actual, Dinero_Ganado, 	Dinero_Perdido);
-Mostrar<<Resultado_Apuesta;
+		Resultado_Apuesta (Seleccionado, Apuesta, Ganancia, Dinero_Actual, Dinero_Ganado, 	Dinero_Perdido);
+		Mostrar<<Resultado_Apuesta;
 	Otro caso
 		Veces_Jugadas_Modo3 = Veces_Jugaads_Modo3 + 1;
-Mostrar<<Recoleccion;
+		Mostrar<<Recoleccion;
 		Maximo = 32;
 		Minimo = 1;
 		Número = Aleatorio (Minimo, Maximo);
-Resultado_Apuesta_Grupo  (Seleccion, Aleatorio, Grupo1, Grupo 2, Grupo3, Grupo4, Apuesta, Dinero_Actual, Dinero_Ganado, Dinero_Perdido);
-Mostrar<<Resultado_Apuesta_Grupo;
+		Resultado_Apuesta_Grupo  (Seleccion, Aleatorio, Grupo1, Grupo 2, Grupo3, Grupo4, Apuesta, Dinero_Actual, Dinero_Ganado, Dinero_Perdido);
+		Mostrar<<Resultado_Apuesta_Grupo;
 	Fin_Caso
 Mostrar<<”¿Desea Seguir Jugando?, 1: Si, 0: No”;
 Leer>>R;
@@ -46,9 +46,9 @@ Mostrar<<”Bienvenido a la Ruleta que te hace pobre *sonido de toser*, digo La 
 Mostrar<<”Ingrese la modalidad de juego seleccionando una de las siguientes, 1: Rojo y Negro, 2: Grupo de Números, 3: Número a su elección”;
 Leer>>Modo_Elegido;
 Mientras (Modo_Elegido < 1 or Modo_Elegido > 3) hacer;
-Mostrar<<”Modo de juego elegido incorrecto, Seleccione un modo de juego nuevamente”;
-Leer>>Modo_Elegido;
-	Fin_Mientras
+	Mostrar<<”Modo de juego elegido incorrecto, Seleccione un modo de juego nuevamente”;
+	Leer>>Modo_Elegido;
+Fin_Mientras
 Fin_Procedimiento
 
 
@@ -56,96 +56,98 @@ Procedimiento Recoleccion (E: Modo_Elegido, S: Apuesta, Seleccion, Multiplicador
 Inicio
 	En Caso (Modo_Elegido > 0) sea;
 		Caso (Modo_Elegido = 1);
-Mostrar<<”Ingrese una suma de fichas”;
+			Mostrar<<”Ingrese una suma de fichas”;
 			Leer>>Apuesta;
-Mostrar<<”Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% extra de lo que aposto al perder”;
+			Mostrar<<”Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% 			extra de lo que aposto al perder”;
 			Leer>>Multiplicador;
-Mostrar<<”Ingrese el color al cual apostara (1: Rojo, 2: Negro”;
-Leer>>Seleccion;
-Mientras (Apuesta < 0) or (Seleccion < 1 or Seleccion > 2) or (Multiplicador < 	1 or Multiplicador > 3) hacer;
-Mostrar<<”Valores ingresados erróneos, ingreselos nuevamente”;
-			Leer>>Apuesta;
+			Mostrar<<”Ingrese el color al cual apostara (1: Rojo, 2: Negro”;
 			Leer>>Seleccion;
-			Leer>>Multiplicador;
-Fin_Mientras
+			Mientras (Apuesta < 0) or (Seleccion < 1 or Seleccion > 2) or (Multiplicador < 	1 or Multiplicador > 3) hacer;
+				Mostrar<<”Valores ingresados erróneos, ingreselos nuevamente”;
+				Leer>>Apuesta;
+				Leer>>Seleccion;
+				Leer>>Multiplicador;
+			Fin_Mientras
 		Caso (Modo_Elegido = 2);
 			Mostrar<<”Ingrese una suma de fichas”;
 			Leer>>Apuesta;	
-Mostrar<<”Ingrese por cuanto quiere multiplicar su dinero (maximo 3) por cada vez que multiplique su dinero debera pagar un 150% extra de lo que 	aposto al perder”;
-Leer>>Multiplicador;
-Mostrar << ”Ingrese el numero específico al cual apostara (del 1 al 32)”;
-			Leer>>Seleccion;
-Mientras (Apuesta < 0) or (Seleccion < 1 or Seleccion > 32) or (Multiplicador < 1 or Multiplicador > 3) hacer;
-Mostrar<<”Valores ingresados erróneos, ingreselos nuevamente”;
-			Leer>>Apuesta;
-			Leer>>Seleccion;
+			Mostrar<<”Ingrese por cuanto quiere multiplicar su dinero (maximo 3) por cada vez que multiplique su dinero debera pagar un 150% 			extra de lo que aposto al perder”;
 			Leer>>Multiplicador;
-Fin_Mientras
+			Mostrar << ”Ingrese el numero específico al cual apostara (del 1 al 32)”;
+			Leer>>Seleccion;
+			Mientras (Apuesta < 0) or (Seleccion < 1 or Seleccion > 32) or (Multiplicador < 1 or Multiplicador > 3) hacer;
+				Mostrar<<”Valores ingresados erróneos, ingreselos nuevamente”;
+				Leer>>Apuesta;
+				Leer>>Seleccion;
+				Leer>>Multiplicador;
+			Fin_Mientras
 		Otro Caso
 			Mostrar<<”Ingrese una suma de fichas”;
 			Leer>>Apuesta;	
-Mostrar<<”Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% extra de lo que aposto al perder”;
-Leer>>Multiplicador;
-Mostrar << ”Ingrese el grupo numero al cual apostará (1: del 1 al 8, 2: del 9 al 16, 3: del 17 al 24, 4: del 25 al 32)”;
-			Leer>>Seleccion;
-Mientras (Apuesta < 0) or (Seleccion < 1 or Seleccion > 4) or (Multiplicador < 1 or Multiplicador > 3) hacer;
-Mostrar<<”Valores ingresados erróneos, ingreselos nuevamente”;
-			Leer>>Apuesta;
-			Leer>>Seleccion;
+			Mostrar<<”Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% 			extra de lo que aposto al perder”;
 			Leer>>Multiplicador;
-Fin_Mientras
+			Mostrar << ”Ingrese el grupo numero al cual apostará (1: del 1 al 8, 2: del 9 al 16, 3: del 17 al 24, 4: del 25 al 32)”;
+			Leer>>Seleccion;
+			Mientras (Apuesta < 0) or (Seleccion < 1 or Seleccion > 4) or (Multiplicador < 1 or Multiplicador > 3) hacer;
+				Mostrar<<”Valores ingresados erróneos, ingreselos nuevamente”;
+				Leer>>Apuesta;
+				Leer>>Seleccion;
+				Leer>>Multiplicador;
+			Fin_Mientras
 	Fin_Caso
 Fin_Procedimiento
 
 Función Aleatorio (Minimo, Maximo): Entero;
+Inicio
 Var número: Entero;
-número = GenerarNumeroAleatorio(mínimo, máximo);
-Devolver (número);
+	número = GenerarNumeroAleatorio(mínimo, máximo);
+	Devolver (número);
 Fin_Funcion
 
 Procedimiento Resultado_Apuesta (E: Seleccion, Número, E/S: Apuesta, Dinero_Actual, Dinero_Ganado, Dinero_Perdido, S: Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2, Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2);
 Inicio
 Mostrar<<”Ok, veamos que tocó”;	
 Si (Número = Seleccion) entonces,
-		Mostrar<<”Maravilloso, has ganado”;
-		Dinero_Actual = (Apuesta * Multiplicador);
-		Dinero_Ganado = (Apuesta * Multiplicador);
-		Si (Modo_Elegido = 1) entonces;
-Partidas_Ganadas_Modo1 = Partidas_Ganadas_Modo1 + 1;
-		Fin_Si
-		Si (Modo_Elegido = 2) entonces;
-Partidas_Ganadas_Modo2 = Partidas_Ganadas_Modo2 + 1;
-		Fin_Si
+	Mostrar<<”Maravilloso, has ganado”;
+	Dinero_Actual = (Apuesta * Multiplicador);
+	Dinero_Ganado = (Apuesta * Multiplicador);
+	Si (Modo_Elegido = 1) entonces;
+		Partidas_Ganadas_Modo1 = Partidas_Ganadas_Modo1 + 1;
+	Fin_Si
+	Si (Modo_Elegido = 2) entonces;
+		Partidas_Ganadas_Modo2 = Partidas_Ganadas_Modo2 + 1;
+	Fin_Si
 	Sino
 		Mostrar<<”Lamentablemente has perdido”;
 		Dinero_Actual = Dinero_Actual - (Apuesta * 1,5);
 		Dinero_Perdido = Apuesta - (Apuesta * 1,5);
 		Si (Modo_Elegido = 1) entonces;
-Partidas_Perdidas_Modo1 = Partidas_Perdidas_Modo1 + 1;
+			Partidas_Perdidas_Modo1 = Partidas_Perdidas_Modo1 + 1;
 		Fin_Si
 		Si (Modo_Elegido = 2)entonces;
-Partidas_Perdidas_Modo2 = Partidas_Perdidas_Modo2 + 1;
+			Partidas_Perdidas_Modo2 = Partidas_Perdidas_Modo2 + 1;
 		Fin_Si
-	Fin_Si
+Fin_Si
 Fin_Procedimiento
 
 
-Procedimiento Grupos_Valor (E/S: Grupo1, Grupo2, Grupo3, Grupo4) 
+Procedimiento Grupos_Valor (E/S: Grupo1, Grupo2, Grupo3, Grupo4);
+Inicio
 Grupo1 [8]: Entero;
 Para (I = 1 hasta I = 8 ) hacer;
-			Grupo [I] = I;
+	Grupo [I] = I;
 Fin_Para
 Grupo2 [8]: Entero;
 Para (I = 1 hasta I = 8) hacer;
-			Grupo2 [I] = I + 8;
+	Grupo2 [I] = I + 8;
 Fin_Para
 Grupo3 [8]: Entero;
 Para (I = 1 hasta I = 8) hacer;
-			Grupo3 [I] = I + 16;
+	Grupo3 [I] = I + 16;
 Fin_Para
 Grupo4 [8]: Entero;
 Para (I = 1 hasta I = 8) hacer;
-			Grupo4 [I] = I + 24;
+	Grupo4 [I] = I + 24;
 Fin_Para
 Fin_Procedimiento
 
@@ -155,79 +157,79 @@ Inicio
 Var  No_gano = 0: Entero
 
 En Caso (Seleccion > 0) sea;
-Caso (Seleccion = 1) entonces;
+	Caso (Seleccion = 1) entonces;
 		Para (I = 1 hasta I =  8) hacer;
-Si (Número != Grupo1 [I]) entonces;
+			Si (Número != Grupo1 [I]) entonces;
 				Mostrar<<”Veremos lo que toco pronto”;
-No_gano = No_gano + 1;
+				No_gano = No_gano + 1;
 			Sino
 				Mostrar<<”Has ganado”;
 				Dinero_Actual = (Apuesta * Multiplicador);
 				Dinero_Ganado = (Apuesta * Multiplicador);
-Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
-Fin_Si
-Fin_Para
-Si (No_Gano = 8) entonces;
-Mostrar<<”Lamentablemente has perdido”;
-			Dinero_Actual = Dinero_Actual - (Apuesta * 1,5);
-			Dinero_Perdido = Apuesta - (Apuesta * 1,5);
-			Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 			1;
-Fin_Si
-Caso (Seleccion = 2) ;
-	Para (I = 1 hasta I = 8) hacer;
-		Si (Número != Grupo2 [I]) entonces;
-			Mostrar<<”Veremos lo que toco pronto”;
-			No_gano = No_gano + 1;
-		Sino
-			Mostrar<<”Has ganado”
-Dinero_Actual = (Apuesta * Multiplicador);
-				Dinero_Ganado = (Apuesta * Multiplicador);
-Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
-Fin_Si
+				Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+			Fin_Si
 		Fin_Para
 		Si (No_Gano = 8) entonces;
-Mostrar<<”Lamentablemente has perdido”;
+			Mostrar<<”Lamentablemente has perdido”;
 			Dinero_Actual = Dinero_Actual - (Apuesta * 1,5);
 			Dinero_Perdido = Apuesta - (Apuesta * 1,5);
-Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+			Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+		Fin_Si
+	Caso (Seleccion = 2) ;
+		Para (I = 1 hasta I = 8) hacer;
+			Si (Número != Grupo2 [I]) entonces;
+				Mostrar<<”Veremos lo que toco pronto”;
+				No_gano = No_gano + 1;
+			Sino
+				Mostrar<<”Has ganado”
+				Dinero_Actual = (Apuesta * Multiplicador);
+				Dinero_Ganado = (Apuesta * Multiplicador);
+				Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+			Fin_Si
+		Fin_Para
+		Si (No_Gano = 8) entonces;
+			Mostrar<<”Lamentablemente has perdido”;
+			Dinero_Actual = Dinero_Actual - (Apuesta * 1,5);
+			Dinero_Perdido = Apuesta - (Apuesta * 1,5);
+			Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
 		Fin_Si
 	Caso (Seleccion = 3) ;
-Para (I = 1 hasta I = 8) hacer;
-		Si (Número != Grupo3 [I]) entonces;
-			Mostrar<<”Veremos lo que toco pronto”;
-			No_gano = No_gano + 1;
-		Sino
-			Mostrar<<”Has ganado”
-Dinero_Actual = (Apuesta * Multiplicador);
+		Para (I = 1 hasta I = 8) hacer;
+			Si (Número != Grupo3 [I]) entonces;
+				Mostrar<<”Veremos lo que toco pronto”;
+				No_gano = No_gano + 1;
+			Sino
+				Mostrar<<”Has ganado”
+				Dinero_Actual = (Apuesta * Multiplicador);
 				Dinero_Ganado = (Apuesta * Multiplicador);
-Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
-Fin_Si
+				Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+			Fin_Si
 		Fin_Para
 		Si (No_Gano = 8) entonces;
-Mostrar<<”Lamentablemente has perdido”;
+			Mostrar<<”Lamentablemente has perdido”;
 			Dinero_Actual = Dinero_Actual - (Apuesta * 1,5);
 			Dinero_Perdido = Apuesta - (Apuesta * 1,5);
-Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+			Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
 		Fin_Si
 	Otro Caso
-Para (I = 1 hasta I = 8) hacer;
-		Si (Número != Grupo4 [I]) entonces;
-			Mostrar<<”Veremos lo que toco pronto”;
-			No_gano = No_gano + 1;
-		Sino
-			Mostrar<<”Has ganado”
-Dinero_Actual = (Apuesta * Multiplicador);
+		Para (I = 1 hasta I = 8) hacer;
+			Si (Número != Grupo4 [I]) entonces;
+				Mostrar<<”Veremos lo que toco pronto”;
+				No_gano = No_gano + 1;
+			Sino
+				Mostrar<<”Has ganado”
+				Dinero_Actual = (Apuesta * Multiplicador);
 				Dinero_Ganado = (Apuesta * Multiplicador);
-Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
-Fin_Si
+				Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+			Fin_Si
 		Fin_Para
 		Si (No_Gano = 8) entonces;
-Mostrar<<”Lamentablemente has perdido”;
+			Mostrar<<”Lamentablemente has perdido”;
 			Dinero_Actual = Dinero_Actual - (Apuesta * 1,5);
 			Dinero_Perdido = Apuesta - (Apuesta * 1,5);
-Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+			Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
 		Fin_Si
-	Fin_Caso
+Fin_Caso
 Fin_Procedimiento
 
 Procedimiento Estadisticas (E: Dinero_Actual, Dinero_Ganado, Dinero_Perdido, Veces_jugadas_Modo1, Veces_Jugadas_Modo2, Veces_Jugadas_ Modo3, Partidas_Ganadas, Partidas_Perdidas, Porcentaje_Victorias);
@@ -237,9 +239,9 @@ Veces_Jugadas = (Veces_Jugadas_Modo1 + Veces_Jugadas_Modo2 + Veces_Jugadas_Modo3
 Partidas_Perdidas =  (Partidas_Perdidas_Modo1 + Partidas_Perdidas_Modo2 + Partidas_Perdidas_Modo3);
 Partidas_Ganadas = (Partidas_Ganadas_Modo1 + Partidas_Ganadas_Modo2 + Partidas_Ganadas_Modo3);
 Porcentaje_Victorias = (Partidas_Ganadas/Veces_Jugadas)*100;
-	Mostrar<<”Bien, estas han sido sus estadisticas”;
-	Mostrar<<”Su Dinero actual es..”,Dinero_Actual;
-	Mostrar<<”Sus ganancias fueron..(esto solo incluye el dinero ganado no toma en cuenta lo perdido)”, Dinero_Ganado;
+Mostrar<<”Bien, estas han sido sus estadisticas”;
+Mostrar<<”Su Dinero actual es..”,Dinero_Actual;
+Mostrar<<”Sus ganancias fueron..(esto solo incluye el dinero ganado no toma en cuenta lo perdido)”, Dinero_Ganado;
 Mostrar<<”Todo lo que le sacamos jajajaja *sonido de toser* digo sus pobres pérdidas fueron... (esto solo incluye perdidas no cuenta lo ganado)”, Dinero_Perdido;
 Mostrar<<”Las veces que usted participo en la Ruleta Maravillosa fueron...”, Veces_Jugadas;
 Mostrar<<”Usted Ganó ....”, Partidas_Ganadas,”Veces”;
