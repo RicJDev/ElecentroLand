@@ -1,0 +1,5 @@
+procedimiento tiendita()
+Inicio
+  var opcion_menu: Booleano;
+  var opcion_dibujo: Entero;
+Fin_Procedimiento

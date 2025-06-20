@@ -1,0 +1,35 @@
+Procedimiento menu_juegos(E/S: casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]: Cadena, id_usuario: Entero, nombre: Cadena);
+Inicio
+  var opcion_juegos: Entero;
+  
+  Mientras (opcion_juegos != 0) Hacer;
+    Mostrar << "Ingrese una opcion.";
+    Mostrar << "0. Salir";
+    Mostrar << "1. Blackjack";
+    Mostrar << "2. Ruleta";
+    Mostrar << "3. Dados";
+    Mostrar << "4. Tragamonedas";
+    Mostrar << "5. Tiendita (donde puedes canjear tus fichas por dinero)";
+    Leer >> opcion_juegos;
+    
+    Mientras (opcion_juegos < 0 OR opcion_juegos > 5) Hacer;
+      Mostrar << "No te entiendo. Solo te di 6 opciones. Elije algo valido, por favor";
+      Leer >> opcion_juegos;
+    Fin_Mientras
+    
+    En_Caso (opcion_juegos >= 0) Sea;
+      Caso (opcion_juegos = 1);
+        Blackjack();
+      Caso (opcion_juegos = 2);
+        Ruleta();
+      Caso (opcion_juegos = 3);
+        Dados();
+      Caso (opcion_juegos = 4);
+        Tragamonedas();
+      Caso (opcion_juegos = 5);
+        
+      Otro_Caso
+        
+    Fin_Caso
+  Fin_Mientras
+Fin_Procedimiento

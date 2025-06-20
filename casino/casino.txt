@@ -1,4 +1,4 @@
-Procedimiento Casino(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], casino_listado_premios[j_casino]);
+Procedimiento Casino(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino], casino_listado_premios[j_casino]: Cadena);
 Inicio
   var esta_en_registro, permitir_acceso, seguir_casino = 1: Booleano;
   
@@ -14,7 +14,7 @@ Inicio
     Leer >> esta_en_registro;
     
     Si (esta_en_registro = 1) Entonces;
-      inicio_sesion(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino]. id_usuario, permitir_acceso, nombre, contrasena, edad, saldo_fichas, premios[j_casino]);
+      inicio_sesion(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario, permitir_acceso, nombre, contrasena, edad, saldo_fichas, premios[j_casino]);
       Mostrar << inicio_sesion;
       
       Si (permitir_acceso = 1) Entonces;
@@ -35,7 +35,7 @@ Inicio
   Fin_Repetir
 Fin_Procedimiento
 
-Procedimiento inicio_sesion(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario, S: permitir_acceso, nombre, contrasena, edad, saldo_fichas, premios[j_casino]);
+Procedimiento inicio_sesion(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]:Cadena, id_usuario: Entero, S: permitir_acceso: Booleano, nombre, contrasena: Cadena, edad, saldo_fichas: Entero, premios[j_casino]: Cadena);
 Inicio
   var nombre_busqueda, contrasena_asociada, contrasena_comparacion: Cadena;
   var existe_nombre = 0: Booleano;
@@ -88,7 +88,7 @@ Inicio
   Fin_Si
 Fin_Procedimiento
 
-Procedimiento registro_nuevo_usuario(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario);
+Procedimiento registro_nuevo_usuario(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]: Cadena, id_usuario: Entero);
 Inicio
   var nombre_registro, contrasena_registro: Cadena;
   var i_local = 1, nueva_id = -1, edad_registro: Entero;
