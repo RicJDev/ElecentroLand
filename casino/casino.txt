@@ -1,4 +1,4 @@
-Procedimiento Casino(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino]);
+Procedimiento Casino(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], casino_listado_premios[j_casino]);
 Inicio
   var esta_en_registro, permitir_acceso, seguir_casino = 1: Booleano;
   
@@ -6,11 +6,13 @@ Inicio
   var id_usuario = -1, edad, saldo_fichas: Entero;
   var premios[10]: Cadena;
   
-  Mostrar << "Bienvenido al casino. Antes de continuar debe iniciar sesion. Si no esta registrado, por favor pase al modulo de registro";
-  Mostrar << "Esta registrado? (1: si, 0: no)";
-  Leer >> esta_en_registro;
+  Mostrar << "Bienvenido al casino.";
   
   Repetir
+    Mostrar << "Antes de continuar debe iniciar sesion. Si no esta registrado, por favor pase al modulo de registro";
+    Mostrar << "Esta registrado? (1: si, 0: no)";
+    Leer >> esta_en_registro;
+    
     Si (esta_en_registro = 1) Entonces;
       inicio_sesion(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino]. id_usuario, permitir_acceso, nombre, contrasena, edad, saldo_fichas, premios[j_casino]);
       Mostrar << inicio_sesion;
@@ -26,8 +28,9 @@ Inicio
       Mostrar << registro_nuevo_usuario;
     Fin_Si
     
-    Mostrar << "Desea salir del casino o iniciar sesion nuevamente? (1: iniciar sesion otra vez, 0: salir)";
+    Mostrar << "Desea salir del casino? (0: si, 1: no)";
     Leer >> seguir_casino;
+    
     Hasta (seguir_casino = 0);
   Fin_Repetir
 Fin_Procedimiento
@@ -77,11 +80,56 @@ Inicio
       Fin_Para
       
       permitir_acceso = 1;
+      
+      Sino 
+      Mostrar << "Usted ha alcanzado el limite de intentos. ";
+      permitir_acceso = 0;
     Fin_Si
   Fin_Si
 Fin_Procedimiento
 
-Procedimiento registro_nuevo_usuario();
+Procedimiento registro_nuevo_usuario(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario);
 Inicio
+  var nombre_registro, contrasena_registro: Cadena;
+  var i_local = 1, nueva_id = -1, edad_registro: Entero;
   
+  Mientras (i_local <= 100 AND nueva_id = -1) Hacer;
+    Si (casino_nombres[i_local] = "no_asignado" AND casino_contrasenas = "no_asignado") Entonces;
+      nueva_id = i_local;
+    Fin_Si
+  Fin_Mientras
+  
+  Si (nueva_id = -1) Entonces;
+    Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
+    
+    Sino 
+    
+    Mostrar << "Ingrese nombre de usuario";
+    Leer >> nombre_registro;
+    
+    Mientras (nombre_registro = "no_asignado") Hacer;
+      Mostrar << "Nombre no valido por posible injeccion SQL";
+      Leer >> nombre_registro;
+    Fin_Mientras
+    
+    Mostrar >> "Ingrese su contrasena";
+    Leer >> contrasena_registro;
+    
+    Mientras (contrasena_registro = "no_asignado") Hacer;
+      Mostrar << "Contrasena no valida por posible injeccion SQL";
+      Leer >> contrasena_registro;
+    Fin_Mientras
+    
+    Mostrar << "Ingrese su edad";
+    Leer >> edad_registro;
+    
+    Mientras (edad_registro < 18) Hacer;
+      Mostrar << "Eeepa, menol. Tu no puedes entrar";
+      Leer >> edad_registro;
+    Fin_Mientras
+    
+    casino_nombres[nueva_id] = nombre_registro;
+    casino_contrasenas[nueva_id] = contrasena_registro;
+    casino_edades[nueva_id] = edad_registro;
+  Fin_Si
 Fin_Procedimiento

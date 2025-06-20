@@ -1,5 +1,4 @@
-Algoritmo Tiendita de regalos
-
+procedimiento tiendita()
 Inicio
   var seguir = 1: Booleana;
   var precio_regalo: Real;
@@ -65,16 +64,4 @@ Inicio
         seguir = 0;
     Fin_Caso
   Fin_Mientras
-Fin
-
-Funcion hacer_algo(a: Entero): Cadena;
-Inicio
-  var resultado: Cadena;
-  
-  En_Caso (a > 0) Sea;
-    Caso (a = 2);
-      resultado = "Eeeeh, si (a = g)  entonces maestro. Un 2!";
-  Fin_Caso
-  
-  Devolver (resultado);
-Fin_Funcion
+Fin_Procedimiento
