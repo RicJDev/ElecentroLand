@@ -1,10 +1,7 @@
-Procedimiento Casino(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino], casino_listado_premios[j_casino]: Cadena);
+Procedimiento Casino(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]: Entero, casino_premios[i_casino][j_casino]: Booleano);
 Inicio
   var esta_en_registro, permitir_acceso, seguir_casino = 1: Booleano;
-  
-  var nombre, contrasena: Cadena;
-  var id_usuario = -1, edad, saldo_fichas: Entero;
-  var premios[10]: Cadena;
+  var id_usuario = -1, edad: Entero;
   
   Mostrar << "Bienvenido al casino.";
   
@@ -14,11 +11,11 @@ Inicio
     Leer >> esta_en_registro;
     
     Si (esta_en_registro = 1) Entonces;
-      inicio_sesion(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario, permitir_acceso, nombre, contrasena, edad, saldo_fichas, premios[j_casino]);
+      inicio_sesion(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario, permitir_acceso);
       Mostrar << inicio_sesion;
       
       Si (permitir_acceso = 1) Entonces;
-        menu_juegos(casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario, nombre);
+        menu_juegos(casino_nombres[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario);
         Mostrar << menu_juegos;
       Fin_Si
     Fin_Si
@@ -35,7 +32,7 @@ Inicio
   Fin_Repetir
 Fin_Procedimiento
 
-Procedimiento inicio_sesion(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]:Cadena, id_usuario: Entero, S: permitir_acceso: Booleano, nombre, contrasena: Cadena, edad, saldo_fichas: Entero, premios[j_casino]: Cadena);
+Procedimiento inicio_sesion(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]: Booleano, id_usuario: Entero, S: permitir_acceso: Booleano);
 Inicio
   var nombre_busqueda, contrasena_asociada, contrasena_comparacion: Cadena;
   var existe_nombre = 0: Booleano;
@@ -71,13 +68,6 @@ Inicio
     
     Si (contrasena_comparacion = contrasena_asociada) Entonces;
       Mostrar << "Ya tienes acceso, papá (o mamá o unicornio volador o helicóptero apache)!";
-      nombre = casino_nombres[id_usuario];
-      saldo_fichas = casino_saldos_fichas[id_usuario];
-      edad = casino_edades[id_usuario];
-      
-      Para (j_casino = 1 Hasta j_casino = 10) Hacer;
-        premios[j_casino] = casino_premios[id_usuario][j_casino];
-      Fin_Para
       
       permitir_acceso = 1;
       

@@ -1,9 +1,19 @@
-Procedimiento menu_juegos(E/S: casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]: Cadena, id_usuario: Entero, nombre: Cadena);
+Procedimiento menu_juegos(E/S: casino_nombres[i_casino]: Cadena, casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]: Entero, casino_premios[i_casino][j_casino]: Booleano, id_usuario: Entero);
 Inicio
   var opcion_juegos: Entero;
+  var nombre: Cadena;
+  var saldo_disponible: Entero;
+  var premios_canjedos[10]: Booleano;
+  
+  nombre = casino_nombres[id_usuario];
+  saldo_disponible = casino_saldos_fichas[id_usuario];
+  
+  Para (j_casino = 1 Hasta j_casino = 10) Hacer;
+    premios_canjedos[j_casino] = casino_premios[id_usuario][j_casino];
+  Fin_Para
   
   Mientras (opcion_juegos != 0) Hacer;
-    Mostrar << "Ingrese una opcion.";
+    Mostrar << "Ingrese una opcion. (Recomiendo pasar antes por la tiendita, ya que necesitas fichas para los juegos)";
     Mostrar << "0. Salir";
     Mostrar << "1. Blackjack";
     Mostrar << "2. Ruleta";
@@ -17,19 +27,23 @@ Inicio
       Leer >> opcion_juegos;
     Fin_Mientras
     
-    En_Caso (opcion_juegos >= 0) Sea;
+    En_Caso (opcion_juegos > 0) Sea;
       Caso (opcion_juegos = 1);
-        Blackjack();
+        Blackjack(nombre, saldo_disponible);
       Caso (opcion_juegos = 2);
-        Ruleta();
+        Ruleta(nombre, saldo_disponible);
       Caso (opcion_juegos = 3);
-        Dados();
+        Dados(nombre, saldo_disponible);
       Caso (opcion_juegos = 4);
-        Tragamonedas();
-      Caso (opcion_juegos = 5);
-        
-      Otro_Caso
-        
+        Tragamonedas(nombre, saldo_disponible);
+      Otro_Caso(opcion_juegos = 5);
+        Tiendita(nombre, saldo_disponible, premios_canjedos[j_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]);
     Fin_Caso
+    
+    Para (j_casino = 1 Hasta j_casino = 10) Hacer;
+      casino_premios[id_usuario][j_casino] = premios_canjedos[j_casino];
+    Fin_Para
+    
+    casino_saldos_fichas[id_usuario] = saldo_disponible;
   Fin_Mientras
 Fin_Procedimiento
