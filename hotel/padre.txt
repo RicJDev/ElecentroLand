@@ -1,0 +1,33 @@
+Algoritmo padre
+
+Inicio
+  // Where are the variables?????
+
+  Repetir
+    Mostrar << "1:Registrar un nuevo cliente";
+    Mostrar << "2:Realizar una reserva";
+    Mostrar << "3:Buscar Estatus del cliente (con ID)";
+    Mostrar << "4:Imprimir Factura del cliente";
+    Mostrar << "5:salir del sistema";
+    Leer >> opc_hotel;
+    
+    Mientras (opc_hotel < 1 OR opc_hotel > 5) Hacer;
+      mostrar >> "Estimado usuario, error en opcion seleccionada, intente de nuevo";
+      Leer >> opc_hotel;
+    Fin_Mientras
+    
+    En_Caso (opc_hotel > 0) Sea;
+      Caso (opc_hotel = 1);
+        registro_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, contador_clientes_hotel);
+      Caso (opc_hotel = 2);
+        reserva_hotel();
+      Caso (opc_hotel = 3);
+        Busca_cliente();
+      Caso (opc_hotel = 4);
+        Factura_cliente();
+      Caso (opc_hotel = 5);
+    Fin_Caso
+    
+    Hasta (opc_hotel = 5);
+  Fin_Repetir
+Fin
