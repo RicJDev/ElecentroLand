@@ -1,490 +1,484 @@
-//procedimiento generar ID
-Procedimiento generar_id (e:contador_cliente=0,e:clientes[contador_cliente]:entero,e/s:id_cliente:entero); 
-
- Inicio
- 
-var id_cliente:entero
-
-		Si contador_clientes=500 entonces;
-			Mostrar<<"Estimado, usuario el hotel esta completamente lleno, lo sentimos";
-			sino 
-			contador_cliente=contador_cliente+1;
-			id_cliente=contador_cliente;
-			clientes=[contador_cliente]
-		Fin si
-
-Fin Procedimiento
-//procedimiento metodo de pago
-Procedimiento metodo de pago (e:Clientes=[contador_clientes]:entero);
+Procedimiento generar_id(e: contador_cliente = 0, e: clientes[contador_cliente]: entero, e/s: id_cliente: entero); ;
 Inicio
-
-Var
-opc_pago,cedula:enterotipo_cuenta,num_tarjeta,digitos_tarjeta,referencia;
-fecha_vencimiento:cadena;
-
-Mostrar<<"Ingrese su ID, por favor";
-Leer>>id_cliente_reservacion;
-
-	Mientras id_cliente_reservacion<1 hacer
-		Mostrar<<"Por favor ingrese un ID valido";
-		Leer>>id_cliente_reservacion;
-	Fin mientras
-
-    validacion(id_cliente_reservacion,clientes=[contador_cliente])
-	
-	Si validacion=2 entonces;
-	   Mostrar<<"Error el ID",id_cliente_reservacion,"no se encuentra en nuestra base de datos"
-	   sino
-	   
-Mostrar<<"Estimado usuario a continuacion te muestro los metodos de pago disponible";
-Mostrar<<"1:Tarjeta de debito";
-Mostrar<<"2:Tarjeta de credito";
-Mostrar<<"3:Transferencia Bancaria";
-Mostrar<<"4:Pago Movil";
-Mostrar<<"5:Zelle";
-Mostrar<<"6:Binance Pay (criptomonedas)";
-Mostrar<<"7:Zinli";
-Mostrar<<"8:Euros en efectivo";
-Mostrar<<"9:Efectivo en BS";
-Mostrar<<"10:Divisas en Efectivo";
-Leer>>opc_pago;
-
-Mientras opc_pago<1 or opc_pago>10 hacer;
-	Mostra<<"Error en opcion seleccionada, por favor vuelva a intentar"
-	Lee>>opc_pago
-Fin mientras
-
-En caso opc_pago>0 sea;
-	caso (opc_pago=1) :
-	Mostrar<<"Ingrese su numero de cedula";
-	Leer>>cedula;
-	Mientras cedula<1000000 hacer
-		Mostrar<<"Por favor ingrese un dato valido";
-		Leer>>cedula
-	Fin mientras
-	Mostrar<<"Ingrese su tipo de cuenta (ahorro o corriente)";
-	Leer>>tipo_cuenta
-	Mostrar<<"Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave secreta";
-	caso (opc_pago=2);
-	Mostrar<<"Ingrese el numero de su tarjeta";
-	Leer>>num_tarjeta;
-	Mientras num_tarjeta<0 hacer
-		Mostrar<<"Error en datos ingresados,intente nuevamente";
-		Leer>>num_tarjeta;
-	Fin Mientras
-	Mostrar<<"Ingrese la fecha de vencimiento DD-MM-AAAA";
-	Leer>>fecha_vencimiento;
-	Mostrar<<"Ingrese los 4 digitos traseros de su tarjeta";
-	Leer>>digitos_tarjeta;
-	Mientras digitos_tarjeta<0 hacer
-		Mostrar<<"Error en datos ingresados,intente nuevamente";
-		Leer>>digitos_tarjeta;
-	Fin Mientras
-	Mostrar<<"Perfecto, datos captados, gracias por su pago";
-	caso (opc_pago=3);
-	Mostrar<<"Datos Bancarios Elecentroland"
-	Mostrar<<"Banco:Banesco";
-	Mostrar<<"Numero de cuenta:01340254325200006321";
-	Mostrar<<"J-10526368-7"
-	Mostrar<<"Tipo de cuenta:Corriente";
-	Mostrar<<"Ingrese su numero de referencia por favor (minimo 6 digitos)"
-	Leer>>referencia;
-	Mientras referencia<0 hacer;
-		Mostrar<<"Error en referencia ingresada, verifique e ingrese nuevamente";
-		Leer>>referencia
-	Fin mientras
-	caso (opc_pago=4);
-	Mostrar<<"Datos Bancarios Elecentroland";
-	Mostrar<<"Banco:Banesco (0134)";
-	Mostrar<<"J-10526368-7";
-	Mostrar<<"Numero telefonico:0412-8628439";
-	Mostrar<<"Ingrese su numero de referencia por favor (minimo 6 digitos)"
-	Leer>>referencia;
-	Mientras referencia<0 hacer;
-		Mostrar<<"Error en referencia ingresada, verifique e ingrese nuevamente";
-		Leer>>referencia
-	Fin mientras
-	caso (opc_pago=5);
-	Mostrar<<"Datos Bancarios Zelle Elecentroland";
-	Mostrar<<"Correo electronico:elecentroland@gmail.com";
-	Mostrar<<"Ingrese su numero de referencia por favor (minimo 6 digitos)"
-	Leer>>referencia;
-	Mientras referencia<0 hacer;
-		Mostrar<<"Error en referencia ingresada, verifique e ingrese nuevamente";
-		Leer>>referencia
-	Fin mientras
-	caso (opc_pago=6);
-	Mostrar<<"Datos Bancarios Binance Pay Elecentroland";
-	Mostrar<<"Correo electronico:elecentroland@gmail.com";
-	Mostrar<<"Numero telefonico:0412-8628439";
-	Mostrar<<"Numero de ID: 1236548214";
-	Mostrar<<"Ingrese su numero de referencia por favor (minimo 6 digitos)"
-	Leer>>referencia;
-	Mientras referencia<0 hacer;
-		Mostrar<<"Error en referencia ingresada, verifique e ingrese nuevamente";
-		Leer>>referencia
-	Fin mientras
-	caso (opc_pago=7);
-	Mostrar<<"Datos Bancarios Zinli Elecentroland";
-	Mostrar<<"Correo electronico:elecentroland@gmail.com";
-	Mostrar<<"Ingrese su numero de referencia por favor (minimo 6 digitos)"
-	Leer>>referencia;
-	Mientras referencia<0 hacer;
-		Mostrar<<"Error en referencia ingresada, verifique e ingrese nuevamente";
-		Leer>>referencia
-	Fin mientras
-	caso (opc_pago=8);
-	Mostrar<<"Perfecto estimado usuario, en taquilla se haran cargo de recibir su pago";
-	caso (opc_pago=9);
-	Mostrar<<"Perfecto estimado usuario, en taquilla se haran cargo de recibir su pago";
-	otro caso 
-	Mostrar<<"Perfecto estimado usuario, en taquilla se haran cargo de recibir su pago";
-Fin caso
-Fin si
-Fin Procedimiento
-//registro de cliente
-procedimiento registro_nuevo_cliente (e/s: nombre_apellido:cadena,e/s telefono:entero,e/s edad_usuario:entero,e/s cedula:entero,e/s email:cadena,e/s:id_cliente:entero,e/s:cant_acompañantes:entero,e/s:clientes_hotel=0;)
-
-  inicio
-  var opc_registro:entero
+  var id_cliente: entero;
   
-    id_cliente_registrado=generar_id (econtador_cliente=0:entero)
-	
-	Mostrar<<"Bienvenido al hotel Elecentroland";
-	mostrar<<"Estimado usuario se hospedara solo o con acompañantes 1:si, 2:no";
-	leer>>opc_registro;
- 
-	Mientras opc_registro<1 or opc_registro>2 hacer;//validacion de la opcion
-		Mostrar<<"Error en respuesta enviada por favor intente de nuevo";
-		Leer>>opc_registro;
-	Fin mientras
+  Si (contador_clientes = 500) Entonces;
+    Mostrar << "Estimado, usuario el hotel esta completamente lleno, lo sentimos";
+    Sino 
+    contador_cliente = contador_cliente + 1;
+    id_cliente = contador_cliente;
+    clientes = [contador_cliente];
+  Fin_Si
+Fin_Procedimiento
 
-	Si opc_registro=1 entonces;
-		Mostrar<<"Ingrese su nombre y apellido";
-		Leer>>nombre_apellido,
-		Mostrar<<"Ingrese su edad";
-		Leer>>edad_usuario;
-
-		Mientras edad_usuario<18 hacer;//validacion edad para cliente solo 
-			Mostrar<<"Personas menores de 18 años necesitan un representante legal para registrarse";
-			Leer>>edad_usuario;
-		Fin mientras
-
-		Mostrar<<"Ingrese su numero telefonico si tiene";
-		Leer>>telefono;
-		Mostrar<<"Ingrese direccion email si tiene";
-		Leer>>email;
-		id_cliente_nuevo=generar_id (contador_cliente=0:entero,clientes=[contador_cliente],id_cliente); 
-		
-		Mostrar<<"Datos de el cliente";
-		Mostrar<<"Nombre y apellido:",nombre_apellido;
-		Mostrar<<"Numero Telefonico:",telefono;
-		Mostrar<<"E-mail:",email;
-		Mostrar<<"Usuario registrado con exito su numero de identificacion es",id_cliente_nuevo;
-
-		Sino
-
-			Mostrar<<"Ingrese los datos del titular del registro";
-			Mostrar<<"Ingrese su nombre y apellido";
-			Leer>>nombre_apellido;
-			Mostrar<<"Ingrese su edad";
-			Leer>>edad_usuario;
-
-			Mientras edad_usuario<18 hacer;//validacion para cliente titular
-				Mostrar<<"Personas menores de 18 años no pueden ser titulares de una reserva";
-				Leer>>edad_usuario;
-			Fin mientras
-
-			Mostrar<<"Ingrese su numero telefonico";
-			leer>>telefono;
-			Mostrar<<"Ingrese direccion email si tiene";
-			Leer>>email;
-			contador_clientes_hotel=contador_clientes_hotel+1;
-			mostrar<<"Ingrese la cantidad de acompañantes";
-			Leer>>cant_acompañantes;
-			id_cliente_nuevo=generar_id (contador_cliente=0:entero,clientes=[contador_cliente],id_cliente);
-		
-			Para I=1 hasta I=cant_acompañantes hacer;
- 
-			Mostrar<<"Ingrese su nombre y apellido";
-			Leer>>nombre_apellido;
-			Mostrar<<"Ingrese su edad";
-			Leer>>edad_usuario;
-
-			Mientras edad_usuario<0 hacer;
-				Mostrar<<"Ingrese una edad valida por favor";
-				Leer>>edad_usuario;
-			Fin mientras
- 
-			Mostrar<<"Ingrese su numero telefonico si tiene";
-				leer>>telefono;
-				Mostrar<<"Ingrese direccion email si tiene";
-				Leer>>email;
-			Fin para
-
-			clientes_hotel=clientes_hotel+cant_acompañantes;
-			
-			Mostrar<<"Datos de el cliente";
-			Mostrar<<"Nombre y apellido:",nombre_apellido;
-			Mostrar<<"Numero Telefonico:",telefono;
-			Mostrar<<"E-mail:",email;
-			Mostrar<<"Usuario registrado con exito su numero de identificacion es",id_cliente_nuevo,"usted es el titular de",cant_acompañantes,"acompañantes";
-
-    fin si
-
-Fin Procedimiento
-//validacion
-proceso validacion (e:id_cliente_reservacion:entero,s:validacion_final:entero,e:clientes=[contador_clientes])
+Procedimiento metodo_de_pago(e: Clientes = [contador_clientes]: entero);
 Inicio
-Var validacion=entero
-para I=1 Hasta contado_clientes hacer
- Si id_ingresado≠clientes[contador_clientes]
- validacion=1
- sino 
- Mostrar<<"El cliente",id_ingresado,"ha sido encontrado con exito";
-finsi
-fin proceso
-//check-out
-procedimiento check_out (e:contador_cliente,e:cantidad_habitacion1:entero,e:cantidad_habitacion2:entero,e:cantidad_habitacion3:entero,e:cantidad_habitacion4:entero)
-inicio
-var id_cliente_reservacion:entero
-opcion_habitacion:entero
+  var opc_pago, cedula enterotipo_cuenta, num_tarjeta, digitos_tarjeta, referencia, fecha_vencimiento: cadena;
+  
+  Mostrar << "Ingrese su ID, por favor";
+  Leer >> id_cliente_reservacion;
+  
+  Mientras (id_cliente_reservacion < 1) Hacer;
+    Mostrar << "Por favor ingrese un ID valido";
+    Leer >> id_cliente_reservacion;
+  Fin_Mientras
+  
+  validacion(id_cliente_reservacion, clientes = [contador_cliente]);
+  
+  Si (validacion = 2) Entonces;
+    Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
+    
+    Sino 
+    Mostrar << "Estimado usuario a continuacion te muestro los metodos de pago disponible";
+    Mostrar << "1:Tarjeta de debito";
+    Mostrar << "2:Tarjeta de credito";
+    Mostrar << "3:Transferencia Bancaria";
+    Mostrar << "4:Pago Movil";
+    Mostrar << "5:Zelle";
+    Mostrar << "6:Binance Pay (criptomonedas)";
+    Mostrar << "7:Zinli";
+    Mostrar << "8:Euros en efectivo";
+    Mostrar << "9:Efectivo en BS";
+    Mostrar << "10:Divisas en Efectivo";
+    Leer >> opc_pago;
+    
+    Mientras (opc_pago < 1 OR opc_pago > 10) Hacer;
+      Mostra << "Error en opcion seleccionada, por favor vuelva a intentar";
+      Lee >> opc_pago;
+    Fin_Mientras
+    
+    En_Caso (opc_pago > 0) Sea;
+      Caso (opc_pago = 1);
+        Mostrar << "Ingrese su numero de cedula";
+        Leer >> cedula;
+        
+        Mientras (cedula < 1000000) Hacer;
+          Mostrar << "Por favor ingrese un dato valido";
+          Leer >> cedula;
+        Fin_Mientras
+        
+        Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
+        Leer >> tipo_cuenta;
+        Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave secreta";
+      Caso (opc_pago = 2);
+        Mostrar << "Ingrese el numero de su tarjeta";
+        Leer >> num_tarjeta;
+        
+        Mientras (num_tarjeta < 0) Hacer;
+          Mostrar << "Error en datos ingresados,intente nuevamente";
+          Leer >> num_tarjeta;
+        Fin_Mientras
+        
+        Mostrar << "Ingrese la fecha de vencimiento DD-MM-AAAA";
+        Leer >> fecha_vencimiento;
+        Mostrar << "Ingrese los 4 digitos traseros de su tarjeta";
+        Leer >> digitos_tarjeta;
+        
+        Mientras (digitos_tarjeta < 0) Hacer;
+          Mostrar << "Error en datos ingresados,intente nuevamente";
+          Leer >> digitos_tarjeta;
+        Fin_Mientras
+        
+        Mostrar << "Perfecto, datos captados, gracias por su pago";
+      Caso (opc_pago = 3);
+        Mostrar << "Datos Bancarios Elecentroland";
+        Mostrar << "Banco:Banesco";
+        Mostrar << "Numero de cuenta:01340254325200006321";
+        Mostrar << "J-10526368-7";
+        Mostrar << "Tipo de cuenta:Corriente";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 4);
+        Mostrar << "Datos Bancarios Elecentroland";
+        Mostrar << "Banco:Banesco (0134)";
+        Mostrar << "J-10526368-7";
+        Mostrar << "Numero telefonico:0412-8628439";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 5);
+        Mostrar << "Datos Bancarios Zelle Elecentroland";
+        Mostrar << "Correo electronico:elecentroland@gmail.com";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 6);
+        Mostrar << "Datos Bancarios Binance Pay Elecentroland";
+        Mostrar << "Correo electronico:elecentroland@gmail.com";
+        Mostrar << "Numero telefonico:0412-8628439";
+        Mostrar << "Numero de ID: 1236548214";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 7);
+        Mostrar << "Datos Bancarios Zinli Elecentroland";
+        Mostrar << "Correo electronico:elecentroland@gmail.com";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 8);
+        Mostrar << "Perfecto estimado usuario, en taquilla se haran cargo de recibir su pago";
+      Caso (opc_pago = 9);
+        Mostrar << "Perfecto estimado usuario, en taquilla se haran cargo de recibir su pago";
+      Otro_Caso
+        Mostrar << "Perfecto estimado usuario, en taquilla se haran cargo de recibir su pago";
+    Fin_Caso
+  Fin_Si
+Fin_Procedimiento
 
-Mostrar<<"Gracias por haber elegido a Elecentroland Para su visita a San Juan De Los Morros, vuelva pronto";
-Mostrar<<"Ingrese su ID, por favor";
-Leer>>id_cliente_reservacion;
-
-	Mientras id_cliente_reservacion<1 hacer
-		Mostrar<<"Por favor ingrese un ID valido";
-		Leer>>id_cliente_reservacion;
-	Fin mientras
-	
-	validacion(id_cliente_reservacion,validacion_final,cliente=[contador_clientes])
-	
-	si validacion=2 entonces;
-	   Mostrar<<"Error el ID",id_cliente_reservacion,"no se encuentra en nuestra base de datos"
-	   sino
-	contador_cliente=contador_cliente-1;
-	Mostrar<<"Ingrese en que habitacion estaba hospedado";
-	Mostrar<<"Listado de habitaciones";
-	Mostrar<<"1:Habitacion Elecentro (Habitación individual: Diseñada para una persona, con cama individua) precio 10$ por noche";
-	Mostrar<<"2:habitacion Guanabana (habitacion con dual )precio: 20$ por noche";
-	Mostrar<<"3:Habitacion Maravillas (hasta 4 personas) precio: 35$ por noche";
-	Mostrar<<"4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
-	Leer>>opcion_habitacion;
-	
-	Mientras (opcion_habitacion<1) or (opcion_habitacion>4) hacer;
-		Mostrar<<"Error por favor elija una habitacion disponible";
-		Leer>>opcion_habitacion;
-    Fien mientras
-	
-	En caso (opcion_habitacion>0) sea;
-		caso (opcion_habitacion=1) 
-		cantidad_habitacion1=cantidad_habitacion1+1;
-		caso (opcion_habitacion=2)
-		cantidad_habitacion2=cantidad_habitacion2+1;
-		caso (opcion_habitacion=3)
-		cantidad_habitacion3=cantidad_habitacion3+1;
-		otro caso
-		cantidad_habitacion4=cantidad_habitacion4+1;
-	Fin caso	
- Fin si
-Fin Para 
-Fin Procedimiento
-
-//
-procedimiento estadisticas (S:clientes[contador_clientes]:entero,S:clientes_hotel:entero,S:cantidad_habitacion1:entero,S:cantidad_habitacion2:entero,S:cantidad_habitacion3:entero,S:cantidad_habitacion4:entero)
-
-Inicio
-var
-
-Mostrar<<"Estimado Usuario, Estas son las estadisticas actuales de Elecentroland";
-Mostrar<<"Cantidad de personas hospedadas como titulares",cliente[contador_clientes];
-Mostrar<<"Cantidad de personas hospedadas en todo el hotel:",clientes_hotel;
-Mostrar<<"Cantidad de habitaciones Elecentro disponibles:",cantidad_habitacion1;
-Mostrar<<"Cantidad de habitaciones Guanabana disponibles:"cantidad_habitacion2;
-Mostrar<<"Cantidad de habitaciones Maravilla disponibles:"cantidad_habitacion3;
-Mostrar<<"Cantidad de habitaciones Picha disponibles:",cantidad_habitacion4;
-Mostrar<<"Elecentroland tu destino"
-Fin procedimiento
-//reserva
-procedimiento reserva_habitaciones (e:Clientes=[contador_cliente]:entero,s:total_pagar_habitacion:real,e/s:dias_hospedaje:entero,e/s:fecha_llegada:cadena,e/s:fecha_salida:cadena,)
+Procedimiento registro_nuevo_cliente(e/s: nombre_apellido: cadena, e/s telefono: entero, e/s edad_usuario: entero, e/s cedula: entero, e/s email: cadena, e/s: id_cliente: entero, e/s: cant_acompañantes: entero, e/s: clientes_hotel = 0;);
 
 Inicio
+  var opc_registro: entero;
+  
+  id_cliente_registrado = generar_id(econtador_cliente = 0: entero);
+  
+  Mostrar << "Bienvenido al hotel Elecentroland";
+  Mostrar << "Estimado usuario se hospedara solo o con acompañantes 1:si, 2:no";
+  Leer >> opc_registro;
+  
+  //validacion de la opcion
+  Mientras (opc_registro < 1 OR opc_registro > 2) Hacer;
+    Mostrar << "Error en respuesta enviada por favor intente de nuevo";
+    Leer >> opc_registro;
+  Fin_Mientras
+  
+  Si (opc_registro = 1) Entonces;
+    Mostrar << "Ingrese su nombre y apellido";
+    Leer >> nombre_apellido;
+    Mostrar << "Ingrese su edad";
+    Leer >> edad_usuario;
+    
+    //validacion edad para cliente solo 
+    Mientras (edad_usuario < 18) Hacer;
+      Mostrar << "Personas menores de 18 años necesitan un representante legal para registrarse";
+      Leer >> edad_usuario;
+    Fin_Mientras
+    
+    Mostrar << "Ingrese su numero telefonico si tiene";
+    Leer >> telefono;
+    Mostrar << "Ingrese direccion email si tiene";
+    Leer >> email;
+    id_cliente_nuevo = generar_id(contador_cliente = 0: entero, clientes = [contador_cliente], id_cliente); ;
+    
+    Mostrar << "Datos de el cliente";
+    Mostrar << "Nombre y apellido:", nombre_apellido;
+    Mostrar << "Numero Telefonico:", telefono;
+    Mostrar << "E-mail:", email;
+    Mostrar << "Usuario registrado con exito su numero de identificacion es", id_cliente_nuevo;
+    
+    Sino 
+    
+    Mostrar << "Ingrese los datos del titular del registro";
+    Mostrar << "Ingrese su nombre y apellido";
+    Leer >> nombre_apellido;
+    Mostrar << "Ingrese su edad";
+    Leer >> edad_usuario;
+    
+    //validacion para cliente titular
+    Mientras (edad_usuario < 18) Hacer;
+      Mostrar << "Personas menores de 18 años no pueden ser titulares de una reserva";
+      Leer >> edad_usuario;
+    Fin_Mientras
+    
+    Mostrar << "Ingrese su numero telefonico";
+    Leer >> telefono;
+    Mostrar << "Ingrese direccion email si tiene";
+    Leer >> email;
+    contador_clientes_hotel = contador_clientes_hotel + 1;
+    Mostrar << "Ingrese la cantidad de acompañantes";
+    Leer >> cant_acompañantes;
+    id_cliente_nuevo = generar_id(contador_cliente = 0: entero, clientes = [contador_cliente], id_cliente);
+    
+    Para (I = 1 Hasta I = cant_acompañantes) Hacer;
+      Mostrar << "Ingrese su nombre y apellido";
+      Leer >> nombre_apellido;
+      Mostrar << "Ingrese su edad";
+      Leer >> edad_usuario;
+      
+      Mientras (edad_usuario < 0) Hacer;
+        Mostrar << "Ingrese una edad valida por favor";
+        Leer >> edad_usuario;
+      Fin_Mientras
+      
+      Mostrar << "Ingrese su numero telefonico si tiene";
+      Leer >> telefono;
+      Mostrar << "Ingrese direccion email si tiene";
+      Leer >> email;
+    Fin_Para
+    
+    clientes_hotel = clientes_hotel + cant_acompañantes;
+    
+    Mostrar << "Datos de el cliente";
+    Mostrar << "Nombre y apellido:", nombre_apellido;
+    Mostrar << "Numero Telefonico:", telefono;
+    Mostrar << "E-mail:", email;
+    Mostrar << "Usuario registrado con exito su numero de identificacion es", id_cliente_nuevo, "usted es el titular de", cant_acompañantes, "acompañantes";
+  Fin_Si
+Fin_Procedimiento
 
-var id_cliente_reservacion:entero;
-opcion_habitacion:entero;
-
-	Mostrar<<"Ingrese su ID";
-	Leer>>id_cliente_reservacion
-	
-	Mientras id_cliente_reservacion<1 hacer;
-		Mostrar<<"Por favor vuelva a intentar, y ingrese una opcion valida";
-		Leer>>id_cliente_reservacion;
-	Fin mientras
-	
-	validacion(id_cliente_reservacion,validacion,clientes=[contador_cliente])
-	
-	si validacion=2 entonces;
-	   Mostrar<<"Error el ID",id_cliente_reservacion,"no se encuentra en nuestra base de datos"
-	   sino
-	
-			Mostrar<<"Listado de habitaciones";
-			Mostrar<<"Seleccione una opcion";
-			Mostrar<<"1:Habitacion Elecentro (Habitación individual: Diseñada para una persona, con cama individua) precio 10$ por noche";
-			Mostrar<<"2:habitacion Guanabana (habitacion con dual )precio: 20$ por noche";
-			Mostrar<<"3:Habitacion Maravillas (hasta 4 personas) precio: 35$ por noche";
-			Mostrar<<"4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
-			Leer>>opcion_habitacion;
-
-			Mientras (opcion_habitacion<1) or (opcion_habitacion>4) hacer;
-				Mostrar<<"Error por favor elija una habitacion disponible";
-				Leer>>opcion_habitacion;
-            Fien mientras
-			
-			En caso (opcion_habitacion>0) sea;
-			
-				Caso (opcion_habitacion=1);
-				Cantidad_habitacion1=cantidad_habitacion1-1;
-
-				Mientras (cantidad_habitacion1<1) hacer;
-					Mostrar<<"Disculpe la habitacion seleccionada ya esta llena";
-					Leer>>opcion_habitacion;
-				Fin mientras
-				Mostrar<<"¿Cuantos dias desea hospedarse?";
-				Leer>>dias_hospedaje;
-				
-				Mientras (dias_hospedaje<1) hacer;
-					Mostrar<<"Por favor ingrese una cantidad valida";
-					Leer>>dias_hospedaje;
-				Fin mientras
-				
-				Mostrar<<"Señale su fecha de llegada DD-MM-AA";
-				Leer>>fecha_llegada;
-				Mostrar<<"Señale su fecha de salida DD-MM-AA";
-				Leer>>fecha_salida;
-				total_pagar_habitacion=10*dias_hospedaje;
-				Mostrar<<"Estimado cliente usted ha elegido la habitacion Elecentro por",dias_hospedaje,"dias, su total a pagar es de", total_pagar_habitacion,"$";
- 
-				Caso (opcion_habitacion=2);
- 
-				cantidad_habitacion2=cantidad_habitacion2-1
-
-				Mientras (cantidad_habitacion2<1) hacer;
-					Mostrar<<"Disculpe la habitacion seleccionada ya esta llena";
-					Leer>>opcion_habitacion;
-				Fin mientras
- 
-				Mostrar<<"¿Cuantos dias desea hospedarse?";
-				Leer>>dias_hospedaje;
-				
-				Mientras (dias_hospedaje<1) hacer
-					Mostrar<<"Por favor ingrese una cantidad valida";
-					Leer>>dias_hospedaje;
-				Fin mientras
-				
-				Mostrar<<"Señale su fecha de llegada DD-MM-AA";
-				Leer>>fecha_llegada;
-				Mostrar<<"Señale su fecha de salida DD-MM-AA";
-				Leer>>fecha_salida;
-				total_pagar_habitacion=15*dias_hospedaje
-				Mostrar<<"Estimado cliente usted ha elegido la habitacion Guanabana por",dias_hospedaje,"dias, su total a pagar es de", total_pagar_habitacion,"$";
- 
-				caso (opcion_habitacion=3);
- 
-				cantidad_habitacion3=cantidad_habitacion3-1
-
-				Mientras (cantidad_habitacion3<1) hacer;
-					Mostrar<<"Disculpe la habitacion seleccionada ya esta llena";
-					Leer>>opcion_habitacion;
-				Fin mientras
-				
-				Mostrar<<"¿Cuantos dias desea hospedarse?";
-				Leer>>dias_hospedaje;
-				
-				Mientras (dias_hospedaje<1) hacer
-					Mostrar<<"Por favor ingrese una cantidad valida";
-					Leer>>dias_hospedaje;
-				Fin mientras
-				
-				Mostrar<<"Señale su fecha de llegada DD-MM-AA";
-				Leer>>fecha_llegada;
-				Mostrar<<"Señale su fecha de salida DD-MM-AA";
-				Leer>>fecha_salida;
-				total_pagar_habitacion=35*dias_hospedaje
-				Mostrar<<"estimado cliente usted ha elegido la habitacion Maravillas por",dias_hospedaje,"dias, su total a pagar es de", total_pagar_habitacion,"$";
- 
-				otro caso
- 
-				Mientras (cantidad_habitacion4<1) hacer;
-					Mostrar<<"Disculpe la habitacion seleccionada ya esta llena";
-					Leer>>opcion_habitacion;
-				Fin mientras
-				
-				Mostrar<<"¿Cuantos dias desea hospedarse?";
-				Leer>>dias_hospedaje;
-				
-				Mientras (dias_hospedaje<1) hacer;
-					Mostrar<<"Por favor ingrese una cantidad valida";
-					Leer>>dias_hospedaje;
-				Fin mientras
-				
-				Mostrar<<"Señale su fecha de llegada DD-MM-AA";
-				Leer>>fecha_llegada;
-				Mostrar<<"Señale su fecha de salida DD-MM-AA";
-				Leer>>fecha_salida;
-				total_pagar_habitacion=45*dias_hospedaje
-				Mostrar<<"estimado cliente usted ha elegido la habitacion Picha por",dias_hospedaje,"dias, su total a pagar es de", total_pagar_habitacion,"$";
-			fin caso
-		fin si
-	fin para
- fin procedimiento
- 
-Algoritmo_padre
+Procedimiento validacion(e: id_cliente_reservacion: entero, s: validacion_final: entero, e: clientes = [contador_clientes]);
 Inicio
+  var validacion = entero;
+  Para (I = 1 Hasta contado_clientes) Hacer;
+    Si (id_ingresado != clientes[contador_clientes]) Entonces;
+      validacion = 1;
+      
+      Sino 
+      Mostrar << "El cliente", id_ingresado, "ha sido encontrado con exito";
+    Fin_Si
+  Fin_Para
+Fin_Procedimiento
 
-var
- contador_cliente=0
- cant_acompañantes=0
- clientes_hotel=0
- clientes[contador_cliente],cantidad_habitacion1=250,cantidad_habitacion2=100,cantidad_habitacion3=80,cantidad_habitacion4=70, id_cliente,
- dias_hospedaje,telefono,edad_usuario,cedula,id_cliente_reservacion,validacion_final,:entero
- total_pagar_habitacion:real
- fecha_llegada,fecha_salida,nombre_apellido,email:cadena;
+Procedimiento check_out(e: contador_cliente, e: cantidad_habitacion1: entero, e: cantidad_habitacion2: entero, e: cantidad_habitacion3: entero, e: cantidad_habitacion4: entero);
+Inicio
+  var id_cliente_reservacion: entero;
+  opcion_habitacion: entero;
+  
+  Mostrar << "Gracias por haber elegido a Elecentroland Para su visita a San Juan De Los Morros, vuelva pronto";
+  Mostrar << "Ingrese su ID, por favor";
+  Leer >> id_cliente_reservacion;
+  
+  Mientras (id_cliente_reservacion < 1) Hacer;
+    Mostrar << "Por favor ingrese un ID valido";
+    Leer >> id_cliente_reservacion;
+  Fin_Mientras
+  
+  validacion(id_cliente_reservacion, validacion_final, cliente = [contador_clientes]);
+  
+  Si (validacion = 2) Entonces;
+    Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
+    
+    Sino 
+    contador_cliente = contador_cliente-1;
+    Mostrar << "Ingrese en que habitacion estaba hospedado";
+    Mostrar << "Listado de habitaciones";
+    Mostrar << "1:Habitacion Elecentro (Habitación individual: Diseñada para una persona, con cama individua) precio 10$ por noche";
+    Mostrar << "2:habitacion Guanabana (habitacion con dual )precio: 20$ por noche";
+    Mostrar << "3:Habitacion Maravillas (hasta 4 personas) precio: 35$ por noche";
+    Mostrar << "4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
+    Leer >> opcion_habitacion;
+    
+    Mientras (opcion_habitacion < 1) OR (opcion_habitacion > 4) Hacer;
+      Mostrar << "Error por favor elija una habitacion disponible";
+      Leer >> opcion_habitacion;
+    Fin_Mientras
+    
+    En_Caso (opcion_habitacion > 0) Sea;
+      Caso (opcion_habitacion = 1);
+        cantidad_habitacion1 = cantidad_habitacion1 + 1;
+      Caso (opcion_habitacion = 2);
+        cantidad_habitacion2 = cantidad_habitacion2 + 1;
+      Caso (opcion_habitacion = 3);
+        cantidad_habitacion3 = cantidad_habitacion3 + 1;
+      Otro_Caso
+        cantidad_habitacion4 = cantidad_habitacion4 + 1;
+    Fin_Caso
+  Fin_Si
+  
+  // "Fin_Para" -- Esto para que es?
+Fin_Procedimiento
 
-Repetir
+Procedimiento estadisticas(S: clientes[contador_clientes]: entero, S: clientes_hotel: entero, S: cantidad_habitacion1: entero, S: cantidad_habitacion2: entero, S: cantidad_habitacion3: entero, S: cantidad_habitacion4: entero);
+Inicio
+  Mostrar << "Estimado Usuario, Estas son las estadisticas actuales de Elecentroland";
+  Mostrar << "Cantidad de personas hospedadas como titulares", cliente[contador_clientes];
+  Mostrar << "Cantidad de personas hospedadas en todo el hotel:", clientes_hotel;
+  Mostrar << "Cantidad de habitaciones Elecentro disponibles:", cantidad_habitacion1;
+  Mostrar << "Cantidad de habitaciones Guanabana disponibles:"cantidad_habitacion2;
+  Mostrar << "Cantidad de habitaciones Maravilla disponibles:"cantidad_habitacion3;
+  Mostrar << "Cantidad de habitaciones Picha disponibles:", cantidad_habitacion4;
+  Mostrar << "Elecentroland tu destino";
+Fin_Procedimiento
 
-Mostrar<<"1:Registrar un nuevo cliente";
-Mostrar<<"2:Realizar una reserva";
-Mostrar<<"3:Consulta de estadisticas del hotel";
-Mostrar<<"4:Metodos de Pago";
-Mostrar<<"5:Check-out";
-Mostrar<<"6:salir del sistema";
-Leer>>opc_hotel;
+Procedimiento reserva_habitaciones(e: Clientes = [contador_cliente]: entero, s: total_pagar_habitacion: real, e/s: dias_hospedaje: entero, e/s: fecha_llegada: cadena, e/s: fecha_salida: cadena,);
+Inicio
+  var id_cliente_reservacion: entero;
+  var opcion_habitacion: entero;
+  
+  Mostrar << "Ingrese su ID";
+  Leer >> id_cliente_reservacion;
+  
+  Mientras (id_cliente_reservacion < 1) Hacer;
+    Mostrar << "Por favor vuelva a intentar, y ingrese una opcion valida";
+    Leer >> id_cliente_reservacion;
+  Fin_Mientras
+  
+  validacion(id_cliente_reservacion, validacion, clientes = [contador_cliente]);
+  
+  Si (validacion = 2) Entonces;
+    Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
+    Sino 
+    
+    Mostrar << "Listado de habitaciones";
+    Mostrar << "Seleccione una opcion";
+    Mostrar << "1:Habitacion Elecentro (Habitación individual: Diseñada para una persona, con cama individua) precio 10$ por noche";
+    Mostrar << "2:habitacion Guanabana (habitacion con dual )precio: 20$ por noche";
+    Mostrar << "3:Habitacion Maravillas (hasta 4 personas) precio: 35$ por noche";
+    Mostrar << "4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
+    Leer >> opcion_habitacion;
+    
+    Mientras (opcion_habitacion < 1) OR (opcion_habitacion > 4) Hacer;
+      Mostrar << "Error por favor elija una habitacion disponible";
+      Leer >> opcion_habitacion;
+    Fin_Mientras
+    
+    En_Caso (opcion_habitacion > 0) Sea;
+      Caso (opcion_habitacion = 1);
+        Cantidad_habitacion1 = cantidad_habitacion1-1;
+        
+        Mientras (cantidad_habitacion1 < 1) Hacer;
+          Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
+          Leer >> opcion_habitacion;
+        Fin_Mientras
+        
+        Mostrar << "¿Cuantos dias desea hospedarse?";
+        Leer >> dias_hospedaje;
+        
+        Mientras (dias_hospedaje < 1) Hacer;
+          Mostrar << "Por favor ingrese una cantidad valida";
+          Leer >> dias_hospedaje;
+        Fin_Mientras
+        
+        Mostrar << "Señale su fecha de llegada DD-MM-AA";
+        Leer >> fecha_llegada;
+        Mostrar << "Señale su fecha de salida DD-MM-AA";
+        Leer >> fecha_salida;
+        total_pagar_habitacion = 10 * dias_hospedaje;
+        Mostrar << "Estimado cliente usted ha elegido la habitacion Elecentro por", dias_hospedaje, "dias, su total a pagar es de", total_pagar_habitacion, "$";
+        
+      Caso (opcion_habitacion = 2);
+        cantidad_habitacion2 = cantidad_habitacion2-1;
+        
+        Mientras (cantidad_habitacion2 < 1) Hacer;
+          Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
+          Leer >> opcion_habitacion;
+        Fin_Mientras
+        
+        Mostrar << "¿Cuantos dias desea hospedarse?";
+        Leer >> dias_hospedaje;
+        
+        Mientras (dias_hospedaje < 1) Hacer;
+          Mostrar << "Por favor ingrese una cantidad valida";
+          Leer >> dias_hospedaje;
+        Fin_Mientras
+        
+        Mostrar << "Señale su fecha de llegada DD-MM-AA";
+        Leer >> fecha_llegada;
+        Mostrar << "Señale su fecha de salida DD-MM-AA";
+        Leer >> fecha_salida;
+        total_pagar_habitacion = 15 * dias_hospedaje;
+        Mostrar << "Estimado cliente usted ha elegido la habitacion Guanabana por", dias_hospedaje, "dias, su total a pagar es de", total_pagar_habitacion, "$";
+      Caso (opcion_habitacion = 3);
+        cantidad_habitacion3 = cantidad_habitacion3-1;
+        
+        Mientras (cantidad_habitacion3 < 1) Hacer;
+          Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
+          Leer >> opcion_habitacion;
+        Fin_Mientras
+        
+        Mostrar << "¿Cuantos dias desea hospedarse?";
+        Leer >> dias_hospedaje;
+        
+        Mientras (dias_hospedaje < 1) Hacer;
+          Mostrar << "Por favor ingrese una cantidad valida";
+          Leer >> dias_hospedaje;
+        Fin_Mientras
+        
+        Mostrar << "Señale su fecha de llegada DD-MM-AA";
+        Leer >> fecha_llegada;
+        Mostrar << "Señale su fecha de salida DD-MM-AA";
+        Leer >> fecha_salida;
+        total_pagar_habitacion = 35 * dias_hospedaje;
+        Mostrar << "estimado cliente usted ha elegido la habitacion Maravillas por", dias_hospedaje, "dias, su total a pagar es de", total_pagar_habitacion, "$";
+        
+      Otro_Caso
+        
+        Mientras (cantidad_habitacion4 < 1) Hacer;
+          Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
+          Leer >> opcion_habitacion;
+        Fin_Mientras
+        
+        Mostrar << "¿Cuantos dias desea hospedarse?";
+        Leer >> dias_hospedaje;
+        
+        Mientras (dias_hospedaje < 1) Hacer;
+          Mostrar << "Por favor ingrese una cantidad valida";
+          Leer >> dias_hospedaje;
+        Fin_Mientras
+        
+        Mostrar << "Señale su fecha de llegada DD-MM-AA";
+        Leer >> fecha_llegada;
+        Mostrar << "Señale su fecha de salida DD-MM-AA";
+        Leer >> fecha_salida;
+        total_pagar_habitacion = 45 * dias_hospedaje;
+        Mostrar << "estimado cliente usted ha elegido la habitacion Picha por", dias_hospedaje, "dias, su total a pagar es de", total_pagar_habitacion, "$";
+    Fin_Caso
+  Fin_Si
+Fin_Para
+Fin_Procedimiento
 
-	Mientras opc_hotel<1 or opc_hotel>6 hacer;
-		Mostrar<<"Estimado usuario, error en opcion seleccionada, intente de nuevo";
-		Leer>>opc_hotel;
-	Fin mientras
-
-	En caso (opc_hotel>0) sea;
-		Caso (opc_hotel=1);
-		registro_cliente (nombre_apellido,telefono, edad_usuario, cedula, email, contador_clientes_hotel);
-		Mostrar<<registro_cliente;
-		Caso (opc_hotel=2);
-		reserva_habitaciones (Clientes=[contador_clientes],total_pagar_habitacion,dias_hospedaje,fecha_llegada,fecha_salida);
-		Mostrar<<reserva_habitaciones;
-		Caso (opc_hotel=3);
-		estadisticas (clientes[contador_clientes],clientes_hotel,cantidad_habitacion1,cantidad_habitacion2,cantidad_habitacion3,cantidad_habitacion4)
-		Mostrar<<estadisticas;
-		caso (opc_hotel=4);
-		metodo_de_pago (Clientes=[contador_clientes]);
-		Mostrar<<metodo_de_pago
-        Caso (opc_hotel=5);
-		check_out (contador_cliente);
-		Mostrar<<check_out;
-		Otro caso
-		opc_hotel=6
-	Fin caso
-	Hasta que opc_hotel=6
- Fin repetir
+Algoritmo padre
+Inicio
+  var contador_cliente = 0, cant_acompañantes = 0, clientes_hotel = 0, clientes[contador_cliente], cantidad_habitacion1 = 250, cantidad_habitacion2 = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70, id_cliente, dias_hospedaje, telefono, edad_usuario, cedula, id_cliente_reservacion, validacion_final: entero;
+  var total_pagar_habitacion: real;
+  var fecha_llegada, fecha_salida, nombre_apellido, email: cadena;
+  
+  Repetir
+    Mostrar << "1:Registrar un nuevo cliente";
+    Mostrar << "2:Realizar una reserva";
+    Mostrar << "3:Consulta de estadisticas del hotel";
+    Mostrar << "4:Metodos de Pago";
+    Mostrar << "5:Check-out";
+    Mostrar << "6:salir del sistema";
+    Leer >> opc_hotel;
+    
+    Mientras (opc_hotel < 1 OR opc_hotel > 6) Hacer;
+      Mostrar << "Estimado usuario, error en opcion seleccionada, intente de nuevo";
+      Leer >> opc_hotel;
+    Fin_Mientras
+    
+    En_Caso (opc_hotel > 0) Sea;
+      Caso (opc_hotel = 1);
+        registro_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, contador_clientes_hotel);
+        Mostrar << registro_cliente;
+      Caso (opc_hotel = 2);
+        reserva_habitaciones(Clientes = [contador_clientes], total_pagar_habitacion, dias_hospedaje, fecha_llegada, fecha_salida);
+        Mostrar << reserva_habitaciones;
+      Caso (opc_hotel = 3);
+        estadisticas(clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4);
+        Mostrar << estadisticas;
+      Caso (opc_hotel = 4);
+        metodo_de_pago(Clientes = [contador_clientes]);
+        Mostrar << metodo_de_pago;
+      Caso (opc_hotel = 5);
+        check_out(contador_cliente);
+        Mostrar << check_out;
+      Otro_Caso
+        opc_hotel = 6;
+    Fin_Caso
+    
+    Hasta (opc_hotel = 6);
+  Fin_Repetir
+Fin
