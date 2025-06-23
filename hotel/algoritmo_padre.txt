@@ -448,7 +448,7 @@ opcion_habitacion,validacion_reservacion:entero;
  fin procedimiento
  
 Procedimiento hotel (e/s:contador_cliente=0,e/s:cant_acompañantes=0,e/s:clientes_hotel=0,e/s:clientes[contador_cliente],e/s:cantidad_habitacion1=250,e/s:cantidad_habitacion2=100,e/s:cantidad_habitacion3=80,e/s:cantidad_habitacion4=70,
- e/s:id_cliente,e/s:dias_hospedaje,e/s:telefono,e/s:edad_usuario,e/s:cedula,e/s::id_ingresado,e/s:validacion_final,e/s:validacion_final,e/s:id_cliente_reservacion:entero,e/s:total_pagar_habitacion:real,
+ e/s:id_cliente,e/s:dias_hospedaje,e/s:telefono,e/s:edad_usuario,e/s:cedula,e/s::id_ingresado,e/s:validacion_final,,e/s:id_cliente_reservacion:entero,e/s:total_pagar_habitacion:real,
  e/s:fecha_llegada,e/s:fecha_salida,e/s:nombre_apellido,e/s:email:cadena;)
 Inicio
 
