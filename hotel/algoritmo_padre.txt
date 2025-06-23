@@ -241,7 +241,7 @@ procedimiento registro_nuevo_cliente (e/s: nombre_apellido:cadena,e/s telefono:e
 Fin Procedimiento
 
 //validacion
-procedimiento validacion (e:id_ingresado:entero,s:validacion_final:entero,e:clientes[contador_clientes])
+Funcion validacion (id_ingresado:entero:entero,validacion_final:entero,clientes[contador_clientes])entero;
 Inicio
 Var validacion_final=entero
 
@@ -249,9 +249,10 @@ Para I=1 Hasta contado_clientes hacer;
  Si id_ingresado≠clientes[contador_clientes];
  validacion_final=2
  sino 
- Mostrar<<"El cliente",id_ingresado,"ha sido encontrado con exito";
+ validacion_final=1
 finsi
-fin procedimiento
+devolver (validacion_final)
+fin funcion
 
 //check-out
 Procedimiento check_out (e:contador_cliente:entero,e:cantidad_habitacion1:entero,e:cantidad_habitacion2:entero,e:cantidad_habitacion3:entero,e:cantidad_habitacion4:entero,e/s:id_ingresado:entero,e:validacion_final:entero)
