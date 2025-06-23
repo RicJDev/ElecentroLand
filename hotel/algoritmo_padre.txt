@@ -279,7 +279,7 @@ Inicio
     Mostrar << "4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
     Leer >> opcion_habitacion;
     
-    Mientras ((opcion_habitacion < 1) OR (opcion_habitacion > 4)) Hacer;
+    Mientras (opcion_habitacion < 1) OR (opcion_habitacion > 4) Hacer;
       Mostrar << "Error por favor elija una habitacion disponible";
       Leer >> opcion_habitacion;
     Fin_Mientras
@@ -338,7 +338,7 @@ Inicio
     Mostrar << "4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
     Leer >> opcion_habitacion;
     
-    Mientras ((opcion_habitacion < 1) OR (opcion_habitacion > 4)) Hacer;
+    Mientras (opcion_habitacion < 1) OR (opcion_habitacion > 4) Hacer;
       Mostrar << "Error por favor elija una habitacion disponible";
       Leer >> opcion_habitacion;
     Fin_Mientras
@@ -347,7 +347,7 @@ Inicio
       Caso (opcion_habitacion = 1);
         Cantidad_habitacion1 = cantidad_habitacion1-1;
         
-        Mientras ((cantidad_habitacion1 < 1)) Hacer;
+        Mientras (cantidad_habitacion1 < 1) Hacer;
           Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
           Leer >> opcion_habitacion;
         Fin_Mientras
@@ -355,7 +355,7 @@ Inicio
         Mostrar << "¿Cuantos dias desea hospedarse?";
         Leer >> dias_hospedaje;
         
-        Mientras ((dias_hospedaje < 1)) Hacer;
+        Mientras (dias_hospedaje < 1) Hacer;
           Mostrar << "Por favor ingrese una cantidad valida";
           Leer >> dias_hospedaje;
         Fin_Mientras
@@ -370,7 +370,7 @@ Inicio
       Caso (opcion_habitacion = 2);
         cantidad_habitacion2 = cantidad_habitacion2-1;
         
-        Mientras ((cantidad_habitacion2 < 1)) Hacer;
+        Mientras (cantidad_habitacion2 < 1) Hacer;
           Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
           Leer >> opcion_habitacion;
         Fin_Mientras
@@ -378,7 +378,7 @@ Inicio
         Mostrar << "¿Cuantos dias desea hospedarse?";
         Leer >> dias_hospedaje;
         
-        Mientras ((dias_hospedaje < 1)) Hacer;
+        Mientras (dias_hospedaje < 1) Hacer;
           Mostrar << "Por favor ingrese una cantidad valida";
           Leer >> dias_hospedaje;
         Fin_Mientras
@@ -393,7 +393,7 @@ Inicio
       Caso (opcion_habitacion = 3);
         cantidad_habitacion3 = cantidad_habitacion3-1;
         
-        Mientras ((cantidad_habitacion3 < 1)) Hacer;
+        Mientras (cantidad_habitacion3 < 1) Hacer;
           Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
           Leer >> opcion_habitacion;
         Fin_Mientras
@@ -401,7 +401,7 @@ Inicio
         Mostrar << "¿Cuantos dias desea hospedarse?";
         Leer >> dias_hospedaje;
         
-        Mientras ((dias_hospedaje < 1)) Hacer;
+        Mientras (dias_hospedaje < 1) Hacer;
           Mostrar << "Por favor ingrese una cantidad valida";
           Leer >> dias_hospedaje;
         Fin_Mientras
@@ -413,7 +413,7 @@ Inicio
         total_pagar_habitacion = 35 * dias_hospedaje;
         Mostrar << "estimado cliente usted ha elegido la habitacion Maravillas por", dias_hospedaje, "dias, su total a pagar es de", total_pagar_habitacion, "$";
       Otro_Caso
-        Mientras ((cantidad_habitacion4 < 1)) Hacer;
+        Mientras (cantidad_habitacion4 < 1) Hacer;
           Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
           Leer >> opcion_habitacion;
         Fin_Mientras
@@ -421,7 +421,7 @@ Inicio
         Mostrar << "¿Cuantos dias desea hospedarse?";
         Leer >> dias_hospedaje;
         
-        Mientras ((dias_hospedaje < 1)) Hacer;
+        Mientras (dias_hospedaje < 1) Hacer;
           Mostrar << "Por favor ingrese una cantidad valida";
           Leer >> dias_hospedaje;
         Fin_Mientras
@@ -430,13 +430,14 @@ Inicio
         Leer >> fecha_llegada;
         Mostrar << "Señale su fecha de salida DD-MM-AA";
         Leer >> fecha_salida;
+
         total_pagar_habitacion = 45 * dias_hospedaje;
-        Mostrar << "estimado cliente usted ha elegido la habitacion Picha por", dias_hospedaje, "dias, su total a pagar es de", total_pagar_habitacion, "$";
+        Mostrar << "Estimado cliente usted ha elegido la habitacion Picha por", dias_hospedaje, "dias, su total a pagar es de", total_pagar_habitacion, "$";
     Fin_Caso
   Fin_Si
 Fin_Procedimiento
 
-Procedimiento hotel(E/S: contador_cliente = 0, e/s: cant_acompañantes = 0, e/s: clientes_hotel = 0, e/s: clientes[contador_cliente], e/s: cantidad_habitacion1 = 250, e/s: cantidad_habitacion2 = 100, e/s: cantidad_habitacion3 = 80, e/s: cantidad_habitacion4 = 70, E/S: id_cliente, e/s: dias_hospedaje, e/s: telefono, e/s: edad_usuario, e/s: cedula, e/s: : id_ingresado, e/s: validacion_final, , e/s: id_cliente_reservacion: Entero, e/s: total_pagar_habitacion: Real, E/S: fecha_llegada, e/s: fecha_salida, e/s: nombre_apellido, e/s: email: Cadena);
+Procedimiento hotel(E/S: contador_cliente = 0, cant_acompañantes = 0,  clientes_hotel = 0,  clientes[contador_cliente],  cantidad_habitacion1 = 250,  cantidad_habitacion2 = 100,  cantidad_habitacion3 = 80,  cantidad_habitacion4 = 70,  id_cliente,  dias_hospedaje,  telefono,  edad_usuario,  cedula,   id_ingresado,  validacion_final,   id_cliente_reservacion: Entero,  total_pagar_habitacion: Real,  fecha_llegada,  fecha_salida,  nombre_apellido,  email: Cadena);
 Inicio
   Repetir
     var opc_hotel = entero;

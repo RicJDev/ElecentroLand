@@ -26,7 +26,7 @@ Fin_Procedimiento
 
 Procedimiento comprar_fichas(E/S: nombre: Cadena, saldo_disponible);
 Inicio
-  
+  // ...
 Fin_Procedimiento
 
 Procedimiento canjear_dinero(E/S: saldo_disponible: Entero, nombre: Cadena);
@@ -66,8 +66,8 @@ Inicio
         
         Mostrar << "Pago movil hecho al banco ", banco, ", al numero de cedula, ", cedula, " y el telefono ", telefono, ", bajo la referencia: ", referencia;
         Mostrar << "Saldo del canje: ", monto_canjeado;
-
-        saldo_disponible = saldo_disponible - monto_canjeado
+        
+        saldo_disponible = saldo_disponible - monto_canjeado;
       Fin_Si
       
       Mostrar << "Quieres seguir canjeando por money? (0: no, ya no, 1: Sisa, manao)";
@@ -80,18 +80,25 @@ Inicio
   Fin_Mientras
 Fin_Procedimiento
 
-Procedimiento canjear_dibujos(E/S: E/S: saldo_disponible: Entero, nombre: Cadena);
+Procedimiento canjear_dibujos(E/S: saldo_disponible: Entero, nombre: Cadena, casino_valor_premios[j_casino], casino_stock_premios[j_casino]: Entero);
 Inicio
+  var id_dibujo: Entero;
   
-  // 1 "Ficha ElecentroLand"
-  // 2 "Pikachu sorprendido"
-  // 3 "Funcion matematica del amor"
-  // 4 "Tu madre"
-
   Mientras (seguir_canje = 1) Hacer;
     Si (saldo_disponible > 0) Entonces;
-      // ...
-
+      Mostrar << "Elige un dibujo, hermano. ";
+      Mostrar << "1. ";
+      Mostrar << "2. ";
+      Mostrar << "4. ";
+      Leer >> id_dibujo;
+      
+      // Favor de colocar mas dibujos
+      
+      Mientras (id_dibujo < 1 OR id_dibujo > 10) Hacer;
+        Mostrar << "Fuera de rango. Solo hay 10 dibujos";
+        Leer >> id_dibujo;
+      Fin_Mientras
+      
       Sino 
       Mostrar << "No tienes fichas. Compra algunas o trata de ganarlas en los juegos";
       seguir_canje = 0;
