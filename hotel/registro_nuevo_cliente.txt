@@ -1,6 +1,6 @@
-Procedimiento registro_nuevo_cliente(E/S: nombre_apellido: Cadena, telefono: Entero, edad_usuario: Entero, : cedula: Entero, : email: Cadena, id_cliente: Entero, cant_acompañantes: Entero, : clientes_hotel = 0);
+Procedimiento registro_nuevo_cliente(E: contador_cliente = 0, clientes[contador_cliente], id_cliente: Entero, E/S: nombre_apellido, email: Cadena, telefono, edad_usuario, cedula, id_cliente, cant_acompañantes, clientes_hotel = 0: Entero);
 Inicio
-  var opc_registro: Entero;
+  Var opc_registro: Entero;
   
   Mostrar << "Bienvenido al hotel Elecentroland";
   Mostrar << "Estimado usuario se hospedara solo o con acompañantes 1:si, 2:no";
