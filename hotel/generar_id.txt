@@ -1,4 +1,4 @@
-Procedimiento generar_id(e: contador_cliente = 0, e: clientes[contador_cliente]: Entero, E/S: id_cliente: Entero);
+Procedimiento generar_id(E/S: contador_cliente = 0, clientes[contador_cliente]: Entero, S: id_cliente: Entero);
 Inicio
   Si (contador_clientes = 500) Entonces;
     Mostrar << "Estimado, usuario el hotel esta completamente lleno, lo sentimos";
