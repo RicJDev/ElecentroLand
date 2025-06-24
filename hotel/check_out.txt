@@ -1,19 +1,19 @@
 Procedimiento check_out(E/S: contador_clientes, validacion_final, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado: Entero);
 Inicio
-  Var id_cliente_reservacion, validacion_check_out, opcion_habitacion: Entero;
+  Var validacion_check_out, opcion_habitacion: Entero;
 
   Mostrar << "Gracias por haber elegido a Elecentroland para su visita a San Juan De Los Morros, vuelva pronto";
   Mostrar << "Ingrese su ID, por favor";
   Leer >> id_ingresado;
   
-  Mientras (id_cliente_reservacion < 1) Hacer;
+  Mientras (id_ingresado < 1) Hacer;
     Mostrar << "Por favor ingrese un ID valido";
     Leer >> id_ingresado;
   Fin_Mientras
   
   validacion_check_out = validacion(id_ingresado, validacion_final, clientes[contador_clientes]);
   
-  Si (validacion_check_out = 2) Entonces;
+  Si (validacion_check_out = 0) Entonces;
     Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
   Sino 
     contador_clientes = contador_clientes - 1;
