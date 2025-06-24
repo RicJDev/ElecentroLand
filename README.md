@@ -2,32 +2,32 @@
 
 Este es un proyecto que estamos escribiendo entre varios compis para Algoritmos I. Consiste en un sistema de reservación para un hotel, un casino virtual, un restaurante con inventario y sitema de reservaciones, y un barcito para que puedas ir a llorar y beber después de reprobar matemáticas
 
-## Estructura del proyecto actualmente:
+## Representacion del proyecto como arbol de archivos:
 
 ```
-Electroland
-│   resort.txt
+Electroland\
+│   Resort.txt
 │
-├───casino
+├───casino\
 │   │   Casino.txt
 │   │   inicio_sesion.txt
 │   │   menu_juegos.txt
 │   │   registro_nuevo_usuario.txt
 │   │
-│   └───juegos
+│   └───juegos\
 │       │   blackjack.txt
 │       │   dados.txt
 │       │   ruleta.txt
 │       │   tragamonedas.txt
 │       │
-│       └───tiendita
+│       └───tiendita\
 │               canjear_dibujos.txt
 │               canjear_dinero.txt
 │               comprar_fichas.txt
 │               mostrar_dibujos.txt
 │               Tiendita.txt
 │
-├───hotel
+├───hotel\
 │       check_out.txt
 │       estadisticas.txt
 │       generar_id.txt
@@ -36,17 +36,17 @@ Electroland
 │       registro_nuevo_cliente.txt
 │       reserva_habitaciones.txt
 │
-├───restaurante
+├───restaurante\
 │       agenda.txt
 │       bienvenida.txt
 │       manu_almuerzo.txt
 │       menu_cena.txt
 │       menu_desayuno.txt
-│       restaurante.txt
+│       Restaurante.txt
 │
-├───taberna
+├───taberna\
 │       tabe.txt
 │
-└───utilidades
+└───utilidades\
         aleatorio.txt
 ```
