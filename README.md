@@ -6,50 +6,50 @@ Este es un proyecto que estamos escribiendo entre varios compis para Algoritmos 
 
 ```
 Electroland\
-│   Resort.txt
+│   Resort
 │
 ├───casino\
-│   │   Casino.txt
-│   │   inicio_sesion.txt
-│   │   menu_juegos.txt
-│   │   registro_nuevo_usuario.txt
+│   │   Casino
+│   │   inicio_sesion
+│   │   menu_juegos
+│   │   registro_nuevo_usuario
 │   │
 │   └───juegos\
-│       │   blackjack.txt
-│       │   dados.txt
-│       │   ruleta.txt
-│       │   tragamonedas.txt
+│       │   blackjack
+│       │   dados
+│       │   ruleta
+│       │   tragamonedas
 │       │
 │       └───tiendita\
-│           │   canjear_dinero.txt
-│           │   comprar_fichas.txt
-│           │   Tiendita.txt
+│           │   canjear_dinero
+│           │   comprar_fichas
+│           │   Tiendita
 │           │
 │           └───dibujos\
-│                   canjear_dibujos.txt
-│                   dibujos_usuario.txt
-│                   mostrar_dibujo.txt
+│                   canjear_dibujos
+│                   dibujos_usuario
+│                   mostrar_dibujo
 │
 ├───hotel\
-│       check_out.txt
-│       estadisticas.txt
-│       generar_id.txt
-│       Hotel.txt
-│       metodo_de_pago.txt
-│       registro_nuevo_cliente.txt
-│       reserva_habitaciones.txt
+│       check_out
+│       estadisticas
+│       generar_id
+│       Hotel
+│       metodo_de_pago
+│       registro_nuevo_cliente
+│       reserva_habitaciones
 │
 ├───restaurante\
-│       agenda.txt
-│       bienvenida.txt
-│       manu_almuerzo.txt
-│       menu_cena.txt
-│       menu_desayuno.txt
-│       restaurante.txt
+│       agenda
+│       bienvenida
+│       manu_almuerzo
+│       menu_cena
+│       menu_desayuno
+│       restaurante
 │
 ├───taberna\
-│       tabe.txt
+│       tabe
 │
 └───utilidades\
-        aleatorio.txt
+        aleatorio
 ```

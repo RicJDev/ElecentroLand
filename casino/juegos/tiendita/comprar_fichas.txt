@@ -1,4 +1,32 @@
-Procedimiento comprar_fichas(E/S: nombre: Cadena, saldo_disponible);
+Procedimiento comprar_fichas(E/S: nombre: Cadena, saldo_disponible: Entero);
 Inicio
-  // ...
+  var cantidad_fichas: Entero;
+  var monto_pago: Real;
+  var validacion_pago, seguir_comprando = 1: Booleano;
+  
+  Mientras (seguir_comprando = 1) Hacer;
+    Mostrar << "Ingrese la cantidad de fichas que quiere comprar";
+    Leer >> cantidad_fichas;
+    
+    Mientras (cantidad_fichas < 1 OR cantidad_fichas > 10000) Hacer;
+      Mostrar << "Cantidad de fichas no valida";
+      Leer >> cantidad_fichas;
+    Fin_Mientras
+    
+    monto_pago = cantidad_fichas * 2.00;
+    
+    metodo_pago(monto_pago, validacion_pago);
+    Mostrar << metodo_pago;
+    
+    Si (validacion_pago = 1) Entonces;
+      saldo_disponible = saldo_disponible + cantidad_fichas;
+      Mostrar << "Pago recibido con exito";
+
+      Sino 
+      Mostrar << "Paga, pelabolas";
+    Fin_Si
+    
+    Mostrar << "Desea seguir comprando? (1: Si, viva la ludopatia; 0: No, asi esta bien)";
+    Leer >> seguir_comprando;
+  Fin_Mientras
 Fin_Procedimiento

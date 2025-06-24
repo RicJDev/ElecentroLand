@@ -1,8 +1,7 @@
-Procedimiento metodo_de_pago(e: Clientes[contador_clientes]: Entero, E/S: id_registrado: Entero);
+Procedimiento metodo_de_pago(E: Clientes[contador_clientes]: Entero, E/S: id_registrado: Entero);
 Inicio
-  var;
-  opc_pago, referencia, digitos_tarjeta, num_tarjeta, , cedula: Entero;
-  tipo_cuenta, fecha_vencimiento: Cadena;
+  var opc_pago, referencia, digitos_tarjeta, num_tarjeta, cedula: Entero;
+  var tipo_cuenta, fecha_vencimiento: Cadena;
   
   Mostrar << "Ingrese su ID, por favor, para continuar";
   Leer >> id_ingresado;
