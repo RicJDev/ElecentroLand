@@ -1,4 +1,4 @@
-Procedimiento metodo_de_pago(E: Clientes[contador_clientes]: Entero, E/S: id_registrado: Entero);
+Procedimiento metodo_de_pago(E: clientes[contador_clientes]: Entero, E/S: id_registrado: Entero);
 Inicio
   var opc_pago, referencia, digitos_tarjeta, num_tarjeta, cedula: Entero;
   var tipo_cuenta, fecha_vencimiento: Cadena;
@@ -11,7 +11,7 @@ Inicio
     Leer >> id_ingresado;
   Fin_Mientras
   
-  validacion(id_ingresado, clientes[contador_cliente]);
+  validacion(id_ingresado, clientes[contador_clientes]);
   
   Si (validacion = 2) Entonces;
     Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
