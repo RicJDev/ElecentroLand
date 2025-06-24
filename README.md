@@ -3,7 +3,7 @@
   <h1>ElecentroLand</h1>
 </div>
 
-Este es el proyecto que estamos escribiendo Las Víctimas de Elecentro para Algoritmos I. Consiste en un sistema de reservación para un hotel, un casino virtual (con posibles aplicaciones a un casino real), un restaurante con inventario y sitema de reservaciones, y un barcito para que puedas ir a llorar y beber después de reprobar matemáticas. Dicho sistema está pensado para implementarse en la ciudad de San Juan de los Morros, ubicada en el estado Guárico, Venezuela.
+Este es el proyecto que estamos escribiendo Las Víctimas de Elecentro para Algoritmos I. Consiste en un sistema de reservación para un hotel, un casino virtual (con posibles aplicaciones a un casino real), un restaurante con inventario y sistema de reservaciones, y un barcito para que puedas ir a llorar y beber después de reprobar matemáticas. Dicho sistema está pensado para implementarse en la ciudad de San Juan de los Morros, ubicada en el estado Guárico, Venezuela.
 
 Este proyecto surgió a partir de la tradicional quema anual de sedes de Elecentro de San Juan. Viendo el potencial turístico y económico, nosotros como equipo decidimos aprovechar nuestro ingenio y capacidades para hacer algo que pueda significativamente aumentar el valor de la zona (y darnos plata, ¿por qué no?)
 
