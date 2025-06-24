@@ -3,12 +3,12 @@ Inicio
   Var opc_hotel = entero;
   Repetir
 
-    Mostrar << "1:Registrar un nuevo cliente";
-    Mostrar << "2:Realizar una reserva";
-    Mostrar << "3:Consulta de estadisticas del hotel";
-    Mostrar << "4:Metodos de Pago";
-    Mostrar << "5:Check-out";
-    Mostrar << "6:salir del sistema";
+    Mostrar << "1: Registrar un nuevo cliente";
+    Mostrar << "2: Realizar una reserva";
+    Mostrar << "3: Consulta de estadisticas del hotel";
+    Mostrar << "4: Metodos de Pago";
+    Mostrar << "5: Check-out";
+    Mostrar << "6: Salir del sistema";
     Leer >> opc_hotel;
     
     Mientras (opc_hotel < 1 OR opc_hotel > 6) Hacer;
@@ -40,13 +40,12 @@ Inicio
   Fin_Repetir
 Fin_Procedimiento
 
-Funcion validacion(id_ingresado: Entero, validacion_final: Entero, clientes[contador_clientes]: Entero): Entero;
+Funcion validacion(id_ingresado, validacion_final, clientes[contador_clientes]: Entero): Booleano;
 Inicio
-  Var validacion_final: Entero;
-  
+
   Mientras (I = 1 Hasta I = contador_clientes) Hacer;
     Si id_ingresado != clientes[contador_clientes];
-      validacion_final = 2;
+      validacion_final = 0;
     Sino 
       validacion_final = 1;
     Fin_Si
