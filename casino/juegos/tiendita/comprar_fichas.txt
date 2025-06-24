@@ -1,0 +1,4 @@
+Procedimiento comprar_fichas(E/S: nombre: Cadena, saldo_disponible);
+Inicio
+  // ...
+Fin_Procedimiento

@@ -1,0 +1,46 @@
+Procedimiento registro_nuevo_usuario(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]: Cadena, id_usuario: Entero);
+Inicio
+  var nombre_registro, contrasena_registro: Cadena;
+  var i_local = 1, nueva_id = -1, edad_registro: Entero;
+  
+  Mientras (i_local <= 100 AND nueva_id = -1) Hacer;
+    Si (casino_nombres[i_local] = "no_asignado" AND casino_contrasenas = "no_asignado") Entonces;
+      nueva_id = i_local;
+    Fin_Si
+  Fin_Mientras
+  
+  Si (nueva_id = -1) Entonces;
+    Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
+    
+    Sino 
+    
+    Mostrar << "Ingrese nombre de usuario";
+    Leer >> nombre_registro;
+    
+    Mientras (nombre_registro = "no_asignado") Hacer;
+      Mostrar << "Nombre no valido por posible injeccion SQL";
+      Leer >> nombre_registro;
+    Fin_Mientras
+    
+    Mostrar >> "Ingrese su contrasena";
+    Leer >> contrasena_registro;
+    
+    Mientras (contrasena_registro = "no_asignado") Hacer;
+      Mostrar << "Contrasena no valida por posible injeccion SQL";
+      Leer >> contrasena_registro;
+    Fin_Mientras
+    
+    Mostrar << "Ingrese su edad";
+    Leer >> edad_registro;
+    
+    Mientras (edad_registro < 18) Hacer;
+      Mostrar << "Eeepa, menol. Tu no puedes entrar";
+      Leer >> edad_registro;
+    Fin_Mientras
+    
+    casino_nombres[nueva_id] = nombre_registro;
+    casino_contrasenas[nueva_id] = contrasena_registro;
+    casino_edades[nueva_id] = edad_registro;
+    casino_saldos_fichas[nueva_id] = 5; // 5 fichas de regalo para que puedan empezar a jugar :D
+  Fin_Si
+Fin_Procedimiento

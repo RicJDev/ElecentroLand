@@ -1,0 +1,139 @@
+Procedimiento metodo_de_pago(e: Clientes[contador_clientes]: Entero, E/S: id_registrado: Entero);
+Inicio
+  var;
+  opc_pago, referencia, digitos_tarjeta, num_tarjeta, , cedula: Entero;
+  tipo_cuenta, fecha_vencimiento: Cadena;
+  
+  Mostrar << "Ingrese su ID, por favor, para continuar";
+  Leer >> id_ingresado;
+  
+  Mientras (id_cliente_reservacion < 1) Hacer;
+    Mostrar << "Por favor ingrese un ID valido";
+    Leer >> id_ingresado;
+  Fin_Mientras
+  
+  validacion(id_ingresado, clientes[contador_cliente]);
+  
+  Si (validacion = 2) Entonces;
+    Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
+    
+    Sino 
+    Mostrar << "Estimado usuario a continuacion se muestran los metodos de pago disponibles";
+    Mostrar << "1: Tarjeta de debito";
+    Mostrar << "2: Tarjeta de credito";
+    Mostrar << "3: Transferencia Bancaria";
+    Mostrar << "4: Pago Movil";
+    Mostrar << "5: Zelle";
+    Mostrar << "6: Binance Pay (criptomonedas)";
+    Mostrar << "7: Zinli";
+    Mostrar << "8: Euros en efectivo";
+    Mostrar << "9: Efectivo en BS";
+    Mostrar << "10: Divisas en Efectivo";
+    Leer >> opc_pago ;
+    
+    Mientras (opc_pago < 1 OR opc_pago > 10) Hacer;
+      Mostra << "Error en opcion seleccionada, por favor vuelva a intentar";
+      Lee >> opc_pago;
+    Fin_Mientras
+    
+    En_Caso (opc_pago > 0) Sea;
+      Caso (opc_pago = 1): ;//opcion 1
+        Mostrar << "Ingrese su numero de cedula";
+        Leer >> cedula;
+        Mientras (cedula < 1000000) Hacer;
+          Mostrar << "Por favor ingrese un dato valido";
+          Leer >> cedula;
+        Fin_Mientras
+        
+        Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
+        Leer >> tipo_cuenta;
+        Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave secreta";
+        
+      Caso (opc_pago = 2);  //opcion 2
+        Mostrar << "Ingrese el numero de su tarjeta";
+        Leer >> num_tarjeta;
+        
+        Mientras (num_tarjeta < 0) Hacer;
+          Mostrar << "Error en datos ingresados,intente nuevamente";
+          Leer >> num_tarjeta;
+        Fin_Mientras
+        
+        Mostrar << "Ingrese la fecha de vencimiento DD-MM-AAAA";
+        Leer >> fecha_vencimiento;
+        Mostrar << "Ingrese los 4 digitos traseros de su tarjeta";
+        Leer >> digitos_tarjeta;
+        
+        Mientras (digitos_tarjeta < 0) Hacer;
+          Mostrar << "Error en datos ingresados,intente nuevamente";
+          Leer >> digitos_tarjeta;
+        Fin_Mientras
+        
+        Mostrar << "Perfecto, datos captados, gracias por su pago";
+      Caso (opc_pago = 3);  //opcion 3
+        Mostrar << "Datos Bancarios Elecentroland";
+        Mostrar << "Banco: Banesco";
+        Mostrar << "Numero de cuenta: 01340254325200006321";
+        Mostrar << "J-10526368-7";
+        Mostrar << "Tipo de cuenta:Corriente";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 4);  //opcion 4
+        Mostrar << "Datos Bancarios Elecentroland";
+        Mostrar << "Banco:Banesco (0134)";
+        Mostrar << "J-10526368-7";
+        Mostrar << "Numero telefonico: 0412-8628439";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 5);  //opcion 5
+        Mostrar << "Datos Bancarios Zelle Elecentroland";
+        Mostrar << "Correo electronico: elecentroland@gmail.com";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+        
+      Caso (opc_pago = 6);  //opcion 6
+        Mostrar << "Datos Bancarios Binance Pay Elecentroland";
+        Mostrar << "Correo electronico:elecentroland@gmail.com";
+        Mostrar << "Numero telefonico:0412-8628439";
+        Mostrar << "Numero de ID: 1236548214";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 7);  //opcion  7
+        Mostrar << "Datos Bancarios Zinli Elecentroland";
+        Mostrar << "Correo electronico:elecentroland@gmail.com";
+        Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
+        Leer >> referencia;
+        
+        Mientras (referencia < 0) Hacer;
+          Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
+          Leer >> referencia;
+        Fin_Mientras
+      Caso (opc_pago = 8);  //opcion 8
+        Mostrar << "Perfecto estimado usuario, su pago sera en Euros, en taquilla se haran cargo de recibir su pago";
+        
+      Caso (opc_pago = 9);  //opcion 9
+        Mostrar << "Perfecto estimado usuario,su pago sera en Bs en efectivo, en taquilla se haran cargo de recibir su pago";
+      Otro_Caso;  //opcion10
+        Mostrar << "Perfecto estimado usuario,su pago sera en Divisas en efectivo, en taquilla se haran cargo de recibir su pago";
+    Fin_Caso
+  Fin_Si
+Fin_Procedimiento

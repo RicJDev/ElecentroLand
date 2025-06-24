@@ -1,0 +1,50 @@
+Procedimiento canjear_dinero(E/S: saldo_disponible: Entero, nombre: Cadena);
+Inicio
+  var monto_canjeado: Real;
+  var seguir_canje = 1, confirmar_transaccion: Booleano;
+  var cedula, banco, telefono: Cadena;
+  
+  Mientras (seguir_canje = 1) Hacer;
+    Si (saldo_disponible >= 10) Entonces;
+      Mostrar << "Cuantas fichas quieres canjear? Recuerda que tienes ", fichas, " disponibles";
+      Leer >> cantidad_fichas;
+      
+      Mientras (cantidad_fichas < 1 OR cantidad_fichas > saldo_disponible) Hacer;
+        Mostrar << "No puedes elegir menos de una ficha ni puedes canjear mas de lo que tienes";
+        Leer >> cantidad_fichas;
+      Fin_Mientras
+      
+      Mostrar << "Seguro del monto elegido? (0: nolsa, 1: si, palante)";
+      Leer >> confirmar_transaccion;
+      
+      Si (confirmar_transaccion = 1) Entonces;
+        Mostrar << "Manda pago movil pues";
+        Mostrar << "Dime la cedula";
+        Leer >> cedula;
+        Mostrar << "Dime el banco, padre (o madre o lo que sea con lo que te identifiques)";
+        Leer >> banco;
+        Mostrar << "Dime el numero de telefono, bro (or sis or whatever you feel like)";
+        leer telefono;
+        
+        // Simulando pago movil: D
+        
+        monto_canjeado = cantidad_fichas * 1.90;  // Esto es a dolar, oyo?
+        Minimo = 100000;
+        Maximo = 900000;
+        referencia = Aleatorio(Minimo, Maximo);
+        
+        Mostrar << "Pago movil hecho al banco ", banco, ", al numero de cedula, ", cedula, " y el telefono ", telefono, ", bajo la referencia: ", referencia;
+        Mostrar << "Saldo del canje: ", monto_canjeado;
+        
+        saldo_disponible = saldo_disponible - monto_canjeado;
+      Fin_Si
+      
+      Mostrar << "Quieres seguir canjeando por money? (0: no, ya no, 1: Sisa, manao)";
+      Leer >> seguir_canje;
+      
+      Sino 
+      Mostrar << "No tienes fichas suficientes para canjear. Compra algunas o trata de ganarlas en los juegos";
+      seguir_canje = 0;
+    Fin_Si
+  Fin_Mientras
+Fin_Procedimiento

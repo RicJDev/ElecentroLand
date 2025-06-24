@@ -1,0 +1,55 @@
+Procedimiento Hotel(E/S: contador_cliente = 0, cant_acompañantes = 0,  clientes_hotel = 0,  clientes[contador_cliente],  cantidad_habitacion1 = 250,  cantidad_habitacion2 = 100,  cantidad_habitacion3 = 80,  cantidad_habitacion4 = 70,  id_cliente,  dias_hospedaje,  telefono,  edad_usuario,  cedula,   id_ingresado,  validacion_final,   id_cliente_reservacion: Entero,  total_pagar_habitacion: Real,  fecha_llegada,  fecha_salida,  nombre_apellido,  email: Cadena);
+Inicio
+  Repetir
+    var opc_hotel = entero;
+    
+    Mostrar << "1:Registrar un nuevo cliente";
+    Mostrar << "2:Realizar una reserva";
+    Mostrar << "3:Consulta de estadisticas del hotel";
+    Mostrar << "4:Metodos de Pago";
+    Mostrar << "5:Check-out";
+    Mostrar << "6:salir del sistema";
+    Leer >> opc_hotel;
+    
+    Mientras (opc_hotel < 1 OR opc_hotel > 6) Hacer;
+      Mostrar << "Estimado usuario, error en opcion seleccionada, intente de nuevo";
+      Leer >> opc_hotel;
+    Fin_Mientras
+    
+    En_Caso (opc_hotel > 0) Sea;
+      Caso (opc_hotel = 1);
+        registro_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, contador_clientes_hotel);
+        Mostrar << registro_cliente;
+      Caso (opc_hotel = 2);
+        reserva_habitaciones(Clientes = [contador_clientes], total_pagar_habitacion, dias_hospedaje, fecha_llegada, fecha_salida);
+        Mostrar << reserva_habitaciones;
+      Caso (opc_hotel = 3);
+        estadisticas(clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4);
+        Mostrar << estadisticas;
+      Caso (opc_hotel = 4);
+        metodo_de_pago(Clientes = [contador_clientes]);
+        Mostrar << metodo_de_pago;
+      Caso (opc_hotel = 5);
+        check_out(contador_cliente);
+        Mostrar << check_out;
+      Otro_Caso
+        opc_hotel = 6;
+    Fin_Caso
+    
+    Hasta (opc_hotel = 6);
+  Fin_Repetir
+Fin_Procedimiento
+
+Funcion validacion(id_ingresado: Entero: Entero, validacion_final: Entero, clientes[contador_clientes])entero;
+Inicio
+  var validacion_final = entero;
+  
+  Mientras (I = 1 Hasta contado_clientes) Hacer;
+    Si id_ingresado != clientes[contador_clientes];
+    validacion_final = 2;
+    Sino 
+    validacion_final = 1;
+  Fin_Si
+  
+  Devolver (validacion_final);
+Fin_Funcion

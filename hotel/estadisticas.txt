@@ -1,0 +1,14 @@
+Procedimiento estadisticas(S: clientes[contador_clientes]: Entero, clientes_hotel: Entero, cantidad_habitacion1: Entero, cantidad_habitacion2: Entero, cantidad_habitacion3: Entero, cantidad_habitacion4: Entero);
+Inicio
+  var;
+  
+  Mostrar << "Estimado Usuario, Estas son las estadisticas actuales de Elecentroland";
+  Mostrar << "Cantidad de personas hospedadas como titulares", cliente[contador_clientes];
+  Mostrar << "Cantidad de personas hospedadas en todo el hotel:", clientes_hotel;
+  Mostrar << "Cantidad de habitaciones Elecentro disponibles:", cantidad_habitacion1;
+  Mostrar << "Cantidad de habitaciones Guanabana disponibles:"cantidad_habitacion2;
+  Mostrar << "Cantidad de habitaciones Maravilla disponibles:"cantidad_habitacion3;
+  Mostrar << "Cantidad de habitaciones Picha disponibles:", cantidad_habitacion4;
+  Mostrar << "Elecentroland tu destino";
+Fin_Procedimiento
+
