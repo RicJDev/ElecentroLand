@@ -15,9 +15,10 @@ Inicio
   
   casino_valor_premios[1] = 12;
   casino_valor_premios[2] = 10;
-  casino_valor_premios[3] = 7;
-  casino_valor_premios[4] = 5;
-  casino_valor_premios[5] = 15;
+  casino_valor_premios[3] = 17;
+  casino_valor_premios[4] = 15;
+  casino_valor_premios[5] = 13;
+  casino_valor_premios[6] = 11;
   
   Para (i_casino = 1 Hasta i_casino = 100) Hacer;
     casino_nombres[i_casino] = "no_asignado"; // Valor vacio

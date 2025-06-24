@@ -7,8 +7,8 @@ Inicio
     Mostrar << "Elije una opcion";
     Mostrar << "1. Comprar fichas";
     Mostrar << "2. Canjear fichas por dinero";
-    Mostrar << "3. Canjear fichas por premios (son bonitos ✨)";
-    Mostrar << "4. Ver tus premios. (Que son bonitos, digo ✨)";
+    Mostrar << "3. Canjear fichas por dibujos (son bonitos ✨)";
+    Mostrar << "4. Ver tus dibujos. (Que son bonitos, digo ✨)";
     Mostrar << "5. No hacer nada. O sea, salir";
     
     Leer >> opcion_tiendita;
@@ -18,8 +18,17 @@ Inicio
       Leer >> opcion_tiendita;
     Fin_Mientras
     
-    Si (opcion_tiendita = 2) Entonces;
-      canjear_dinero(saldo_disponible, nombre);
-    Fin_Si
+    En_Caso (opcion_tiendita > 0) Sea;
+      Caso (opcion_tiendita = 1);
+        comprar_fichas(saldo_disponible, nombre);
+      Caso (opcion_tiendita = 2);
+        canjear_dinero(saldo_disponible, nombre);
+      Caso (opcion_tiendita = 3);
+        canjear_dibujo(saldo_disponible, nombre, casino_valor_premios[j_casino], casino_stock_premios[j_casino], premios_canjedos[j_casino]);
+      Caso (opcion_tiendita = 4);
+        dibujos_usuario(premios_canjedos[j_casino], nombre);
+      Otro_Caso
+        Mostrar << "Chau. Nos vemos";
+    Fin_Caso
   Fin_Mientras
 Fin_Procedimiento

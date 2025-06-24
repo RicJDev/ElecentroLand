@@ -26,7 +26,7 @@ Inicio
         Mostrar << "Dime el numero de telefono, bro (or sis or whatever you feel like)";
         leer telefono;
         
-        // Simulando pago movil: D
+        // Simulando pago movil :D
         
         monto_canjeado = cantidad_fichas * 1.90;  // Esto es a dolar, oyo?
         Minimo = 100000;

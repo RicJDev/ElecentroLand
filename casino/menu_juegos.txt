@@ -11,9 +11,12 @@ Inicio
   Para (j_casino = 1 Hasta j_casino = 10) Hacer;
     premios_canjedos[j_casino] = casino_premios[id_usuario][j_casino];
   Fin_Para
+
+  Mostrar << "Bienvenido seas, ", nombre;
+  Mostrar << "Tu saldo disponible para el casino es ", saldo_disponible;
   
   Mientras (opcion_juegos != 0) Hacer;
-    Mostrar << "Ingrese una opcion. (Recomiendo pasar antes por la tiendita, ya que necesitas fichas para los juegos)";
+    Mostrar << "Ingresa una opcion. ";
     Mostrar << "0. Salir";
     Mostrar << "1. Blackjack";
     Mostrar << "2. Ruleta";

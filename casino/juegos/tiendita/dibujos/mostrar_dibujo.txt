@@ -1,0 +1,165 @@
+Procedimiento mostrar_dibujo(E: id_dibujo);
+Inicio
+  En_Caso (id_dibujo > 0) Sea;
+    Caso (id_dibujo = 1);
+      Mostrar << "Abran paso a la maxima autoridad de China: ";
+      Mostrar << " ";
+      
+      Mostrar << "                   .--,            ";
+      Mostrar << "    .-.    __,,,__/    |           ";
+      Mostrar << "   /   \-'`        `-./_           ";
+      Mostrar << "   |    |               `)         ";
+      Mostrar << "    \   `             `\ ;         ";
+      Mostrar << "   /       ,        ,    |         ";
+      Mostrar << "   |      /         : O /_         ";
+      Mostrar << "   |          O  .--;__   '.       ";
+      Mostrar << "   |                (  )`.  |      ";
+      Mostrar << "   \                 `-` /  |      ";
+      Mostrar << "    \          ,_  _.-./`  /       ";
+      Mostrar << "     \          \``-.(    /        ";
+      Mostrar << "     |           `---'   /--.      ";
+      Mostrar << "   ,--\___..__        _.'   /--.   ";
+      Mostrar << "   \          `-._  _`/    '    '. ";
+      Mostrar << "   .' ` ' .       ``    '        . ";
+    Caso (id_dibujo = 2);
+      Mostrar << "Aw... un perrito";
+      Mostrar << " ";
+      
+      Mostrar << "         .--.             .---.";
+      Mostrar << "        /:.  '.         .' ..  '._.---.";
+      Mostrar << "       /:::-.  \.-"""-;` .-: : : .     .: : \";
+      Mostrar << "      /::'|  `\/  _ _  \'   `\:'   ::::|";
+      Mostrar << "  __.'    |   /  (o|o)  \     `'.   ':/";
+      Mostrar << " /    .:. /   |   ___   |        '---'";
+      Mostrar << "|    ::::'   /:  (._.) .:\";
+      Mostrar << "\    .='    |:'        :::|";
+      Mostrar << " `""`       \     .-.   ':/";
+      Mostrar << "             '---`|I|`---'";
+      Mostrar << "                  '-'";
+    Caso (id_dibujo = 3);
+      Mostrar << "I can't get no... satistfaction!";
+      Mostrar << " ";
+      
+      Mostrar << "             __           __";
+      Mostrar << "          ,888888       888888.";
+      Mostrar << "        ,8888  8888   8888  8888,_";
+      Mostrar << "       ,8888888888888888888888888888,.";
+      Mostrar << "    _,88888888888888888888888888888888888";
+      Mostrar << " _,888888888 @ @@   8   @@ @@@@@ 888888'";
+      Mostrar << "888888888 @@@@@@@@@@@@@@@@@@@@@ 88888'";
+      Mostrar << "  `88888 @@  @@@@@@@@@@@@@@@@@ 88888'";
+      Mostrar << "   `88 @@@  @@@  @@@@@@@@@@@@@ 8888'";
+      Mostrar << "      @@@  @@@  @@@@@@@  @@@@ 8888'";
+      Mostrar << "     @@@   @@@ @@@@@@   @@@ 88888'";
+      Mostrar << "    @@@   @@@ @@@@@@   @@@ 88888'";
+      Mostrar << "    @@@   @@@ @@@@@@   @@@ 8888'";
+      Mostrar << "    @@@  @@@@@@@@@@   @@@ 88888";
+      Mostrar << "     @@@@@@@@@@@@@@   @@@ 888'";
+      Mostrar << "      @@@@@@@@@@@@@@ @@@' '";
+      Mostrar << "       @@@@@@@@@@@@@@@@'";
+      Mostrar << "        `@@@@@@@@@@@@@'";
+      Mostrar << "            `@@@@@@'";
+    Caso (id_dibujo = 4);
+      Mostrar << "Creiste que no podria hacer un retrato de tu madre? Pos mira: ";
+      Mostrar << " ";
+      
+      Mostrar << "*****************************************************************************";
+      Mostrar << "*                                                                           *";
+      Mostrar << "*                                                                           *";
+      Mostrar << "*                                                                           *";
+      Mostrar << "*                    ___                                                    *";
+      Mostrar << "*        ___        /__/\                                                   *";
+      Mostrar << "*       /  /\       \  \:\                                                  *";
+      Mostrar << "*      /  /:/        \  \:\                                                 *";
+      Mostrar << "*     /  /:/     ___  \  \:\                                                *";
+      Mostrar << "*    /  /::\    /__/\  \__\:\                                               *";
+      Mostrar << "*   /__/:/\:\   \  \:\ /  /:/                                               *";
+      Mostrar << "*   \__\/  \:\   \  \:\  /:/                                                *";
+      Mostrar << "*        \  \:\   \  \:\/:/                                                 *";
+      Mostrar << "*         \__\/    \  \::/                                                  *";
+      Mostrar << "*                   \__\/                                                   *";
+      Mostrar << "*        ___           ___          _____          ___           ___        *";
+      Mostrar << "*       /__/\         /  /\        /  /::\        /  /\         /  /\       *";
+      Mostrar << "*      |  |::\       /  /::\      /  /:/\:\      /  /::\       /  /:/_      *";
+      Mostrar << "*      |  |:|:\     /  /:/\:\    /  /:/  \:\    /  /:/\:\     /  /:/ /\     *";
+      Mostrar << "*    __|__|:|\:\   /  /:/~/::\  /__/:/ \__\:|  /  /:/~/:/    /  /:/ /:/_    *";
+      Mostrar << "*   /__/::::| \:\ /__/:/ /:/\:\ \  \:\ /  /:/ /__/:/ /:/___ /__/:/ /:/ /\   *";
+      Mostrar << "*   \  \:\~~\__\/ \  \:\/:/__\/  \  \:\  /:/  \  \:\/:::::/ \  \:\/:/ /:/   *";
+      Mostrar << "*    \  \:\        \  \::/        \  \:\/:/    \  \::/~~~~   \  \::/ /:/    *";
+      Mostrar << "*     \  \:\        \  \:\         \  \::/      \  \:\        \  \:\/:/     *";
+      Mostrar << "*      \  \:\        \  \:\         \__\/        \  \:\        \  \::/      *";
+      Mostrar << "*       \__\/         \__\/                       \__\/         \__\/       *";
+      Mostrar << "*                                                                           *";
+      Mostrar << "*                                                                           *";
+      Mostrar << "*                                                                           *";
+      Mostrar << "*****************************************************************************";
+    Caso (id_dibujo = 5);
+      Mostrar << "Asi veo al profe cuando se acerca la evaluacion";
+      Mostrar << " ";
+      
+      Mostrar << "                                           .""--.._";
+      Mostrar << "                                           []      `'--.._";
+      Mostrar << "                                           ||__           `'-,";
+      Mostrar << "                                         `)||_ ```'--..       \";
+      Mostrar << "                     _                    /|//}        ``--._  |"
+      Mostrar << "                  .'` `'.                /////}              `\/"
+      Mostrar << "                 /  .'''.\              //{///    "
+      Mostrar << "                /  /_  _`\\            // `||"
+      Mostrar << "                | |(_)(_)||          _//   ||"
+      Mostrar << "                | |  /\  )|        _///\   ||"
+      Mostrar << "                | |L====J |       / |/ |   ||";
+      Mostrar << "               /  /'-..-' /    .'`  \  |   ||";
+      Mostrar << "              /   |  :: | |_.-`      |  \  ||";
+      Mostrar << "             /|   `\-::.| |          \   | ||";
+      Mostrar << "           /` `|   /    | |          |   / ||";
+      Mostrar << "         |`    \   |    / /          \  |  ||";
+      Mostrar << "        |       `\_|    |/      ,.__. \ |  ||";
+      Mostrar << "        /                     /`    `\ ||  ||";
+      Mostrar << "       |           .         /        \||  ||";
+      Mostrar << "       |                     |         |/  ||";
+      Mostrar << "       /         /           |         (   ||";
+      Mostrar << "      /          .           /          )  ||";
+      Mostrar << "     |            \          |             ||";
+      Mostrar << "    /             |          /             ||";
+      Mostrar << "   |\            /          |              ||";
+      Mostrar << "   \ `-._       |           /              ||";
+      Mostrar << "    \ ,//`\    /`           |              ||"
+      Mostrar << "     ///\  \  |             \              ||"
+      Mostrar << "    |||| ) |__/             |              ||";
+      Mostrar << "    |||| `.(                |              ||";
+      Mostrar << "    `\\` /`                 /              ||";
+      Mostrar << "       /`                   /              ||";
+      Mostrar << "      /                     |              ||";
+      Mostrar << "     |                      \              ||";
+      Mostrar << "    /                        |             ||";
+      Mostrar << "  /`                          \            ||";
+      Mostrar << "/`                            |            ||";
+      Mostrar << "`-.___,-.      .-.        ___,'            ||";
+      Mostrar << "         `---'`   `'----'`";
+    Caso (id_dibujo = 6);
+      Mostrar << "Alta diavla que fue ella conmigo. Aca dejo su retrato";
+      Mostrar << " ";
+      
+      Mostrar << "                            ,-.";
+      Mostrar << "       ___,---.__          /'|`\          __,---,___";
+      Mostrar << "    ,-'    \`    `-.____,-'  |  `-.____,-'    //    `-."
+      Mostrar << "  ,'        |           ~'\     /`~           |        `.";
+      Mostrar << " /      ___//              `. ,'          ,  , \___      \"
+      Mostrar << "|    ,-'   `-.__   _         |        ,    __,-'   `-.    |";
+      Mostrar << "|   /          /\_  `   .    |    ,      _/\          \   |";
+      Mostrar << "\  |           \ \`-.___ \   |   / ___,-'/ /           |  /";
+      Mostrar << " \  \           | `._   `\\  |  //'   _,' |           /  /"
+      Mostrar << "  `-.\         /'  _ `---'' , . ``---' _  `\         /,-'";
+      Mostrar << "     ``       /     \    ,='/ \`=.    /     \       ''";
+      Mostrar << "             |__   /|\_,--.,-.--,--._/|\   __|";
+      Mostrar << "             /  `./  \\`\ |  |  | /,//' \,'  \"
+      Mostrar << "eViL        /   /     ||--+--|--+-/-|     \   \";
+      Mostrar << "           |   |     /'\_\_\ | /_/_/`\     |   |";
+      Mostrar << "            \   \__, \_     `~'     _/ .__/   /";
+      Mostrar << "             `-._,-'   `-._______,-'   `-._,-'";
+    Otro_Caso
+      Mostrar << "Este dibujo lo agregaremos pronto!";
+
+      // Agreguen mas dibujos, pueh!
+  Fin_Caso
+Fin_Procedimiento

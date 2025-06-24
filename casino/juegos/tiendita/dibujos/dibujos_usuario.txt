@@ -1,0 +1,23 @@
+Procedimiento dibujos_usuario(E: premios_canjedos[j_casino]: Booleano, nombre: Cadena);
+Inicio
+  
+  Mostrar << "Estos son los dibujos que hay: ";
+  Mostrar << "1. El presidente de China";
+  Mostrar << "2. Un lindo perrito que seguramente mordio mi zapato";
+  Mostrar << "3. Poster de The Rolling Stones";
+  Mostrar << "4. Un retrato de tu madre";
+  Mostrar << "5. Una representacion de como veo al profe cuando hay evaluacion";
+  Mostrar << "6. Mi ex";
+  Mostrar << "7. sin dibujo";
+  Mostrar << "8. sin dibujo";
+  Mostrar << "9. sin dibujo";
+  Mostrar << "10. sin dibujo";
+
+  Mostrar << "De los cuales tienes: "
+
+  Para (j_casino = 1 Hasta j_casino = 10) Hacer;
+    Si (premios_canjedos[j_casino] = 1) Entonces;
+      Mostrar << "Premio: ", j_casino;
+    Fin_Si
+  Fin_Para
+Fin_Procedimiento
