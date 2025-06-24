@@ -1,4 +1,4 @@
-Procedimiento reserva_habitaciones(E: clientes[contador_clientes]: Entero, E/S: id_ingresado, dias_hospedaje: Entero, fecha_llegada, fecha_salida: Cadena, S: total_pagar_habitacion: Real);
+Procedimiento reserva_habitaciones(E: clientes[contador_clientes]: Entero, E/S: cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado, dias_hospedaje: Entero, fecha_llegada, fecha_salida: Cadena, S: total_pagar_habitacion: Real);
 Inicio
   Var
   opcion_habitacion, validacion_reservacion: Entero;
@@ -13,7 +13,7 @@ Inicio
   
   validacion_reservacion = validacion(id_ingresado, validacion, clientes[contador_clientes]);
   
-  Si (validacion = 2) Entonces;
+  Si (validacion = 0) Entonces;
     Mostrar << "Error el ID", id_ingresado, "no se encuentra en nuestra base de datos";
     
     Sino 
