@@ -1,4 +1,4 @@
-Procedimiento registro_nuevo_cliente(E: contador_cliente = 0, clientes[contador_cliente], id_cliente: Entero, E/S: nombre_apellido, email: Cadena, telefono, edad_usuario, cedula, id_cliente, cant_acompañantes, clientes_hotel = 0: Entero);
+Procedimiento registro_nuevo_cliente(E: contador_clientes = 0, clientes[contador_clientes], id_cliente: Entero, E/S: nombre_apellido, email: Cadena, telefono, edad_usuario, cedula, id_cliente, cant_acompañantes, clientes_hotel = 0: Entero);
 Inicio
   Var opc_registro: Entero;
   
@@ -29,7 +29,7 @@ Inicio
     Mostrar << "Ingrese direccion email si tiene";
     Leer >> email;
     
-    id_cliente_nuevo = generar_id(contador_cliente = 0: Entero, clientes[contador_cliente], id_cliente);
+    id_cliente_nuevo = generar_id(contador_clientes = 0, clientes[contador_clientes], id_cliente);
     
     Mostrar << "Datos de el cliente";
     Mostrar << "Nombre y apellido:", nombre_apellido;
