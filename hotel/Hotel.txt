@@ -18,16 +18,16 @@ Inicio
     
     En_Caso (opc_hotel > 0) Sea;
       Caso (opc_hotel = 1);
-        registro_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, contador_clientes_hotel);
-        Mostrar << registro_cliente;
+        registro_nuevo_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, id_cliente, cant_acompañantes, clientes_hotel = 0);
+        Mostrar << registro_nuevo_cliente;
       Caso (opc_hotel = 2);
-        reserva_habitaciones(Clientes = [contador_clientes], total_pagar_habitacion, dias_hospedaje, fecha_llegada, fecha_salida);
+        reserva_habitaciones(Clientes[contador_clientes], total_pagar_habitacion, dias_hospedaje, fecha_llegada, fecha_salida);
         Mostrar << reserva_habitaciones;
       Caso (opc_hotel = 3);
-        estadisticas(clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4);
+        estadisticas(Clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4);
         Mostrar << estadisticas;
       Caso (opc_hotel = 4);
-        metodo_de_pago(Clientes = [contador_clientes]);
+        metodo_de_pago(Clientes[contador_clientes]);
         Mostrar << metodo_de_pago;
       Caso (opc_hotel = 5);
         check_out(contador_cliente);
@@ -40,7 +40,7 @@ Inicio
   Fin_Repetir
 Fin_Procedimiento
 
-Funcion validacion(id_ingresado: Entero: Entero, validacion_final: Entero, clientes[contador_clientes])entero;
+Funcion validacion(id_ingresado: Entero: Entero, validacion_final: Entero, Clientes[contador_clientes])entero;
 Inicio
   var validacion_final = entero;
   
