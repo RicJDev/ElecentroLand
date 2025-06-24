@@ -14,7 +14,7 @@ Inicio
   validacion_check_out = validacion(id_ingresado, validacion_final, clientes[contador_clientes]);
   
   Si (validacion_check_out = 0) Entonces;
-    Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
+    Mostrar << "Error el ID", id_ingresado, "no se encuentra en nuestra base de datos";
   Sino 
     contador_clientes = contador_clientes - 1;
     Mostrar << "Ingrese en que habitacion estaba hospedado";
