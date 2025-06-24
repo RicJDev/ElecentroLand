@@ -1,6 +1,6 @@
-Procedimiento Hotel(E/S: contador_cliente = 0, cant_acompañantes = 0,  clientes_hotel = 0,  clientes[contador_cliente],  cantidad_habitacion1 = 250,  cantidad_habitacion2 = 100,  cantidad_habitacion3 = 80,  cantidad_habitacion4 = 70,  id_cliente,  dias_hospedaje,  telefono,  edad_usuario,  cedula,   id_ingresado,  validacion_final,   id_cliente_reservacion: Entero,  total_pagar_habitacion: Real,  fecha_llegada,  fecha_salida,  nombre_apellido,  email: Cadena);
+Procedimiento Hotel(E/S: contador_clientes = 0, cant_acompañantes = 0,  clientes_hotel = 0,  clientes[contador_clientes],  cantidad_habitacion1 = 250,  cantidad_habitacion2 = 100,  cantidad_habitacion3 = 80,  cantidad_habitacion4 = 70,  id_cliente,  dias_hospedaje,  telefono,  edad_usuario,  cedula,   id_ingresado,  validacion_final,   id_cliente_reservacion: Entero,  total_pagar_habitacion: Real,  fecha_llegada,  fecha_salida,  nombre_apellido,  email: Cadena);
 Inicio
-  var opc_hotel = entero;
+  Var opc_hotel = entero;
   Repetir
 
     Mostrar << "1:Registrar un nuevo cliente";
@@ -30,7 +30,7 @@ Inicio
         metodo_de_pago(clientes[contador_clientes]);
         Mostrar << metodo_de_pago;
       Caso (opc_hotel = 5);
-        check_out(contador_cliente);
+        check_out(contador_clientes, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado, validacion_final);
         Mostrar << check_out;
       Otro_Caso
         opc_hotel = 6;
@@ -40,16 +40,16 @@ Inicio
   Fin_Repetir
 Fin_Procedimiento
 
-Funcion validacion(id_ingresado: Entero: Entero, validacion_final: Entero, Clientes[contador_clientes])entero;
+Funcion validacion(id_ingresado: Entero, validacion_final: Entero, clientes[contador_clientes]: Entero): Entero;
 Inicio
-  var validacion_final = entero;
+  Var validacion_final: Entero;
   
-  Mientras (I = 1 Hasta contado_clientes) Hacer;
+  Mientras (I = 1 Hasta I = contador_clientes) Hacer;
     Si id_ingresado != clientes[contador_clientes];
-    validacion_final = 2;
+      validacion_final = 2;
     Sino 
-    validacion_final = 1;
-  Fin_Si
+      validacion_final = 1;
+    Fin_Si
   
   Devolver (validacion_final);
 Fin_Funcion
