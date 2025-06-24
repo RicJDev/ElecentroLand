@@ -1,7 +1,7 @@
-Procedimiento check_out(E: contador_cliente: Entero, cantidad_habitacion1: Entero, cantidad_habitacion2: Entero, cantidad_habitacion3: Entero, cantidad_habitacion4: Entero, E/S: id_ingresado: Entero, E: validacion_final: Entero);
+Procedimiento check_out(E/S: contador_clientes, validacion_final, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado: Entero);
 Inicio
-  var id_cliente_reservacion, validacion_check_out, opcion_habitacion: Entero;
-  
+  Var id_cliente_reservacion, validacion_check_out, opcion_habitacion: Entero;
+
   Mostrar << "Gracias por haber elegido a Elecentroland para su visita a San Juan De Los Morros, vuelva pronto";
   Mostrar << "Ingrese su ID, por favor";
   Leer >> id_ingresado;
@@ -15,14 +15,14 @@ Inicio
   
   Si (validacion_check_out = 2) Entonces;
     Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
-    Sino 
-    contador_cliente = contador_cliente-1;
+  Sino 
+    contador_clientes = contador_clientes - 1;
     Mostrar << "Ingrese en que habitacion estaba hospedado";
     Mostrar << "Listado de habitaciones";
-    Mostrar << "1:Habitacion Elecentro (Habitación individual: Diseñada para una persona, con cama individua) precio 10$ por noche";
-    Mostrar << "2:habitacion Guanabana (habitacion con dual )precio: 20$ por noche";
-    Mostrar << "3:Habitacion Maravillas (hasta 4 personas) precio: 35$ por noche";
-    Mostrar << "4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
+    Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
+    Mostrar << "2: Habitación Guanábana (habitacion con dual) precio: 20$ por noche";
+    Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
+    Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
     Leer >> opcion_habitacion;
     
     Mientras (opcion_habitacion < 1) OR (opcion_habitacion > 4) Hacer;
