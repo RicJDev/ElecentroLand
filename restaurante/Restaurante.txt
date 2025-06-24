@@ -21,7 +21,7 @@ Inicio
   Var opc, personas_agenda, opc_combo, contC1 = 0, contC2 = 0, contC3 = 0, contC4 = 0, contC5 = 0, contC6 = 0: Entero, Cuenta: Real;
   
   Repetir
-    bienvenida(opcion);
+    bienvenida(Opcion);
     Mostrar << bienvenida;
     
     Si (Opcion = 1) Entonces;
