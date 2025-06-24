@@ -1,4 +1,4 @@
-Procedimiento metodo_de_pago(E: Clientes[contador_clientes]: Entero, E/S: id_registrado: Entero, validacion_pago: Booleano, monto_pago: Real);
+Procedimiento metodo_pago(E: monto_pago: Real, E/S: validacion_pago: Booleano);
 Inicio
   Var
   opc_pago, referencia, digitos_tarjeta, num_tarjeta, cedula: Entero;
