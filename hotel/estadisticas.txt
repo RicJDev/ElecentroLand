@@ -1,7 +1,5 @@
-Procedimiento estadisticas(S: clientes[contador_clientes]: Entero, clientes_hotel: Entero, cantidad_habitacion1: Entero, cantidad_habitacion2: Entero, cantidad_habitacion3: Entero, cantidad_habitacion4: Entero);
+Procedimiento estadisticas(E/S: clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4: Entero);
 Inicio
-  var;
-  
   Mostrar << "Estimado Usuario, Estas son las estadisticas actuales de Elecentroland";
   Mostrar << "Cantidad de personas hospedadas como titulares", cliente[contador_clientes];
   Mostrar << "Cantidad de personas hospedadas en todo el hotel:", clientes_hotel;
