@@ -1,20 +1,20 @@
-Procedimiento registro_nuevo_cliente(E: contador_clientes = 0, clientes[contador_clientes], id_cliente: Entero, E/S: nombre_apellido, email: Cadena, telefono, edad_usuario, cedula, id_cliente, cant_acompañantes, clientes_hotel = 0: Entero);
+Procedimiento registro_nuevo_cliente(E: clientes[contador_clientes], id_cliente: Entero, E/S: contador_clientes = 0, nombre_apellido, email: Cadena, telefono, edad_usuario, cedula, id_cliente, cant_acompañantes, clientes_hotel = 0: Entero);
 Inicio
   Var opc_registro: Entero;
   
-  Mostrar << "Bienvenido al hotel Elecentroland";
-  Mostrar << "Estimado usuario se hospedara solo o con acompañantes 1:si, 2:no";
+  Mostrar << "Bienvenido al Hotel Elecentroland";
+  Mostrar << "Estimado usuario se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
   Leer >> opc_registro;
-  
-  //validacion de la opcion
-  Mientras (opc_registro < 1 OR opc_registro > 2) Hacer;
-    Mostrar << "Error en respuesta enviada por favor intente de nuevo";
+
+  //validación de la opción
+  Mientras (opc_registro < 1 or opc_registro > 2) Hacer;
+    Mostrar << "Error en datos, intente nuevamente";
     Leer >> opc_registro;
   Fin_Mientras
-  
+
   Si (opc_registro = 1) Entonces;
     Mostrar << "Ingrese su nombre y apellido";
-    Leer >> nombre_apellido, ;
+    Leer >> nombre_apellido;
     Mostrar << "Ingrese su edad";
     Leer >> edad_usuario;
     
@@ -24,20 +24,20 @@ Inicio
       Leer >> edad_usuario;
     Fin_Mientras
     
-    Mostrar << "Ingrese su numero telefonico si tiene";
+    Mostrar << "Ingrese su número telefónico si tiene";
     Leer >> telefono;
-    Mostrar << "Ingrese direccion email si tiene";
+    Mostrar << "Ingrese dirección email si tiene";
     Leer >> email;
     
     id_cliente_nuevo = generar_id(contador_clientes = 0, clientes[contador_clientes], id_cliente);
     
-    Mostrar << "Datos de el cliente";
+    Mostrar << "Datos del cliente";
     Mostrar << "Nombre y apellido:", nombre_apellido;
-    Mostrar << "Numero Telefonico:", telefono;
+    Mostrar << "Número Telefónico:", telefono;
     Mostrar << "E-mail:", email;
-    Mostrar << "Usuario registrado con exito su numero de identificacion es", id_cliente_nuevo;
+    Mostrar << "Usuario registrado con éxito su número de identificación es", id_cliente_nuevo;
     
-    Sino 
+  Sino 
     
     Mostrar << "Ingrese los datos del titular del registro";
     Mostrar << "Ingrese su nombre y apellido";
@@ -51,14 +51,14 @@ Inicio
       Leer >> edad_usuario;
     Fin_Mientras
     
-    Mostrar << "Ingrese su numero telefonico";
+    Mostrar << "Ingrese su número telefónico";
     Leer >> telefono;
-    Mostrar << "Ingrese direccion email si tiene";
+    Mostrar << "Ingrese dirección email si tiene";
     Leer >> email;
-    contador_clientes_hotel = contador_clientes_hotel + 1;
+    contador_clientes = contador_clientes + 1;
     Mostrar << "Ingrese la cantidad de acompañantes";
     Leer >> cant_acompañantes;
-    id_cliente_nuevo = generar_id(contador_cliente = 0: Entero, clientes[contador_cliente], id_cliente);
+    id_cliente_nuevo = generar_id(contador_clientes = 0: Entero, clientes[contador_clientes], id_cliente);
     
     Para (I = 1 Hasta I = cant_acompañantes) Hacer;
       Mostrar << "Ingrese su nombre y apellido";
@@ -67,13 +67,13 @@ Inicio
       Leer >> edad_usuario;
       
       Mientras (edad_usuario < 0) Hacer;
-        Mostrar << "Ingrese una edad valida por favor";
+        Mostrar << "Ingrese una edad válida por favor";
         Leer >> edad_usuario;
       Fin_Mientras
       
-      Mostrar << "Ingrese su numero telefonico si tiene";
+      Mostrar << "Ingrese su número telefónico si tiene";
       Leer >> telefono;
-      Mostrar << "Ingrese direccion email si tiene";
+      Mostrar << "Ingrese dirección email si tiene";
       Leer >> email;
     Fin_Para
     
