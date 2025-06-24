@@ -21,11 +21,14 @@ Electroland\
 │       │   tragamonedas.txt
 │       │
 │       └───tiendita\
-│               canjear_dibujos.txt
-│               canjear_dinero.txt
-│               comprar_fichas.txt
-│               mostrar_dibujos.txt
-│               Tiendita.txt
+│           │   canjear_dinero.txt
+│           │   comprar_fichas.txt
+│           │   Tiendita.txt
+│           │
+│           └───dibujos\
+│                   canjear_dibujos.txt
+│                   dibujos_usuario.txt
+│                   mostrar_dibujo.txt
 │
 ├───hotel\
 │       check_out.txt
@@ -42,7 +45,7 @@ Electroland\
 │       manu_almuerzo.txt
 │       menu_cena.txt
 │       menu_desayuno.txt
-│       Restaurante.txt
+│       restaurante.txt
 │
 ├───taberna\
 │       tabe.txt
