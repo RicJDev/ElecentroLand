@@ -4,20 +4,7 @@ Inicio
   opc_pago, referencia, digitos_tarjeta, num_tarjeta, cedula: Entero;
   tipo_cuenta, fecha_vencimiento: Cadena;
   monto: Real;
-  Mostrar << "Ingrese su ID, por favor, para continuar";
-  Leer >> id_ingresado;
-  
-  Mientras (id_cliente_reservacion < 1) Hacer;
-    Mostrar << "Por favor ingrese un ID valido";
-    Leer >> id_ingresado;
-  Fin_Mientras
-  
-  validacion(id_ingresado, clientes[contador_cliente]);
-  
-  Si (validacion = 2) Entonces;
-    Mostrar << "Error el ID", id_cliente_reservacion, "no se encuentra en nuestra base de datos";
-    
-    Sino 
+
     Mostrar << "Estimado usuario a continuacion se muestran los metodos de pago disponibles";
     Mostrar << "1: Tarjeta de debito";
     Mostrar << "2: Tarjeta de credito";
@@ -47,7 +34,7 @@ Inicio
         
         Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
         Leer >> tipo_cuenta;
-        Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave secreta";
+        Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave          secreta";
         validacion_pago = 1;
       Caso (opc_pago = 2);  //opcion 2
         Mostrar << "Ingrese el numero de su tarjeta";
