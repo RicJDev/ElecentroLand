@@ -158,9 +158,9 @@ Inicio
       Mostrar << "            \   \__, \_     `~'     _/ .__/   /";
       Mostrar << "             `-._,-'   `-._______,-'   `-._,-'";
     Caso (id_dibujo = 7);
-      Mostrar << "Si tienes hambre, come... --Monkey D. Luffy"
-      Mostrar << " "
-
+      Mostrar << "Si tienes hambre, come... --Monkey D. Luffy";
+      Mostrar << " ";
+      
       Mostrar << "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠉⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿";
       Mostrar << "⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⢦⣀⡈⢻⣿⣿⣿⣿⣿⣿⣿⣿";
       Mostrar << "⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠈⣷⡄⠙⠛⢿⣿⣿⣿⣿⣿";
@@ -184,6 +184,92 @@ Inicio
       Mostrar << "⣿⣿⣿⣿⡿⠁⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠘⣿⣿⣿⣿";
       Mostrar << "⣿⡿⠛⠉⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠈⠻⣿⣿";
       Mostrar << "⣿⣷⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣤⣤⣤⣼⣿";
+    Caso (id_dibujo = 8);
+      Mostrar << "Un Bulbasaur salvaje ha aparecido!!";
+      Mostrar << " ";
+      
+      Mostrar << "                                           /";
+      Mostrar << "                        _,.------....___,.' ',.-.";
+      Mostrar << "                     ,-'          _,.--"        |";
+      Mostrar << "                   ,'         _.-'              .";
+      Mostrar << "                  /   ,     ,'                   `";
+      Mostrar << "                 .   /     /                     ``.";
+      Mostrar << "                 |  |     .                       \.\";
+      Mostrar << "       ____      |___._.  |       __               \ `.";
+      Mostrar << "     .'    `---""       ``"-.--"'`  \               .  \";
+      Mostrar << "    .  ,            __               `              |   .";
+      Mostrar << "    `,'         ,-"'  .               \             |    L";
+      Mostrar << "   ,'          '    _.'                -._          /    |";
+      Mostrar << "  ,`-.    ,".   `--' > ., '     |";
+      Mostrar << " . .'\'   `-'       __    ,  ,-.         /  `.__.-      ,'";
+      Mostrar << " ||:, .           ,'  ;  /  / \ `        `.    .      .'/";
+      Mostrar << "  |:   \          `--'  ' ,'_  . .         `.__, \   , /";
+      Mostrar << "/ L:_  |                 .  "': _;                `.'.'";
+      Mostrar << ".    ""'                  """""'                    V";
+      Mostrar << " `.                                 .    `.   _,..  `";
+      Mostrar << "   `,_   .    .                _,-'/    .. `,'   __  `";
+      Mostrar << "    ) \`._        ___....----"', '   .'  \ |   '  \  .";
+      Mostrar << "   /   `. "`-.--"'         _,' ,'     `---' |    `./  |";
+      Mostrar << "  .   _  `""'--.._____..--", '         |";
+      Mostrar << "  | ." `. `-.                /-.           /, ";
+      Mostrar << "  | `._.'    `,_            ;  /         ,'          .";
+      Mostrar << " .'          /| `-.        . ,'         ,           ,";
+      Mostrar << " '-.__ __ _,','    '`-..___;-...__   ,.'\ ____.___.'";
+      Mostrar << " `" ^ --'..'   '-`- ^ -'"--    `-^-'`.''"""""`., ^ .`.--' ";
+    Caso (id_dibujo = 9);
+      Mostrar << "Espada epica-legendaria encantada por la abuela de un mago AAAAAAHHHH!!!";
+      Mostrar << " ";
+      
+      Mostrar << "          /\";
+      Mostrar << "         /  \";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        |    |";
+      Mostrar << "        | /\ |";
+      Mostrar << ":\______|/  \|______/:";
+      Mostrar << " \__________________/";
+      Mostrar << "        | /\ |";
+      Mostrar << "        ||  ||";
+      Mostrar << "        ||  ||";
+      Mostrar << "        ||  ||";
+      Mostrar << "        ||  ||";
+      Mostrar << "        ||  ||";
+      Mostrar << "        ||  ||";
+      Mostrar << "        | \/ |";
+      Mostrar << "        \____/";
+      Mostrar << "        (____)";
+    Caso (id_dibujo = 10);
+      Mostrar << "Caballero caballeroso de la caballerosidad";
+      Mostrar << " ";
+      
+      Mostrar << "  ,   A           {}";
+      Mostrar << " / \, | ,        .--.";
+      Mostrar << "|    =|= >      /.--.\";
+      Mostrar << " \ /` | `       |====|";
+      Mostrar << "  `   |         |`::`|";
+      Mostrar << "      |     .-;`\..../`;_.-^-._";
+      Mostrar << "     /\\/  /  |...::..|`   :   `|";
+      Mostrar << "     |:'\ |   /'''::''|   .:.   |";
+      Mostrar << "      \ /\;-,/\   ::  |..:::::..|";
+      Mostrar << "      |\ <` >  >._::_.| ':::::' |";
+      Mostrar << "      | `""`  /   ^^  |   ':'   |";
+      Mostrar << "      |       |       \    :    /";
+      Mostrar << "      |       |        \   :   /";
+      Mostrar << "      |       |___/\___|`-.:.-`";
+      Mostrar << "      |        \_ || _/    `";
+      Mostrar << "      |        <_ >< _>";
+      Mostrar << "      |        |  ||  |";
+      Mostrar << "      |        |  ||  |";
+      Mostrar << "      |       _\.:||:./_";
+      Mostrar << "      |      /____/\____\";
     Otro_Caso
       Mostrar << "Este dibujo lo agregaremos pronto!";
       
