@@ -1,23 +1,53 @@
 Procedimiento dibujos_usuario(E: premios_canjedos[j_casino]: Booleano, nombre: Cadena);
 Inicio
+  var status = 0, seguir_viendo = 1: Booleano;
+  var id_dibujo, c_dibujos = 0: Entero;
   
-  Mostrar << "Estos son los dibujos que hay: ";
-  Mostrar << "1. El presidente de China";
-  Mostrar << "2. Un lindo perrito que seguramente mordio mi zapato";
-  Mostrar << "3. Poster de The Rolling Stones";
-  Mostrar << "4. Un retrato de tu madre";
-  Mostrar << "5. Una representacion de como veo al profe cuando hay evaluacion";
-  Mostrar << "6. Mi ex";
-  Mostrar << "7. sin dibujo";
-  Mostrar << "8. sin dibujo";
-  Mostrar << "9. sin dibujo";
-  Mostrar << "10. sin dibujo";
-
-  Mostrar << "De los cuales tienes: "
-
-  Para (j_casino = 1 Hasta j_casino = 10) Hacer;
-    Si (premios_canjedos[j_casino] = 1) Entonces;
-      Mostrar << "Premio: ", j_casino;
+  Mientras (seguir_viendo = 1) Hacer;
+    Mostrar << "Estos son los dibujos que hay: ";
+    Mostrar << "1. El presidente de China";
+    Mostrar << "2. Un lindo perrito que seguramente mordio mi zapato";
+    Mostrar << "3. Poster de The Rolling Stones";
+    Mostrar << "4. Un retrato de tu madre";
+    Mostrar << "5. Una representacion de como veo al profe cuando hay evaluacion";
+    Mostrar << "6. Mi ex";
+    Mostrar << "7. Consejo de vida de parte de un personaje muy querido";
+    Mostrar << "8. Atrapalo antes de que escape";
+    Mostrar << "9. Un arma para defenderte en San Juan";
+    Mostrar << "10. Alguien que use el arma por ti, ya que tambien soy informatico y se que ninguno va al gym";
+    
+    Mostrar << "De los cuales tienes: ";
+    Para (j_casino = 1 Hasta j_casino = 10) Hacer;
+      status = premios_canjedos[j_casino];
+      Si (status = 1) Entonces;
+        Mostrar << "Dibujo: ", j_casino;
+        c_dibujos = c_dibujos + 1;
+      Fin_Si
+    Fin_Para
+    
+    Si (c_dibujos = 0) Entonces;
+      Mostrar << "Ah, no. No tienes ninguno. Ve a canjer tus fichas para tener dibujos";
+      
+      Sino 
+      Mostrar << "Elige el que quieres ver";
+      Leer >> id_dibujo;
+      
+      Mientras (id_dibujo < 1 OR id_dibujo > 10) Hacer;
+        Mostrar << "Solo hay 10 opciones, mijo. No trates de hackearme.";
+        Leer >> id_dibujo;
+      Fin_Mientras
+      
+      status = premios_canjedos[id_dibujo];
+      
+      Si (status = 1) Entonces;
+        mostrar_dibujo(id_dibujo);
+        
+        Sino 
+        Mostrar << "No tienes ese dibujo. Debes canjearlo para poder verlo";
+      Fin_Si
     Fin_Si
-  Fin_Para
+    
+    Mostrar << "Deseas seguir aca o ya te vas? (1: seguir aca; 0: salir)";
+    Leer >> seguir_viendo;
+  Fin_Mientras
 Fin_Procedimiento
