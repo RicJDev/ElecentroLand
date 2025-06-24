@@ -1,8 +1,8 @@
 Procedimiento Hotel(E/S: contador_cliente = 0, cant_acompañantes = 0,  clientes_hotel = 0,  clientes[contador_cliente],  cantidad_habitacion1 = 250,  cantidad_habitacion2 = 100,  cantidad_habitacion3 = 80,  cantidad_habitacion4 = 70,  id_cliente,  dias_hospedaje,  telefono,  edad_usuario,  cedula,   id_ingresado,  validacion_final,   id_cliente_reservacion: Entero,  total_pagar_habitacion: Real,  fecha_llegada,  fecha_salida,  nombre_apellido,  email: Cadena);
 Inicio
+  var opc_hotel = entero;
   Repetir
-    var opc_hotel = entero;
-    
+
     Mostrar << "1:Registrar un nuevo cliente";
     Mostrar << "2:Realizar una reserva";
     Mostrar << "3:Consulta de estadisticas del hotel";
@@ -21,13 +21,13 @@ Inicio
         registro_nuevo_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, id_cliente, cant_acompañantes, clientes_hotel = 0);
         Mostrar << registro_nuevo_cliente;
       Caso (opc_hotel = 2);
-        reserva_habitaciones(Clientes[contador_clientes], total_pagar_habitacion, dias_hospedaje, fecha_llegada, fecha_salida);
+        reserva_habitaciones(clientes[contador_clientes], total_pagar_habitacion, dias_hospedaje, fecha_llegada, fecha_salida);
         Mostrar << reserva_habitaciones;
       Caso (opc_hotel = 3);
-        estadisticas(Clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4);
+        estadisticas(clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4);
         Mostrar << estadisticas;
       Caso (opc_hotel = 4);
-        metodo_de_pago(Clientes[contador_clientes]);
+        metodo_de_pago(clientes[contador_clientes]);
         Mostrar << metodo_de_pago;
       Caso (opc_hotel = 5);
         check_out(contador_cliente);
