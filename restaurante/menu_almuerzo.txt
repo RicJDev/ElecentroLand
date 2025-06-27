@@ -107,12 +107,12 @@ Repetir
 Hasta (R = 0);
 Fin_Repetir
 Dinero_Todas_Opcs = Dinero_Opc1 + Dinero_Opc2 + Dinero_Opc3 + Dinero_Opc4 + Dinero_Opc5 + Dinero_Opc6; 
-Mostrar<<”Este es el dinero acumulado por cada una de las opciones”;
-Mostrar<<”Opcion 1:”, Dinero_Opc1;
-Mostrar<<”Opcion 2:”, Dinero_Opc2;
-Mostrar<<”Opcion 3:”, Dinero_Opc3;
-Mostrar<<”Opcion 4:”, Dinero_Opc4;
-Mostrar<<”Opcion 5:”, Dinero_Opc5;
-Mostrar<<”Opcion 6:”, Dinero_Opc6;
-Mostrar<<”Para un total de todas las opciones de: ”, Dinero_Todas_Opcs;
+Mostrar << ”Este es el dinero acumulado por cada una de las opciones”;
+Mostrar << ”Opcion 1:”, Dinero_Opc1;
+Mostrar << ”Opcion 2:”, Dinero_Opc2;
+Mostrar << ”Opcion 3:”, Dinero_Opc3;
+Mostrar << ”Opcion 4:”, Dinero_Opc4;
+Mostrar << ”Opcion 5:”, Dinero_Opc5;
+Mostrar << ”Opcion 6:”, Dinero_Opc6;
+Mostrar << ”Para un total de todas las opciones de: ”, Dinero_Todas_Opcs;
 Fin_Procedimiento
