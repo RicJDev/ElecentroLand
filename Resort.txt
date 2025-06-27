@@ -47,6 +47,8 @@ Inicio
   restaurante_ingredientes[7] = "waffles"
   restaurante_ingredientes[8] = "cachapas"
   restaurante_ingredientes[9] = "empanadas"
+  restaurante_ingredientes[10] = "ensalada cesar"
+  restaurante_ingredientes[11] = "vino blanco"
 
   restaurante_ingredientes_cantidades[1] = 40
   restaurante_ingredientes_cantidades[2] = 30
