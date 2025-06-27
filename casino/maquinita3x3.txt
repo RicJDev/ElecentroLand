@@ -1,0 +1,151 @@
+Procedimiento asignar_figura(rodillo[3,3])
+Inicio 
+var 
+	Para I=1 hasta 3 hacer;
+		Para J=1 hasta 3 hacer;
+		En caso (rodillo[3,3]>0) sea;
+			caso (rodillo[I,J]=1);
+			Mostrar<<'🍌';
+			caso (rodillo[I,J]=2);
+			mostrar<<'🍒';
+			caso (rodillo[I,J]=3);
+			mostrar<<'🥭';
+			caso (rodillo[I,J]=4);
+			mostrar<<'🍍';
+			otro caso
+			mostrar<<'🍋';
+		Fin caso
+      fin para
+    fin para
+
+fin procedimiento
+
+Funcion premio_maquinita (rodillo1,rodillo2,rodillo3:entero, saldo_apostado:real);real
+Definir premio Como real
+
+En caso (rodillo[3,3]>0) sea;
+	caso (rodillo[1,1]=rodillo[1,2]) and (rodillo[1,1]=rodillo[1,3]);
+		premio=monto_Apostado*5;
+	caso (rodillo[2,1]=rodillo[2,2]) and (rodillo[2,1]=rodillo[2,3]);
+		premio=monto_Apostado*5;
+	caso (rodillo[3,1]=rodillo[3,2]) and (rodillo[3,1]=rodillo[3,3]);
+		premio=monto_Apostado*5;
+	caso (rodillo[1,1]=rodillo[2,1]) and (rodillo[1,1]=rodillo[3,1]); 
+		premio=saldo_apostado*10;
+	caso (rodillo[1,2]=rodillo[2,2]) and (rodillo[1,2]=rodillo[3,2]);
+		premio=saldo_apostado*10;
+	caso (rodillo[1,3]=rodillo[2,3]) and (rodillo[1,3]=rodillo[3,3]);
+		premio=saldo_apostado*10;
+	caso (rodillo[1,1]=rodillo[2,2]) and (rodillo[1,1]=rodillo[3,3]);
+		premio=saldo_apostado*15;
+	caso (rodillo[3,1]=rodillo[2,2]) and (rodillo[3,1]=rodillo[1,3]);
+		premio=saldo_apostado*15
+	    Otro caso
+			premio=0;
+Fin caso
+devolver (premio)
+FinFuncion
+
+Procedimiento figura (e/s:rodillo[3,3])
+inicio
+En caso (rodillo1>0) and (rodillo2>0) and (rodillo3>0) and (rodillo4>0) and (rodillo5>0) and (rodillo6>0) and (rodillo7>0) and (rodillo8>0) and (rodillo9>09) sea;
+ caso (rodillo[1,1]=1) or (rodillo[2,1]=1) or (rodillo[3,1]=1) or (rodillo[1,2]=1) or (rodillo[2,2]=1) or (rodillo[3,2]=1) or (rodillo[1,3]=1) or (rodillo[2,3]=1) or (rodillo[3,3]=1);
+ Mostrar<<'🍌';
+ caso (rodillo[1,1]=2) or (rodillo[2,1]=2) or (rodillo[3,1]=2) or (rodillo[1,2]=2) or (rodillo[2,2]=2) or (rodillo[3,2]=2) or (rodillo[1,3]=2) or (rodillo[2,3]=2) or (rodillo[3,3]=2);
+ Mostrar<<'🍒' ;
+ caso (rodillo[1,1]=3) or (rodillo[2,1]=3) or (rodillo[3,1]=3) or (rodillo[1,2]=3) or (rodillo[2,2]=3) or (rodillo[3,2]=3) or (rodillo[1,3]=3) or (rodillo[2,3]=3) or (rodillo[3,3]=3);
+ Mostrar<<'🥭' ;
+ caso (rodillo[1,1]=4) or (rodillo[2,1]=4) or (rodillo[3,1]=4) or (rodillo[1,2]=4) or (rodillo[2,2]=4) or (rodillo[3,2]=4) or (rodillo[1,3]=4) or (rodillo[2,3]=4) or (rodillo[3,3]=4);
+ Mostrar<<'🍍' ;
+ Otro caso
+  (rodillo[1,1]=5) or (rodillo[2,1]=5) or (rodillo[3,1]=5) or (rodillo[1,2]=5) or (rodillo[2,2]=5) or (rodillo[3,2]=5) or (rodillo[1,3]=5) or (rodillo[2,3]=5) or (rodillo[3,3]=5);
+  Mostrar<<'🍋' ;
+Fin caso
+fin procedimiento
+
+Algoritmo tragamoneda
+
+Definir rodillo1 Como Entero
+Definir rodillo2 Como Entero
+Definir rodillo3 Como Entero
+Definir saldo_usuario Como Real
+Definir saldo_apostado Como Real
+Definir saldo_restante Como Real
+Definir r Como entero
+definir premio_giro como real
+rodillo[3,3]:entero
+figuras[5] = ['🍌', '🍒', '🥭', '🍍', '🍋']
+
+  Mostrar<< ” -------------------------------------------------------”;
+  Mostrar<< ”|            BIENVENIDO A $FRUIT MONEY$                 |";
+  Mostrar<< "|                     REGLAS                            |";
+  Mostrar<< "|Si tres figuras son iguales entonces usted gana 5x     |";
+  Mostrar<< "|Si dos figuras son iguales entonces usted gana 2x      |";
+  Mostrar<< "|Si tres figuras son diferentes entonces usted pierde   |";
+  Mostrar<< ”--------------------------------------------------------”;
+  saldo_usuario=menu_juegos(casino_nombres,casino_saldos_fichas, casino_stock_premios, casino_valor_premios, casino_premios, id_usuario);
+  Mostrar <<"Querido usuario usted tiene"saldo_usuario,"fichas disponibles";
+ 
+  Repetir
+
+  Mostrar<< ” ----------------------------------------------------”;             
+  Mostrar<< "|           ¿Cuanto saldo desea apostar?             |";
+  Mostrar<< "|    Montos de apuesta: min:1 ficha, max:50 fichas   |";
+  Mostrar<< ” ----------------------------------------------------”;
+  Leer>> saldo_apostado;
+  
+  Mientras saldo_apostado<1 or saldo_apostado>50 Hacer; //validación de saldo apostado
+        Mostrar<<"Error en monto apostado, vuelva a intentar";
+		Leer >>saldo_apostado;
+  FinMientras
+
+  Mientras saldo_apostado>saldo_usuario //validación de saldo apostado
+        Mostrar<<"No posee suficientes fondos para seguir jugando, recargue por favor"
+		Leer>>saldo_usuario;
+  FinMientras
+
+ Mostrar<<"Comencemos";
+ 
+//asignar numeros
+	rodillo[1][1]=aleatorio(1,5);
+	rodillo[2][1]=aleatorio(1,5);
+	rodillo[3][1]=aleatorio(1,5);
+ 
+	rodillo[1][2]=aleatorio(1,5);
+	rodillo[2][2]=aleatorio(1,5);
+	rodillo[3][2]=aleatorio(1,5);
+ 
+	rodillo[3][1]=aleatorio(1,5);
+	rodillo[3][2]=aleatorio(1,5);
+	rodillo[3][3]=aleatorio(1,5);
+	
+premio_giro=premio_maquinita(rodillo[3,3],saldo_apostado);
+
+  Para I=1 hasta I=3 hacer;
+	Para J=1 hasta J=3 hacer;
+  Mostrar<<”---------------------------”;             
+  Mostrar<<"|TRAGAMONEDAS $FRUIT MONEY$|";
+  Mostrar<<”---------------------------”;    
+  Mostrar<<"|",rodillo [I,J],"|";
+	fin para
+	mostrar<<"---";
+  fin para  
+       
+  Mostrar<<"Resultados de la apuesta:usted gana",premio giro,"fichas";
+  saldo_restante=(saldo_usuario-saldo_apostado)+premio_giro;
+
+  Si (saldo_restante<1) entonces;
+     Mostrar<<”Su saldo es insuficiente para seguir jugando, ¡recargue por favor!”;
+     Mostrar<<”Hasta pronto, ¡Gracias por jugar!”;
+	 R=2;
+	  sino
+     Mostrar <<"Desea realizar otra apuesta, 1:Si, 2:no";
+     Leer>>R;
+   
+    Mientras R<1 or R>2 hacer;
+       Mostrar<<”Error en respuesta enviada, solo puede seleccionar 1 o 2”;
+  Finsi
+
+ Hasta Que R=2
+ Fin repetir
+Mostrar<<”Hasta pronto, ¡Gracias por jugar!”;
