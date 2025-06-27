@@ -1,4 +1,4 @@
-Procedimiento Restaurante(E/S: Opcion_Restaurante: Entero);
+Procedimiento Restaurante(E/S: Opcion_Restaurante: Entero, i_restaurante: Entero, restaurante_ingredientes[]: Cadena, restaurante_ingredientes_cantidades[]: Entero, restaurante_contadores[]: Entero);
 Inicio
   Var R = 0: Entero;
   Repetir
