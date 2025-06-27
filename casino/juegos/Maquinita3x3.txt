@@ -149,7 +149,7 @@ Inicio
       Fin_Mientras
     Fin_Si
     
-    Hasta Que R = 2;
+    Hasta (R = 2);
   Fin_Repetir
   Mostrar << "Hasta pronto, ¡Gracias por jugar!";
 Fin_Procedimiento
