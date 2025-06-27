@@ -1,32 +1,60 @@
 Algoritmo Resort
 
 Inicio
-  // Base de datos del casino,hotel
+  // Base de datos del Restaurante
   
-  var casino_premios[100][10]: Booleano;
-  var casino_i, j_casino: Entero;
-  var casino_nombres[100], casino_contrasenas[100]: Cadena;
-  var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios: Entero;
-  clientes[contador_cliente]:entero
-  clientes_hotel=0
-  cantidad_habitacion1=250
-  cantidad_habitacion2=100
-  cantidad_habitacion3=80
-  cantidad_habitacion4=70
-  id_cliente:entero
-  dias_hospedaje:entero
-  telefono:entero
-  edad_usuario:entero
-  cedula:entero
-  validacion_final:entero
-  id_ingresado:entero
-  total_pagar_habitacion:real
-  fecha_llegada:cadena
-  fecha_salida:cadena
-  nombre_apellido:Cadena
-  email:cadena
+  Var i_restaurante: Entero;
+  Var restaurante_ingredientes[]: Cadena;
+  Var restaurante_ingredientes_cantidades[]: Entero;
+  Var restaurante_contadores[]
   
+  // Base de datos del Hotel
   
+  Var clientes[contador_cliente]: Entero; // <-- Variable no declarada
+  Var clientes_hotel = 0;
+  Var cantidad_habitacion1 = 250;
+  Var cantidad_habitacion2 = 100;
+  Var cantidad_habitacion3 = 80;
+  Var cantidad_habitacion4 = 70;
+  Var id_cliente: Entero;
+  Var dias_hospedaje: Entero;
+  Var telefono: Entero;
+  Var edad_usuario: Entero;
+  Var cedula: Entero;
+  Var validacion_final: Entero;
+  Var id_ingresado: Entero;
+  Var total_pagar_habitacion: real;
+  Var fecha_llegada: Cadena;
+  Var fecha_salida: Cadena;
+  Var nombre_apellido: Cadena;
+  Var email: Cadena;
+
+  // Base de datos del Casino
+  
+  Var casino_premios[100][10]: Booleano;
+  Var casino_i, j_casino: Entero;
+  Var casino_nombres[100], casino_contrasenas[100]: Cadena;
+  Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios: Entero;
+  
+  // Inicializando DB del Restaurante
+  
+  restaurante_ingredientes[1] = "panqueques"
+  restaurante_ingredientes[2] = "patatas"
+  restaurante_ingredientes[3] = "huevos"
+  restaurante_ingredientes[4] = "tocineta"
+  restaurante_ingredientes[5] = "pan"
+  restaurante_ingredientes[6] = "jamon"
+  restaurante_ingredientes[7] = "waffles"
+  restaurante_ingredientes[8] = "cachapas"
+  restaurante_ingredientes[9] = "empanadas"
+
+  restaurante_ingredientes_cantidades[1] = 40
+  restaurante_ingredientes_cantidades[2] = 30
+  restaurante_ingredientes_cantidades[3] = 20
+  restaurante_ingredientes_cantidades[4] = 60
+
+  // Inicializando DB del Casino
+
   Para (j_casino = 1 Hasta j_casino = 10) Hacer;
     casino_stock_premios[j_casino] = 10;
     casino_valor_premios[j_casino] = 0;

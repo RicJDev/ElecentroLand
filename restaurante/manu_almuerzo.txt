@@ -11,7 +11,7 @@ Inicio
   Opc4 = 25;
   Mostrar << "Opción 5: Pasta Ex´ reprobada y de bebida Estracto de Picha; 19$";
   Opc5 = 19;
-  Mostrar <  < "Opción 6: Ensalada de Guanábana a la APK y de bebida Whisky Maravilla; 27$";
+  Mostrar << "Opción 6: Ensalada de Guanábana a la APK y de bebida Whisky Maravilla; 27$";
   Opc6 = 27;
   Leer >> Opc_menu_Almuerzo;
   

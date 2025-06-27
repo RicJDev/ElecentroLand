@@ -1,10 +1,9 @@
-Algoritmo Restaurante
-
+Procedimiento Restaurante(E/S: /*Base de datos*/);
 Inicio
   Var opc: Entero;
   
   // Desayuno
-  Opcion: Entero;
+  opcion: Entero;
   Desayuno, Cuenta_Pan = 0, Desa_Pan = 0, Cuenta_Pat_Hue_Toci = 0, Desa_Pat_Hue_Toci = 0, Cuenta_Sand = 0, Sandwiches = 0, Cuenta_Cachapas = 0, Cachapas = 0, Cuenta_Empanadas = 0, Empanadas = 0: Entero;
   Cantidad_Panqueques = 40, Cantidad_Patatas = 30, Cantidad_Huevos = 20, Cantidad_Jamon = 40, Cantidad_Pan = 50, Cantidad_Cachapas = 30, Cantidad_Empanadas = 40, Cantidad_Waffles = 20, Cantidad: Entero;
   
@@ -21,7 +20,7 @@ Inicio
   Var opc, personas_agenda, opc_combo, contC1 = 0, contC2 = 0, contC3 = 0, contC4 = 0, contC5 = 0, contC6 = 0: Entero, Cuenta: Real;
   
   Repetir
-    bienvenida(Opcion);
+    bienvenida(opcion);
     Mostrar << bienvenida;
     
     Si (Opcion = 1) Entonces;
@@ -87,7 +86,7 @@ Inicio
         Repetir
           menu_cena();
           Mostrar << menu_cena;
-
+          
           Mostrar << "Estimado cliente, su cuenta asciende a: ", cuenta;
           Mostrar << "¿Desea ordenar otro combo?, 1: Sí, 0: No ";
           Leer >> R;
@@ -204,4 +203,4 @@ Inicio
     
     Hasta (R = 4);
   Fin_Repetir
-Fin
+Fin_Procedimiento

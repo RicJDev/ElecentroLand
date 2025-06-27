@@ -1,5 +1,7 @@
-Procedimiento menu_desayuno(E/S: Desayuno, Cantidad_Panqueques);
+Procedimiento menu_desayuno(E/S: Cantidad_Panqueques);
 Inicio
+  var Desayuno: Entero;
+
   Mostrar << "Seleccione el desayuno de su preferencia";
   Mostrar << "1: Panqueques con miel 5$";
   Mostrar << "2: Patatas con huevo y tocineta 3$";
