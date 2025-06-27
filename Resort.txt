@@ -62,7 +62,18 @@ Inicio
   restaurante_ingredientes[21] = "ensalada guanábana a la apk";
   restaurante_ingredientes[22] = "whisky maravilla";
 
-
+  restaurante_ingredientes[23] = "sushi";
+  restaurante_ingredientes[24] = "soya";
+  restaurante_ingredientes[25] = "coca cola";
+  restaurante_ingredientes[26] = "hamburguesa"; // pan de hamburguesas
+  restaurante_ingredientes[27] = "pollo";
+  restaurante_ingredientes[28] = "papas a la francesa";
+  restaurante_ingredientes[29] = "carne";
+  restaurante_ingredientes[30] = "justy";
+  restaurante_ingredientes[31] = "pepsi";
+  restaurante_ingredientes[32] = "pizza";
+  restaurante_ingredientes[33] = "pepperoni";
+  restaurante_ingredientes[34] = "queso";
 
   restaurante_ingredientes_cantidades[1] = 40;
   restaurante_ingredientes_cantidades[2] = 30;
