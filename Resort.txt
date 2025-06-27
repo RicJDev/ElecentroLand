@@ -6,14 +6,14 @@ Inicio
   Var i_restaurante: Entero;
   Var restaurante_ingredientes[]: Cadena;
   Var restaurante_ingredientes_cantidades[]: Entero;
-  Var restaurante_contadores[]
+  Var restaurante_contadores[];
 
   // Base de datos del Bar
 
   Var i_taberna: Entero;
   Var taberna_ingredientes[]: Cadena;
   Var taberna_ingredientes_cantidades[]: Entero;
-  Var taberna_contadores[]
+  Var taberna_contadores[];
 
   // Base de datos del Hotel
   
