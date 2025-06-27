@@ -79,6 +79,38 @@ Inicio
   restaurante_ingredientes_cantidades[2] = 30;
   restaurante_ingredientes_cantidades[3] = 20;
   restaurante_ingredientes_cantidades[4] = 60;
+  restaurante_ingredientes_cantidades[5] = 50;
+  restaurante_ingredientes_cantidades[6] = 55;
+  restaurante_ingredientes_cantidades[7] = 45;
+  restaurante_ingredientes_cantidades[8] = 35;
+  restaurante_ingredientes_cantidades[9] = 25;
+
+  restaurante_ingredientes_cantidades[10] = 65;
+  restaurante_ingredientes_cantidades[11] = 70;
+  restaurante_ingredientes_cantidades[12] = 50;
+  restaurante_ingredientes_cantidades[13] = 40;
+  restaurante_ingredientes_cantidades[14] = 45;
+  restaurante_ingredientes_cantidades[15] = 30;
+  restaurante_ingredientes_cantidades[16] = 35;
+  restaurante_ingredientes_cantidades[17] = 25;
+  restaurante_ingredientes_cantidades[18] = 30;
+  restaurante_ingredientes_cantidades[19] = 60;
+  restaurante_ingredientes_cantidades[20] = 65;
+  restaurante_ingredientes_cantidades[21] = 50;
+  restaurante_ingredientes_cantidades[22] = 40;
+
+  restaurante_ingredientes_cantidades[23] = 80;
+  restaurante_ingredientes_cantidades[24] = 75;
+  restaurante_ingredientes_cantidades[25] = 45;
+  restaurante_ingredientes_cantidades[26] = 55;
+  restaurante_ingredientes_cantidades[27] = 30;
+  restaurante_ingredientes_cantidades[28] = 35;
+  restaurante_ingredientes_cantidades[29] = 25;
+  restaurante_ingredientes_cantidades[30] = 20;
+  restaurante_ingredientes_cantidades[31] = 50;
+  restaurante_ingredientes_cantidades[32] = 45;
+  restaurante_ingredientes_cantidades[33] = 40;
+  restaurante_ingredientes_cantidades[34] = 55;
 
   // Inicializando DB del Casino
 
