@@ -7,13 +7,13 @@ Inicio
     
     En_Caso (Opcion_Restaurante > 0) Sea;
       Caso (Opcion_Restaurante = 1);
-        Desayuno(Cantidad, Cuenta_Cliente);
+        Desayuno(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[], restaurante_ingredientes_cantidades[], restaurante_contadores[]);
         Mostrar << Desayuno;
       Caso (Opcion_Restaurante = 2);
-        Almuerzo(Cantidad, Cuenta_Cliente);
+        Almuerzo(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[], restaurante_ingredientes_cantidades[], restaurante_contadores[]);
         Mostrar << Almuerzo;
       Caso (Opcion_Restaurante = 3);
-        Cena(Cantidad, Cuenta_Cliente);
+        Cena(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[], restaurante_ingredientes_cantidades[], restaurante_contadores[]);
         Mostrar << Cena;
       Otro_Caso
         R = 4;
