@@ -6,16 +6,16 @@ Inicio
     Mostrar << Bienvenida;
     En caso (Opcion_Restaurante > 0) sea;
       Caso (Opcion_Restaurante = 1);
-        Desayuno (Cantidad, Cuenta_Cliente);
-		    Mostrar << Desayuno;
-	    Caso (Opcion_Restaurante = 2);
-        Almuerzo (Cantidad, Cuenta_Cliente);
-		    Mostrar << Almuerzo;
-	    Caso (Opcion_Restaurante = 3);
-        Cena (Cantidad, Cuenta_Cliente);
-		    Mostrar << Cena;
-	    Otro  caso
-		    R = 4;
+          Desayuno (Cantidad, Cuenta_Cliente);
+	  Mostrar << Desayuno;
+      Caso (Opcion_Restaurante = 2);
+          Almuerzo (Cantidad, Cuenta_Cliente);
+          Mostrar << Almuerzo;
+     Caso (Opcion_Restaurante = 3);
+          Cena (Cantidad, Cuenta_Cliente);
+          Mostrar << Cena;
+     Otro  caso
+	R = 4;
   Fin_Caso
   Hasta (R = 4);
   Fin_Repetir
