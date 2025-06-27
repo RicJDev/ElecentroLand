@@ -1,118 +1,135 @@
-Procedimiento Almuerzo (E/S: Cantidad: Entero, Cuenta_Cliente: Real);
+Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente: Real);
 Inicio
-    Var Opc_menu_Almuerzo, Opc1, Opc2, Opc3, Opc4, Opc5, Opc6 Opc_Selec1 = 0, Dinero_Opc1 = 0, Opc_Selec2 = 0, Dinero_Opc2 = 0, Opc_Selec3 = 0, Dinero_Opc3 = 0, Opc_Selec4 = 0, Dinero_Opc4 = 0, Opc_Selec5 = 0, Dinero_Opc5 = 0, Opc_Selec6 = 0, Dinero_Opc6 = 0, Cantidad_Cesar = 40, Vino_Blanco = 40, Cantidad_Cebolla = 40, Cantidad_Tomate = 40, Vinotinto = 40, Cantidad_Bistec_Res = 40, Bourbon = 40, Cantidad_Chuletas = 40, John_Collins = 40, Cantidad_Pasta = 40, Estracto_Picha = 40, Cantidad_Guanábana = 40, Whisky_Maravilla = 40, Dinero_Todas_Opcs = 0: Entero;
-R: Booleano;
-Repetir
-  Mostrar <<”Este es nuestro menú de Almuerzo:”;
-  Mostrar <<”Opción 1: Ensalada Cesar y de bebida Vino Blanco; 32$”;
-  Opc1 = 32;
-  Mostrar <<”Opción 2: Sopa de Cebolla y tomate, y de bebida Vino Tinto; 25$”;
-  Opc2 = 25;
-  Mostrar <<”Opción 3: Bistec de Carne de Res y de bebida Bourbon; 22$”;
-  Opc3 = 22;
-  Mostrar <<”Opción 4: Chuletas de Cerdo a la BBQ y de bebida John Collins; 25$”;
-  Opc4 = 25;
-  Mostrar <<”Opción 5: Pasta Ex´ reprobada y de bebida Estracto de Picha; 19$”;
-  Opc5 = 19;
-  Mostrar< <”Opción 6: Ensalada de Guanábana a la APK y de bebida Whisky Maravilla; 27$”;
-  Opc6 = 27;
-  Leer >> Opc_menu_Almuerzo;
-  Mientras (Opc_menu_Almuerzo < 1) or (Opc_menu_Almuerzo > 6) hacer;
-  Mostrar<<”Ha seleccionado una opción fuera del menú, intente nuevamente”;
-          Leer >> Opc_menu_Almuerzo; 
-  Fin_Mientras
-  En caso (Opc_menu_Almuerzo > 0) sea;
-    Caso (Opc_menu_Almuerzo = 1 And Cantidad_Cesar > 0 And Vino_Blanco > 0);
-           Mostrar << ”¿Cuántas ordenó?”;
-           Leer >> Cantidad;
-           Mientras (Cantidad > Cantidad_Cesar Or Cantidad > Vino_Blanco);
-              Mostrar << ”Solo hay “, Cantidad_Cesar, “Ensaladas Cesar y “, Vino_Blanco, “Botellas de Vino Blanco disponibles”;
-              Leer >> Cantidad;
-           Fin_Mientras
-           Opc_Selec1 = Opc_Selec1 + 1;
-           Cuenta_Cliente = Cuenta Cliente + (Cantidad * Opc1);
-           Dinero_Opc1 = Dinero_Opc1 + (Cantidad * Opc1);
-           Cantidad_Cesar = Cantidad_Cesar – Cantidad;
-           Vino_Blanco = Vino_Blanco – Cantidad;
-           Mostrar<<”Usted selecciono la Opción 1 (Ensalada Cesar y de bebida Vino Blanco) con un precio de 32$”;
-     Caso (Opc_menu_Almuerzo = 2);
-           Mostrar <<”¿Cuántas ordenó?”;
-           Leer >> Cantidad;
-           Mientras (Cantidad > Cantidad_Cebolla Or Cantidad_Tomate Or Cantidad > Vinotinto);
-              Mostrar << ”Solo hay “, Cantidad_Cebolla, “Cebollas,  “, Cantidad_Tomate, “Tomates y ”, Vinotinto, “Botellas de Vinotinto disponibles”;
-              Leer >> Cantidad;
-           Fin_Mientras
-           Opc_Selec2 = Opc_Selec2+ 1;
-  	       Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc2);
-           Dinero_Opc2 = Dinero_Opc2 + (Cantidad * Opc2);
-           Cantidad_Cebolla = Cantidad_Cebolla – Cantidad;
-           Cantidad_Tomate = Cantidad_Tomate – Cantidad;
-           Vinotinto = Vinotinto – Cantidad;
-           Mostrar << ”Usted selecciono la Opción 2 (Sopa de Cebolla y tomate, y de bebida Vino Tinto)  con un precio de 25$”;
+  Var Opc_menu_Almuerzo, Opc1, Opc2, Opc3, Opc4, Opc5, Opc6 Opc_Selec1 = 0, Dinero_Opc1 = 0, Opc_Selec2 = 0, Dinero_Opc2 = 0, Opc_Selec3 = 0, Dinero_Opc3 = 0, Opc_Selec4 = 0, Dinero_Opc4 = 0, Opc_Selec5 = 0, Dinero_Opc5 = 0, Opc_Selec6 = 0, Dinero_Opc6 = 0, Cantidad_Cesar = 40, Vino_Blanco = 40, Cantidad_Cebolla = 40, Cantidad_Tomate = 40, Vinotinto = 40, Cantidad_Bistec_Res = 40, Bourbon = 40, Cantidad_Chuletas = 40, John_Collins = 40, Cantidad_Pasta = 40, Estracto_Picha = 40, Cantidad_Guanábana = 40, Whisky_Maravilla = 40, Dinero_Todas_Opcs = 0: Entero;
+  R: Booleano;
+  
+  Repetir
+    Mostrar << "Este es nuestro menú de Almuerzo:";
+    Mostrar << "Opción 1: Ensalada Cesar y de bebida Vino Blanco; 32$";
+    Opc1 = 32;
+    Mostrar << "Opción 2: Sopa de Cebolla y tomate, y de bebida Vino Tinto; 25$";
+    Opc2 = 25;
+    Mostrar << "Opción 3: Bistec de Carne de Res y de bebida Bourbon; 22$";
+    Opc3 = 22;
+    Mostrar << "Opción 4: Chuletas de Cerdo a la BBQ y de bebida John Collins; 25$";
+    Opc4 = 25;
+    Mostrar << "Opción 5: Pasta Ex´ reprobada y de bebida Estracto de Picha; 19$";
+    Opc5 = 19;
+    Mostrar <  < "Opción 6: Ensalada de Guanábana a la APK y de bebida Whisky Maravilla; 27$";
+    Opc6 = 27;
+    Leer >> Opc_menu_Almuerzo;
+    
+    Mientras (Opc_menu_Almuerzo < 1) OR (Opc_menu_Almuerzo > 6) Hacer;
+      Mostrar << "Ha seleccionado una opción fuera del menú, intente nuevamente";
+      Leer >> Opc_menu_Almuerzo;
+    Fin_Mientras
+    
+    En_Caso (Opc_menu_Almuerzo > 0) Sea;
+      Caso (Opc_menu_Almuerzo = 1 AND Cantidad_Cesar > 0 AND Vino_Blanco > 0);
+        Mostrar << "¿Cuántas ordenó?";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Cesar OR Cantidad > Vino_Blanco) Hacer;
+          Mostrar << "Solo hay ", Cantidad_Cesar, "Ensaladas Cesar y ", Vino_Blanco, "Botellas de Vino Blanco disponibles";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Opc_Selec1 = Opc_Selec1 + 1;
+        Cuenta_Cliente = Cuenta Cliente + (Cantidad * Opc1);
+        Dinero_Opc1 = Dinero_Opc1 + (Cantidad * Opc1);
+        Cantidad_Cesar = Cantidad_Cesar – Cantidad;
+        Vino_Blanco = Vino_Blanco – Cantidad;
+        Mostrar << "Usted selecciono la Opción 1 (Ensalada Cesar y de bebida Vino Blanco) con un precio de 32$";
+      Caso (Opc_menu_Almuerzo = 2);
+        Mostrar << "¿Cuántas ordenó?";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Cebolla OR Cantidad_Tomate OR Cantidad > Vinotinto) Hacer;
+          Mostrar << "Solo hay ", Cantidad_Cebolla, "Cebollas,  ", Cantidad_Tomate, "Tomates y ", Vinotinto, "Botellas de Vinotinto disponibles";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Opc_Selec2 = Opc_Selec2 + 1;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc2);
+        Dinero_Opc2 = Dinero_Opc2 + (Cantidad * Opc2);
+        Cantidad_Cebolla = Cantidad_Cebolla – Cantidad;
+        Cantidad_Tomate = Cantidad_Tomate – Cantidad;
+        Vinotinto = Vinotinto – Cantidad;
+        Mostrar << "Usted selecciono la Opción 2 (Sopa de Cebolla y tomate, y de bebida Vino Tinto)  con un precio de 25$";
       Caso (Opc_menu_Almuerzo = 3);
-           Mostrar <<”¿Cuántas ordenó?”;
-           Leer >> Cantidad;
-           Mientras (Cantidad > Cantidad_Bistec_Res Or Cantidad > Bourbon);
-              Mostrar << ”Solo hay “, Cantidad_Bistec_Res, “Bistecs de Res y “, Bourbon, “Botellas de Bourbon disponibles”;
-              Leer >> Cantidad;
-           Fin_Mientras
-           Opc_Selec3 = Opc_Selec 3+ 1;
-  	       Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc3);
-           Dinero_Opc3 = Dinero_Opc3 + (Cantidad * Opc3);
-           Cantidad_Bistec_Res = Cantidad_Bistec_Res – Cantidad;
-           Bourbon = Bourbon – Cantidad;
-           Mostrar <<”Usted selecciono la Opción 3 (Bistec de Carne de Res y de bebida Bourbon) con un precio de 22$”;
+        Mostrar << "¿Cuántas ordenó?";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Bistec_Res OR Cantidad > Bourbon) Hacer;
+          Mostrar << "Solo hay ", Cantidad_Bistec_Res, "Bistecs de Res y ", Bourbon, "Botellas de Bourbon disponibles";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Opc_Selec3 = Opc_Selec 3 + 1;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc3);
+        Dinero_Opc3 = Dinero_Opc3 + (Cantidad * Opc3);
+        Cantidad_Bistec_Res = Cantidad_Bistec_Res – Cantidad;
+        Bourbon = Bourbon – Cantidad;
+        Mostrar << "Usted selecciono la Opción 3 (Bistec de Carne de Res y de bebida Bourbon) con un precio de 22$";
       Caso (Opc_menu_Almuerzo = 4);
-           Mostrar <<”¿Cuántas ordenó?”;
-           Leer >> Cantidad;
-           Mientras (Cantidad > Cantidad_Chuletas Or Cantidad > John_Collins);
-              Mostrar << ”Solo hay “, Cantidad_Chuletas, “Chuletas y “, John_Collins, “Botellas de John Collins disponibles”;
-              Leer >> Cantidad;
-           Fin_Mientras
-           Opc_Selec4 = Opc_Selec 4+ 1;
-  	       Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc4);
-           Dinero_Opc4= Dinero_Opc4 + (Cantidad * Opc4);
-           Cantidad_Chuletas = Cantidad_Chuletas – Cantidad;
-           John_Collins = John_Collins – Cantidad;
-           Mostrar <<”Usted selecciono la Opción 4 (Chuletas de Cerdo a la BBQ y de bebida John Collins) con un precio de 25$”;
+        Mostrar << "¿Cuántas ordenó?";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Chuletas OR Cantidad > John_Collins) Hacer;
+          Mostrar << "Solo hay ", Cantidad_Chuletas, "Chuletas y ", John_Collins, "Botellas de John Collins disponibles";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Opc_Selec4 = Opc_Selec 4 + 1;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc4);
+        Dinero_Opc4 = Dinero_Opc4 + (Cantidad * Opc4);
+        Cantidad_Chuletas = Cantidad_Chuletas – Cantidad;
+        John_Collins = John_Collins – Cantidad;
+        Mostrar << "Usted selecciono la Opción 4 (Chuletas de Cerdo a la BBQ y de bebida John Collins) con un precio de 25$";
       Caso (Opc_menu_Almuerzo = 5);
-           Mostrar <<”¿Cuántas ordenó?”;
-           Leer >> Cantidad;
-           Mientras (Cantidad > Cantidad_Pasta Or Cantidad > Estracto_Picha);
-             Mostrar <<”Solo hay “, Cantidad_Pasta, “Pastas Ex’ Reprobada y “, Estracto_Picha, “Botellas de Estracto de Picha disponibles”;
-             Leer >> Cantidad;
-           Fin_Mientras
-           Opc_Selec5 = Opc_Selec 5+ 1;
-           Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc5);
-           Dinero_Opc5 = Dinero_Opc5 + (Cantidad * Opc5);
-           Cantidad_Pasta = Cantidad_Pasta – Cantidad;
-           Estracto_Picha = Estracto_Picha – Cantidad;
-           Mostrar <<”Usted selecciono la Opción 5 (Pasta Ex´ reprobada y de bebida Estracto de Picha) con un precio de 19$”;
-      Otro Caso
-           Mostrar <<”¿Cuántas ordenó?”;
-           Leer >> Cantidad;
-           Mientras (Cantidad > Cantidad_Guanábana Or Cantidad > Whisky_Maravilla);
-              Mostrar <<”Solo hay “, Cantidad_Guanábana, “Ensaladas de Guanábana a la APK y “, Whisky_Maravilla, “Botellas de Whisky Maravilla disponibles”;
-              Leer >> Cantidad;
-           Fin_Mientras
-           Opc_Selec6 = Opc_Selec6 + 1;
-  	       Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc6);
-           Dinero_Opc6 = Dinero_Opc6 + (Cantidad * Opc6);
-           Cantidad_Guanábana = Cantidad_Guanábana – Cantidad;
-           Whisky_Maravilla = Whisky_Maravilla – Cantidad;
-           Mostrar <<”Usted seleccionó la Opción 6 (Ensalada de Guanábana a la APK y de bebida Whisky Maravilla) con un precio de 27$”;
-      Fin_Caso
-      Mostrar<<”Desea añadir algo más a su menú?, 1: Sí, 0: No ”;
-      Leer>>R;
-Hasta (R = 0);
-Fin_Repetir
-Dinero_Todas_Opcs = Dinero_Opc1 + Dinero_Opc2 + Dinero_Opc3 + Dinero_Opc4 + Dinero_Opc5 + Dinero_Opc6; 
-Mostrar << ”Este es el dinero acumulado por cada una de las opciones”;
-Mostrar << ”Opcion 1:”, Dinero_Opc1;
-Mostrar << ”Opcion 2:”, Dinero_Opc2;
-Mostrar << ”Opcion 3:”, Dinero_Opc3;
-Mostrar << ”Opcion 4:”, Dinero_Opc4;
-Mostrar << ”Opcion 5:”, Dinero_Opc5;
-Mostrar << ”Opcion 6:”, Dinero_Opc6;
-Mostrar << ”Para un total de todas las opciones de: ”, Dinero_Todas_Opcs;
+        Mostrar << "¿Cuántas ordenó?";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Pasta OR Cantidad > Estracto_Picha) Hacer;
+          Mostrar << "Solo hay ", Cantidad_Pasta, "Pastas Ex’ Reprobada y ", Estracto_Picha, "Botellas de Estracto de Picha disponibles";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Opc_Selec5 = Opc_Selec 5 + 1;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc5);
+        Dinero_Opc5 = Dinero_Opc5 + (Cantidad * Opc5);
+        Cantidad_Pasta = Cantidad_Pasta – Cantidad;
+        Estracto_Picha = Estracto_Picha – Cantidad;
+        Mostrar << "Usted selecciono la Opción 5 (Pasta Ex´ reprobada y de bebida Estracto de Picha) con un precio de 19$";
+      Otro_Caso
+        Mostrar << "¿Cuántas ordenó?";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Guanábana OR Cantidad > Whisky_Maravilla) Hacer;
+          Mostrar << "Solo hay ", Cantidad_Guanábana, "Ensaladas de Guanábana a la APK y ", Whisky_Maravilla, "Botellas de Whisky Maravilla disponibles";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Opc_Selec6 = Opc_Selec6 + 1;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc6);
+        Dinero_Opc6 = Dinero_Opc6 + (Cantidad * Opc6);
+        Cantidad_Guanábana = Cantidad_Guanábana – Cantidad;
+        Whisky_Maravilla = Whisky_Maravilla – Cantidad;
+        Mostrar << "Usted seleccionó la Opción 6 (Ensalada de Guanábana a la APK y de bebida Whisky Maravilla) con un precio de 27$";
+    Fin_Caso
+    
+    Mostrar << "Desea añadir algo más a su menú?, 1: Sí, 0: No ";
+    Leer >> R;
+    Hasta (R = 0);
+  Fin_Repetir
+  
+  Dinero_Todas_Opcs = Dinero_Opc1 + Dinero_Opc2 + Dinero_Opc3 + Dinero_Opc4 + Dinero_Opc5 + Dinero_Opc6;
+  Mostrar << "Este es el dinero acumulado por cada una de las opciones";
+  Mostrar << "Opcion 1:", Dinero_Opc1;
+  Mostrar << "Opcion 2:", Dinero_Opc2;
+  Mostrar << "Opcion 3:", Dinero_Opc3;
+  Mostrar << "Opcion 4:", Dinero_Opc4;
+  Mostrar << "Opcion 5:", Dinero_Opc5;
+  Mostrar << "Opcion 6:", Dinero_Opc6;
+  Mostrar << "Para un total de todas las opciones de: ", Dinero_Todas_Opcs;
 Fin_Procedimiento
