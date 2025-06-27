@@ -1,4 +1,4 @@
-Procedimiento Desayuno(E/S: Cantidad: Entero, Cuenta_Cliente: Real);
+Procedimiento Desayuno(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[]: Cadena, restaurante_ingredientes_cantidades[]: Entero, restaurante_contadores[]: Entero);
 Inicio
   Var Cantidad_Panqueques = 40, Desa_Pan = 0, Cantidad_Patatas = 40, Cantidad_Huevos = 40, Cantidad_Tocineta = 40, Desa_Pat_Hue_Toci = 0, Cantidad_Pan = 40, Cantidad_Jamon, Sandwiches = 0, Cantidad_Waffles = 40, Waffles = 0, Cantidad_Cachapas = 40, Cachapas = 0, Cantidad_Empanadas = 40, Empanadas = 0: Entero;
   R: Booleano;
