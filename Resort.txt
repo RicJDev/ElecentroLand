@@ -38,22 +38,34 @@ Inicio
   
   // Inicializando DB del Restaurante
   
-  restaurante_ingredientes[1] = "panqueques"
-  restaurante_ingredientes[2] = "patatas"
-  restaurante_ingredientes[3] = "huevos"
-  restaurante_ingredientes[4] = "tocineta"
-  restaurante_ingredientes[5] = "pan"
-  restaurante_ingredientes[6] = "jamon"
-  restaurante_ingredientes[7] = "waffles"
-  restaurante_ingredientes[8] = "cachapas"
-  restaurante_ingredientes[9] = "empanadas"
-  restaurante_ingredientes[10] = "ensalada cesar"
-  restaurante_ingredientes[11] = "vino blanco"
+  restaurante_ingredientes[1] = "panqueques";
+  restaurante_ingredientes[2] = "patatas";
+  restaurante_ingredientes[3] = "huevos";
+  restaurante_ingredientes[4] = "tocineta";
+  restaurante_ingredientes[5] = "pan";
+  restaurante_ingredientes[6] = "jamon";
+  restaurante_ingredientes[7] = "waffles";
+  restaurante_ingredientes[8] = "cachapas";
+  restaurante_ingredientes[9] = "empanadas";
 
-  restaurante_ingredientes_cantidades[1] = 40
-  restaurante_ingredientes_cantidades[2] = 30
-  restaurante_ingredientes_cantidades[3] = 20
-  restaurante_ingredientes_cantidades[4] = 60
+  restaurante_ingredientes[10] = "ensalada cesar";
+  restaurante_ingredientes[11] = "vino blanco";
+  restaurante_ingredientes[12] = "cebolla";
+  restaurante_ingredientes[13] = "tomate";
+  restaurante_ingredientes[14] = "vinotinto";
+  restaurante_ingredientes[15] = "bistec de carne de res";
+  restaurante_ingredientes[16] = "bourbon";
+  restaurante_ingredientes[17] = "chuletas de cerdo a la bbq";
+  restaurante_ingredientes[18] = "john collins";
+  restaurante_ingredientes[19] = "pasta ex' reprobada";
+  restaurante_ingredientes[20] = "estracto de picha";
+  restaurante_ingredientes[21] = "ensalada guanábana a la apk";
+  restaurante_ingredientes[22] = "whisky maravilla";
+
+  restaurante_ingredientes_cantidades[1] = 40;
+  restaurante_ingredientes_cantidades[2] = 30;
+  restaurante_ingredientes_cantidades[3] = 20;
+  restaurante_ingredientes_cantidades[4] = 60;
 
   // Inicializando DB del Casino
 
