@@ -1,0 +1,23 @@
+Procedimiento Bar (E/S: Opcion_Inv, Opcion_Clientes: Entero);
+Inicio
+Var Cuenta_Clientes = 0: Real, R: Booleano;
+Repetir
+	Mostrar<<”¡Bienvenido a nuestro Bar Elecentro Drinks!”;
+	Mostrar<<”¿Qué desea ordenar?”;
+  Mostrar<<”1: Alimentos”;
+  Mostrar<<”2: Bebidas”;
+  Leer>>Opcion_Inv;
+  Si (Opcion_Inv = 1) Entonces;
+    Alimentos (OpcionClientes, Cantidad_Papas = 40, Cantidad_Hamb = 40, Cantidad_Emp = 40, Cantidad_Sand = 40, Cuenta_Clientes = 0);
+  	Mostrar << Alimentos;
+  Sino
+    Si (Opcion_Inv = 2) Entonces;
+      Bebidas (OpcionClientes, Cantidad_Cerveza = 40, Cantidad_Vino = 40, Cantidad_Vodka = 40, Cantidad_Coctel = 40, Cuenta_Clientes = 0);
+  	  Mostrar << Bebidas;
+    Fin_Si
+  Fin_Si
+  Mostrar << “¿Desea ingresar otro producto? 1: Sí, 0: No”;
+  Leer >> R;
+Hasta (R = 0);
+Fin_Repetir
+Fin_Procedimiento

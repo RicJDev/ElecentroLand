@@ -1,0 +1,71 @@
+Procedimiento Alimentos (E/S: OpcionClientes: Entero, Cuenta_Cliente = 0: Real);
+Inicio
+	Var Cantidad_Papas = 40, Cantidad_Hamb = 40, Cantidad_Emp = 40, Cantidad_Sand = 40: Entero, Cuenta_Cliente = 0: Real;
+R: Booleano;
+Repetir
+Mostrar<<”Menú de Alimentos:”;
+Mostrar<<”1: Papas Fritas 1$ cada bolsa.”;
+Mostrar<<”2: Mini Hamburguesas 15$ cada bolsa.”;
+Mostrar<<”3: Empanadillas 10$ cada bolsa.”;
+Mostrar<<”4: Sándwiches 7$ cada bolsa.”;
+Leer>>OpcionClientes;
+Mientras (OpcionClientes < 1 or OpcionClientes > 4) Hacer;
+Mostrar<<”Error en datos, solo datos entre 1-4, intente nuevamente”;
+Leer>>OpcionClientes;
+Fin_Mientras
+En caso (OpcionClientes > 0) sea;
+Caso (OpcionClientes = 1 and Cantidad_Papas > 0);
+Mostrar<<”¿Cuántas unidades compró? “;
+Leer>>Cantidad;
+Mientras (Cantidad > Cantidad_Papas) Hacer;
+Mostrar<<”Error, solo hay “, Cantidad_Papas, “ bolsas de Papas Fritas disponibles”;
+Leer>>Cantidad;
+Fin_Mientras
+Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 1);
+Cantidad_Papas = Cantidad_Papas – Cantidad;
+Mostrar<<”Quedan disponibles “, Cantidad_Papas, “ bolsas de Papas Fritas”;
+Caso (OpcionClientes = 1 and Cantidad_Papas < 1);
+Mostrar<<”Se agotaron las bolsas de Papas Fritas.”;
+Caso (OpcionClientes = 2 and Cantidad_Hamb > 0);
+Mostrar<<”¿Cuántas unidades compró? “;
+Leer>>Cantidad;
+Mientras (Cantidad > Cantidad_Hamb) Hacer;
+Mostrar<<”Error, solo hay “, Cantidad_Hamb, “ bolsas de Mini Hamburguesas disponibles.”;
+Leer>>Cantidad;
+Fin_Mientras
+Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 15);
+Cantidad_Hamb = Cantidad_Hamb – Cantidad;
+Mostrar<<”Quedan disponibles “, Cantidad_Hamb, “ bolsas de Mini Hamburguesas.”;
+Caso (OpcionClientes = 2 and Cantidad_Hamb < 1);
+Mostrar<<”Se agotaron las bolsas de Mini Hamburguesas.”;
+Caso (OpcionClientes = 3 and Cantidad_Emp > 0);
+Mostrar<<”¿Cuántas unidades compró? “;
+Leer>>Cantidad;
+Mientras (Cantidad > Cantidad_Emp) Hacer;
+Mostrar<<”Error, solo hay “, Cantidad_Emp, “ bolsas de Empanadillas disponibles.”;
+Leer>>Cantidad;
+Fin_Mientras
+Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 10);
+Cantidad_Emp = Cantidad_Emp – Cantidad;
+Mostrar<<”Quedan disponibles “, Cantidad_Emp, “ bolsas de Empanadillas.”;
+Caso (OpcionClientes = 3 and Cantidad_Emp < 1);
+Mostrar<<”Se agotaron las bolsas de Empanadillas.”;
+Caso (OpcionClientes = 4 and Cantidad_Sand > 0);
+Mostrar<<”¿Cuántas unidades compró? “;
+Leer>>Cantidad;
+Mientras (Cantidad > Cantidad_Sand) Hacer;
+Mostrar<<”Error, solo hay “, Cantidad_Sand, “ bolsas de Sándwiches disponibles.”;
+Leer>>Cantidad;
+Fin_Mientras
+Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 7);
+Cantidad_Sand = Cantidad_Sand – Cantidad;	
+Mostrar<<”Quedan disponibles “, Cantidad_Sand, “ bolsas de Sándwiches.”;
+Otro caso
+Mostrar<<”Se agotaron las bolsas de Sándwiches.”;
+Fin_Caso
+Mostrar<<”La cuenta acumulada de los clientes es: “, Cuenta_Clientes, “$”;
+Mostrar<<”¿Los clientes consumieron otro producto más? 1: Sí, 0: No “;
+Leer>>R;
+Hasta (R = 0);
+Fin_Repetir
+Fin_Procedimiento
