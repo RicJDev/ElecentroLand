@@ -1,4 +1,4 @@
-Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente: Real);
+Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[]: Cadena, restaurante_ingredientes_cantidades[]: Entero, restaurante_contadores[]: Entero);
 Inicio
   Var Opc_menu_Almuerzo, Opc1, Opc2, Opc3, Opc4, Opc5, Opc6 Opc_Selec1 = 0, Dinero_Opc1 = 0, Opc_Selec2 = 0, Dinero_Opc2 = 0, Opc_Selec3 = 0, Dinero_Opc3 = 0, Opc_Selec4 = 0, Dinero_Opc4 = 0, Opc_Selec5 = 0, Dinero_Opc5 = 0, Opc_Selec6 = 0, Dinero_Opc6 = 0, Cantidad_Cesar = 40, Vino_Blanco = 40, Cantidad_Cebolla = 40, Cantidad_Tomate = 40, Vinotinto = 40, Cantidad_Bistec_Res = 40, Bourbon = 40, Cantidad_Chuletas = 40, John_Collins = 40, Cantidad_Pasta = 40, Estracto_Picha = 40, Cantidad_Guanábana = 40, Whisky_Maravilla = 40, Dinero_Todas_Opcs = 0: Entero;
   R: Booleano;
