@@ -10,7 +10,7 @@ Inicio
   
   // Base de datos del Hotel
   
-  Var clientes[contador_cliente]: Entero; // <-- Variable no declarada
+  Var clientes[contador_clientes]: Entero; // <-- Variable no declarada
   Var clientes_hotel = 0;
   Var cantidad_habitacion1 = 250;
   Var cantidad_habitacion2 = 100;
@@ -61,6 +61,8 @@ Inicio
   restaurante_ingredientes[20] = "estracto de picha";
   restaurante_ingredientes[21] = "ensalada guanábana a la apk";
   restaurante_ingredientes[22] = "whisky maravilla";
+
+
 
   restaurante_ingredientes_cantidades[1] = 40;
   restaurante_ingredientes_cantidades[2] = 30;
