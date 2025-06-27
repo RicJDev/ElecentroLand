@@ -9,6 +9,7 @@ Inicio
   Var restaurante_contadores[]
 
   // Base de datos del Bar
+
   Var i_taberna: Entero;
   Var taberna_ingredientes[]: Cadena;
   Var taberna_ingredientes_cantidades[]: Entero;
@@ -119,11 +120,27 @@ Inicio
   restaurante_ingredientes_cantidades[34] = 55;
 
   // Inicializando DB de la Taberna
-  taberna_ingredientes[1] = "";
 
+  taberna_ingredientes[1] = "papas fritas";
+  taberna_ingredientes[2] = "mini hamburguesas";
+  taberna_ingredientes[3] = "empanadillas";
+  taberna_ingredientes[4] = "sándwiches";
+
+  taberna_ingredientes[5] = "cerveza";
+  taberna_ingredientes[6] = "vinotinto";
+  taberna_ingredientes[7] = "vodka";
+  taberna_ingredientes[8] = "cóctel";
 
   taberna_ingredientes_cantidades[1] = 40;
-  
+  taberna_ingredientes_cantidades[2] = 35;
+  taberna_ingredientes_cantidades[3] = 30;
+  taberna_ingredientes_cantidades[4] = 45;
+
+  taberna_ingredientes_cantidades[5] = 50;
+  taberna_ingredientes_cantidades[6] = 40;
+  taberna_ingredientes_cantidades[7] = 30;
+  taberna_ingredientes_cantidades[8] = 35;
+
   // Inicializando DB del Casino
 
   Para (j_casino = 1 Hasta j_casino = 10) Hacer;
