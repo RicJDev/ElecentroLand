@@ -7,7 +7,13 @@ Inicio
   Var restaurante_ingredientes[]: Cadena;
   Var restaurante_ingredientes_cantidades[]: Entero;
   Var restaurante_contadores[]
-  
+
+  // Base de datos del Bar
+  Var i_taberna: Entero;
+  Var taberna_ingredientes[]: Cadena;
+  Var taberna_ingredientes_cantidades[]: Entero;
+  Var taberna_contadores[]
+
   // Base de datos del Hotel
   
   Var clientes[contador_clientes]: Entero; // <-- Variable no declarada
@@ -32,7 +38,7 @@ Inicio
   // Base de datos del Casino
   
   Var casino_premios[100][10]: Booleano;
-  Var casino_i, j_casino: Entero;
+  Var i_casino, j_casino: Entero;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios: Entero;
   
@@ -112,6 +118,12 @@ Inicio
   restaurante_ingredientes_cantidades[33] = 40;
   restaurante_ingredientes_cantidades[34] = 55;
 
+  // Inicializando DB de la Taberna
+  taberna_ingredientes[1] = "";
+
+
+  taberna_ingredientes_cantidades[1] = 40;
+  
   // Inicializando DB del Casino
 
   Para (j_casino = 1 Hasta j_casino = 10) Hacer;
