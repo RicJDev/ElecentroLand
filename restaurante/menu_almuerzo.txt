@@ -28,7 +28,7 @@ Inicio
         
         Repetir
           Si (ingrediente_1 > 0 AND ingrediente_2 > 0) Entonces;
-            Mostrar << "Un racion de Ensalada Cesar y una copa de bebida Vino Blanco. Serian, 32$"; // 11 y 10
+            Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serian, 32$"; // 11 y 10
             
             ingrediente_1 = ingrediente_1 - 1;
             ingrediente_2 = ingrediente_2 - 1;
