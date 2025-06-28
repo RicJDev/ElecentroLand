@@ -1,9 +1,10 @@
-Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[]: Cadena, restaurante_ingredientes_cantidades[]: Entero, restaurante_contadores[]: Entero);
+Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero);
 Inicio
   Var opcion: Entero;
   Var quieres_otra: Booleano;
   Var ingrediente_1, ingrediente_2, ingrediente_3: Entero;
-
+  Var precio: Real;
+  Var contador: Entero;
   Var R: Booleano;
   
   Repetir
@@ -28,13 +29,14 @@ Inicio
         
         Repetir
           Si (ingrediente_1 > 0 AND ingrediente_2 > 0) Entonces;
-            Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serian, 32$"; // 11 y 10
+            Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serían, 32$"; // 11 y 10
             
             ingrediente_1 = ingrediente_1 - 1;
             ingrediente_2 = ingrediente_2 - 1;
-            
-            restaurante_ingredientes[10] = ingrediente_1;
-            restaurante_ingredientes[11] = ingrediente_2;
+            contador = contador + 1;
+            restaurante_contadores[7] = contador;
+            restaurante_ingredientes_cantidades[10] = ingrediente_1;
+            restaurante_ingredientes_cantidades[11] = ingrediente_2;
             
             Mostrar << "¿Quieres otro combo igual, manao? (0: No; 1: Si)";
             Leer >> quieres_otra;
@@ -48,48 +50,72 @@ Inicio
           Hasta (quieres_otra = 0);
         Fin_Repetir
       Caso (opcion = 2);
-        Mientras (Cantidad > Cantidad_Cebolla OR Cantidad_Tomate OR Cantidad > Vinotinto) Hacer;
-          Mostrar << "Solo hay ", Cantidad_Cebolla, "Cebollas,  ", Cantidad_Tomate, "Tomates y ", Vinotinto, "Botellas de Vinotinto disponibles";
+        ingrediente_1 = restaurante_ingredientes_cantidades[12];
+        ingrediente_2 = restaurante_ingredientes_cantidades[13];
+        ingrediente_3 = restaurante_ingredientes_cantidades[14];
+
+        Mostrar << "¿Cuántas desea ordenar?";
+        Leer >> Cantidad;
+
+        Mientras (Cantidad > ingrediente_1 OR ingrediente_2 OR Cantidad > ingrediente_3) Hacer;
+          Mostrar << "Solo hay ", ingrediente_1, "Cebollas,  ", ingrediente_2, "Tomates y ", ingrediente_3, "copas de Vinotinto disponibles";
           Leer >> Cantidad;
         Fin_Mientras
-        
-        Opc_Selec2 = Opc_Selec2 + 1;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc2);
+
+        Mostrar << "Una sopa de Cebolla y tomate y una copa de Vinotinto. Serían, 25$.";
+        precio = restaurante_ingredientes_precios[8];
+        contador = contador + 1;
+        restaurante_contadores[8] = contador;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
         Dinero_Opc2 = Dinero_Opc2 + (Cantidad * Opc2);
-        Cantidad_Cebolla = Cantidad_Cebolla – Cantidad;
-        Cantidad_Tomate = Cantidad_Tomate – Cantidad;
-        Vinotinto = Vinotinto – Cantidad;
-        Mostrar << "Usted selecciono la Opción 2 (Sopa de Cebolla y tomate, y de bebida Vino Tinto)  con un precio de 25$";
+        ingrediente_1 = ingrediente_1 – Cantidad;
+        ingrediente_2 = ingrediente_2 – Cantidad;
+        ingrediente_3 = ingrediente_3 – Cantidad;
+        restaurante_ingredientes_cantidades[12] = ingrediente_1;
+        restaurante_ingredientes_cantidades[13] = ingrediente_2;
+        restaurante_ingredientes_cantidades[14] = ingrediente_3;
       Caso (opcion = 3);
-        Mostrar << "¿Cuántas ordenó?";
+        ingrediente_1 = restaurante_ingredientes_cantidades[15];
+        ingrediente_2 = restaurante_ingredientes_cantidades[16];
+
+        Mostrar << "¿Cuántas desea ordenar?";
         Leer >> Cantidad;
         
-        Mientras (Cantidad > Cantidad_Bistec_Res OR Cantidad > Bourbon) Hacer;
-          Mostrar << "Solo hay ", Cantidad_Bistec_Res, "Bistecs de Res y ", Bourbon, "Botellas de Bourbon disponibles";
+        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
+          Mostrar << "Solo hay ", ingrediente_1, "Bistecs de Res y ", ingrediente_2, "copas de Bourbon disponibles";
           Leer >> Cantidad;
         Fin_Mientras
-        
-        Opc_Selec3 = Opc_Selec 3 + 1;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc3);
-        Dinero_Opc3 = Dinero_Opc3 + (Cantidad * Opc3);
-        Cantidad_Bistec_Res = Cantidad_Bistec_Res – Cantidad;
-        Bourbon = Bourbon – Cantidad;
-        Mostrar << "Usted selecciono la Opción 3 (Bistec de Carne de Res y de bebida Bourbon) con un precio de 22$";
+
+        Mostrar << "Una ración de bistec de res y de bebida una copa de Bourbon. Serían, 22$.";
+
+        precio = restaurante_ingredientes_precios[9];
+        contador = contador + 1;
+        restaurante_contadores[9] = contador;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        Dinero_Opc3 = Dinero_Opc3 + (Cantidad * precio);
+        ingrediente_1 = ingrediente_1 – Cantidad;
+        ingrediente_2 = ingrediente_2 – Cantidad;
+        restaurante_ingredientes_cantidades[15] = ingrediente_1;
+        restaurante_ingredientes_cantidades[16] = ingrediente_2;
       Caso (opcion = 4);
-        Mostrar << "¿Cuántas ordenó?";
+        ingrediente_1 = restaurante_ingredientes_cantidades[17];
+        ingrediente_2 = restaurante_ingredientes_cantidades[18];
+        
+        Mostrar << "¿Cuántas desea ordenar?";
         Leer >> Cantidad;
         
-        Mientras (Cantidad > Cantidad_Chuletas OR Cantidad > John_Collins) Hacer;
-          Mostrar << "Solo hay ", Cantidad_Chuletas, "Chuletas y ", John_Collins, "Botellas de John Collins disponibles";
+        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
+          Mostrar << "Solo hay ", ingrediente_1, "Chuletas de cerdo y ", ingrediente_2, "copas de John Collins disponibles";
           Leer >> Cantidad;
         Fin_Mientras
-        
-        Opc_Selec4 = Opc_Selec 4 + 1;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc4);
+        Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$.";
+        precio = restaurante_ingredientes_precios[10]
+        contador = contador + 1;
+        restaurante_contadores[10] = contador;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
         Dinero_Opc4 = Dinero_Opc4 + (Cantidad * Opc4);
-        Cantidad_Chuletas = Cantidad_Chuletas – Cantidad;
-        John_Collins = John_Collins – Cantidad;
-        Mostrar << "Usted selecciono la Opción 4 (Chuletas de Cerdo a la BBQ y de bebida John Collins) con un precio de 25$";
+        ingrediente_1 = ingrediente_1 – Cantidad;
+        ingrediente_2 = ingrediente_2 – Cantidad;
       Caso (opcion = 5);
         Mostrar << "¿Cuántas ordenó?";
         Leer >> Cantidad;
