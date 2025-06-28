@@ -14,7 +14,8 @@ Inicio
   Var i_taberna: Entero;
   Var taberna_ingredientes[]: Cadena;
   Var taberna_ingredientes_cantidades[]: Entero;
-  Var taberna_contadores[];
+  Var taberna_contadores[]: Entero;
+  Var taberna_ingredientes_precio[]: Real;
 
   // Base de datos del Hotel
   
@@ -120,7 +121,26 @@ Inicio
   restaurante_ingredientes_cantidades[33] = 40;
   restaurante_ingredientes_cantidades[34] = 55;
 
-  restaurante_ingredientes_precio[1] = 8;
+  restaurante_ingredientes_precio[1] = 5;
+  restaurante_ingredientes_precio[2] = 3;
+  restaurante_ingredientes_precio[3] = 4;
+  restaurante_ingredientes_precio[4] = 6;
+  restaurante_ingredientes_precio[5] = 7;
+  restaurante_ingredientes_precio[6] = 8;
+
+  restaurante_ingredientes_precio[7] = 32;
+  restaurante_ingredientes_precio[8] = 25;
+  restaurante_ingredientes_precio[9] = 22;
+  restaurante_ingredientes_precio[10] = 25;
+  restaurante_ingredientes_precio[11] = 19;
+  restaurante_ingredientes_precio[12] = 27;
+
+  restaurante_ingredientes_precio[13] = 6;
+  restaurante_ingredientes_precio[14] = 8;
+  restaurante_ingredientes_precio[15] = 5;
+  restaurante_ingredientes_precio[16] = 7;
+  restaurante_ingredientes_precio[17] = 10;
+  restaurante_ingredientes_precio[18] = 15;
 
   // Inicializando DB de la Taberna
 
@@ -143,6 +163,16 @@ Inicio
   taberna_ingredientes_cantidades[6] = 40;
   taberna_ingredientes_cantidades[7] = 30;
   taberna_ingredientes_cantidades[8] = 35;
+
+  taberna_ingredientes_precio[1] = 1;
+  taberna_ingredientes_precio[2] = 9;
+  taberna_ingredientes_precio[3] = 7;
+  taberna_ingredientes_precio[4] = 4;
+
+  taberna_ingredientes_precio[5] = 1;
+  taberna_ingredientes_precio[6] = 10;
+  taberna_ingredientes_precio[7] = 25;
+  taberna_ingredientes_precio[8] = 8;
 
   // Inicializando DB del Casino
 
