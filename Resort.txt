@@ -170,9 +170,9 @@ Inicio
   taberna_ingredientes_precio[4] = 7;
 
   taberna_ingredientes_precio[5] = 1;
-  taberna_ingredientes_precio[6] = 10;
-  taberna_ingredientes_precio[7] = 25;
-  taberna_ingredientes_precio[8] = 8;
+  taberna_ingredientes_precio[6] = 25;
+  taberna_ingredientes_precio[7] = 8;
+  taberna_ingredientes_precio[8] = 5;
 
   // Inicializando DB del Casino
 
