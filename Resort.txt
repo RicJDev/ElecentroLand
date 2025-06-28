@@ -6,7 +6,8 @@ Inicio
   Var i_restaurante: Entero;
   Var restaurante_ingredientes[]: Cadena;
   Var restaurante_ingredientes_cantidades[]: Entero;
-  Var restaurante_contadores[];
+  Var restaurante_ingredientes_precio[]: Real;
+  Var restaurante_contadores[]: Entero;
 
   // Base de datos del Bar
 

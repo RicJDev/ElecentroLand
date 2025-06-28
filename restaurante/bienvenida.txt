@@ -14,4 +14,3 @@ Inicio
     Leer >> Opcion_Restaurante;
   Fin_Mientras
 Fin_Procedimiento
-
