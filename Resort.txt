@@ -120,6 +120,8 @@ Inicio
   restaurante_ingredientes_cantidades[33] = 40;
   restaurante_ingredientes_cantidades[34] = 55;
 
+  restaurante_ingredientes_precio[1] = 8;
+
   // Inicializando DB de la Taberna
 
   taberna_ingredientes[1] = "papas fritas";
