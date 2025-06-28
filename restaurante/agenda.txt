@@ -1,4 +1,0 @@
-Procedimiento agendar_comida();
-Inicio
-  //
-Fin_Procedimiento
