@@ -165,9 +165,9 @@ Inicio
   taberna_ingredientes_cantidades[8] = 35;
 
   taberna_ingredientes_precio[1] = 1;
-  taberna_ingredientes_precio[2] = 9;
-  taberna_ingredientes_precio[3] = 7;
-  taberna_ingredientes_precio[4] = 4;
+  taberna_ingredientes_precio[2] = 15;
+  taberna_ingredientes_precio[3] = 10;
+  taberna_ingredientes_precio[4] = 7;
 
   taberna_ingredientes_precio[5] = 1;
   taberna_ingredientes_precio[6] = 10;
