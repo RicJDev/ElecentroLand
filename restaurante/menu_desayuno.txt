@@ -1,9 +1,10 @@
-Procedimiento Desayuno(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[]: Cadena, restaurante_ingredientes_cantidades[]: Entero, restaurante_contadores[]: Entero);
+Procedimiento Desayuno(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero);
 Inicio
   Var Desa_Pan = 0, Desa_Pat_Hue_Toci = 0, Sandwiches = 0, Waffles = 0, Cachapas = 0, Empanadas = 0: Entero;
   R: Booleano;
   ingrediente_1, ingrediente_2, ingrediente_3: Entero;
   precio: Real;
+  contador: Entero;
   Repetir
     Mostrar << "Seleccione el desayuno de su preferencia";
     Mostrar << "1: Panqueques con miel 5$";
@@ -34,7 +35,8 @@ Inicio
 
         precio = restaurante_ingredientes_precio[1];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Desa_Pan = Desa_Pan + 1;
+        contador = contador + 1;
+        restaurante_contadores[1] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
         restaurante_ingredientes_cantidades[1] = ingrediente_1;
       Caso (Desayuno = 2) AND (restaurante_ingredientes_cantidades[2] > 1) AND (restaurante_ingredientes_cantidades[3] > 1) AND                                     (restaurante_ingredientes_cantidades[4] > 1);
@@ -52,7 +54,8 @@ Inicio
 
         precio = restaurante_ingredientes_precio[2];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Desa_Pat_Hue_Toci = Desa_Pat_Hue_Toci + 1;
+        contador = contador + 1;
+        restaurante_contadores[2] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
         ingrediente_2 = ingrediente_2 – Cantidad;
         ingrediente_3 = ingrediente_3 – Cantidad;
@@ -75,7 +78,8 @@ Inicio
 
         precio = restaurante_ingredientes_precio[3];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Sandwiches = Sandwiches + 1;
+        contador = contador + 1;
+        restaurante_contadores[3] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
         ingrediente_2 = ingrediente_2 – Cantidad;
         ingrediente_3 = ingrediente_3 – Cantidad;
@@ -93,7 +97,8 @@ Inicio
 
         precio = restaurante_ingredientes_precio[4];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Waffles = Waffles + 1;
+        contador = contador + 1;
+        restaurante_contadores[4] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
         restaurante_ingredientes_cantidades[7] = ingrediente_1;
       Caso (Desayuno = 5 AND restaurante_ingredientes_cantidades[8] > 0);
@@ -107,7 +112,8 @@ Inicio
 
         precio = restaurante_ingredientes_precio[5];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Cachapas = Cachapas + 1;
+        contador = contador + 1;
+        restaurante_contadores[5] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
         restaurante_ingredientes_cantidades[8] = ingrediente_1;
       Otro_Caso
@@ -121,7 +127,8 @@ Inicio
 
         precio = restaurante_ingredientes_precio[6];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Empanadas = Empanadas + 1;
+        contador = contador + 1;
+        restaurante_contadores[6] = contador;
         ingrediente_1 = ingrediente_1 – 1;
         restaurante_ingredientes_cantidades[9] = ingrediente_1;
     Fin_Caso
