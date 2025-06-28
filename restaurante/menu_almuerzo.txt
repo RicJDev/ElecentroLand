@@ -109,43 +109,53 @@ Inicio
           Leer >> Cantidad;
         Fin_Mientras
         Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$.";
-        precio = restaurante_ingredientes_precios[10]
+        precio = restaurante_ingredientes_precios[10];
         contador = contador + 1;
         restaurante_contadores[10] = contador;
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Dinero_Opc4 = Dinero_Opc4 + (Cantidad * Opc4);
+        Dinero_Opc4 = Dinero_Opc4 + (Cantidad * precio);
         ingrediente_1 = ingrediente_1 – Cantidad;
         ingrediente_2 = ingrediente_2 – Cantidad;
+        restaurante_ingredientes_cantidades[17] = ingrediente_1;
+        restaurante_ingredientes_cantidades[18] = ingrediente_2;
       Caso (opcion = 5);
+        ingrediente_1 = restaurante_ingredientes_cantidades[19];
+        ingrediente_2 = restaurante_ingredientes_cantidades[20];
         Mostrar << "¿Cuántas ordenó?";
         Leer >> Cantidad;
         
-        Mientras (Cantidad > Cantidad_Pasta OR Cantidad > Estracto_Picha) Hacer;
-          Mostrar << "Solo hay ", Cantidad_Pasta, "Pastas Ex’ Reprobada y ", Estracto_Picha, "Botellas de Estracto de Picha disponibles";
+        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
+          Mostrar << "Solo hay ", ingrediente_1, "Pastas Ex’ Reprobada y ", ingrediente_2, "copas de Estracto de Picha disponibles";
           Leer >> Cantidad;
         Fin_Mientras
-        
-        Opc_Selec5 = Opc_Selec 5 + 1;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc5);
-        Dinero_Opc5 = Dinero_Opc5 + (Cantidad * Opc5);
-        Cantidad_Pasta = Cantidad_Pasta – Cantidad;
-        Estracto_Picha = Estracto_Picha – Cantidad;
-        Mostrar << "Usted selecciono la Opción 5 (Pasta Ex´ reprobada y de bebida Estracto de Picha) con un precio de 19$";
+        Mostrar << "Una ración de Pasta Ex' Reprobada y de bebida una copa de Estracto de Picha. Serían, 19$";
+
+        precio = restaurante_ingredientes_precios[11];
+        contador = contador 5 + 1;
+        restaurante_contadores[11] = contador;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        Dinero_Opc5 = Dinero_Opc5 + (Cantidad * precio);
+        ingrediente_1 = ingrediente_1 – Cantidad;
+        ingrediente_2 = ingrediente_2 – Cantidad;
       Otro_Caso
+        ingrediente_1 = restaurante_ingredientes_cantidades[21];
+        ingrediente_2 = restaurante_ingredientes_cantidades[22];
         Mostrar << "¿Cuántas ordenó?";
         Leer >> Cantidad;
         
-        Mientras (Cantidad > Cantidad_Guanábana OR Cantidad > Whisky_Maravilla) Hacer;
-          Mostrar << "Solo hay ", Cantidad_Guanábana, "Ensaladas de Guanábana a la APK y ", Whisky_Maravilla, "Botellas de Whisky Maravilla disponibles";
+        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
+          Mostrar << "Solo hay ", ingrediente_1, "Ensaladas de Guanábana a la APK y ", ingrediente_2, "Botellas de Whisky Maravilla disponibles";
           Leer >> Cantidad;
         Fin_Mientras
-        
-        Opc_Selec6 = Opc_Selec6 + 1;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * Opc6);
-        Dinero_Opc6 = Dinero_Opc6 + (Cantidad * Opc6);
-        Cantidad_Guanábana = Cantidad_Guanábana – Cantidad;
-        Whisky_Maravilla = Whisky_Maravilla – Cantidad;
-        Mostrar << "Usted seleccionó la Opción 6 (Ensalada de Guanábana a la APK y de bebida Whisky Maravilla) con un precio de 27$";
+        Mostrar << "Una ración de Ensalada de Guanábana a la APK y de bebida una copa de Whisky Maravilla. Serían, 27$.";
+
+        precio = restaurante_ingredientes_precios[12];
+        contador = contador + 1;
+        restaurante_contadores[12] = contador;
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        Dinero_Opc6 = Dinero_Opc6 + (Cantidad * precio);
+        ingrediente_1 = ingrediente_1 – Cantidad;
+        ingrediente_2 = ingrediente_2 – Cantidad;
     Fin_Caso
     
     Mostrar << "Desea añadir algo más a su menú?, 1: Sí, 0: No ";
