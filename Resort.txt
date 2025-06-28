@@ -4,18 +4,18 @@ Inicio
   // Base de datos del Restaurante
   
   Var i_restaurante: Entero;
-  Var restaurante_ingredientes[]: Cadena;
-  Var restaurante_ingredientes_cantidades[]: Entero;
-  Var restaurante_ingredientes_precio[]: Real;
-  Var restaurante_contadores[]: Entero;
+  Var restaurante_ingredientes[34]: Cadena;
+  Var restaurante_ingredientes_cantidades[34]: Entero;
+  Var restaurante_ingredientes_precio[18]: Real;
+  Var restaurante_contadores[18]: Entero;
 
   // Base de datos del Bar
 
   Var i_taberna: Entero;
-  Var taberna_ingredientes[]: Cadena;
-  Var taberna_ingredientes_cantidades[]: Entero;
-  Var taberna_contadores[]: Entero;
-  Var taberna_ingredientes_precio[]: Real;
+  Var taberna_ingredientes[8]: Cadena;
+  Var taberna_ingredientes_cantidades[8]: Entero;
+  Var taberna_contadores[8]: Entero;
+  Var taberna_ingredientes_precio[8]: Real;
 
   // Base de datos del Hotel
   
@@ -142,6 +142,10 @@ Inicio
   restaurante_ingredientes_precio[17] = 10;
   restaurante_ingredientes_precio[18] = 15;
 
+  Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
+    restaurante_contadores[i_restaurante] = 0;
+  Fin_Para
+
   // Inicializando DB de la Taberna
 
   taberna_ingredientes[1] = "papas fritas";
@@ -173,6 +177,10 @@ Inicio
   taberna_ingredientes_precio[6] = 25;
   taberna_ingredientes_precio[7] = 8;
   taberna_ingredientes_precio[8] = 5;
+
+  Para (i_taberna = 1 Hasta i_taberna = 8) Hacer;
+    taberna_contadores[i_taberna] = 0;
+  Fin_Para
 
   // Inicializando DB del Casino
 
