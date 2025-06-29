@@ -1,6 +1,6 @@
-Procedimiento Bar(E/S: Opcion_Inv, Opcion_Clientes: Entero);
+Procedimiento Bar(E/S: Opcion_Inv, Opcion_Clientes: Entero, bar_ingredientes_cantidades[8], bar_contadores[8]: Entero, Cuenta_Cliente = 0, bar_ingredientes_precios[8]: Real);
 Inicio
-  Var Cuenta_Clientes = 0: Real, R: Booleano;
+  Var R: Booleano;
 
   Repetir
     Mostrar << "¡Bienvenido a nuestro Bar Elecentro Drinks!";
