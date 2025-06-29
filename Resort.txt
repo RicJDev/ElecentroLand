@@ -4,18 +4,18 @@ Inicio
   // Base de datos del Restaurante
   
   Var i_restaurante: Entero;
-  Var restaurante_ingredientes[34]: Cadena;
   Var restaurante_ingredientes_cantidades[34]: Entero;
-  Var restaurante_ingredientes_precio[18]: Real;
   Var restaurante_contadores[18]: Entero;
+  Var restaurante_ingredientes_precio[18]: Real;
+  Var restaurante_ingredientes[34]: Cadena;
 
   // Base de datos del Bar
 
-  Var i_taberna: Entero;
-  Var taberna_ingredientes[8]: Cadena;
-  Var taberna_ingredientes_cantidades[8]: Entero;
-  Var taberna_contadores[8]: Entero;
-  Var taberna_ingredientes_precio[8]: Real;
+  Var i_bar: Entero;
+  Var bar_ingredientes[8]: Cadena;
+  Var bar_ingredientes_cantidades[8]: Entero;
+  Var bar_contadores[8]: Entero;
+  Var bar_ingredientes_precio[8]: Real;
 
   // Base de datos del Hotel
   
@@ -43,168 +43,16 @@ Inicio
   Var casino_premios[100][10]: Booleano;
   Var i_casino, j_casino: Entero;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
-  Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios: Entero;
+  Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
   
   // Inicializando DB del Restaurante
-  
-  restaurante_ingredientes[1] = "panqueques";
-  restaurante_ingredientes[2] = "patatas";
-  restaurante_ingredientes[3] = "huevos";
-  restaurante_ingredientes[4] = "tocineta";
-  restaurante_ingredientes[5] = "pan";
-  restaurante_ingredientes[6] = "jamon";
-  restaurante_ingredientes[7] = "waffles";
-  restaurante_ingredientes[8] = "cachapas";
-  restaurante_ingredientes[9] = "empanadas";
+  init_Restaurante(restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precio[i_restaurante], restaurante_ingredientes[i_restaurante])
 
-  restaurante_ingredientes[10] = "ensalada cesar";
-  restaurante_ingredientes[11] = "vino blanco";
-  restaurante_ingredientes[12] = "cebolla";
-  restaurante_ingredientes[13] = "tomate";
-  restaurante_ingredientes[14] = "vinotinto";
-  restaurante_ingredientes[15] = "bistec de carne de res";
-  restaurante_ingredientes[16] = "bourbon";
-  restaurante_ingredientes[17] = "chuletas de cerdo a la bbq";
-  restaurante_ingredientes[18] = "john collins";
-  restaurante_ingredientes[19] = "pasta ex' reprobada";
-  restaurante_ingredientes[20] = "estracto de picha";
-  restaurante_ingredientes[21] = "ensalada guanábana a la apk";
-  restaurante_ingredientes[22] = "whisky maravilla";
-
-  restaurante_ingredientes[23] = "sushi";
-  restaurante_ingredientes[24] = "soya";
-  restaurante_ingredientes[25] = "coca cola";
-  restaurante_ingredientes[26] = "hamburguesa"; // pan de hamburguesas
-  restaurante_ingredientes[27] = "pollo";
-  restaurante_ingredientes[28] = "papas a la francesa";
-  restaurante_ingredientes[29] = "carne";
-  restaurante_ingredientes[30] = "justy";
-  restaurante_ingredientes[31] = "pepsi";
-  restaurante_ingredientes[32] = "pizza";
-  restaurante_ingredientes[33] = "pepperoni";
-  restaurante_ingredientes[34] = "queso";
-
-  restaurante_ingredientes_cantidades[1] = 40;
-  restaurante_ingredientes_cantidades[2] = 30;
-  restaurante_ingredientes_cantidades[3] = 20;
-  restaurante_ingredientes_cantidades[4] = 60;
-  restaurante_ingredientes_cantidades[5] = 50;
-  restaurante_ingredientes_cantidades[6] = 55;
-  restaurante_ingredientes_cantidades[7] = 45;
-  restaurante_ingredientes_cantidades[8] = 35;
-  restaurante_ingredientes_cantidades[9] = 25;
-
-  restaurante_ingredientes_cantidades[10] = 65;
-  restaurante_ingredientes_cantidades[11] = 70;
-  restaurante_ingredientes_cantidades[12] = 50;
-  restaurante_ingredientes_cantidades[13] = 40;
-  restaurante_ingredientes_cantidades[14] = 45;
-  restaurante_ingredientes_cantidades[15] = 30;
-  restaurante_ingredientes_cantidades[16] = 35;
-  restaurante_ingredientes_cantidades[17] = 25;
-  restaurante_ingredientes_cantidades[18] = 30;
-  restaurante_ingredientes_cantidades[19] = 60;
-  restaurante_ingredientes_cantidades[20] = 65;
-  restaurante_ingredientes_cantidades[21] = 50;
-  restaurante_ingredientes_cantidades[22] = 40;
-
-  restaurante_ingredientes_cantidades[23] = 80;
-  restaurante_ingredientes_cantidades[24] = 75;
-  restaurante_ingredientes_cantidades[25] = 45;
-  restaurante_ingredientes_cantidades[26] = 55;
-  restaurante_ingredientes_cantidades[27] = 30;
-  restaurante_ingredientes_cantidades[28] = 35;
-  restaurante_ingredientes_cantidades[29] = 25;
-  restaurante_ingredientes_cantidades[30] = 20;
-  restaurante_ingredientes_cantidades[31] = 50;
-  restaurante_ingredientes_cantidades[32] = 45;
-  restaurante_ingredientes_cantidades[33] = 40;
-  restaurante_ingredientes_cantidades[34] = 55;
-
-  restaurante_ingredientes_precio[1] = 5;
-  restaurante_ingredientes_precio[2] = 3;
-  restaurante_ingredientes_precio[3] = 4;
-  restaurante_ingredientes_precio[4] = 6;
-  restaurante_ingredientes_precio[5] = 7;
-  restaurante_ingredientes_precio[6] = 8;
-
-  restaurante_ingredientes_precio[7] = 32;
-  restaurante_ingredientes_precio[8] = 25;
-  restaurante_ingredientes_precio[9] = 22;
-  restaurante_ingredientes_precio[10] = 25;
-  restaurante_ingredientes_precio[11] = 19;
-  restaurante_ingredientes_precio[12] = 27;
-
-  restaurante_ingredientes_precio[13] = 6;
-  restaurante_ingredientes_precio[14] = 8;
-  restaurante_ingredientes_precio[15] = 5;
-  restaurante_ingredientes_precio[16] = 7;
-  restaurante_ingredientes_precio[17] = 10;
-  restaurante_ingredientes_precio[18] = 15;
-
-  Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
-    restaurante_contadores[i_restaurante] = 0;
-  Fin_Para
-
-  // Inicializando DB de la Taberna
-
-  taberna_ingredientes[1] = "papas fritas";
-  taberna_ingredientes[2] = "mini hamburguesas";
-  taberna_ingredientes[3] = "empanadillas";
-  taberna_ingredientes[4] = "sándwiches";
-
-  taberna_ingredientes[5] = "cerveza";
-  taberna_ingredientes[6] = "vinotinto";
-  taberna_ingredientes[7] = "vodka";
-  taberna_ingredientes[8] = "cóctel";
-
-  taberna_ingredientes_cantidades[1] = 40;
-  taberna_ingredientes_cantidades[2] = 35;
-  taberna_ingredientes_cantidades[3] = 30;
-  taberna_ingredientes_cantidades[4] = 45;
-
-  taberna_ingredientes_cantidades[5] = 50;
-  taberna_ingredientes_cantidades[6] = 40;
-  taberna_ingredientes_cantidades[7] = 30;
-  taberna_ingredientes_cantidades[8] = 35;
-
-  taberna_ingredientes_precio[1] = 1;
-  taberna_ingredientes_precio[2] = 15;
-  taberna_ingredientes_precio[3] = 10;
-  taberna_ingredientes_precio[4] = 7;
-
-  taberna_ingredientes_precio[5] = 1;
-  taberna_ingredientes_precio[6] = 25;
-  taberna_ingredientes_precio[7] = 8;
-  taberna_ingredientes_precio[8] = 5;
-
-  Para (i_taberna = 1 Hasta i_taberna = 8) Hacer;
-    taberna_contadores[i_taberna] = 0;
-  Fin_Para
+  // Inicializando DB del Bar 
+  init_Bar(bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], bar_ingredientes[i_bar], bar_ingredientes_precio[i_bar])
 
   // Inicializando DB del Casino
-
-  Para (j_casino = 1 Hasta j_casino = 10) Hacer;
-    casino_stock_premios[j_casino] = 10;
-    casino_valor_premios[j_casino] = 0;
-  Fin_Para
-  
-  casino_valor_premios[1] = 12;
-  casino_valor_premios[2] = 10;
-  casino_valor_premios[3] = 7;
-  casino_valor_premios[4] = 5;
-  casino_valor_premios[5] = 15;
-  
-  Para (i_casino = 1 Hasta i_casino = 100) Hacer;
-    casino_nombres[i_casino] = "no_asignado";
-    casino_contrasenas[i_casino] = "no_asignado";
-    casino_edades[i_casino] = 0;
-    casino_saldos_fichas[i_casino] = 0;
-    
-    Para (j_casino = 1 Hasta j_casino = 10) Hacer;
-      casino_premios[i_casino][j_casino] = 0;
-    Fin_Para
-  Fin_Para
+  init_Casino(casino_premios[i_casino][j_casino], casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino])
   
   Repetir
     Mostrar << "¡Bienvenido al Resort ElecentroLand!, ingrese a dónde quiere ir";

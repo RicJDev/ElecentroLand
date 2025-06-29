@@ -1,0 +1,36 @@
+Procedimiento init_Bar(E/S: bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, bar_ingredientes[i_bar]: Cadena, bar_ingredientes_precio[i_bar]: Real);
+Inicio
+  bar_ingredientes[1] = "papas fritas";
+  bar_ingredientes[2] = "mini hamburguesas";
+  bar_ingredientes[3] = "empanadillas";
+  bar_ingredientes[4] = "sándwiches";
+
+  bar_ingredientes[5] = "cerveza";
+  bar_ingredientes[6] = "vinotinto";
+  bar_ingredientes[7] = "vodka";
+  bar_ingredientes[8] = "cóctel";
+
+  bar_ingredientes_cantidades[1] = 40;
+  bar_ingredientes_cantidades[2] = 35;
+  bar_ingredientes_cantidades[3] = 30;
+  bar_ingredientes_cantidades[4] = 45;
+
+  bar_ingredientes_cantidades[5] = 50;
+  bar_ingredientes_cantidades[6] = 40;
+  bar_ingredientes_cantidades[7] = 30;
+  bar_ingredientes_cantidades[8] = 35;
+
+  bar_ingredientes_precio[1] = 1;
+  bar_ingredientes_precio[2] = 15;
+  bar_ingredientes_precio[3] = 10;
+  bar_ingredientes_precio[4] = 7;
+
+  bar_ingredientes_precio[5] = 1;
+  bar_ingredientes_precio[6] = 25;
+  bar_ingredientes_precio[7] = 8;
+  bar_ingredientes_precio[8] = 5;
+
+  Para (i_bar = 1 Hasta i_bar = 8) Hacer;
+    bar_contadores[i_bar] = 0;
+  Fin_Para
+Fin_Procedimiento

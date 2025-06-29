@@ -1,0 +1,3 @@
+Procedimiento init_Hotel();
+Inicio
+Fin_Procedimiento

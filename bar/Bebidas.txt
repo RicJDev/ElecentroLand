@@ -1,0 +1,79 @@
+Procedimiento Bebidas(E/S: OpcionClientes: Entero, Cuenta_Cliente = 0: Real);
+Inicio
+  Var Cantidad_Cerveza = 40, Cantidad_Vino = 40, Cantidad_Vodka = 40, Cantidad_Coctel = 40: Entero;
+  R: Booleano;
+  
+  Repetir
+    Mostrar << "Menú de Bebidas:";
+    Mostrar << "1: Cerveza Duff 1$ cada botella";
+    Mostrar << "2: Vinotinto 25$ cada botella";
+    Mostrar << "3: Vodka 8$ cada botella";
+    Mostrar << "4: Cóctel 5$ cada copa";
+    Leer >> OpcionClientes;
+    
+    En_Caso (OpcionClientes > 0) Sea;
+      Caso (OpcionClientes = 1 AND Cantidad_Cerveza > 0);
+        Mostrar << "¿Cuántas unidades compró? ";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Cerveza) Hacer;
+          Mostrar << "Error, solo hay ", Cantidad_Cerveza, " botellas de Cerveza disponibles";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 1);
+        Cantidad_Cerveza = Cantidad_Cerveza – Cantidad;
+        Mostrar << "Quedan disponibles ", Cantidad_Cerveza, " botellas de Cerveza.";
+      Caso (OpcionClientes = 1 AND Cantidad_Cerveza < 1);
+        Mostrar << "Se agotaron las botellas de Cervezas.";
+      Caso (OpcionClientes = 2 AND Cantidad_Vino > 0);
+        Mostrar << "¿Cuántas unidades compró? ";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Vino) Hacer;
+          Mostrar << "Error, solo hay ", Cantidad_Vino, " botellas de Vino disponibles.";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 25);
+        Cantidad_Vino = Cantidad_Vino – Cantidad;
+        Mostrar << "Quedan disponibles ", Cantidad_Vino, " botellas de Vino.";
+      Caso (OpcionClientes = 2 AND Cantidad_Vino < 1);
+        Mostrar << "Se agotaron las botellas de Vino.";
+      Caso (OpcionClientes = 3 AND Cantidad_Vodka > 0);
+        Mostrar << "¿Cuántas unidades compró? ";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Vodka) Hacer;
+          Mostrar << "Error, solo hay ", Cantidad_Vodka, " botellas de Vodka disponibles.";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 8);
+        Cantidad_Vodka = Cantidad_Vodka – Cantidad;
+        
+        Mostrar << "Quedan disponibles ", Cantidad_Vodka, " botellas de Vodka.";
+      Caso (OpcionClientes = 3 AND Cantidad_Vodka < 1);
+        Mostrar << "Se agotaron las botellas de Vodka.";
+      Caso (OpcionClientes = 4 AND Cantidad_Coctel > 0);
+        Mostrar << "¿Cuántas unidades compró? ";
+        Leer >> Cantidad;
+        
+        Mientras (Cantidad > Cantidad_Coctel) Hacer;
+          Mostrar << "Error, solo hay ", Cantidad_Coctel, " copas de Cóctel disponibles.";
+          Leer >> Cantidad;
+        Fin_Mientras
+        
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 5);
+        Cantidad_Coctel = Cantidad_Coctel – Cantidad;
+        Mostrar << "Quedan disponibles ", Cantidad_Coctel, " copas de Cóctel.";
+      Otro_Caso
+        Mostrar << "Se agotaron las copas de Cóctel.";
+    Fin_Caso
+
+    Mostrar << "La cuenta acumulada del cliente es: ", Cuenta_Cliente, "$";
+    Mostrar << "¿El cliente consumió otro producto más? 1: Sí, 0: No ";
+    Leer >> R;
+    Hasta (R = 0);
+  Fin_Repetir
+Fin_Procedimiento

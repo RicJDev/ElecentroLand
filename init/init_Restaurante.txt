@@ -1,0 +1,102 @@
+Procedimiento init_Restaurante(E/S: restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante]: Entero, restaurante_ingredientes_precio[i_restaurante]: Real, restaurante_ingredientes[i_restaurante]: Cadena);
+Inicio
+  restaurante_ingredientes[1] = "panqueques";
+  restaurante_ingredientes[2] = "patatas";
+  restaurante_ingredientes[3] = "huevos";
+  restaurante_ingredientes[4] = "tocineta";
+  restaurante_ingredientes[5] = "pan";
+  restaurante_ingredientes[6] = "jamon";
+  restaurante_ingredientes[7] = "waffles";
+  restaurante_ingredientes[8] = "cachapas";
+  restaurante_ingredientes[9] = "empanadas";
+
+  restaurante_ingredientes[10] = "ensalada cesar";
+  restaurante_ingredientes[11] = "vino blanco";
+  restaurante_ingredientes[12] = "cebolla";
+  restaurante_ingredientes[13] = "tomate";
+  restaurante_ingredientes[14] = "vinotinto";
+  restaurante_ingredientes[15] = "bistec de carne de res";
+  restaurante_ingredientes[16] = "bourbon";
+  restaurante_ingredientes[17] = "chuletas de cerdo a la bbq";
+  restaurante_ingredientes[18] = "john collins";
+  restaurante_ingredientes[19] = "pasta ex' reprobada";
+  restaurante_ingredientes[20] = "estracto de picha";
+  restaurante_ingredientes[21] = "ensalada guanábana a la apk";
+  restaurante_ingredientes[22] = "whisky maravilla";
+
+  restaurante_ingredientes[23] = "sushi";
+  restaurante_ingredientes[24] = "soya";
+  restaurante_ingredientes[25] = "coca cola";
+  restaurante_ingredientes[26] = "hamburguesa"; // pan de hamburguesas
+  restaurante_ingredientes[27] = "pollo";
+  restaurante_ingredientes[28] = "papas a la francesa";
+  restaurante_ingredientes[29] = "carne";
+  restaurante_ingredientes[30] = "justy";
+  restaurante_ingredientes[31] = "pepsi";
+  restaurante_ingredientes[32] = "pizza";
+  restaurante_ingredientes[33] = "pepperoni";
+  restaurante_ingredientes[34] = "queso";
+
+  restaurante_ingredientes_cantidades[1] = 40;
+  restaurante_ingredientes_cantidades[2] = 30;
+  restaurante_ingredientes_cantidades[3] = 20;
+  restaurante_ingredientes_cantidades[4] = 60;
+  restaurante_ingredientes_cantidades[5] = 50;
+  restaurante_ingredientes_cantidades[6] = 55;
+  restaurante_ingredientes_cantidades[7] = 45;
+  restaurante_ingredientes_cantidades[8] = 35;
+  restaurante_ingredientes_cantidades[9] = 25;
+
+  restaurante_ingredientes_cantidades[10] = 65;
+  restaurante_ingredientes_cantidades[11] = 70;
+  restaurante_ingredientes_cantidades[12] = 50;
+  restaurante_ingredientes_cantidades[13] = 40;
+  restaurante_ingredientes_cantidades[14] = 45;
+  restaurante_ingredientes_cantidades[15] = 30;
+  restaurante_ingredientes_cantidades[16] = 35;
+  restaurante_ingredientes_cantidades[17] = 25;
+  restaurante_ingredientes_cantidades[18] = 30;
+  restaurante_ingredientes_cantidades[19] = 60;
+  restaurante_ingredientes_cantidades[20] = 65;
+  restaurante_ingredientes_cantidades[21] = 50;
+  restaurante_ingredientes_cantidades[22] = 40;
+
+  restaurante_ingredientes_cantidades[23] = 80;
+  restaurante_ingredientes_cantidades[24] = 75;
+  restaurante_ingredientes_cantidades[25] = 45;
+  restaurante_ingredientes_cantidades[26] = 55;
+  restaurante_ingredientes_cantidades[27] = 30;
+  restaurante_ingredientes_cantidades[28] = 35;
+  restaurante_ingredientes_cantidades[29] = 25;
+  restaurante_ingredientes_cantidades[30] = 20;
+  restaurante_ingredientes_cantidades[31] = 50;
+  restaurante_ingredientes_cantidades[32] = 45;
+  restaurante_ingredientes_cantidades[33] = 40;
+  restaurante_ingredientes_cantidades[34] = 55;
+
+  restaurante_ingredientes_precio[1] = 5;
+  restaurante_ingredientes_precio[2] = 3;
+  restaurante_ingredientes_precio[3] = 4;
+  restaurante_ingredientes_precio[4] = 6;
+  restaurante_ingredientes_precio[5] = 7;
+  restaurante_ingredientes_precio[6] = 8;
+
+  restaurante_ingredientes_precio[7] = 32;
+  restaurante_ingredientes_precio[8] = 25;
+  restaurante_ingredientes_precio[9] = 22;
+  restaurante_ingredientes_precio[10] = 25;
+  restaurante_ingredientes_precio[11] = 19;
+  restaurante_ingredientes_precio[12] = 27;
+
+  restaurante_ingredientes_precio[13] = 6;
+  restaurante_ingredientes_precio[14] = 8;
+  restaurante_ingredientes_precio[15] = 5;
+  restaurante_ingredientes_precio[16] = 7;
+  restaurante_ingredientes_precio[17] = 10;
+  restaurante_ingredientes_precio[18] = 15;
+
+  Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
+    restaurante_contadores[i_restaurante] = 0;
+  Fin_Para
+Fin_Procedimiento
+
