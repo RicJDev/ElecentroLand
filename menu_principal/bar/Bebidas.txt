@@ -1,7 +1,6 @@
-Procedimiento Bebidas(E/S: OpcionClientes: Entero, Cuenta_Cliente = 0: Real);
+Procedimiento Bebidas(E/S: OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8]: Entero, Cuenta_Cliente = 0, bar_ingredientes_precios[8]: Real);
 Inicio
-  Var Cantidad_Cerveza = 40, Cantidad_Vino = 40, Cantidad_Vodka = 40, Cantidad_Coctel = 40: Entero;
-  R: Booleano;
+  Var R: Booleano;
   ingrediente: Entero;
   precio: Real;
   contador: Entero;
@@ -24,6 +23,7 @@ Inicio
           Leer >> Cantidad;
         Fin_Mientras
         precio = bar_ingredientes_precios[5];
+        contador = bar_contadores[5]
         contador = contador + 1;
         bar_contadores[5] = contador;
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
@@ -42,6 +42,7 @@ Inicio
           Leer >> Cantidad;
         Fin_Mientras
         precio = bar_ingredientes_precios[6];
+        contador = bar_contadores[6];
         contador = contador + 1;
         bar_contadores[6] = contador;
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
@@ -50,33 +51,43 @@ Inicio
         Mostrar << "Quedan disponibles ", ingrediente, " botellas de Vino.";
       Caso (OpcionClientes = 2 AND bar_ingredientes_cantidades[6] < 1);
         Mostrar << "Se agotaron las botellas de Vino.";
-      Caso (OpcionClientes = 3 AND Cantidad_Vodka > 0);
+      Caso (OpcionClientes = 3 AND bar_ingredientes_cantidades[7] > 0);
+        ingrediente = bar_ingredientes_cantidades[7];
         Mostrar << "¿Cuántas unidades compró? ";
         Leer >> Cantidad;
         
-        Mientras (Cantidad > Cantidad_Vodka) Hacer;
-          Mostrar << "Error, solo hay ", Cantidad_Vodka, " botellas de Vodka disponibles.";
+        Mientras (Cantidad > ingrediente) Hacer;
+          Mostrar << "Error, solo hay ", ingrediente, " botellas de Vodka disponibles.";
           Leer >> Cantidad;
         Fin_Mientras
-        
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 8);
-        Cantidad_Vodka = Cantidad_Vodka – Cantidad;
+        precio = bar_ingredientes_precios[7];
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        contador = bar_contadores[7];
+        contador = contador + 1;
+        bar_contadores[7] = contador;
+        ingrediente = ingrediente – Cantidad;
+        bar_ingredientes_cantidades[7] = ingrediente;
         
         Mostrar << "Quedan disponibles ", Cantidad_Vodka, " botellas de Vodka.";
-      Caso (OpcionClientes = 3 AND Cantidad_Vodka < 1);
+      Caso (OpcionClientes = 3 AND bar_ingredientes_cantidades[7] < 1);
         Mostrar << "Se agotaron las botellas de Vodka.";
-      Caso (OpcionClientes = 4 AND Cantidad_Coctel > 0);
+      Caso (OpcionClientes = 4 AND bar_ingredientes_cantidades[8] > 0);
+        ingrediente = bar_ingredientes_cantidades[8];
         Mostrar << "¿Cuántas unidades compró? ";
         Leer >> Cantidad;
         
-        Mientras (Cantidad > Cantidad_Coctel) Hacer;
-          Mostrar << "Error, solo hay ", Cantidad_Coctel, " copas de Cóctel disponibles.";
+        Mientras (Cantidad > ingrediente) Hacer;
+          Mostrar << "Error, solo hay ", ingrediente, " copas de Cóctel disponibles.";
           Leer >> Cantidad;
         Fin_Mientras
-        
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 5);
-        Cantidad_Coctel = Cantidad_Coctel – Cantidad;
-        Mostrar << "Quedan disponibles ", Cantidad_Coctel, " copas de Cóctel.";
+        precio = bar_ingredientes_precios[8];
+        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        contador = bar_contadores[8];
+        contador = contador + 1;
+        bar_contadores[8] = contador;
+        ingrediente = ingrediente – Cantidad;
+        bar_ingredientes_cantidades[8] = ingrediente;
+        Mostrar << "Quedan disponibles ", ingrediente, " copas de Cóctel.";
       Otro_Caso
         Mostrar << "Se agotaron las copas de Cóctel.";
     Fin_Caso
