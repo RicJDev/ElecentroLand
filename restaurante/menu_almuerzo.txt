@@ -63,6 +63,7 @@ Inicio
         Fin_Mientras
 
         Mostrar << "Una sopa de Cebolla y tomate y una copa de Vinotinto. Serían, 25$.";
+
         precio = restaurante_ingredientes_precios[8];
         contador = contador + 1;
         restaurante_contadores[8] = contador;
@@ -108,7 +109,9 @@ Inicio
           Mostrar << "Solo hay ", ingrediente_1, "Chuletas de cerdo y ", ingrediente_2, "copas de John Collins disponibles";
           Leer >> Cantidad;
         Fin_Mientras
+
         Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$.";
+
         precio = restaurante_ingredientes_precios[10];
         contador = contador + 1;
         restaurante_contadores[10] = contador;
@@ -128,6 +131,7 @@ Inicio
           Mostrar << "Solo hay ", ingrediente_1, "Pastas Ex’ Reprobada y ", ingrediente_2, "copas de Estracto de Picha disponibles";
           Leer >> Cantidad;
         Fin_Mientras
+
         Mostrar << "Una ración de Pasta Ex' Reprobada y de bebida una copa de Estracto de Picha. Serían, 19$";
 
         precio = restaurante_ingredientes_precios[11];
@@ -147,6 +151,7 @@ Inicio
           Mostrar << "Solo hay ", ingrediente_1, "Ensaladas de Guanábana a la APK y ", ingrediente_2, "Botellas de Whisky Maravilla disponibles";
           Leer >> Cantidad;
         Fin_Mientras
+
         Mostrar << "Una ración de Ensalada de Guanábana a la APK y de bebida una copa de Whisky Maravilla. Serían, 27$.";
 
         precio = restaurante_ingredientes_precios[12];

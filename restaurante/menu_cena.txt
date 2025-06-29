@@ -81,7 +81,7 @@ Inicio
             Leer >> Cantidad;
             
             Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) OR (Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Pollos ", ingrediente_3, "Papas a la francesa y                             ", ingrediente_4, "Jugos de Justy disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Pollos ", ingrediente_3, "Papas a la francesa y ", ingrediente_4, "Jugos de Justy disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -108,7 +108,7 @@ Inicio
             Leer >> Cantidad;
 
             Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Carnes ", ingrediente_3, "Papas a la francesa y ",                          ingrediente_4, "Refrescos de Pepsi disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Carnes ", ingrediente_3, "Papas a la francesa y ", ingrediente_4, "Refrescos de Pepsi disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -135,7 +135,7 @@ Inicio
             Leer >> Cantidad;
             
             Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Pizzas, ", ingrediente_2, "Pepperonis ", ingrediente_3, "Quesos y ", ingrediente_4, "Refrescos de Coca                Cola disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, "Pizzas, ", ingrediente_2, "Pepperonis ", ingrediente_3, "Quesos y ", ingrediente_4, "Refrescos de Coca Cola disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -162,7 +162,7 @@ Inicio
             Leer >> Cantidad
 
             Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, " de masa de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, "de Quesos y ", ingrediente_4,                "Refrescos de Pepsi disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, " de masa de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, "de Quesos y ", ingrediente_4, "Refrescos de Pepsi disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -188,8 +188,8 @@ Inicio
             ingrediente_5 = restaurante_ingredientes_cantidades[25];
             Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad
-            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4 OR Cantidad >                          ingrediente_5) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Masas de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, " de Quesos ", ingrediente_4, " de               Tocinetas y ", ingrediente_5, " Refrescos de Coca Cola disponibles";
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4 OR Cantidad > ingrediente_5) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Masas de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, " de Quesos ", ingrediente_4, " de Tocinetas y ", ingrediente_5, " Refrescos de Coca Cola disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -283,7 +283,7 @@ Inicio
             Leer >> Cantidad;
             
             Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) OR (Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Pollos ", ingrediente_3, "Papas a la francesa y                             ", ingrediente_4, "Jugos de Justy disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Pollos ", ingrediente_3, "Papas a la francesa y ", ingrediente_4, "Jugos de Justy disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -310,7 +310,7 @@ Inicio
             Leer >> Cantidad;
 
             Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Carnes ", ingrediente_3, "Papas a la francesa y ",                          ingrediente_4, "Refrescos de Pepsi disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Carnes ", ingrediente_3, "Papas a la francesa y ", ingrediente_4, "Refrescos de Pepsi disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -337,7 +337,7 @@ Inicio
             Leer >> Cantidad;
             
             Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Pizzas, ", ingrediente_2, "Pepperonis ", ingrediente_3, "Quesos y ", ingrediente_4, "Refrescos de Coca                Cola disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, "Pizzas, ", ingrediente_2, "Pepperonis ", ingrediente_3, "Quesos y ", ingrediente_4, "Refrescos de Coca Cola disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -364,7 +364,7 @@ Inicio
             Leer >> Cantidad
 
             Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, " de masa de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, "de Quesos y ", ingrediente_4,                "Refrescos de Pepsi disponibles";
+              Mostrar << "Solo hay ", ingrediente_1, " de masa de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, "de Quesos y ", ingrediente_4, "Refrescos de Pepsi disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
@@ -391,8 +391,8 @@ Inicio
             Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad
 
-            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4 OR Cantidad >                          ingrediente_5) Hacer;
-              Mostrar << "Solo hay ", ingrediente_1, "Masas de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, " de Quesos ", ingrediente_4, " de               Tocinetas y ", ingrediente_5, " Refrescos de Coca Cola disponibles";
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4 OR Cantidad > ingrediente_5) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Masas de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, " de Quesos ", ingrediente_4, " de Tocinetas y ", ingrediente_5, " Refrescos de Coca Cola disponibles";
               Leer >> Cantidad;
             Fin_Mientras
 
