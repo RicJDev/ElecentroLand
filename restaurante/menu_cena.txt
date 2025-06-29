@@ -1,6 +1,6 @@
-Procedimiento Cena(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[]: Cadena, restaurante_ingredientes_cantidades[]: Entero, restaurante_contadores[]: Entero);
+Procedimiento Cena(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real);
 Inicio
-  Var opc_agenda, opc_cena, personas_agenda, contC1 = 0, contC2 = 0, contC3 = 0, contC4 = 0, contC5 = 0, contC6 = 0, Cantidad_Sushi = 40, Cantidad_Soya = 40, CocaCola = 40, Cantidad_Pan_Hamburguesas = 40, Cantidad_Pollo = 40, Cantidad_Papas = 40, Justy = 40, Cantidad_Carne = 40, Pepsi = 40, Cantidad_Pizzas = 40, Cantidad_Pepperoni = 40, Cantidad_Queso = 40: Entero, I: Entero, R: Booleano;
+  Var opc_agenda, opc_cena, personas_agenda, I: Entero, R: Booleano;
 Var ingrediente_1, ingrediente_2, ingrediente_3, ingrediente_4, ingrediente_5: Entero;
 Var precio: Real;
 Var contador: Entero;
@@ -49,83 +49,166 @@ Var contador: Entero;
         
         En_Caso (opc_cena > 0) Sea;
           Caso (opc_cena = 1);
+            ingrediente_1 = restaurante_ingredientes_cantidades[23];
+            ingrediente_2 = restaurante_ingredientes_cantidades[24];
+            ingrediente_3 = restaurante_ingredientes_cantidades[25];
             Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad;
             
-            Mientras (Cantidad > Cantidad_Sushi OR Cantidad > Cantidad_Soya OR Cantidad > CocaCola) Hacer;
-              Mostrar << "Solo hay ", Cantidad_Sushi, "Sushis y ", Cantidad_Soya, "Salsas de soya y ", CocaCola, " Refrescos de Coca Cola disponibles";
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Sushis y ", ingrediente_2, "Salsas de soya y ", ingrediente_3, " Refrescos de Coca Cola disponibles";
               Leer >> Cantidad;
             Fin_Mientras
-            
-            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 5.1);
-            contC1 = conC1 + 1;  //contador de combo
-            Cantidad_Sushi = Cantidad_Sushi – Cantidad;
-            Cantidad_Soya = Cantidad_Soya – Cantidad;
-            CocaCola = CocaCola – Cantidad;
+            Mostrar << "Una ración de Sushi Tempura con salsa de soya y de bebida una CocaCola. Serían, 6$";
+
+            precio = restaurante_ingredientes_precios[13];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[13] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            restaurante_ingredientes_cantidades[23] = ingrediente_1;
+            restaurante_ingredientes_cantidades[24] = ingrediente_2;
+            restaurante_ingredientes_cantidades[25] = ingrediente_3;
+
           Caso (opc_cena = 2);
+            ingrediente_1 = restaurante_ingredientes_cantidades[26];
+            ingrediente_2 = restaurante_ingredientes_cantidades[27];
+            ingrediente_3 = restaurante_ingredientes_cantidades[28];
+            ingrediente_4 = restaurante_ingredientes_cantidades[30];
             Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad;
             
-            Mientras (Cantidad > Cantidad_Pan_Hamburguesas OR Cantidad > Cantidad_Pollo OR Cantidad > Cantidad_Papas OR Cantidad > Justy) Hacer;
-              Mostrar << "Solo hay ", Cantidad_Pan_Hamburguesas, "Panes de Hamburguesas, ", Cantidad_Pollo, "Pollos ", Cantidad_Papas, "Papas a la francesa y ", Justy, "Jugos de Justy disponibles";
+            Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) OR (Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Pollos ", ingrediente_3, "Papas a la francesa y                             ", ingrediente_4, "Jugos de Justy disponibles";
               Leer >> Cantidad;
             Fin_Mientras
-            
-            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 6.8);
-            contC2 = contC2 + 1;  //contador de combo
-            Cantidad_Pan_Hamburguesas = Cantidad_Pan_Hamburguesas – Cantidad;
-            Cantidad_Pollo = Cantidad_Pollo – Cantidad;
-            Cantidad_Papas = Cantidad_Papas – Cantidad;
-            Justy = Justy – Cantidad;
+
+            Mostrar << "Una hamburguesa de pollo y de bebida un jugo Justy. Serían, 8$";
+
+            precio = restaurante_ingredientes_precios[14];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[14] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[26] = ingrediente_1;
+            restaurante_ingredientes_cantidades[27] = ingrediente_2;
+            restaurante_ingredientes_cantidades[28] = ingrediente_3;
+            restaurante_ingredientes_cantidades[30] = ingrediente_4;
           Caso (opc_cena = 3);
-            Mientras (Cantidad > Cantidad_Pan_Hamburguesas OR Cantidad > Cantidad_Carne OR Cantidad > Cantidad_Papas OR Cantidad > Pepsi) Hacer;
-              Mostrar << "Solo hay ", Cantidad_Pan_Hamburguesas, "Panes de Hamburguesas, ", Cantidad_Carne, "Carnes ", Cantidad_Papas, "Papas a la francesa y ", Pepsi, "Refrescos de Pepsi disponibles";
+            ingrediente_1 = restaurante_ingredientes_cantidades[26];
+            ingrediente_2 = restaurante_ingredientes_cantidades[29];
+            ingrediente_3 = restaurante_ingredientes_cantidades[28];
+            ingrediente_4 = restaurante_ingredientes_cantidades[31];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
+            Leer >> Cantidad;
+
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Carnes ", ingrediente_3, "Papas a la francesa y ",                          ingrediente_4, "Refrescos de Pepsi disponibles";
               Leer >> Cantidad;
             Fin_Mientras
-            
-            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 4.25);
-            contC3 = contC3 + 1;  //contador de combo
-            Cantidad_Pan_Hamburguesas = Cantidad_Pan_Hamburguesas – Cantidad;
-            Cantidad_Carne = Cantidad_Carne – Cantidad;
-            Cantidad_Papas = Cantidad_Papas – Cantidad;
-            Pepsi = Pepsi – Cantidad;
+
+            Mostrar << "Una hamburguesa de carne y de bebida una Pepsi. Serían, 5$";
+
+            precio = restaurante_ingredientes_precios[15];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[15] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[26] = ingrediente_1;
+            restaurante_ingredientes_cantidades[29] = ingrediente_2;
+            restaurante_ingredientes_cantidades[28] = ingrediente_3;
+            restaurante_ingredientes_cantidades[31] = ingrediente_4;
           Caso (opc_cena = 4);
-            Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > Justy) Hacer;
-              Mostrar << "Solo hay ", Cantidad_Pizzas, "Pizzas, ", Cantidad_Pepperoni, "Pepperonis ", Cantidad_Queso, "Quesos y ", CocaCola, "Refrescos de Coca Cola disponibles";
+            ingrediente_1 = restaurante_ingredientes_cantidades[32];
+            ingrediente_2 = restaurante_ingredientes_cantidades[33];
+            ingrediente_3 = restaurante_ingredientes_cantidades[34];
+            ingrediente_4 = restaurante_ingredientes_cantidades[25];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
+            Leer >> Cantidad;
+            
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Pizzas, ", ingrediente_2, "Pepperonis ", ingrediente_3, "Quesos y ", ingrediente_4, "Refrescos de Coca                Cola disponibles";
               Leer >> Cantidad;
             Fin_Mientras
-            
-            Cuenta_Cliente = Cuenta¬_Cliente + (Cantidad * 5.95);
-            contC4 = contC4 + 1;  //contador de combo
-            Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
-            Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
-            Cantidad_Queso = Cantidad_Queso – Cantidad;
-            CocaCola = CocaCola – Cantidad;
+
+            Mostrar << "Una pizza pequeña con pepperoni y queso y de bebida una CocaCola 1L. Serían, 7$";
+
+            precio = restaurante_ingredientes_precios[16];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[16] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[32] = ingrediente_1;
+            restaurante_ingredientes_cantidades[33] = ingrediente_2;
+            restaurante_ingredientes_cantidades[34] = ingrediente_3;
+            restaurante_ingredientes_cantidades[25] = ingrediente_4;
           Caso (opc_cena = 5);
-            Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > Justy) Hacer;
-              Mostrar << "Solo hay ", Cantidad_Pizzas, " de masa de Pizzas, ", Cantidad_Pepperoni, " de Pepperonis ", Cantidad_Queso, "de Quesos y ", Pepsi, "Refrescos de Pepsi disponibles";
+            ingrediente_1 = restaurante_ingredientes_cantidades[32];
+            ingrediente_2 = restaurante_ingredientes_cantidades[33];
+            ingrediente_3 = restaurante_ingredientes_cantidades[34];
+            ingrediente_4 = restaurante_ingredientes_cantidades[31];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
+            Leer >> Cantidad
+
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, " de masa de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, "de Quesos y ", ingrediente_4,                "Refrescos de Pepsi disponibles";
               Leer >> Cantidad;
             Fin_Mientras
-            
-            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 8.5);
-            contC5 = contC5 + 1;  //contador de combo
-            Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
-            Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
-            Cantidad_Queso = Cantidad_Queso – Cantidad;
-            Pepsi = Pepsi – Cantidad;
+
+            Mostrar << "Una pizza mediana con pepperoni y queso y de bebida una Pepsi 1L. Serían, 10$";
+
+            precio = restaurante_ingredientes_precios[17];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[17] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[32] = ingrediente_1;
+            restaurante_ingredientes_cantidades[33] = ingrediente_2;
+            restaurante_ingredientes_cantidades[34] = ingrediente_3;
+            restaurante_ingredientes_cantidades[31] = ingrediente_4;
           Otro_Caso
-            Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > Cantidad_Tocineta OR Cantidad > Justy) Hacer;
-              Mostrar << "Solo hay ", Cantidad_Pizzas, "Masas de Pizzas, ", Cantidad_Pepperoni, " de Pepperonis ", Cantidad_Queso, " de Quesos ", Cantidad_Tocineta, " de Tocinetas y ", CocaCola, " Refrescos de Coca Cola disponibles";
+            ingrediente_1 = restaurante_ingredientes_cantidades[32];
+            ingrediente_2 = restaurante_ingredientes_cantidades[33];
+            ingrediente_3 = restaurante_ingredientes_cantidades[34];
+            ingrediente_4 = restaurante_ingredientes_cantidades[4];
+            ingrediente_5 = restaurante_ingredientes_cantidades[25];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
+            Leer >> Cantidad
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4 OR Cantidad >                          ingrediente_5) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Masas de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, " de Quesos ", ingrediente_4, " de               Tocinetas y ", ingrediente_5, " Refrescos de Coca Cola disponibles";
               Leer >> Cantidad;
             Fin_Mientras
-            
-            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 13.25); ;
-            contC6 = contC6 + 1;  //contador de combo
-            Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
-            Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
-            Cantidad_Queso = Cantidad_Queso – Cantidad;
-            Cantidad_Tocineta = Cantidad_Tocineta – Cantidad;
-            CocaCola = CocaCola – Cantidad;
+
+            Mostrar << "Una pizza grande con pepperoni, queso y tocineta y de bebida una CocaCola 2L. Serían, 15$";
+
+            precio = restaurante_ingredientes_precios[18];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[18] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            ingrediente_5 = ingrediente_5 – Cantidad;
+            restaurante_ingredientes_cantidades[32] = ingrediente_1;
+            restaurante_ingredientes_cantidades[33] = ingrediente_2;
+            restaurante_ingredientes_cantidades[34] = ingrediente_3;
+            restaurante_ingredientes_cantidades[4] = ingrediente_4;
+            restaurante_ingredientes_cantidades[25] = ingrediente_5;
         Fin_Caso
       Fin_Para
       
@@ -166,86 +249,170 @@ Var contador: Entero;
         Leer >> opc_combo;
       Fin_Mientras
       
-      En_Caso (opc_cena > 0) Sea;
-        Caso (opc_cena = 1);
-          Mostrar << "¿Cuántas unidades quiere ordenar?";
-          Leer >> Cantidad;
-          
-          Mientras (Cantidad > Cantidad_Sushi OR Cantidad > Cantidad_Soya OR Cantidad > CocaCola) Hacer;
-            Mostrar << "Solo hay ", Cantidad_Sushi, "Sushis y ", Cantidad_Soya, "Salsas de soya y ", CocaCola, " Refrescos de Coca Cola disponibles";
+        En_Caso (opc_cena > 0) Sea;
+          Caso (opc_cena = 1);
+            ingrediente_1 = restaurante_ingredientes_cantidades[23];
+            ingrediente_2 = restaurante_ingredientes_cantidades[24];
+            ingrediente_3 = restaurante_ingredientes_cantidades[25];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad;
-          Fin_Mientras
-          
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 6);
-          contC1 = conC1 + 1;  //contador de combo
-          Cantidad_Sushi = Cantidad_Sushi – Cantidad;
-          Cantidad_Soya = Cantidad_Soya – Cantidad;
-          CocaCola = CocaCola – Cantidad;
-        Caso (opc_cena = 2);
-          Mostrar << "¿Cuántas unidades quiere ordenar?";
-          Leer >> Cantidad;
-          
-          Mientras (Cantidad > Cantidad_Pan_Hamburguesas OR Cantidad > Cantidad_Pollo OR Cantidad > Cantidad_Papas OR Cantidad > Justy) Hacer;
-            Mostrar << "Solo hay ", Cantidad_Pan_Hamburguesas, "Panes de Hamburguesas, ", Cantidad_Pollo, "Pollos ", Cantidad_Papas, "Papas a la francesa y ", Justy, "Jugos de Justy disponibles";
+            
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Sushis y ", ingrediente_2, "Salsas de soya y ", ingrediente_3, " Refrescos de Coca Cola disponibles";
+              Leer >> Cantidad;
+            Fin_Mientras
+            Mostrar << "Una ración de Sushi Tempura con salsa de soya y de bebida una CocaCola. Serían, 6$";
+
+            precio = restaurante_ingredientes_precios[13];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[13] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            restaurante_ingredientes_cantidades[23] = ingrediente_1;
+            restaurante_ingredientes_cantidades[24] = ingrediente_2;
+            restaurante_ingredientes_cantidades[25] = ingrediente_3;
+
+          Caso (opc_cena = 2);
+            ingrediente_1 = restaurante_ingredientes_cantidades[26];
+            ingrediente_2 = restaurante_ingredientes_cantidades[27];
+            ingrediente_3 = restaurante_ingredientes_cantidades[28];
+            ingrediente_4 = restaurante_ingredientes_cantidades[30];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad;
-          Fin_Mientras
-          
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 8);
-          contC2 = contC2 + 1;  //contador de combo
-          Cantidad_Pan_Hamburguesas = Cantidad_Pan_Hamburguesas – Cantidad;
-          Cantidad_Pollo = Cantidad_Pollo – Cantidad;
-          Cantidad_Papas = Cantidad_Papas – Cantidad;
-          Justy = Justy – Cantidad;
-        Caso (opc_cena = 3);
-          Mientras (Cantidad > Cantidad_Pan_Hamburguesas OR Cantidad > Cantidad_Carne OR Cantidad > Cantidad_Papas OR Cantidad > Pepsi) Hacer;
-            Mostrar << "Solo hay ", Cantidad_Pan_Hamburguesas, "Panes de Hamburguesas, ", Cantidad_Carne, "Carnes ", Cantidad_Papas, "Papas a la francesa y ", Pepsi, "Refrescos de Pepsi disponibles";
+            
+            Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) OR (Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Pollos ", ingrediente_3, "Papas a la francesa y                             ", ingrediente_4, "Jugos de Justy disponibles";
+              Leer >> Cantidad;
+            Fin_Mientras
+
+            Mostrar << "Una hamburguesa de pollo y de bebida un jugo Justy. Serían, 8$";
+
+            precio = restaurante_ingredientes_precios[14];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[14] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[26] = ingrediente_1;
+            restaurante_ingredientes_cantidades[27] = ingrediente_2;
+            restaurante_ingredientes_cantidades[28] = ingrediente_3;
+            restaurante_ingredientes_cantidades[30] = ingrediente_4;
+          Caso (opc_cena = 3);
+            ingrediente_1 = restaurante_ingredientes_cantidades[26];
+            ingrediente_2 = restaurante_ingredientes_cantidades[29];
+            ingrediente_3 = restaurante_ingredientes_cantidades[28];
+            ingrediente_4 = restaurante_ingredientes_cantidades[31];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad;
-          Fin_Mientras
-          
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 5);
-          contC3 = contC3 + 1;  //contador de combo
-          Cantidad_Pan_Hamburguesas = Cantidad_Pan_Hamburguesas – Cantidad;
-          Cantidad_Carne = Cantidad_Carne – Cantidad;
-          Cantidad_Papas = Cantidad_Papas – Cantidad;
-          Pepsi = Pepsi – Cantidad;
-        Caso (opc_cena = 4);
-          Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > CocaCola) Hacer;
-            Mostrar << "Solo hay ", Cantidad_Pizzas, "Pizzas, ", Cantidad_Pepperoni, "Pepperonis ", Cantidad_Queso, "Quesos y ", CocaCola, "Refrescos de Coca Cola disponibles";
+
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Panes de Hamburguesas, ", ingrediente_2, "Carnes ", ingrediente_3, "Papas a la francesa y ",                          ingrediente_4, "Refrescos de Pepsi disponibles";
+              Leer >> Cantidad;
+            Fin_Mientras
+
+            Mostrar << "Una hamburguesa de carne y de bebida una Pepsi. Serían, 5$";
+
+            precio = restaurante_ingredientes_precios[15];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[15] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[26] = ingrediente_1;
+            restaurante_ingredientes_cantidades[29] = ingrediente_2;
+            restaurante_ingredientes_cantidades[28] = ingrediente_3;
+            restaurante_ingredientes_cantidades[31] = ingrediente_4;
+          Caso (opc_cena = 4);
+            ingrediente_1 = restaurante_ingredientes_cantidades[32];
+            ingrediente_2 = restaurante_ingredientes_cantidades[33];
+            ingrediente_3 = restaurante_ingredientes_cantidades[34];
+            ingrediente_4 = restaurante_ingredientes_cantidades[25];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
             Leer >> Cantidad;
-          Fin_Mientras
-          
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 7);
-          contC4 = contC4 + 1;  //contador de combo
-          Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
-          Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
-          Cantidad_Queso = Cantidad_Queso – Cantidad;
-          CocaCola = CocaCola – Cantidad;
-        Caso (opc_cena = 5);
-          Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > Pepsi) Hacer;
-            Mostrar << "Solo hay ", Cantidad_Pizzas, " de masa de Pizzas, ", Cantidad_Pepperoni, " de Pepperonis ", Cantidad_Queso, "de Quesos y ", Pepsi, "Refrescos de Pepsi disponibles";
-            Leer >> Cantidad;
-          Fin_Mientras
-          
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 10);
-          contC5 = contC5 + 1;  //contador de combo
-          Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
-          Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
-          Cantidad_Queso = Cantidad_Queso – Cantidad;
-          Pepsi = Pepsi – Cantidad;
-        Otro_Caso
-          Mientras (Cantidad > Cantidad_Pizzas OR Cantidad > Cantidad_Pepperoni OR Cantidad > Cantidad_Queso OR Cantidad > Cantidad_Tocineta OR Cantidad > CocaCola) Hacer;
-            Mostrar << "Solo hay ", Cantidad_Pizzas, "Masas de Pizzas, ", Cantidad_Pepperoni, " de Pepperonis ", Cantidad_Queso, " de Quesos ", Cantidad_Tocineta, " de Tocinetas y ", CocaCola, " Refrescos de Coca Cola disponibles";
-            Leer >> Cantidad;
-          Fin_Mientras
-          
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 15); ;
-          contC6 = contC6 + 1;  //contador de combo
-          Cantidad_Pizzas = Cantidad_Pizzas – Cantidad;
-          Cantidad_Pepperoni = Cantidad_Pepperoni – Cantidad;
-          Cantidad_Queso = Cantidad_Queso – Cantidad;
-          Cantidad_Tocineta = Cantidad_Tocineta – Cantidad;
-          CocaCola = CocaCola – Cantidad;
-      Fin_Caso
+            
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Pizzas, ", ingrediente_2, "Pepperonis ", ingrediente_3, "Quesos y ", ingrediente_4, "Refrescos de Coca                Cola disponibles";
+              Leer >> Cantidad;
+            Fin_Mientras
+
+            Mostrar << "Una pizza pequeña con pepperoni y queso y de bebida una CocaCola 1L. Serían, 7$";
+
+            precio = restaurante_ingredientes_precios[16];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[16] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[32] = ingrediente_1;
+            restaurante_ingredientes_cantidades[33] = ingrediente_2;
+            restaurante_ingredientes_cantidades[34] = ingrediente_3;
+            restaurante_ingredientes_cantidades[25] = ingrediente_4;
+          Caso (opc_cena = 5);
+            ingrediente_1 = restaurante_ingredientes_cantidades[32];
+            ingrediente_2 = restaurante_ingredientes_cantidades[33];
+            ingrediente_3 = restaurante_ingredientes_cantidades[34];
+            ingrediente_4 = restaurante_ingredientes_cantidades[31];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
+            Leer >> Cantidad
+
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, " de masa de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, "de Quesos y ", ingrediente_4,                "Refrescos de Pepsi disponibles";
+              Leer >> Cantidad;
+            Fin_Mientras
+
+            Mostrar << "Una pizza mediana con pepperoni y queso y de bebida una Pepsi 1L. Serían, 10$";
+
+            precio = restaurante_ingredientes_precios[17];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[17] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            restaurante_ingredientes_cantidades[32] = ingrediente_1;
+            restaurante_ingredientes_cantidades[33] = ingrediente_2;
+            restaurante_ingredientes_cantidades[34] = ingrediente_3;
+            restaurante_ingredientes_cantidades[31] = ingrediente_4;
+          Otro_Caso
+            ingrediente_1 = restaurante_ingredientes_cantidades[32];
+            ingrediente_2 = restaurante_ingredientes_cantidades[33];
+            ingrediente_3 = restaurante_ingredientes_cantidades[34];
+            ingrediente_4 = restaurante_ingredientes_cantidades[4];
+            ingrediente_5 = restaurante_ingredientes_cantidades[25];
+            Mostrar << "¿Cuántas unidades quiere ordenar?";
+            Leer >> Cantidad
+
+            Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3 OR Cantidad > ingrediente_4 OR Cantidad >                          ingrediente_5) Hacer;
+              Mostrar << "Solo hay ", ingrediente_1, "Masas de Pizzas, ", ingrediente_2, " de Pepperonis ", ingrediente_3, " de Quesos ", ingrediente_4, " de               Tocinetas y ", ingrediente_5, " Refrescos de Coca Cola disponibles";
+              Leer >> Cantidad;
+            Fin_Mientras
+
+            Mostrar << "Una pizza grande con pepperoni, queso y tocineta y de bebida una CocaCola 2L. Serían, 15$";
+
+            precio = restaurante_ingredientes_precios[18];
+            Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio + (precio * 0.15));
+            contador = contador + 1;  //contador de combo
+            restaurante_contadores[18] = contador;
+            ingrediente_1 = ingrediente_1 – Cantidad;
+            ingrediente_2 = ingrediente_2 – Cantidad;
+            ingrediente_3 = ingrediente_3 – Cantidad;
+            ingrediente_4 = ingrediente_4 – Cantidad;
+            ingrediente_5 = ingrediente_5 – Cantidad;
+            restaurante_ingredientes_cantidades[32] = ingrediente_1;
+            restaurante_ingredientes_cantidades[33] = ingrediente_2;
+            restaurante_ingredientes_cantidades[34] = ingrediente_3;
+            restaurante_ingredientes_cantidades[4] = ingrediente_4;
+            restaurante_ingredientes_cantidades[25] = ingrediente_5;
+        Fin_Caso
     Fin_Para
     
     Mostrar << "Estimado usuario, su cuenta asciende a: ", Cuenta_Cliente;
