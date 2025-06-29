@@ -6,7 +6,7 @@ Inicio
   Var precio: Real;
   Var contador: Entero;
   Var R: Booleano;
-  
+  Var Dinero_Opc1, Dinero_Opc2, Dinero_Opc3, Dinero_Opc4, Dinero_Opc5, Dinero_Opc6, Dinero_Todas_Opcs: Real; 
   Repetir
     Mostrar << "Este es nuestro menú de Almuerzo:";
     Mostrar << "Opción 1: Ensalada Cesar y de bebida Vino Blanco: 32$";
@@ -28,11 +28,12 @@ Inicio
         ingrediente_2 = restaurante_ingredientes[11];
         
         Repetir
-          Si (ingrediente_1 > 0 AND ingrediente_2 > 0) Entonces;
+          Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
             Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serían, 32$"; // 11 y 10
             
             ingrediente_1 = ingrediente_1 - 1;
             ingrediente_2 = ingrediente_2 - 1;
+            contador = restaurante_contadores[7];
             contador = contador + 1;
             restaurante_contadores[7] = contador;
             restaurante_ingredientes_cantidades[10] = ingrediente_1;
@@ -53,114 +54,140 @@ Inicio
         ingrediente_1 = restaurante_ingredientes_cantidades[12];
         ingrediente_2 = restaurante_ingredientes_cantidades[13];
         ingrediente_3 = restaurante_ingredientes_cantidades[14];
-
-        Mostrar << "¿Cuántas desea ordenar?";
-        Leer >> Cantidad;
-
-        Mientras (Cantidad > ingrediente_1 OR ingrediente_2 OR Cantidad > ingrediente_3) Hacer;
-          Mostrar << "Solo hay ", ingrediente_1, "Cebollas,  ", ingrediente_2, "Tomates y ", ingrediente_3, "copas de Vinotinto disponibles";
+        Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) AND (ingrediente_3 > 0) Entonces;
+          Mostrar << "¿Cuántas desea ordenar?";
           Leer >> Cantidad;
-        Fin_Mientras
-
-        Mostrar << "Una sopa de Cebolla y tomate y una copa de Vinotinto. Serían, 25$.";
-
-        precio = restaurante_ingredientes_precios[8];
-        contador = contador + 1;
-        restaurante_contadores[8] = contador;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Dinero_Opc2 = Dinero_Opc2 + (Cantidad * Opc2);
-        ingrediente_1 = ingrediente_1 – Cantidad;
-        ingrediente_2 = ingrediente_2 – Cantidad;
-        ingrediente_3 = ingrediente_3 – Cantidad;
-        restaurante_ingredientes_cantidades[12] = ingrediente_1;
-        restaurante_ingredientes_cantidades[13] = ingrediente_2;
-        restaurante_ingredientes_cantidades[14] = ingrediente_3;
+  
+          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) Hacer;
+            Mostrar << "Solo hay ", ingrediente_1, "Cebollas,  ", ingrediente_2, "Tomates y ", ingrediente_3, "copas de Vinotinto disponibles";
+            Leer >> Cantidad;
+          Fin_Mientras
+  
+          Mostrar << "Una sopa de Cebolla y tomate y una copa de Vinotinto. Serían, 25$.";
+  
+          precio = restaurante_ingredientes_precios[8];
+          contador = restaurante_contadores[8];
+          contador = contador + 1;
+          restaurante_contadores[8] = contador;
+          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+          Dinero_Opc2 = Dinero_Opc2 + (Cantidad * precio);
+          ingrediente_1 = ingrediente_1 – Cantidad;
+          ingrediente_2 = ingrediente_2 – Cantidad;
+          ingrediente_3 = ingrediente_3 – Cantidad;
+          restaurante_ingredientes_cantidades[12] = ingrediente_1;
+          restaurante_ingredientes_cantidades[13] = ingrediente_2;
+          restaurante_ingredientes_cantidades[14] = ingrediente_3;
+        Sino
+          Mostrar << "Se acabaron los ingredientes";
+        Fin_Si
       Caso (opcion = 3);
         ingrediente_1 = restaurante_ingredientes_cantidades[15];
         ingrediente_2 = restaurante_ingredientes_cantidades[16];
-
-        Mostrar << "¿Cuántas desea ordenar?";
-        Leer >> Cantidad;
-        
-        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
-          Mostrar << "Solo hay ", ingrediente_1, "Bistecs de Res y ", ingrediente_2, "copas de Bourbon disponibles";
+        Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
+          Mostrar << "¿Cuántas desea ordenar?";
           Leer >> Cantidad;
-        Fin_Mientras
-
-        Mostrar << "Una ración de bistec de res y de bebida una copa de Bourbon. Serían, 22$.";
-
-        precio = restaurante_ingredientes_precios[9];
-        contador = contador + 1;
-        restaurante_contadores[9] = contador;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Dinero_Opc3 = Dinero_Opc3 + (Cantidad * precio);
-        ingrediente_1 = ingrediente_1 – Cantidad;
-        ingrediente_2 = ingrediente_2 – Cantidad;
-        restaurante_ingredientes_cantidades[15] = ingrediente_1;
-        restaurante_ingredientes_cantidades[16] = ingrediente_2;
+          
+          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+            Mostrar << "Solo hay ", ingrediente_1, "Bistecs de Res y ", ingrediente_2, "copas de Bourbon disponibles";
+            Leer >> Cantidad;
+          Fin_Mientras
+  
+          Mostrar << "Una ración de bistec de res y de bebida una copa de Bourbon. Serían, 22$.";
+  
+          precio = restaurante_ingredientes_precios[9];
+          contador = restaurante_contadores[9];
+          contador = contador + 1;
+          restaurante_contadores[9] = contador;
+          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+          Dinero_Opc3 = Dinero_Opc3 + (Cantidad * precio);
+          ingrediente_1 = ingrediente_1 – Cantidad;
+          ingrediente_2 = ingrediente_2 – Cantidad;
+          restaurante_ingredientes_cantidades[15] = ingrediente_1;
+          restaurante_ingredientes_cantidades[16] = ingrediente_2;
+        Sino
+          Mostrar << "Se acabaron los ingredientes";
+        Fin_Si
       Caso (opcion = 4);
         ingrediente_1 = restaurante_ingredientes_cantidades[17];
         ingrediente_2 = restaurante_ingredientes_cantidades[18];
-        
-        Mostrar << "¿Cuántas desea ordenar?";
-        Leer >> Cantidad;
-        
-        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
-          Mostrar << "Solo hay ", ingrediente_1, "Chuletas de cerdo y ", ingrediente_2, "copas de John Collins disponibles";
+        Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
+          Mostrar << "¿Cuántas desea ordenar?";
           Leer >> Cantidad;
-        Fin_Mientras
-
-        Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$.";
-
-        precio = restaurante_ingredientes_precios[10];
-        contador = contador + 1;
-        restaurante_contadores[10] = contador;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Dinero_Opc4 = Dinero_Opc4 + (Cantidad * precio);
-        ingrediente_1 = ingrediente_1 – Cantidad;
-        ingrediente_2 = ingrediente_2 – Cantidad;
-        restaurante_ingredientes_cantidades[17] = ingrediente_1;
-        restaurante_ingredientes_cantidades[18] = ingrediente_2;
+          
+          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+            Mostrar << "Solo hay ", ingrediente_1, "Chuletas de cerdo y ", ingrediente_2, "copas de John Collins disponibles";
+            Leer >> Cantidad;
+          Fin_Mientras
+  
+          Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$.";
+  
+          precio = restaurante_ingredientes_precios[10];
+          contador = restaurante_contadores[10];
+          contador = contador + 1;
+          restaurante_contadores[10] = contador;
+          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+          Dinero_Opc4 = Dinero_Opc4 + (Cantidad * precio);
+          ingrediente_1 = ingrediente_1 – Cantidad;
+          ingrediente_2 = ingrediente_2 – Cantidad;
+          restaurante_ingredientes_cantidades[17] = ingrediente_1;
+          restaurante_ingredientes_cantidades[18] = ingrediente_2;
+        Sino
+          Mostrar << "Se acabaron los ingredientes";
+        Fin_Si
       Caso (opcion = 5);
         ingrediente_1 = restaurante_ingredientes_cantidades[19];
         ingrediente_2 = restaurante_ingredientes_cantidades[20];
-        Mostrar << "¿Cuántas ordenó?";
-        Leer >> Cantidad;
-        
-        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
-          Mostrar << "Solo hay ", ingrediente_1, "Pastas Ex’ Reprobada y ", ingrediente_2, "copas de Estracto de Picha disponibles";
+        Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
+          Mostrar << "¿Cuántas ordenó?";
           Leer >> Cantidad;
-        Fin_Mientras
-
-        Mostrar << "Una ración de Pasta Ex' Reprobada y de bebida una copa de Estracto de Picha. Serían, 19$";
-
-        precio = restaurante_ingredientes_precios[11];
-        contador = contador 5 + 1;
-        restaurante_contadores[11] = contador;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Dinero_Opc5 = Dinero_Opc5 + (Cantidad * precio);
-        ingrediente_1 = ingrediente_1 – Cantidad;
-        ingrediente_2 = ingrediente_2 – Cantidad;
+          
+          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+            Mostrar << "Solo hay ", ingrediente_1, "Pastas Ex’ Reprobada y ", ingrediente_2, "copas de Estracto de Picha disponibles";
+            Leer >> Cantidad;
+          Fin_Mientras
+  
+          Mostrar << "Una ración de Pasta Ex' Reprobada y de bebida una copa de Estracto de Picha. Serían, 19$";
+  
+          precio = restaurante_ingredientes_precios[11];
+          contador = restaurante_contadores[11];
+          contador = contador + 1;
+          restaurante_contadores[11] = contador;
+          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+          Dinero_Opc5 = Dinero_Opc5 + (Cantidad * precio);
+          ingrediente_1 = ingrediente_1 – Cantidad;
+          ingrediente_2 = ingrediente_2 – Cantidad;
+          restaurante_ingredientes_cantidades[19] = ingrediente_1;
+          restaurante_ingredientes_cantidades[20] = ingrediente_2;
+        Sino
+          Mostrar << "Se acabaron los ingredientes";
+        Fin_Si
       Otro_Caso
         ingrediente_1 = restaurante_ingredientes_cantidades[21];
         ingrediente_2 = restaurante_ingredientes_cantidades[22];
-        Mostrar << "¿Cuántas ordenó?";
-        Leer >> Cantidad;
-        
-        Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2) Hacer;
-          Mostrar << "Solo hay ", ingrediente_1, "Ensaladas de Guanábana a la APK y ", ingrediente_2, "Botellas de Whisky Maravilla disponibles";
+        Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
+          Mostrar << "¿Cuántas ordenó?";
           Leer >> Cantidad;
-        Fin_Mientras
-
-        Mostrar << "Una ración de Ensalada de Guanábana a la APK y de bebida una copa de Whisky Maravilla. Serían, 27$.";
-
-        precio = restaurante_ingredientes_precios[12];
-        contador = contador + 1;
-        restaurante_contadores[12] = contador;
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        Dinero_Opc6 = Dinero_Opc6 + (Cantidad * precio);
-        ingrediente_1 = ingrediente_1 – Cantidad;
-        ingrediente_2 = ingrediente_2 – Cantidad;
+          
+          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+            Mostrar << "Solo hay ", ingrediente_1, "Ensaladas de Guanábana a la APK y ", ingrediente_2, "Botellas de Whisky Maravilla disponibles";
+            Leer >> Cantidad;
+          Fin_Mientras
+  
+          Mostrar << "Una ración de Ensalada de Guanábana a la APK y de bebida una copa de Whisky Maravilla. Serían, 27$.";
+  
+          precio = restaurante_ingredientes_precios[12];
+          contador = restaurante_contadores[12];
+          contador = contador + 1;
+          restaurante_contadores[12] = contador;
+          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+          Dinero_Opc6 = Dinero_Opc6 + (Cantidad * precio);
+          ingrediente_1 = ingrediente_1 – Cantidad;
+          ingrediente_2 = ingrediente_2 – Cantidad;
+          restaurante_ingredientes_cantidades[21] = ingrediente_1;
+          restaurante_ingredientes_cantidades[22] = ingrediente_2;
+        Sino
+          Mostrar << "Se acabaron los ingredientes";
+        Fin_Si
     Fin_Caso
     
     Mostrar << "Desea añadir algo más a su menú?, 1: Sí, 0: No ";
