@@ -5,31 +5,31 @@ var
 		Para (J = 1 Hasta J = 3) Hacer;
 			En caso (rodillo[3][3] > 0) sea;
 				Caso (rodillo[I][J] = 1);
-				Mostrar<<'🍌';
+					Mostrar<<'🍌';
 				Caso (rodillo[I][J] = 2);
-				Mostrar<<'🍒';
+					Mostrar<<'🍒';
 				Caso (rodillo[I][J] = 3);
-				Mostrar<<'🥭';
+					Mostrar<<'🥭';
 				Caso (rodillo[I][J] = 4);
-				Mostrar<<'🍍';
+					Mostrar<<'🍍';
 				Otro caso
-				Mostrar<<'🍋';
+					Mostrar<<'🍋';
 			Fin_Caso
       Fin_Para
     Fin_Para
 
 Fin_Procedimiento
 
-Funcion premio_maquinita (rodillo[3][3]:entero, saldo_apostado:real)real;
+Funcion premio_maquinita (rodillo[3][3]: Entero, saldo_apostado: Real): Real;
 premio: Real;
 
 En caso (rodillo[3][3] > 0) sea;
 	Caso (rodillo[1][1] = rodillo[1][2]) and (rodillo[1][1] = rodillo[1][3]);
-		premio = monto_Apostado * 5;
+		premio = saldo_apostado * 5;
 	Caso (rodillo[2][1] = rodillo[2][2]) and (rodillo[2][1] = rodillo[2][3]);
-		premio = monto_Apostado * 5;
+		premio = saldo_apostado * 5;
 	Caso (rodillo[3][1] = rodillo[3][2]) and (rodillo[3][1] = rodillo[3][3]);
-		premio = monto_Apostado * 5;
+		premio = saldo_apostado * 5;
 	Caso (rodillo[1][1] = rodillo[2][1]) and (rodillo[1][1] = rodillo[3][1]); 
 		premio = saldo_apostado * 10;
 	Caso (rodillo[1][2] = rodillo[2][2]) and (rodillo[1][2] = rodillo[3][2]);
@@ -59,8 +59,8 @@ rodillo[3][3]:entero
   Mostrar<< "|Si dos figuras son iguales entonces usted gana 2x      |";
   Mostrar<< "|Si tres figuras son diferentes entonces usted pierde   |";
   Mostrar<< ”--------------------------------------------------------”;
-  saldo_usuario = menu_juegos(casino_nombres,casino_saldos_fichas, casino_stock_premios, casino_valor_premios, casino_premios, id_usuario);
-  Mostrar <<"Querido usuario usted tiene"saldo_usuario,"fichas disponibles";
+ 
+  Mostrar <<"Querido usuario usted tiene", saldo_disponible,"fichas disponibles";
  
   Repetir
 
@@ -88,20 +88,20 @@ Para (I = 1 Hasta I = 3) Hacer;
 	Fin_Para
 Fin_Para
 	
-premio_giro = premio_maquinita(rodillo[3,3],saldo_apostado);
+premio_giro = premio_maquinita(rodillo[3][3],saldo_apostado);
 
   Para (I = 1 Hasta I = 3) Hacer;
 	Para (J = 1 Hasta J = 3) Hacer;
-  Mostrar << "---------------------------";             
-  Mostrar << "|TRAGAMONEDAS $FRUIT MONEY$|";
-  Mostrar << "---------------------------";    
-  Mostrar << "|", rodillo[I,J], "|";
+		  Mostrar << "---------------------------";             
+		  Mostrar << "|TRAGAMONEDAS $FRUIT MONEY$|";
+		  Mostrar << "---------------------------";    
+		  Mostrar << "|", rodillo[I,J], "|";
 	Fin_Para
 	Mostrar << "---";
   Fin_Para  
        
   Mostrar << "Resultados de la apuesta: usted gana", premio giro,"fichas";
-  saldo_restante = (saldo_usuario - saldo_apostado) + premio_giro;
+  saldo_restante = (saldo_disponible - saldo_apostado) + premio_giro;
 
   Si (saldo_restante < 1) Entonces;
      Mostrar << "Su saldo es insuficiente para seguir jugando, ¡recargue por favor!";
