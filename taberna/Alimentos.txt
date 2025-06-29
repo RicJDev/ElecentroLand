@@ -3,69 +3,89 @@ Inicio
 	Var Cantidad_Papas = 40, Cantidad_Hamb = 40, Cantidad_Emp = 40, Cantidad_Sand = 40: Entero, Cuenta_Cliente = 0: Real;
 R: Booleano;
 Repetir
-Mostrar<<”Menú de Alimentos:”;
-Mostrar<<”1: Papas Fritas 1$ cada bolsa.”;
-Mostrar<<”2: Mini Hamburguesas 15$ cada bolsa.”;
-Mostrar<<”3: Empanadillas 10$ cada bolsa.”;
-Mostrar<<”4: Sándwiches 7$ cada bolsa.”;
-Leer>>OpcionClientes;
-Mientras (OpcionClientes < 1 or OpcionClientes > 4) Hacer;
-Mostrar<<”Error en datos, solo datos entre 1-4, intente nuevamente”;
-Leer>>OpcionClientes;
-Fin_Mientras
-En caso (OpcionClientes > 0) sea;
-Caso (OpcionClientes = 1 and Cantidad_Papas > 0);
-Mostrar<<”¿Cuántas unidades compró? “;
-Leer>>Cantidad;
-Mientras (Cantidad > Cantidad_Papas) Hacer;
-Mostrar<<”Error, solo hay “, Cantidad_Papas, “ bolsas de Papas Fritas disponibles”;
-Leer>>Cantidad;
-Fin_Mientras
-Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 1);
-Cantidad_Papas = Cantidad_Papas – Cantidad;
-Mostrar<<”Quedan disponibles “, Cantidad_Papas, “ bolsas de Papas Fritas”;
-Caso (OpcionClientes = 1 and Cantidad_Papas < 1);
-Mostrar<<”Se agotaron las bolsas de Papas Fritas.”;
-Caso (OpcionClientes = 2 and Cantidad_Hamb > 0);
-Mostrar<<”¿Cuántas unidades compró? “;
-Leer>>Cantidad;
-Mientras (Cantidad > Cantidad_Hamb) Hacer;
-Mostrar<<”Error, solo hay “, Cantidad_Hamb, “ bolsas de Mini Hamburguesas disponibles.”;
-Leer>>Cantidad;
-Fin_Mientras
-Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 15);
-Cantidad_Hamb = Cantidad_Hamb – Cantidad;
-Mostrar<<”Quedan disponibles “, Cantidad_Hamb, “ bolsas de Mini Hamburguesas.”;
-Caso (OpcionClientes = 2 and Cantidad_Hamb < 1);
-Mostrar<<”Se agotaron las bolsas de Mini Hamburguesas.”;
-Caso (OpcionClientes = 3 and Cantidad_Emp > 0);
-Mostrar<<”¿Cuántas unidades compró? “;
-Leer>>Cantidad;
-Mientras (Cantidad > Cantidad_Emp) Hacer;
-Mostrar<<”Error, solo hay “, Cantidad_Emp, “ bolsas de Empanadillas disponibles.”;
-Leer>>Cantidad;
-Fin_Mientras
-Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 10);
-Cantidad_Emp = Cantidad_Emp – Cantidad;
-Mostrar<<”Quedan disponibles “, Cantidad_Emp, “ bolsas de Empanadillas.”;
-Caso (OpcionClientes = 3 and Cantidad_Emp < 1);
-Mostrar<<”Se agotaron las bolsas de Empanadillas.”;
-Caso (OpcionClientes = 4 and Cantidad_Sand > 0);
-Mostrar<<”¿Cuántas unidades compró? “;
-Leer>>Cantidad;
-Mientras (Cantidad > Cantidad_Sand) Hacer;
-Mostrar<<”Error, solo hay “, Cantidad_Sand, “ bolsas de Sándwiches disponibles.”;
-Leer>>Cantidad;
-Fin_Mientras
-Cuenta_Cliente = Cuenta_Cliente + (Cantidad * 7);
-Cantidad_Sand = Cantidad_Sand – Cantidad;	
-Mostrar<<”Quedan disponibles “, Cantidad_Sand, “ bolsas de Sándwiches.”;
-Otro caso
-Mostrar<<”Se agotaron las bolsas de Sándwiches.”;
-Fin_Caso
-Mostrar<<”La cuenta acumulada de los clientes es: “, Cuenta_Clientes, “$”;
-Mostrar<<”¿Los clientes consumieron otro producto más? 1: Sí, 0: No “;
-Leer>>R;
-Hasta (R = 0);
-Fin_Repetir
+	Mostrar<<”Menú de Alimentos:”;
+	Mostrar<<”1: Papas Fritas 1$ cada bolsa.”;
+	Mostrar<<”2: Mini Hamburguesas 15$ cada bolsa.”;
+	Mostrar<<”3: Empanadillas 10$ cada bolsa.”;
+	Mostrar<<”4: Sándwiches 7$ cada bolsa.”;
+	Leer>>OpcionClientes;
+	Mientras (OpcionClientes < 1 or OpcionClientes > 4) Hacer;
+	Mostrar<<”Error en datos, solo datos entre 1-4, intente nuevamente”;
+	Leer>>OpcionClientes;
+	Fin_Mientras
+	En caso (OpcionClientes > 0) sea;
+		Caso (OpcionClientes = 1 and taberna_ingredientes_cantidades[1] > 0);
+			ingrediente = taberna_ingredientes_cantidades[1];
+			Mostrar<<”¿Cuántas unidades compró? “;
+			Leer>>Cantidad;
+			Mientras (Cantidad > ingrediente) Hacer;
+			Mostrar<<”Error, solo hay “, ingrediente, “ bolsas de Papas Fritas disponibles”;
+			Leer>>Cantidad;
+			Fin_Mientras
+			precio = taberna_ingredientes_precios[1];
+			Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+			contador = contador + 1;
+			taberna_contadores[1] = contador;
+			ingrediente = ingrediente – Cantidad;
+			taberna_ingredientes_cantidades[1] = ingrediente;
+			Mostrar<<”Quedan disponibles “, ingrediente, “ bolsas de Papas Fritas”;
+			Caso (OpcionClientes = 1 and taberna_ingredientes_cantidades[1] < 1);
+			Mostrar<<”Se agotaron las bolsas de Papas Fritas.”;
+		Caso (OpcionClientes = 2 and taberna_ingredientes_cantidades[2] > 0);
+			ingrediente = taberna_ingredientes_cantidades[2];
+			Mostrar<<”¿Cuántas unidades compró? “;
+			Leer>>Cantidad;
+			Mientras (Cantidad > ingrediente) Hacer;
+				Mostrar<<”Error, solo hay “, Cantidad_Hamb, “ bolsas de Mini Hamburguesas disponibles.”;
+				Leer>>Cantidad;
+			Fin_Mientras
+			precio = taberna_ingredientes_precios[2];
+			Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+			contador = contador + 1;
+			taberna_contadores[2] = contador;
+			ingrediente = ingrediente – Cantidad;
+			taberna_ingredientes_cantidades[2] = ingrediente;
+			Mostrar<<"Quedan disponibles “, ingrediente, “ bolsas de Mini Hamburguesas.";
+		Caso (OpcionClientes = 2 and taberna_ingredientes_cantidades[2] < 1);
+			Mostrar<<”Se agotaron las bolsas de Mini Hamburguesas.”;
+		Caso (OpcionClientes = 3 and taberna_ingredientes_cantidades[3] > 0);
+			ingrediente = taberna_ingredientes_cantidades[3];
+			Mostrar<<”¿Cuántas unidades compró? “;
+			Leer>>Cantidad;
+			Mientras (Cantidad > ingrediente) Hacer;
+				Mostrar<<”Error, solo hay “, ingrediente, “ bolsas de Empanadillas disponibles.”;
+				Leer>>Cantidad;
+			Fin_Mientras
+			precio = taberna_ingredientes_precios[3];
+			Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+			contador = contador + 1;
+			taberna_contadores[3] = contador;
+			ingrediente = ingrediente – Cantidad;
+			taberna_ingredientes_cantidades[3] = ingrediente;
+			Mostrar<<”Quedan disponibles “, ingrediente, “ bolsas de Empanadillas.”;
+		Caso (OpcionClientes = 3 and taberna_ingredientes_cantidades[3] < 1);
+			Mostrar<<”Se agotaron las bolsas de Empanadillas.”;
+		Caso (OpcionClientes = 4 and taberna_ingredientes_cantidades[4] > 0);
+			ingrediente = taberna_ingredientes_cantidades[4];
+			Mostrar<<”¿Cuántas unidades compró? “;
+			Leer>>Cantidad;
+			Mientras (Cantidad > ingrediente) Hacer;
+			Mostrar<<”Error, solo hay “, ingrediente, “ bolsas de Sándwiches disponibles.”;
+			Leer>>Cantidad;
+			Fin_Mientras
+			precio = taberna_ingredientes_precios[4];
+			Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+			contador = contador + 1;
+			taberna_contadores[4] = contador;
+			ingrediente = ingrediente – Cantidad;	
+			taberna_ingredientes_cantidades[4] = ingrediente
+			Mostrar<<”Quedan disponibles “, ingrediente, “ bolsas de Sándwiches.”;
+		Otro caso
+			Mostrar<<”Se agotaron las bolsas de Sándwiches.”;
+	Fin_Caso
+	Mostrar<<”La cuenta acumulada de los clientes es: “, Cuenta_Cliente, “$”;
+	Mostrar<<”¿Los clientes consumieron otro producto más? 1: Sí, 0: No “;
+	Leer>>R;
+	Hasta (R = 0);
+	Fin_Repetir
 Fin_Procedimiento
