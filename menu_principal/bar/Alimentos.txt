@@ -1,8 +1,8 @@
-Procedimiento Alimentos(E/S: OpcionClientes: Entero, Cuenta_Cliente = 0: Real);
+Procedimiento Alimentos(E/S: OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8]: Entero, Cuenta_Cliente = 0, bar_ingredientes_precios[8]: Real);
 Inicio
-  Var Cantidad_Papas = 40, Cantidad_Hamb = 40, Cantidad_Emp = 40, Cantidad_Sand = 40: Entero, Cuenta_Cliente = 0: Real;
-  R: Booleano;
-
+  Var R: Booleano;
+  Var ingrediente, contador = 0: Entero;
+  Var precio: Real;
   Repetir
     Mostrar << "Menú de Alimentos:";
     Mostrar << "1: Papas Fritas 1$ cada bolsa.";
@@ -29,6 +29,7 @@ Inicio
 
         precio = bar_ingredientes_precios[1];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        contador = bar_contadores[1];
         contador = contador + 1;
         bar_contadores[1] = contador;
         ingrediente = ingrediente – Cantidad;
@@ -43,12 +44,13 @@ Inicio
         Leer >> Cantidad;
 
         Mientras (Cantidad > ingrediente) Hacer;
-          Mostrar << "Error, solo hay ", Cantidad_Hamb, " bolsas de Mini Hamburguesas disponibles.";
+          Mostrar << "Error, solo hay ", ingrediente, " bolsas de Mini Hamburguesas disponibles.";
           Leer >> Cantidad;
         Fin_Mientras
 
         precio = bar_ingredientes_precios[2];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        contador = bar_contadores[2];
         contador = contador + 1;
         bar_contadores[2] = contador;
         ingrediente = ingrediente – Cantidad;
@@ -69,6 +71,7 @@ Inicio
 
         precio = bar_ingredientes_precios[3];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        contador = bar_contadores[3];
         contador = contador + 1;
         bar_contadores[3] = contador;
         ingrediente = ingrediente – Cantidad;
@@ -89,6 +92,7 @@ Inicio
 
         precio = bar_ingredientes_precios[4];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        contador = bar_contadores[4];
         contador = contador + 1;
         bar_contadores[4] = contador;
         ingrediente = ingrediente – Cantidad;	;
