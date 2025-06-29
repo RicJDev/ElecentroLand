@@ -82,18 +82,11 @@ rodillo[3][3]:entero
 
  Mostrar << "Comencemos";
  
-//asignar numeros
-	rodillo[1][1] = Aleatorio(1,5);
-	rodillo[2][1] = Aleatorio(1,5);
-	rodillo[3][1] = Aleatorio(1,5);
- 
-	rodillo[1][2] = Aleatorio(1,5);
-	rodillo[2][2] = Aleatorio(1,5);
-	rodillo[3][2] = Aleatorio(1,5);
- 
-	rodillo[3][1] = Aleatorio(1,5);
-	rodillo[3][2] = Aleatorio(1,5);
-	rodillo[3][3] = Aleatorio(1,5);
+Para (I = 1 Hasta I = 3) Hacer;
+	Para (J = 1 Hasta J = 3) Hacer;
+		rodillos[I][J] = Aleatorio(1,5);
+	Fin_Para
+Fin_Para
 	
 premio_giro = premio_maquinita(rodillo[3,3],saldo_apostado);
 
