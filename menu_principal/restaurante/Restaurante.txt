@@ -1,4 +1,4 @@
-Procedimiento Restaurante(E/S: Opcion_Restaurante: Entero, i_restaurante: Entero, restaurante_ingredientes[]: Cadena, restaurante_ingredientes_cantidades[]: Entero, restaurante_contadores[]: Entero);
+Procedimiento Restaurante(E/S: Opcion_Restaurante, i_restaurante, restaurante_ingredientes_cantidades[34], restaurante_contadores[18]: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_precios[18]: Real);
 Inicio
   Var R = 0: Entero;
   Repetir
@@ -7,13 +7,13 @@ Inicio
     
     En_Caso (Opcion_Restaurante > 0) Sea;
       Caso (Opcion_Restaurante = 1);
-        Desayuno(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[], restaurante_ingredientes_cantidades[], restaurante_contadores[]);
+        Desayuno(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18],             restaurante_ingredientes_precios[18]);
         Mostrar << Desayuno;
       Caso (Opcion_Restaurante = 2);
-        Almuerzo(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[], restaurante_ingredientes_cantidades[], restaurante_contadores[]);
+        Almuerzo(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18],             restaurante_ingredientes_precios[18]);
         Mostrar << Almuerzo;
       Caso (Opcion_Restaurante = 3);
-        Cena(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[], restaurante_ingredientes_cantidades[], restaurante_contadores[]);
+        Cena(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18],                 restaurante_ingredientes_precios[18]);
         Mostrar << Cena;
       Otro_Caso
         R = 4;
