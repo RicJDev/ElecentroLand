@@ -10,13 +10,13 @@ Inicio
     Leer >> Opcion_Inv;
 
     Si (Opcion_Inv = 1) Entonces;
-      Alimentos(OpcionClientes, Cantidad_Papas = 40, Cantidad_Hamb = 40, Cantidad_Emp = 40, Cantidad_Sand = 40, Cuenta_Clientes = 0);
+      Alimentos(OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8], Cuenta_Cliente = 0, bar_ingredientes_precios[8]);
       Mostrar << Alimentos;
 
       Sino 
 
       Si (Opcion_Inv = 2) Entonces;
-        Bebidas(OpcionClientes, Cantidad_Cerveza = 40, Cantidad_Vino = 40, Cantidad_Vodka = 40, Cantidad_Coctel = 40, Cuenta_Clientes = 0);
+        Bebidas(OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8], Cuenta_Cliente = 0, bar_ingredientes_precios[8]);
         Mostrar << Bebidas;
       Fin_Si
     Fin_Si
