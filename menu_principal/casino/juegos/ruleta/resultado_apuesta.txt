@@ -1,0 +1,31 @@
+Procedimiento resultado_apuesta(E: Seleccion, Número, E/S: Apuesta, Dinero_Actual, Dinero_Ganado, Dinero_Perdido, S: Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2, Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2);
+Inicio
+  Mostrar << "Ok, veamos que tocó";
+  Si (Número = Seleccion) Entonces;
+    Mostrar << "Maravilloso, has ganado";
+    Dinero_Actual = (Apuesta * Multiplicador);
+    Dinero_Ganado = (Apuesta * Multiplicador);
+
+    Si (Modo_Elegido = 1) Entonces;
+      Partidas_Ganadas_Modo1 = Partidas_Ganadas_Modo1 + 1;
+    Fin_Si
+
+    Si (Modo_Elegido = 2) Entonces;
+      Partidas_Ganadas_Modo2 = Partidas_Ganadas_Modo2 + 1;
+    Fin_Si
+
+    Sino 
+
+    Mostrar << "Lamentablemente has perdido";
+    Dinero_Actual = Dinero_Actual -(Apuesta * 1, 5);
+    Dinero_Perdido = Apuesta -(Apuesta * 1, 5);
+
+    Si (Modo_Elegido = 1) Entonces;
+      Partidas_Perdidas_Modo1 = Partidas_Perdidas_Modo1 + 1;
+    Fin_Si
+
+    Si (Modo_Elegido = 2) Entonces;
+      Partidas_Perdidas_Modo2 = Partidas_Perdidas_Modo2 + 1;
+    Fin_Si
+  Fin_Si
+Fin_Procedimiento

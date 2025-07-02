@@ -1,13 +1,14 @@
-Procedimiento Blackjack(E: Fichas: Real, E/S: apuesta: Real);
-
+Procedimiento Blackjack(E/S: saldo_disponible: Entero);
 Inicio
+  var apuesta: Entero;
+
   Repetir
     Mostrar << "Bienvenido al Blackjack";
     Mostrar << "Ingrese las fichas que desea apostar";
     Leer >> apuesta;
     
-    Mientras (apuesta < Fichas) Hacer;
-      Mostrar << "Ingresa un número menor o igual al número de fichas";
+    Mientras (apuesta < saldo_disponible) Hacer;
+      Mostrar << "Ingresa un número menor o igual al número de fichas que tienes";
       Leer >> apuesta;
     Fin_Mientras
     
@@ -46,23 +47,23 @@ Inicio
     Si (Suma_Jugador > 21) AND (Suma_Dealer <= 21) Entonces;
       Mostrar << "Te pasaste de 21. Perdiste";
       Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
-      Fichas = Fichas – apuesta;
+      saldo_disponible = saldo_disponible – apuesta;
       
       Sino 
       Si (Suma_Dealer > 21) AND (Suma_Jugador <= 21) Entonces;
         Mostrar << "El dealer se ha pasado de 21. ¡Ganaste!";
         Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
-        Fichas = Fichas + (apuesta * 2);
+        saldo_disponible = saldo_disponible + (apuesta * 2);
         
         Sino 
         Si (Suma_Dealer <= 21) AND (Suma_Dealer > Suma_Jugador) Entonces;
           Mostrar << "El dealer gana con: ", Suma_Dealer, "puntos";
-          Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ",        Suma_Jugador;
+          Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
           
           Sino 
           Si (Suma_Jugador <= 21) AND (Suma_Jugador > Suma_Dealer) Entonces;
             Mostrar << "¡Ganaste! con: ", Suma_Jugador, "puntos. El dealer quedó con: ", Suma_Dealer, "puntos.";
-            Fichas = Fichas + (apuesta * 2);
+            saldo_disponible = saldo_disponible + (apuesta * 2);
             
             Sino 
             Mostrar << "Empate.";
@@ -71,7 +72,7 @@ Inicio
       Fin_Si
     Fin_Si
 
-    Mostrar << "Fichas actuales: ", Fichas;
+    Mostrar << "Cantida de fichas actuales: ", saldo_disponible;
     Mostrar << "¿Quieres jugar de nuevo? 1: Sí, 0: No";
     Leer >> R;
     Hasta (R = 0);

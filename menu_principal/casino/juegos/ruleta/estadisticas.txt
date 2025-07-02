@@ -1,0 +1,17 @@
+Procedimiento estadisticas(E: Dinero_Actual, Dinero_Ganado, Dinero_Perdido, Veces_jugadas_Modo1, Veces_Jugadas_Modo2, Veces_Jugadas_ Modo3, Partidas_Ganadas, Partidas_Perdidas, Porcentaje_Victorias);
+Inicio
+  Var Veces_Jugadas: Entero;
+  Veces_Jugadas = (Veces_Jugadas_Modo1 + Veces_Jugadas_Modo2 + Veces_Jugadas_Modo3);
+  Partidas_Perdidas = (Partidas_Perdidas_Modo1 + Partidas_Perdidas_Modo2 + Partidas_Perdidas_Modo3);
+  Partidas_Ganadas = (Partidas_Ganadas_Modo1 + Partidas_Ganadas_Modo2 + Partidas_Ganadas_Modo3);
+  Porcentaje_Victorias = (Partidas_Ganadas/Veces_Jugadas) * 100;
+  Mostrar << "Bien, estas han sido sus estadisticas";
+  Mostrar << "Su Dinero actual es..", Dinero_Actual;
+  Mostrar << "Sus ganancias fueron..(esto solo incluye el dinero ganado no toma en cuenta lo perdido)", Dinero_Ganado;
+  Mostrar << "Todo lo que le sacamos jajajaja *sonido de toser* digo sus pobres pérdidas fueron... (esto solo incluye perdidas no cuenta lo ganado)", Dinero_Perdido;
+  Mostrar << "Las veces que usted participo en la Ruleta Maravillosa fueron...", Veces_Jugadas;
+  Mostrar << "Usted Ganó ....", Partidas_Ganadas, "Veces";
+  Mostrar << "Usted Perdió ....", Partidas_Perdidas, "Veces";
+  Mostrar << "Usted tuvo un porcentaje de aciertos del... ", Porcentaje_Victorias, "%";
+  Mostrar << "Gracias por Jugar :) ";
+Fin_Procedimiento

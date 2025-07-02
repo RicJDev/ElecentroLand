@@ -1,0 +1,47 @@
+Procedimiento recoleccion(E: Modo_Elegido, S: Apuesta, Seleccion, Multiplicador);
+Inicio
+  En_Caso (Modo_Elegido > 0) Sea;
+    Caso (Modo_Elegido = 1);
+      Mostrar << "Ingrese una suma de fichas";
+      Leer >> Apuesta;
+      Mostrar << "Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% 			extra de lo que aposto al perder";
+      Leer >> Multiplicador;
+      Mostrar << "Ingrese el color al cual apostara (1: Rojo, 2: Negro";
+      Leer >> Seleccion;
+
+      Mientras (Apuesta < 0) OR (Seleccion < 1 OR Seleccion > 2) OR (Multiplicador < 1 OR Multiplicador > 3) Hacer;
+        Mostrar << "Valores ingresados erróneos, ingreselos nuevamente";
+        Leer >> Apuesta;
+        Leer >> Seleccion;
+        Leer >> Multiplicador;
+      Fin_Mientras
+    Caso (Modo_Elegido = 2);
+      Mostrar << "Ingrese una suma de fichas";
+      Leer >> Apuesta;
+      Mostrar << "Ingrese por cuanto quiere multiplicar su dinero (maximo 3) por cada vez que multiplique su dinero debera pagar un 150% extra de lo que aposto al perder";
+      Leer >> Multiplicador;
+      Mostrar << "Ingrese el numero específico al cual apostara (del 1 al 32)";
+      Leer >> Seleccion;
+
+      Mientras (Apuesta < 0) OR (Seleccion < 1 OR Seleccion > 32) OR (Multiplicador < 1 OR Multiplicador > 3) Hacer;
+        Mostrar << "Valores ingresados erróneos, ingreselos nuevamente";
+        Leer >> Apuesta;
+        Leer >> Seleccion;
+        Leer >> Multiplicador;
+      Fin_Mientras
+    Otro_Caso
+      Mostrar << "Ingrese una suma de fichas";
+      Leer >> Apuesta;
+      Mostrar << "Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% extra de lo que aposto al perder";
+      Leer >> Multiplicador;
+      Mostrar << "Ingrese el grupo numero al cual apostará (1: del 1 al 8, 2: del 9 al 16, 3: del 17 al 24, 4: del 25 al 32)";
+      Leer >> Seleccion;
+
+      Mientras (Apuesta < 0) OR (Seleccion < 1 OR Seleccion > 4) OR (Multiplicador < 1 OR Multiplicador > 3) Hacer;
+        Mostrar << "Valores ingresados erróneos, ingreselos nuevamente";
+        Leer >> Apuesta;
+        Leer >> Seleccion;
+        Leer >> Multiplicador;
+      Fin_Mientras
+  Fin_Caso
+Fin_Procedimiento

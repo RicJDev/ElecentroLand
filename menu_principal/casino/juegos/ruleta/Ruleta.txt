@@ -1,0 +1,43 @@
+Procedimiento Ruleta();
+Inicio
+  Var;  //Faltan Variables
+  Repetir
+    eleccion(Modo_elegido);
+    Mostrar << eleccion;
+    recoleccion(Apuesta, Seleccion, Modo_Elegido, Multiplicador);
+    
+    En_Caso (Modo_Elegido > 0) Sea;
+      Caso (Modo_Elegido = 1);
+        Veces_Jugadas_Modo1 = Veces_Jugadas_Modo1 + 1;
+        Mostrar << recoleccion;
+        Maximo = 2;
+        Minimo = 1;
+        Número = Aleatorio(Minimo, Maximo);
+        resultado_apuesta(Seleccionado, Apuesta, Ganancia, Dinero_Actual, Dinero_Ganado, Dinero_Perdido);
+        Mostrar << resultado_apuesta;
+      Caso (Modo_Elegido = 2);
+        Veces_Jugadas_Modo2 = Veces_Jugadas_Modo1 + 2;
+        Mostrar << recoleccion;
+        Maximo = 32;
+        Minimo = 1;
+        Número = Aleatorio(Minimo, Maximo);
+        resultado_apuesta(Seleccionado, Apuesta, Ganancia, Dinero_Actual, Dinero_Ganado, Dinero_Perdido);
+        Mostrar << resultado_apuesta;
+      Otro_Caso
+        Veces_Jugadas_Modo3 = Veces_Jugaads_Modo3 + 1;
+        Mostrar << recoleccion;
+        Maximo = 32;
+        Minimo = 1;
+        Número = Aleatorio(Minimo, Maximo);
+        resultado_apuesta_grupo(Seleccion, Aleatorio, Grupo1, Grupo 2, Grupo3, Grupo4, Apuesta, Dinero_Actual, Dinero_Ganado, Dinero_Perdido);
+        Mostrar << resultado_apuesta_grupo;
+    Fin_Caso
+    
+    Mostrar << "¿Desea Seguir Jugando?, 1: Si, 0: No";
+    Leer >> R;
+    Hasta (R = 0);
+  Fin_Repetir
+  
+  estadisticas(Dinero_Actual, Dinero_Ganado, Dinero_Perdido, Veces_jugadas, Partidas_Ganadas, Partidas_Perdidas, Porcentaje_Victorias);
+  Mostrar << estadisticas;
+Fin_Procedimiento
