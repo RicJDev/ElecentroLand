@@ -21,60 +21,72 @@ Si ya ha leído la presentación del proyecto es probable que no encuentre casi 
 
 ```
 ElecentroLand
-│   Resort.txt
-│
-├───inicializadores
-│       init_Bar.txt
-│       init_Casino.txt
-│       init_Hotel.txt
-│       init_Restaurante.txt
-│
-├───menu_principal
-│   ├───bar
-│   │       Alimentos.txt
-│   │       Bar.txt
-│   │       Bebidas.txt
-│   │
-│   ├───casino
-│   │   │   Casino.txt
-│   │   │   inicio_sesion.txt
-│   │   │   menu_juegos.txt
-│   │   │   registro_nuevo_usuario.txt
-│   │   │
-│   │   ├───juegos
-│   │   │       Blackjack.txt
-│   │   │       Dados.txt
-│   │   │       Maquinita3x3.txt
-│   │   │       Ruleta.txt
-│   │   │       Tragamonedas.txt
-│   │   │
-│   │   └───tiendita
-│   │       │   canjear_dinero.txt
-│   │       │   comprar_fichas.txt
-│   │       │   Tiendita.txt
-│   │       │
-│   │       └───dibujos
-│   │               canjear_dibujos.txt
-│   │               dibujos_usuario.txt
-│   │               mostrar_dibujo.txt
-│   │
-│   ├───hotel
-│   │       check_out.txt
-│   │       estadisticas.txt
-│   │       generar_id.txt
-│   │       Hotel.txt
-│   │       metodo_de_pago.txt
-│   │       registro_nuevo_cliente.txt
-│   │       reserva_habitaciones.txt
-│   │
-│   └───restaurante
-│           bienvenida.txt
-│           menu_almuerzo.txt
-│           menu_cena.txt
-│           menu_desayuno.txt
-│           Restaurante.txt
-│
-└───utilidades
+|   Resort.txt
+|
+|
++---inicializadores
+|       init_Bar.txt
+|       init_Casino.txt
+|       init_Hotel.txt
+|       init_Restaurante.txt
+|
++---menu_principal
+|   +---bar
+|   |       Alimentos.txt
+|   |       Bar.txt
+|   |       Bebidas.txt
+|   |
+|   +---casino
+|   |   |   Casino.txt
+|   |   |   inicio_sesion.txt
+|   |   |   menu_juegos.txt
+|   |   |   registro_nuevo_usuario.txt
+|   |   |
+|   |   +---juegos
+|   |   |   |   Blackjack.txt
+|   |   |   |   Dados.txt
+|   |   |   |
+|   |   |   +---ruleta
+|   |   |   |       eleccion.txt
+|   |   |   |       estadisticas.txt
+|   |   |   |       grupos_valor.txt
+|   |   |   |       recoleccion.txt
+|   |   |   |       resultado_apuesta.txt
+|   |   |   |       resultado_apuesta_grupo.txt
+|   |   |   |       Ruleta.txt
+|   |   |   |
+|   |   |   \---tragamonedas
+|   |   |           asignar_figura.txt
+|   |   |           premio_maquinita.txt
+|   |   |           Tragamonedas.txt
+|   |   |
+|   |   \---tiendita
+|   |       |   canjear_dinero.txt
+|   |       |   comprar_fichas.txt
+|   |       |   Tiendita.txt
+|   |       |
+|   |       \---dibujos
+|   |               canjear_dibujos.txt
+|   |               dibujos_usuario.txt
+|   |               mostrar_dibujo.txt
+|   |
+|   +---hotel
+|   |       check_out.txt
+|   |       estadisticas.txt
+|   |       generar_id.txt
+|   |       Hotel.txt
+|   |       metodo_de_pago.txt
+|   |       registro_nuevo_cliente.txt
+|   |       reserva_habitaciones.txt
+|   |
+|   \---restaurante
+|           bienvenida.txt
+|           menu_almuerzo.txt
+|           menu_cena.txt
+|           menu_desayuno.txt
+|           Restaurante.txt
+|
+\---utilidades
         aleatorio.txt
         metodo_pago.txt
 ```
