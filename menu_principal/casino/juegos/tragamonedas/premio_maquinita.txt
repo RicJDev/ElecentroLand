@@ -1,0 +1,27 @@
+Funcion premio_maquinita(rodillo[3][3]: Entero, saldo_apostado: Entero): Entero;
+Inicio
+  var premio: Entero;
+  
+  En_Caso (rodillo[3, 3] > 0) Sea;
+    Caso (rodillo[1, 1] = rodillo[1, 2]) AND (rodillo[1, 1] = rodillo[1, 3]);
+      premio = saldo_apostado * 5;
+    Caso (rodillo[2, 1] = rodillo[2, 2]) AND (rodillo[2, 1] = rodillo[2, 3]);
+      premio = saldo_apostado * 5;
+    Caso (rodillo[3, 1] = rodillo[3, 2]) AND (rodillo[3, 1] = rodillo[3, 3]);
+      premio = saldo_apostado * 5;
+    Caso (rodillo[1, 1] = rodillo[2, 1]) AND (rodillo[1, 1] = rodillo[3, 1]); ;
+      premio = saldo_apostado * 10;
+    Caso (rodillo[1, 2] = rodillo[2, 2]) AND (rodillo[1, 2] = rodillo[3, 2]);
+      premio = saldo_apostado * 10;
+    Caso (rodillo[1, 3] = rodillo[2, 3]) AND (rodillo[1, 3] = rodillo[3, 3]);
+      premio = saldo_apostado * 10;
+    Caso (rodillo[1, 1] = rodillo[2, 2]) AND (rodillo[1, 1] = rodillo[3, 3]);
+      premio = saldo_apostado * 15;
+    Caso (rodillo[3, 1] = rodillo[2, 2]) AND (rodillo[3, 1] = rodillo[1, 3]);
+      premio = saldo_apostado * 15;
+    Otro_Caso
+      premio = 0;
+  Fin_Caso
+  
+  Devolver (premio);
+Fin_Funcion

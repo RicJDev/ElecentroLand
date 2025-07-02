@@ -38,7 +38,7 @@ Inicio
       Caso (opcion_juegos = 3);
         Dados(nombre, saldo_disponible);
       Caso (opcion_juegos = 4);
-        Tragamonedas(nombre, saldo_disponible);
+        Tragamonedas(saldo_disponible);
       Otro_Caso(opcion_juegos = 5);
         Tiendita(nombre, saldo_disponible, premios_canjedos[j_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]);
     Fin_Caso
