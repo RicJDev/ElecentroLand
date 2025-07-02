@@ -23,7 +23,6 @@ Si ya ha leído la presentación del proyecto es probable que no encuentre casi 
 ElecentroLand
 |   Resort.txt
 |
-|
 +---inicializadores
 |       init_Bar.txt
 |       init_Casino.txt
