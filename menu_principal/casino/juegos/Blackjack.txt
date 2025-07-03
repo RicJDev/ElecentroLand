@@ -1,15 +1,16 @@
 Procedimiento Blackjack(E: saldo_disponible: Entero, E/S: fichas_apostadas, veces_jugadas: Entero);
 Inicio
   Var Jugador_Cartas[10], Dealer_Cartas[10], Carta_Visible, Suma_Jugador, Suma_Dealer, I, J: Entero, R: Booleano;
+  Var apuesta: Entero;
 
   Repetir
     Mostrar << "Bienvenido al Blackjack";
     Mostrar << "Ingrese las fichas que desea apostar";
-    Leer >> fichas_apostadas;
+    Leer >> apuesta;
 
-    Mientras (fichas_apostadas < saldo_disponible) Hacer;
+    Mientras (apuesta < saldo_disponible) Hacer;
       Mostrar << "Ingresa un número menor o igual al número de fichas";
-      Leer >> fichas_apostadas;
+      Leer >> apuesta;
     Fin_Mientras
 
     Jugador_Cartas[1] = Aleatorio(1, 12);
@@ -52,22 +53,22 @@ Inicio
       Caso (Suma_Jugador > 21) AND (Suma_Dealer <= 21);
         Mostrar << "Te pasaste de 21. Perdiste";
         Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
-        saldo_disponible = saldo_disponible – Apuesta;
+        saldo_disponible = saldo_disponible – apuesta;
       Caso (Suma_Dealer > 21) AND (Suma_Jugador <= 21);
         Mostrar << "El dealer se ha pasado de 21. ¡Ganaste!";
         Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
-        saldo_disponible = saldo_disponible + (Apuesta * 2);
+        saldo_disponible = saldo_disponible + (apuesta * 2);
       Caso (Suma_Dealer <= 21) AND (Suma_Dealer > Suma_Jugador);
         Mostrar << "El dealer gana con: ", Suma_Dealer, "puntos";
         Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
-        saldo_disponible = saldo_disponible – Apuesta;
+        saldo_disponible = saldo_disponible – apuesta;
       Caso (Suma_Jugador <= 21) AND (Suma_Jugador > Suma_Dealer);
         Mostrar << "¡Ganaste! con: ", Suma_Jugador, "puntos. El dealer quedó con: ", Suma_Dealer, "puntos.";
-        saldo_disponible = saldo_disponible + (Apuesta * 2);
+        saldo_disponible = saldo_disponible + (apuesta * 2);
       Otro_Caso
         Mostrar << "Empate.";
     Fin_Caso
-
+    fichas_apostadas = fichas_apostadas + apuesta;
     Mostrar << "Fichas actuales: ", saldo_disponible;
     Mostrar << "¿Quieres jugar de nuevo? 1: Sí, 0: No";
     Leer >> R;
