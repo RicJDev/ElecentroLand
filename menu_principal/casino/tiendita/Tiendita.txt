@@ -1,6 +1,6 @@
 Procedimiento Tiendita(E/S: nombre: Cadena, saldo_disponible: Entero, premios_canjeados[j_casino]: Booleano, casino_stock_premios[j_casino], casino_valor_premios[j_casino]: Entero);
 Inicio
-  var opcion_tiendita = 0: Entero;
+  Var opcion_tiendita = 0: Entero;
 
   Mostrar << "Bienvenido seas, ", nombre, "!";
   Mientras (seguir_tiendita != 5) Hacer;
@@ -24,7 +24,7 @@ Inicio
       Caso (opcion_tiendita = 2);
         canjear_dinero(saldo_disponible, nombre);
       Caso (opcion_tiendita = 3);
-        canjear_dibujo(saldo_disponible, nombre, casino_valor_premios[j_casino], casino_stock_premios[j_casino], premios_canjeados[j_casino]);
+        canjear_dibujos(saldo_disponible, nombre, casino_valor_premios[j_casino], casino_stock_premios[j_casino], premios_canjeados[j_casino]);
       Caso (opcion_tiendita = 4);
         dibujos_usuario(premios_canjeados[j_casino], nombre);
       Otro_Caso
