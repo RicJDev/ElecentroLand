@@ -21,7 +21,7 @@ Inicio
     Fin_Si
 
     Si (esta_en_registro = 0) Entonces;
-      registro_usuario(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino]);
+      registro_nuevo_usuario(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino]);
       Mostrar << registro_nuevo_usuario;
     Fin_Si
 
