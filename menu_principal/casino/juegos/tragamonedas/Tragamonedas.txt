@@ -1,10 +1,9 @@
-Procedimiento Tragamoneda(e/s: saldo_disponible: Entero);
+Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas: Entero);
 Inicio
-  var R: Entero;
-  saldo_apostado: Entero ;
-  premio_giro: Entero;
-  saldo_restante: Entero;
-  rodillo[3][3]: Entero;
+  Var R: Entero;
+  Var apuesta: Entero;
+  Var premio_giro: Entero;
+  Var rodillo[3][3]: Entero;
 
   Mostrar << " ------------------------------------------------------------------";
   Mostrar << "|                 BIENVENIDO A $FRUIT MONEY$                      |";
@@ -14,30 +13,30 @@ Inicio
   Mostrar << "|Si tres figuras verticales son iguales entonces usted gana 5x    |";
   Mostrar << "-------------------------------------------------------------------";
 
-  Mostrar << "Querido usuario usted tiene"saldo_disponible, "fichas disponibles";
+  Mostrar << "Querido usuario usted tiene", saldo_disponible, "fichas disponibles";
 
   Repetir
     Mostrar << " ----------------------------------------------------";
     Mostrar << "|           ¿Cuanto saldo desea apostar?             |";
     Mostrar << "|    Montos de apuesta: min:1 ficha, max:50 fichas   |";
     Mostrar << " ----------------------------------------------------";
-    Leer >> saldo_apostado;
+    Leer >> apuesta;
 
     // Validación de saldo apostado
-    Mientras (saldo_apostado < 1) OR (saldo_apostado > 50) Hacer;
+    Mientras (apuesta < 1) OR (apuesta > 50) Hacer;
       Mostrar << "Error en monto apostado, vuelva a intentar";
-      Leer >> saldo_apostado;
+      Leer >> apuesta;
     Fin_Mientras
 
     // validación de saldo apostado
-    Mientras (saldo_apostado > saldo_disponible) Hacer;
+    Mientras (apuesta > saldo_disponible) Hacer;
       Mostrar << "No posee suficientes fondos para seguir jugando, recargue por favor";
-      Leer >> saldo_disponible;
+      Leer >> apuesta;
     Fin_Mientras
 
     Mostrar << "Comencemos";
 
-    premio_giro = premio_maquinita(rodillo[3, 3], saldo_apostado);
+    premio_giro = premio_maquinita(rodillo[3, 3], apuesta);
     Mostrar << "---------------------------";
     Mostrar << "|TRAGAMONEDAS $FRUIT MONEY$|";
     Mostrar << "---------------------------";
@@ -48,22 +47,22 @@ Inicio
       Mostrar << "_";
     Fin_Para
 
-    Mostrar << "Resultados de la apuesta:usted gana", premio giro, "fichas";
-    saldo_restante = (saldo_disponible-saldo_apostado) + premio_giro;
-
+    Mostrar << "Resultados de la apuesta: usted gana", premio giro, "fichas";
+    saldo_disponible = (saldo_disponible - apuesta) + premio_giro;
+    fichas_apostadas = fichas_apostadas + apuesta;
     Si (saldo_restante < 1) Entonces;
       Mostrar << "Su saldo es insuficiente para seguir jugando, ¡recargue por favor!";
       Mostrar << "Hasta pronto, ¡Gracias por jugar!";
       R = 2;
-      Sino
+    Sino
       Mostrar << "Desea realizar otra apuesta, 1:Si, 2:no";
       Leer >> R;
 
-      Mientras R < 1 OR R > 2 hacer;
+      Mientras (R < 1 OR R > 2) hacer;
       Mostrar << "Error en respuesta enviada, solo puede seleccionar 1 o 2";
     Fin_Si
 
-    Hasta Que R = 2;
+    Hasta (R = 2);
   Fin_Repetir
 
   Mostrar << "Hasta pronto, ¡Gracias por jugar!";
