@@ -88,4 +88,29 @@ Inicio
     
     Hasta (R = 0);
   Fin_Repetir
+Mostrar << "Estadísticas Finales del Resort Elecentro";
+Mostrar << "Casino:";
+Mostrar << "Fichas Actuales: ", saldo_disponible;
+Mostrar << "Stock de premios: ";
+Para (i_casino = 1 Hasta i_casino = 10) Hacer;
+  Mostrar << casino_stock_premios[i_casino];
+Fin_Para
+Mostrar << "Apuesta total: ", apuesta;
+Mostrar << "Total de veces jugadas: ", veces_jugadas;
+Mostrar << "Hotel:";
+Mostrar << "Total de clientes registrados: ", clientes;
+Mostrar << "Ingresos recibidos: ", ingresos;
+Mostrar << "Restaurante:";
+Mostrar << "Contadores de las comidas: ";
+Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
+  Mostrar << restaurante_contadores[i_restaurante];
+Fin_Para
+Mostrar << "Dinero recaudado: ", dinero_total_opcs;
+Mostrar << "Bar:";
+Mostrar << "Contadores de los alimentos y bebidas";
+Para (i_bar = 1 Hasta i_bar = 8) Hacer;
+  Mostrar << bar_contadores[i_bar];
+Fin_Para
+Mostrar << "Dinero recaudado:", dinero_recaudado;
+
 Fin
