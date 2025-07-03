@@ -39,7 +39,8 @@ Inicio
   Var email: Cadena;
 
   // Base de datos del Casino
-  
+
+  Var fichas_apostadas: Entero;
   Var casino_premios[100][10]: Booleano;
   Var i_casino, j_casino: Entero;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
