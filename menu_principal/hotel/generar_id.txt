@@ -8,3 +8,4 @@ Inicio
     clientes[contador_clientes] = id_cliente;
   Fin_Si
 Fin_Procedimiento
+ 
