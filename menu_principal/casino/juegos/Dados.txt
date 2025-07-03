@@ -9,11 +9,11 @@ Inicio
     D2 = Aleatorio(1, 6);
     D3 = Aleatorio(1, 6);
     Mostrar << "Ingrese las fichas que desea apostar";
-    Leer >> Saldo_Apuesta;
+    Leer >> apuesta;
 
-    Mientras (Saldo_Apuesta > Fichas) Hacer;
+    Mientras (apuesta > saldo_disponible) Hacer;
       Mostrar << "Saldo insuficiente, no puedes jugar";
-      Leer >> Saldo_Apuesta;
+      Leer >> apuesta;
     Fin_Mientras
 
     Mostrar << "¡Prueben su suerte! Dependiendo de los dados, estos son los premios que puedes conseguir";
