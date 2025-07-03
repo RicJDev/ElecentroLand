@@ -1,9 +1,8 @@
-Procedimiento Bebidas(E/S: OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8]: Entero, Cuenta_Cliente = 0, bar_ingredientes_precios[8]: Real);
+Procedimiento Bebidas(E/S: OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8]: Entero, Cuenta_Cliente = 0, dinero_bar, bar_ingredientes_precios[8]: Real);
 Inicio
   Var R: Booleano;
-  ingrediente: Entero;
-  precio: Real;
-  contador: Entero;
+  Var contador, ingrediente: Entero;
+  Var precio: Real;
   Repetir
     Mostrar << "Menú de Bebidas:";
     Mostrar << "1: Cerveza Duff 1$ cada botella";
@@ -22,11 +21,13 @@ Inicio
           Mostrar << "Error, solo hay ", ingrediente, " copas de Cerveza disponibles";
           Leer >> Cantidad;
         Fin_Mientras
+
         precio = bar_ingredientes_precios[5];
         contador = bar_contadores[5];
         contador = contador + 1;
         bar_contadores[5] = contador;
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_bar = dinero_bar + Cuenta_Cliente;
         ingrediente = ingrediente – Cantidad;
         bar_ingredientes_cantidades[5] = ingrediente;
         Mostrar << "Quedan disponibles ", ingrediente, " botellas de Cerveza.";
@@ -46,6 +47,7 @@ Inicio
         contador = contador + 1;
         bar_contadores[6] = contador;
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_bar = dinero_bar + Cuenta_Cliente;
         ingrediente = ingrediente – Cantidad;
         bar_ingredientes_cantidades[6] = ingrediente;
         Mostrar << "Quedan disponibles ", ingrediente, " botellas de Vino.";
@@ -62,6 +64,7 @@ Inicio
         Fin_Mientras
         precio = bar_ingredientes_precios[7];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_bar = dinero_bar + Cuenta_Cliente;
         contador = bar_contadores[7];
         contador = contador + 1;
         bar_contadores[7] = contador;
@@ -82,6 +85,7 @@ Inicio
         Fin_Mientras
         precio = bar_ingredientes_precios[8];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_bar = dinero_bar + Cuenta_Cliente;
         contador = bar_contadores[8];
         contador = contador + 1;
         bar_contadores[8] = contador;
