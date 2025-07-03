@@ -1,4 +1,4 @@
-Procedimiento registro_nuevo_cliente(e/s: huespedes_total[clientes_hotel], telefono[i_cliente], cedula[i_cliente], edad_usuario[i_cliente]: entero, email[i_cliente], nombres_titulares[i_cliente]: cadena);
+Procedimiento registro_nuevo_cliente(E/S: huespedes_total[clientes_hotel], telefono[i_cliente], cedula[i_cliente], edad_usuario[i_cliente]: Entero, email[i_cliente], nombres_titulares[i_cliente]: Cadena);
 Inicio
   Var opc_registro: Entero;
 
