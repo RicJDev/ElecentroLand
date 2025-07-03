@@ -1,3 +1,16 @@
 Procedimiento init_Hotel();
 Inicio
+
+  Para (i_cliente = 1 Hasta i_cliente = 500) Hacer;
+ 
+    cantidad_titulares[id_cliente]=0;
+	nombres_titulares[i_cliente] ="no_asignado";
+    huespedes_total[clientes_hotel] = 0;
+    email[i_cliente] = "no_asignado";
+    telefono[i_cliente] = 0; 
+	edad_usuario[i_cliente] = 0;
+	cedula[i_cliente] = 0;
+	
+ Fin para 
+ 
 Fin_Procedimiento
