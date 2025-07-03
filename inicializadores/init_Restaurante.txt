@@ -1,4 +1,4 @@
-Procedimiento init_Restaurante(E/S: restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante]: Entero, restaurante_ingredientes_precio[i_restaurante]: Real, restaurante_ingredientes[i_restaurante]: Cadena);
+Procedimiento init_Restaurante(E/S: restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante]: Entero, restaurante_ingredientes_precio[i_restaurante]: Real, restaurante_ingredientes[i_restaurante], restaurante_platillos[i_restaurante]: Cadena);
 Inicio
   restaurante_ingredientes[1] = "panqueques";
   restaurante_ingredientes[2] = "patatas";
@@ -36,6 +36,25 @@ Inicio
   restaurante_ingredientes[32] = "pizza";
   restaurante_ingredientes[33] = "pepperoni";
   restaurante_ingredientes[34] = "queso";
+
+  restaurante_platillos[1] = "panqueques";
+  restaurante_platillos[2] = "patatas con huevo y tocineta";
+  restaurante_platillos[3] = "sándwiches de jamón";
+  restaurante_platillos[4] = "waffles";
+  restaurante_platillos[5] = "cachapas";
+  restaurante_platillos[6] = "empanadas";
+  restaurante_platillos[7] = "ensalada césar y bebida vino blanco";
+  restaurante_platillos[8] = "sopa de cebolla y tomate y bebida vinotinto";
+  restaurante_platillos[9] = "bistec de carne de res y bebida bourbon";
+  restaurante_platillos[10] = "chuletas de cerdo a la bbq y bebida john collins";
+  restaurante_platillos[11] = "pasta ex' reprobada y bebida estracto de picha";
+  restaurante_platillos[12] = "ensalada de guanábana a la apk y bebida whisky maravilla";
+  restaurante_platillos[13] = "sushi tempura con soya y bebida coca cola";
+  restaurante_platillos[14] = "hamburguesa de pollo con papas a la francesa y bebida coca cola";
+  restaurante_platillos[15] = "hamburguesa de carne con papas a la francesa y bebida justy";
+  restaurante_platillos[16] = "pizza pequeña con pepperoni y queso y bebida coca cola ";
+  restaurante_platillos[17] = "pizza mediana con pepperoni y queso y bebida coca cola";
+  restaurante_platillos[18] = "pizza grande con pepperoni, queso y tocineta y bebida pepsi";
 
   restaurante_ingredientes_cantidades[1] = 40;
   restaurante_ingredientes_cantidades[2] = 30;
