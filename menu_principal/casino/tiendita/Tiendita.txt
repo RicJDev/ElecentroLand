@@ -1,7 +1,7 @@
 Procedimiento Tiendita(E/S: nombre: Cadena, saldo_disponible: Entero, premios_canjedos[j_casino]: Booleano, casino_stock_premios[j_casino], casino_valor_premios[j_casino]: Entero);
 Inicio
   var opcion_tiendita = 0: Entero;
-  
+
   Mostrar << "Bienvenido seas, ", nombre, "!";
   Mientras (seguir_tiendita != 5) Hacer;
     Mostrar << "Elije una opcion";
@@ -10,14 +10,14 @@ Inicio
     Mostrar << "3. Canjear fichas por dibujos (son bonitos ✨)";
     Mostrar << "4. Ver tus dibujos. (Que son bonitos, digo ✨)";
     Mostrar << "5. No hacer nada. O sea, salir";
-    
+
     Leer >> opcion_tiendita;
-    
+
     Mientras (opcion_tiendita < 1 OR opcion_tiendita > 5) Hacer;
       Mostrar << "Opcion no valida, mi querido/a", nombre, ". Por favor elige algo que si este en el menu";
       Leer >> opcion_tiendita;
     Fin_Mientras
-    
+
     En_Caso (opcion_tiendita > 0) Sea;
       Caso (opcion_tiendita = 1);
         comprar_fichas(saldo_disponible, nombre);

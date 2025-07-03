@@ -11,19 +11,19 @@ Inicio
     Mostrar << "3: Vodka 8$ cada botella";
     Mostrar << "4: Cóctel 5$ cada copa";
     Leer >> OpcionClientes;
-    
+
     En_Caso (OpcionClientes > 0) Sea;
       Caso (OpcionClientes = 1 AND bar_ingredientes_cantidades[5] > 0);
         ingrediente = bar_ingredientes_cantidades[5];
         Mostrar << "¿Cuántas unidades compró? ";
         Leer >> Cantidad;
-        
+
         Mientras (Cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " copas de Cerveza disponibles";
           Leer >> Cantidad;
         Fin_Mientras
         precio = bar_ingredientes_precios[5];
-        contador = bar_contadores[5]
+        contador = bar_contadores[5];
         contador = contador + 1;
         bar_contadores[5] = contador;
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
@@ -36,7 +36,7 @@ Inicio
         ingrediente = bar_ingredientes_cantidades[6];
         Mostrar << "¿Cuántas unidades compró? ";
         Leer >> Cantidad;
-        
+
         Mientras (Cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " botellas de Vino disponibles.";
           Leer >> Cantidad;
@@ -55,7 +55,7 @@ Inicio
         ingrediente = bar_ingredientes_cantidades[7];
         Mostrar << "¿Cuántas unidades compró? ";
         Leer >> Cantidad;
-        
+
         Mientras (Cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " botellas de Vodka disponibles.";
           Leer >> Cantidad;
@@ -67,7 +67,7 @@ Inicio
         bar_contadores[7] = contador;
         ingrediente = ingrediente – Cantidad;
         bar_ingredientes_cantidades[7] = ingrediente;
-        
+
         Mostrar << "Quedan disponibles ", Cantidad_Vodka, " botellas de Vodka.";
       Caso (OpcionClientes = 3 AND bar_ingredientes_cantidades[7] < 1);
         Mostrar << "Se agotaron las botellas de Vodka.";
@@ -75,7 +75,7 @@ Inicio
         ingrediente = bar_ingredientes_cantidades[8];
         Mostrar << "¿Cuántas unidades compró? ";
         Leer >> Cantidad;
-        
+
         Mientras (Cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " copas de Cóctel disponibles.";
           Leer >> Cantidad;

@@ -9,4 +9,3 @@ Inicio
   Mostrar << "Cantidad de habitaciones Picha disponibles:", cantidad_habitacion4;
   Mostrar << "Elecentroland tu destino";
 Fin_Procedimiento
-

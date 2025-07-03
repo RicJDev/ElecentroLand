@@ -1,4 +1,4 @@
-Procedimiento Hotel(E/S: contador_clientes = 0, cant_acompañantes = 0,  clientes_hotel = 0,  clientes[contador_clientes],  cantidad_habitacion1 = 250,  cantidad_habitacion2 = 100,  cantidad_habitacion3 = 80,  cantidad_habitacion4 = 70,  id_cliente,  dias_hospedaje,  telefono,  edad_usuario,  cedula,   id_ingresado,  validacion_final,   id_cliente_reservacion: Entero,  total_pagar_habitacion: Real,  fecha_llegada,  fecha_salida,  nombre_apellido,  email: Cadena);
+Procedimiento Hotel(E/S: contador_clientes = 0, cant_acompañantes = 0, clientes_hotel = 0, clientes[contador_clientes], cantidad_habitacion1 = 250, cantidad_habitacion2 = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70, id_cliente, dias_hospedaje, telefono, edad_usuario, cedula, id_ingresado, validacion_final, id_cliente_reservacion: Entero, total_pagar_habitacion: Real, fecha_llegada, fecha_salida, nombre_apellido, email: Cadena);
 Inicio
   Var opc_hotel = entero;
   Repetir
@@ -10,12 +10,12 @@ Inicio
     Mostrar << "5: Check-out";
     Mostrar << "6: Salir del sistema";
     Leer >> opc_hotel;
-    
+
     Mientras (opc_hotel < 1 OR opc_hotel > 6) Hacer;
       Mostrar << "Estimado usuario, error en opcion seleccionada, intente de nuevo";
       Leer >> opc_hotel;
     Fin_Mientras
-    
+
     En_Caso (opc_hotel > 0) Sea;
       Caso (opc_hotel = 1);
         registro_nuevo_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, id_cliente, cant_acompañantes, clientes_hotel = 0);
@@ -35,7 +35,7 @@ Inicio
       Otro_Caso
         opc_hotel = 6;
     Fin_Caso
-    
+
     Hasta (opc_hotel = 6);
   Fin_Repetir
 Fin_Procedimiento
@@ -45,10 +45,10 @@ Inicio
 
   Mientras (I = 1 Hasta I = contador_clientes) Hacer;
     Si id_ingresado != clientes[contador_clientes];
-      validacion_final = 0;
-    Sino 
-      validacion_final = 1;
-    Fin_Si
-  
+    validacion_final = 0;
+    Sino
+    validacion_final = 1;
+  Fin_Si
+
   Devolver (validacion_final);
 Fin_Funcion

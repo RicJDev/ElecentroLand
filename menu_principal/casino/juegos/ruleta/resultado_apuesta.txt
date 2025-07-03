@@ -14,7 +14,7 @@ Inicio
       Partidas_Ganadas_Modo2 = Partidas_Ganadas_Modo2 + 1;
     Fin_Si
 
-    Sino 
+    Sino
 
     Mostrar << "Lamentablemente has perdido";
     Dinero_Actual = Dinero_Actual -(Apuesta * 1, 5);

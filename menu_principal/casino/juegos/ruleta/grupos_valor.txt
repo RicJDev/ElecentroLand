@@ -4,17 +4,17 @@ Inicio
   Para (I = 1 Hasta I = 8) Hacer;
     Grupo[I] = I;
   Fin_Para
-  
+
   Grupo2[8]: Entero;
   Para (I = 1 Hasta I = 8) Hacer;
     Grupo2[I] = I + 8;
   Fin_Para
-  
+
   Grupo3[8]: Entero;
   Para (I = 1 Hasta I = 8) Hacer;
     Grupo3[I] = I + 16;
   Fin_Para
-  
+
   Grupo4[8]: Entero;
   Para (I = 1 Hasta I = 8) Hacer;
     Grupo4[I] = I + 24;

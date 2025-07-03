@@ -3,7 +3,7 @@ Inicio
   var número: Entero;
   número = GenerarNumeroAleatorio(Mínimo, Máximo);
 
-  // No se cuestione la magia detras de esta funcion. Genera numeros aleatorios, y con eso basta :D
+  // No se cuestione la magia detras de esta funcion. Genera numeros aleatorios, y con eso basta: D
 
   Devolver (número);
 Fin_Funcion

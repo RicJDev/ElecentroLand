@@ -13,7 +13,7 @@ Inicio
       Alimentos(OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8], Cuenta_Cliente = 0, bar_ingredientes_precios[8]);
       Mostrar << Alimentos;
 
-      Sino 
+      Sino
 
       Si (Opcion_Inv = 2) Entonces;
         Bebidas(OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8], Cuenta_Cliente = 0, bar_ingredientes_precios[8]);

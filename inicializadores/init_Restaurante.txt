@@ -99,4 +99,3 @@ Inicio
     restaurante_contadores[i_restaurante] = 0;
   Fin_Para
 Fin_Procedimiento
-

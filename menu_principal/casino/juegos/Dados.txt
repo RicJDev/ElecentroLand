@@ -9,7 +9,7 @@ Inicio
     D3 = Aleatorio(1, 6);
     Mostrar << "Ingrese las fichas que desea apostar";
     Leer >> Saldo_Apuesta;
-    
+
     Mientras (Saldo_Apuesta > Fichas) Hacer;
       Mostrar << "Saldo insuficiente, no puedes jugar";
       Leer >> Saldo_Apuesta;

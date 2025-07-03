@@ -6,37 +6,37 @@ Inicio
   Var restaurante_contadores[18]: Entero;
   Var restaurante_ingredientes_precio[18]: Real;
   Var restaurante_ingredientes[34]: Cadena;
-  
+
   // Base de datos del Bar
   Var i_bar: Entero;
   Var bar_ingredientes[8]: Cadena;
   Var bar_ingredientes_cantidades[8]: Entero;
   Var bar_contadores[8]: Entero;
   Var bar_ingredientes_precio[8]: Real;
-  
+
   // Base de datos del Hotel
   Var i_clientes: Entero;
   Var nombres_titulares[500], email[500]: Cadena ;
   Var cantidad_titulares[500], huespedes_total[500], telefono[500], edad_usuario[500], cedula[500]: Entero;
-  
+
   // Base de datos del Casino
   Var fichas_apostadas: Entero;
   Var i_casino, j_casino: Entero;
   Var casino_premios[100][10]: Booleano;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
-  
+
   // Inicializando DB del Restaurante
   init_Restaurante(restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precio[i_restaurante], restaurante_ingredientes[i_restaurante]);
-  
-  // Inicializando DB del Bar 
+
+  // Inicializando DB del Bar
   init_Bar(bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], bar_ingredientes[i_bar], bar_ingredientes_precio[i_bar]);
-  
+
   // Inicializando DB del Casino
   init_Casino(casino_premios[i_casino][j_casino], casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]);
-  
+
   // Inicializando DB del Hotel
-  init_Hotel(nombres_titulares[i_cliente], email[i_cliente], cantidad_titulares[i_cliente], huespedes_total[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente])
+  init_Hotel(nombres_titulares[i_cliente], email[i_cliente], cantidad_titulares[i_cliente], huespedes_total[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente]);
 
   Repetir
     Mostrar << "¡Bienvenido al Resort ElecentroLand!, ingrese a dónde quiere ir";
@@ -46,12 +46,12 @@ Inicio
     Mostrar << "4: Bar";
     Mostrar << "5: Salir";
     Leer >> Opcion_Menu;
-    
+
     Mientras (Opcion_Menu < 1 OR Opcion_Menu > 5) Hacer;
       Mostrar << "Opción inválida, intente nuevamente";
       Leer >> Opcion_Menu;
     Fin_Mientras
-    
+
     En_Caso (Opcion_Menu > 0) Sea;
       Caso (Opcion_Menu = 1);
         Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino], casino_premios[i_casino][j_casino]);
@@ -68,7 +68,7 @@ Inicio
       Otro_Caso
         R = 0;
     Fin_Caso
-    
+
     Hasta (R = 0);
   Fin_Repetir
 

@@ -2,7 +2,7 @@ Procedimiento asignar_figura(e/s: rodillo[3][3]);
 Inicio
   var figura[5] = ["🍌", "🍒", "🥭", "🍍", "🍋"]: Cadena;
   var I, J, num_aleatorio, Minimo = 1, Maximo = 5: Entero;
-  
+
   Para (I = 1 Hasta I = 3) Hacer;
     Para (J = 1 Hasta J = 3) Hacer;
       num_aleatorio = aleatorio(Minimo, Maximo);

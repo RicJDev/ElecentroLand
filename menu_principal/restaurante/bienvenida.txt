@@ -1,4 +1,4 @@
-Procedimiento Bienvenida (E/S: Opcion_Restaurante);
+Procedimiento Bienvenida(E/S: Opcion_Restaurante);
 Inicio
   Mostrar << "Bienvenido a nuestro restaurante Sabores Elecentro";
   Mostrar << "A continuación el Menú del Restaurante, elija el de su preferencia.";
@@ -6,9 +6,9 @@ Inicio
   Mostrar << "2: Almuerzos";
   Mostrar << "3: Cenas";
   Mostrar << "4: Salir";
-  
+
   Leer >> Opcion_Restaurante;
-  
+
   Mientras (Opcion_Restaurante < 1 OR Opcion_Restaurante > 4) Hacer;
     Mostrar << "Error en datos, solo se permiten valores entre 1 y 4";
     Leer >> Opcion_Restaurante;

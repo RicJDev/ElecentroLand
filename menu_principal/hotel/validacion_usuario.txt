@@ -1,13 +1,12 @@
-funcion validacion(id_cliente_reservacion: entero, existe_usuario: entero, cantidad_titulares[i_cliente]: entero);
+Funcion validacion_usuario(id_cliente_reservacion: Entero, existe_usuario: Entero, cantidad_titulares[i_cliente]: Entero): Entero;
 Inicio
-  Var existe_usuario: entero;
-  
+  Var existe_usuario = 0: Entero;
+
   Para (i_cliente = 1 Hasta i_cliente = 500) Hacer;
     Si (id_cliente_reservacion = cantidad_titulares[i_cliente]) Entonces;
       existe_usuario = 1;
-      Sino 
-      existe_usuario = 0;
     Fin_Si
   Fin_Para
+
   Devolver (existe_usuario);
 Fin_Funcion

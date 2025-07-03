@@ -4,17 +4,17 @@ Inicio
   var nombre: Cadena;
   var saldo_disponible: Entero;
   var premios_canjedos[10]: Booleano;
-  
+
   nombre = casino_nombres[id_usuario];
   saldo_disponible = casino_saldos_fichas[id_usuario];
-  
+
   Para (j_casino = 1 Hasta j_casino = 10) Hacer;
     premios_canjedos[j_casino] = casino_premios[id_usuario][j_casino];
   Fin_Para
 
   Mostrar << "Bienvenido seas, ", nombre;
   Mostrar << "Tu saldo disponible para el casino es ", saldo_disponible;
-  
+
   Mientras (opcion_juegos != 0) Hacer;
     Mostrar << "Ingresa una opcion. ";
     Mostrar << "0. Salir";
@@ -24,12 +24,12 @@ Inicio
     Mostrar << "4. Tragamonedas";
     Mostrar << "5. Tiendita (donde puedes canjear tus fichas por dinero)";
     Leer >> opcion_juegos;
-    
+
     Mientras (opcion_juegos < 0 OR opcion_juegos > 5) Hacer;
       Mostrar << "No te entiendo. Solo te di 6 opciones. Elije algo valido, por favor";
       Leer >> opcion_juegos;
     Fin_Mientras
-    
+
     En_Caso (opcion_juegos > 0) Sea;
       Caso (opcion_juegos = 1);
         Blackjack(nombre, saldo_disponible);
@@ -42,11 +42,11 @@ Inicio
       Otro_Caso(opcion_juegos = 5);
         Tiendita(nombre, saldo_disponible, premios_canjedos[j_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]);
     Fin_Caso
-    
+
     Para (j_casino = 1 Hasta j_casino = 10) Hacer;
       casino_premios[id_usuario][j_casino] = premios_canjedos[j_casino];
     Fin_Para
-    
+
     casino_saldos_fichas[id_usuario] = saldo_disponible;
   Fin_Mientras
 Fin_Procedimiento

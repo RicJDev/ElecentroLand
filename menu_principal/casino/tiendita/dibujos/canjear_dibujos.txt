@@ -2,7 +2,7 @@ Procedimiento canjear_dibujos(E/S: saldo_disponible: Entero, nombre: Cadena, cas
 Inicio
   var seguir_canje = 1, confirmar_transaccion, existe_premio: Booleno;
   var id_dibujo, valor_premio, stock_premio: Entero;
-  
+
   Mientras (seguir_canje = 1) Hacer;
     Si (saldo_disponible >= 10) Entonces;
       Mostrar << "Elige un dibujo, hermano. Al lado veras su precio en fichas";
@@ -17,56 +17,56 @@ Inicio
       Mostrar << "9. sin dibujo: ", casino_valor_premios[9];
       Mostrar << "10. sin dibujo: ", casino_valor_premios[10];
       Leer >> id_dibujo;
-      
+
       // Favor de colocar mas dibujos
-      
+
       Mientras (id_dibujo < 1 OR id_dibujo > 10) Hacer;
         Mostrar << "Fuera de rango. Solo hay 10 dibujos";
         Leer >> id_dibujo;
       Fin_Mientras
-      
+
       valor_premio = casino_valor_premios[id_dibujo];
       stock_premio = casino_stock_premios[id_dibujo];
       existe_premio = premios_canjeados[id_dibujo];
-      
+
       Si (saldo_disponible >= valor_premio AND stock_premio > 0 AND existe_premio = 0) Entonces;
         Mostrar << "Quieres seguir con la transaccion? (0: No, 1: Si, vale)";
         Leer >> confirmar_transaccion;
-        
+
         Si (confirmar_transaccion = 1) Entonces;
           saldo_disponible = saldo_disponible - valor_premio;
           stock_premio = stock_premio - 1;
           premios_canjeados[id_dibujo] = 1;
-          
+
           Mostrar << "Premio ", id_dibujo, "canjeado exitosamente!";
-          
-          Sino 
+
+          Sino
           Mostrar << "Otro dia lo canjeas. No problemo, my friend";
         Fin_Si
-        
-        Sino 
+
+        Sino
         Mostrar << "No se ha podido realizar el canje debido a: ";
-        
+
         Si (saldo_disponible < valor_premio) Entonces;
           Mostrar << "- No te alcanzan las fichas para comprar este dibujo";
         Fin_Si
-        
+
         Si (stock_premio < 0) Entonces;
           Mostrar << "- Parece que ya se nos agotaron las copias de este dibujo";
         Fin_Si
-        
+
         Si (existe_premio = 1) Entonces;
           Mostrar << "- Ya tenias este dibujo, bro";
         Fin_Si
       Fin_Si
-      
+
       casino_stock_premios[id_dibujo] = stock_premio;
-      
-      Sino 
+
+      Sino
       Mostrar << "No tienes fichas suficientes, porque necesitas al menos 10. Compra algunas o trata de ganarlas en los juegos";
       seguir_canje = 0;
     Fin_Si
-    
+
     Mostrar << "Deseas seguir canjeando? (0: No, que va; 1: Si, manao. Ando adicto)";
     Leer >> seguir_canje;
   Fin_Mientras

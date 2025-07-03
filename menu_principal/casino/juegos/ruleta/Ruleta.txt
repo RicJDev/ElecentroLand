@@ -5,7 +5,7 @@ Inicio
     eleccion(Modo_elegido);
     Mostrar << eleccion;
     recoleccion(Apuesta, Seleccion, Modo_Elegido, Multiplicador);
-    
+
     En_Caso (Modo_Elegido > 0) Sea;
       Caso (Modo_Elegido = 1);
         Veces_Jugadas_Modo1 = Veces_Jugadas_Modo1 + 1;
@@ -32,12 +32,12 @@ Inicio
         resultado_apuesta_grupo(Seleccion, Aleatorio, Grupo1, Grupo 2, Grupo3, Grupo4, Apuesta, Dinero_Actual, Dinero_Ganado, Dinero_Perdido);
         Mostrar << resultado_apuesta_grupo;
     Fin_Caso
-    
+
     Mostrar << "¿Desea Seguir Jugando?, 1: Si, 0: No";
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
-  
+
   estadisticas(Dinero_Actual, Dinero_Ganado, Dinero_Perdido, Veces_jugadas, Partidas_Ganadas, Partidas_Perdidas, Porcentaje_Victorias);
   Mostrar << estadisticas;
 Fin_Procedimiento

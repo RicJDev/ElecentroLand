@@ -5,17 +5,19 @@ Inicio
   Mostrar << "Gracias por haber elegido a Elecentroland para su visita a San Juan De Los Morros, vuelva pronto";
   Mostrar << "Ingrese su ID, por favor";
   Leer >> id_ingresado;
-  
+
   Mientras (id_ingresado < 1) Hacer;
     Mostrar << "Por favor ingrese un ID valido";
     Leer >> id_ingresado;
   Fin_Mientras
-  
+
   validacion_check_out = validacion(id_ingresado, validacion_final, clientes[contador_clientes]);
-  
+
   Si (validacion_check_out = 0) Entonces;
     Mostrar << "Error el ID", id_ingresado, "no se encuentra en nuestra base de datos";
-  Sino 
+
+    Sino
+
     contador_clientes = contador_clientes - 1;
     Mostrar << "Ingrese en que habitacion estaba hospedado";
     Mostrar << "Listado de habitaciones";
@@ -24,12 +26,12 @@ Inicio
     Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
     Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
     Leer >> opcion_habitacion;
-    
+
     Mientras (opcion_habitacion < 1) OR (opcion_habitacion > 4) Hacer;
       Mostrar << "Error por favor elija una habitacion disponible";
       Leer >> opcion_habitacion;
     Fin_Mientras
-    
+
     En_Caso (opcion_habitacion > 0) Sea;
       Caso (opcion_habitacion = 1);
         cantidad_habitacion1 = cantidad_habitacion1 + 1;
@@ -42,4 +44,3 @@ Inicio
     Fin_Caso
   Fin_Si
 Fin_Procedimiento
-

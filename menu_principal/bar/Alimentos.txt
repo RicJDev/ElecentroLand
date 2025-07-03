@@ -3,6 +3,7 @@ Inicio
   Var R: Booleano;
   Var ingrediente, contador = 0: Entero;
   Var precio: Real;
+
   Repetir
     Mostrar << "Menú de Alimentos:";
     Mostrar << "1: Papas Fritas 1$ cada bolsa.";
@@ -95,7 +96,7 @@ Inicio
         contador = bar_contadores[4];
         contador = contador + 1;
         bar_contadores[4] = contador;
-        ingrediente = ingrediente – Cantidad;	;
+        ingrediente = ingrediente – Cantidad;
         bar_ingredientes_cantidades[4] = ingrediente;
 
         Mostrar << "Quedan disponibles ", ingrediente, " bolsas de Sándwiches.";

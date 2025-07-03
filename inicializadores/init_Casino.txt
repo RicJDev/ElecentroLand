@@ -4,19 +4,19 @@ Inicio
     casino_stock_premios[j_casino] = 10;
     casino_valor_premios[j_casino] = 0;
   Fin_Para
-  
+
   casino_valor_premios[1] = 12;
   casino_valor_premios[2] = 10;
   casino_valor_premios[3] = 7;
   casino_valor_premios[4] = 5;
   casino_valor_premios[5] = 15;
-  
+
   Para (i_casino = 1 Hasta i_casino = 100) Hacer;
     casino_nombres[i_casino] = "no_asignado";
     casino_contrasenas[i_casino] = "no_asignado";
     casino_edades[i_casino] = 0;
     casino_saldos_fichas[i_casino] = 0;
-    
+
     Para (j_casino = 1 Hasta j_casino = 10) Hacer;
       casino_premios[i_casino][j_casino] = 0;
     Fin_Para

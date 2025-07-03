@@ -19,7 +19,7 @@ Inicio
       Mostrar << "Error, intente nuevamente";
       Leer >> Desayuno;
     Fin_Mientras
-    
+
     En_Caso (Desayuno > 0) Sea;
       Caso (Desayuno = 1) AND (restaurante_ingredientes_cantidades[1] > 0);
         Mostrar << "¿Cuántos compró?";
@@ -45,7 +45,7 @@ Inicio
         ingrediente_1 = restaurante_ingredientes_cantidades[2];
         ingrediente_2 = restaurante_ingredientes_cantidades[3];
         ingrediente_3 = restaurante_ingredientes_cantidades[4];
-  
+
         Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3) Hacer;
           Mostrar << "Error, solo hay", ingrediente_1, "Patatas disponibles", ingrediente_2, "Huevos disponibles", ingrediente_3, "Tocineta disponible";
           Leer >> Cantidad;

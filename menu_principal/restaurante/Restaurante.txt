@@ -4,21 +4,21 @@ Inicio
   Repetir
     Bienvenida(Opcion_Restaurante);
     Mostrar << Bienvenida;
-    
+
     En_Caso (Opcion_Restaurante > 0) Sea;
       Caso (Opcion_Restaurante = 1);
-        Desayuno(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18],             restaurante_ingredientes_precios[18]);
+        Desayuno(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18], restaurante_ingredientes_precios[18]);
         Mostrar << Desayuno;
       Caso (Opcion_Restaurante = 2);
-        Almuerzo(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18],             restaurante_ingredientes_precios[18]);
+        Almuerzo(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18], restaurante_ingredientes_precios[18]);
         Mostrar << Almuerzo;
       Caso (Opcion_Restaurante = 3);
-        Cena(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18],                 restaurante_ingredientes_precios[18]);
+        Cena(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18], restaurante_ingredientes_precios[18]);
         Mostrar << Cena;
       Otro_Caso
         R = 4;
     Fin_Caso
-    
+
     Hasta (R = 4);
   Fin_Repetir
 Fin_Procedimiento
