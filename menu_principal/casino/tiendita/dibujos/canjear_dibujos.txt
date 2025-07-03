@@ -12,7 +12,7 @@ Inicio
       Mostrar << "4. Un retrato de tu madre: ", casino_valor_premios[4];
       Mostrar << "5. Una representacion de como veo al profe cuando hay evaluacion: ", casino_valor_premios[5];
       Mostrar << "6. Mi ex: ", casino_valor_premios[6];
-      Mostrar << "7. sin dibujo: ", casino_valor_premios[7];
+      Mostrar << "7. Si tienes hambre, come... --Monkey D. Luffy: ", casino_valor_premios[7];
       Mostrar << "8. sin dibujo: ", casino_valor_premios[8];
       Mostrar << "9. sin dibujo: ", casino_valor_premios[9];
       Mostrar << "10. sin dibujo: ", casino_valor_premios[10];
