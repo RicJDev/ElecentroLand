@@ -47,7 +47,7 @@ Inicio
         
         Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
         Leer >> tipo_cuenta;
-        Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el área de administración digite su clave          secreta";
+        Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el área de administración digite su clave secreta";
         
       Caso (opc_pago = 2);  //opcion 2
         Mostrar << "Ingrese el número de su tarjeta";
