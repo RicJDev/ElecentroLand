@@ -59,10 +59,10 @@ Inicio
 
     En_Caso (Opcion_Menu > 0) Sea;
       Caso (Opcion_Menu = 1);
-        Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino], casino_premios[i_casino][j_casino]);
+        Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino],                                       casino_stock_premios[j_casino], casino_valor_premios[j_casino], casino_premios[i_casino][j_casino]);
         Mostrar << Casino;
       Caso (Opcion_Menu = 2);
-        Hotel();
+        Hotel(contador_clientes = 0, cant_acompañantes = 0, clientes_hotel = 0, clientes[contador_clientes], cantidad_habitacion1 = 250, cantidad_habitacion2         = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70, id_cliente, dias_hospedaje, telefono, edad_usuario, cedula, id_ingresado,                        validacion_final, id_cliente_reservacion: Entero, total_pagar_habitacion: Real, fecha_llegada, fecha_salida, nombre_apellido, email);
         Mostrar << Hotel;
       Caso (Opcion_Menu = 3);
         Restaurante(Opcion);
