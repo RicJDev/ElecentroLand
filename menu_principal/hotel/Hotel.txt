@@ -30,7 +30,7 @@ Inicio
         metodo_de_pago(clientes[contador_clientes]);
         Mostrar << metodo_de_pago;
       Caso (opc_hotel = 5);
-        check_out(contador_clientes, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado, validacion_final);
+        check_out(contador_clientes, validacion_final, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado);
         Mostrar << check_out;
       Otro_Caso
         opc_hotel = 6;
