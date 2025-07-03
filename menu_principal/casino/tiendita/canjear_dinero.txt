@@ -1,8 +1,8 @@
 Procedimiento canjear_dinero(E/S: saldo_disponible: Entero, nombre: Cadena);
 Inicio
-  var monto_canjeado: Real;
-  var seguir_canje = 1, confirmar_transaccion: Booleano;
-  var cedula, banco, telefono: Cadena;
+  Var monto_canjeado: Real;
+  Var seguir_canje = 1, confirmar_transaccion: Booleano;
+  Var cedula, banco, telefono: Cadena;
 
   Mientras (seguir_canje = 1) Hacer;
     Si (saldo_disponible >= 10) Entonces;
@@ -24,7 +24,7 @@ Inicio
         Mostrar << "Dime el banco, padre (o madre o lo que sea con lo que te identifiques)";
         Leer >> banco;
         Mostrar << "Dime el numero de telefono, bro (or sis or whatever you feel like)";
-        leer telefono;
+        Leer >> telefono;
 
         // Simulando pago movil: D
 
