@@ -1,6 +1,6 @@
 Procedimiento canjear_dibujos(E/S: saldo_disponible: Entero, nombre: Cadena, casino_valor_premios[j_casino], casino_stock_premios[j_casino]: Entero, premios_canjeados[j_casino]: Booleano);
 Inicio
-  var seguir_canje = 1, confirmar_transaccion, existe_premio: Booleno;
+  var seguir_canje = 1, confirmar_transaccion, existe_premio: Booleano;
   var id_dibujo, valor_premio, stock_premio: Entero;
 
   Mientras (seguir_canje = 1) Hacer;
