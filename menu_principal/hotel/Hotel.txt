@@ -18,7 +18,7 @@ Inicio
 
     En_Caso (opc_hotel > 0) Sea;
       Caso (opc_hotel = 1);
-        registro_nuevo_cliente(nombre_apellido, telefono, edad_usuario, cedula, email, id_cliente, cant_acompañantes, clientes_hotel = 0);
+        registro_nuevo_cliente(huespedes_total[clientes_hotel], telefono[i_cliente], cedula[i_cliente], edad_usuario[i_cliente]: Entero, email[i_cliente],             nombres_titulares[i_cliente]);
         Mostrar << registro_nuevo_cliente;
       Caso (opc_hotel = 2);
         reserva_habitaciones(fecha_salida[i_cliente], fecha_llegada[i_cliente], dias_hospedaje[i_cliente], ingresos_hotel);
