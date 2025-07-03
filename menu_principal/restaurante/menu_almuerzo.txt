@@ -1,12 +1,9 @@
-Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real);
+Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real);
 Inicio
-  Var opcion: Entero;
   Var quieres_otra: Booleano;
-  Var ingrediente_1, ingrediente_2, ingrediente_3: Entero;
+  Var opcion, ingrediente_1, ingrediente_2, ingrediente_3, contador: Entero;
   Var precio: Real;
-  Var contador: Entero;
   Var R: Booleano;
-  Var Dinero_Opc1, Dinero_Opc2, Dinero_Opc3, Dinero_Opc4, Dinero_Opc5, Dinero_Opc6, Dinero_Todas_Opcs: Real;
   Repetir
     Mostrar << "Este es nuestro menú de Almuerzo:";
     Mostrar << "Opción 1: Ensalada Cesar y de bebida Vino Blanco: 32$";
@@ -26,30 +23,29 @@ Inicio
       Caso (opcion = 1);
         ingrediente_1 = restaurante_ingredientes[10];
         ingrediente_2 = restaurante_ingredientes[11];
+        Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
+          Mostrar << "¿Cuántas desea ordenar?";
+          Leer >> Cantidad;
 
-        Repetir
-          Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
-            Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serían, 32$"; // 11 y 10
+          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) Hacer;
+            Mostrar << "Solo hay ", ingrediente_1, "Cebollas,  ", ingrediente_2, "Tomates y ", ingrediente_3, "copas de Vinotinto disponibles";
+            Leer >> Cantidad;
+          Fin_Mientras
+          Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serían, 32$ por cada unidad que haya ordenado."; // 11 y 10
 
-            ingrediente_1 = ingrediente_1 - 1;
-            ingrediente_2 = ingrediente_2 - 1;
-            contador = restaurante_contadores[7];
-            contador = contador + 1;
-            restaurante_contadores[7] = contador;
-            restaurante_ingredientes_cantidades[10] = ingrediente_1;
-            restaurante_ingredientes_cantidades[11] = ingrediente_2;
-
-            Mostrar << "¿Quieres otro combo igual, manao? (0: No; 1: Si)";
-            Leer >> quieres_otra;
-
-            Sino
-
-            Mostrar << "Mira, mijo. Se acabo";
-            quieres_otra = 0;
-          Fin_Si
-
-          Hasta (quieres_otra = 0);
-        Fin_Repetir
+          precio = restaurante_ingredientes_precios[7]
+          ingrediente_1 = ingrediente_1 - 1;
+          ingrediente_2 = ingrediente_2 - 1;
+          contador = restaurante_contadores[7];
+          contador = contador + 1;
+          restaurante_contadores[7] = contador;
+          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
+          restaurante_ingredientes_cantidades[10] = ingrediente_1;
+          restaurante_ingredientes_cantidades[11] = ingrediente_2;
+        Sino
+            Mostrar << "Se acabaron los ingredientes";
+        Fin_Si
       Caso (opcion = 2);
         ingrediente_1 = restaurante_ingredientes_cantidades[12];
         ingrediente_2 = restaurante_ingredientes_cantidades[13];
@@ -63,21 +59,21 @@ Inicio
             Leer >> Cantidad;
           Fin_Mientras
 
-          Mostrar << "Una sopa de Cebolla y tomate y una copa de Vinotinto. Serían, 25$.";
+          Mostrar << "Una sopa de Cebolla y tomate y una copa de Vinotinto. Serían, 25$ por cada unidad que haya ordenado.";
 
           precio = restaurante_ingredientes_precios[8];
           contador = restaurante_contadores[8];
           contador = contador + 1;
           restaurante_contadores[8] = contador;
           Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          Dinero_Opc2 = Dinero_Opc2 + (Cantidad * precio);
+          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
           ingrediente_1 = ingrediente_1 – Cantidad;
           ingrediente_2 = ingrediente_2 – Cantidad;
           ingrediente_3 = ingrediente_3 – Cantidad;
           restaurante_ingredientes_cantidades[12] = ingrediente_1;
           restaurante_ingredientes_cantidades[13] = ingrediente_2;
           restaurante_ingredientes_cantidades[14] = ingrediente_3;
-          Sino
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 3);
@@ -99,12 +95,12 @@ Inicio
           contador = contador + 1;
           restaurante_contadores[9] = contador;
           Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          Dinero_Opc3 = Dinero_Opc3 + (Cantidad * precio);
+          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
           ingrediente_1 = ingrediente_1 – Cantidad;
           ingrediente_2 = ingrediente_2 – Cantidad;
           restaurante_ingredientes_cantidades[15] = ingrediente_1;
           restaurante_ingredientes_cantidades[16] = ingrediente_2;
-          Sino
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 4);
@@ -119,19 +115,19 @@ Inicio
             Leer >> Cantidad;
           Fin_Mientras
 
-          Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$.";
+          Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$ por cada unidad que haya ordenado.";
 
           precio = restaurante_ingredientes_precios[10];
           contador = restaurante_contadores[10];
           contador = contador + 1;
           restaurante_contadores[10] = contador;
           Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          Dinero_Opc4 = Dinero_Opc4 + (Cantidad * precio);
+          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
           ingrediente_1 = ingrediente_1 – Cantidad;
           ingrediente_2 = ingrediente_2 – Cantidad;
           restaurante_ingredientes_cantidades[17] = ingrediente_1;
           restaurante_ingredientes_cantidades[18] = ingrediente_2;
-          Sino
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 5);
@@ -146,19 +142,19 @@ Inicio
             Leer >> Cantidad;
           Fin_Mientras
 
-          Mostrar << "Una ración de Pasta Ex' Reprobada y de bebida una copa de Estracto de Picha. Serían, 19$";
+          Mostrar << "Una ración de Pasta Ex' Reprobada y de bebida una copa de Estracto de Picha. Serían, 19$ por cada unidad que haya ordenado";
 
           precio = restaurante_ingredientes_precios[11];
           contador = restaurante_contadores[11];
           contador = contador + 1;
           restaurante_contadores[11] = contador;
           Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          Dinero_Opc5 = Dinero_Opc5 + (Cantidad * precio);
+          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
           ingrediente_1 = ingrediente_1 – Cantidad;
           ingrediente_2 = ingrediente_2 – Cantidad;
           restaurante_ingredientes_cantidades[19] = ingrediente_1;
           restaurante_ingredientes_cantidades[20] = ingrediente_2;
-          Sino
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Otro_Caso
@@ -173,19 +169,19 @@ Inicio
             Leer >> Cantidad;
           Fin_Mientras
 
-          Mostrar << "Una ración de Ensalada de Guanábana a la APK y de bebida una copa de Whisky Maravilla. Serían, 27$.";
+          Mostrar << "Una ración de Ensalada de Guanábana a la APK y de bebida una copa de Whisky Maravilla. Serían, 27$ por cada unidad que haya ordenado.";
 
           precio = restaurante_ingredientes_precios[12];
           contador = restaurante_contadores[12];
           contador = contador + 1;
           restaurante_contadores[12] = contador;
           Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          Dinero_Opc6 = Dinero_Opc6 + (Cantidad * precio);
+          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
           ingrediente_1 = ingrediente_1 – Cantidad;
           ingrediente_2 = ingrediente_2 – Cantidad;
           restaurante_ingredientes_cantidades[21] = ingrediente_1;
           restaurante_ingredientes_cantidades[22] = ingrediente_2;
-          Sino
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
     Fin_Caso
@@ -194,15 +190,4 @@ Inicio
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
-
-  Dinero_Todas_Opcs = Dinero_Opc1 + Dinero_Opc2 + Dinero_Opc3 + Dinero_Opc4 + Dinero_Opc5 + Dinero_Opc6;
-
-  Mostrar << "Este es el dinero acumulado por cada una de las opciones";
-  Mostrar << "Opcion 1:", Dinero_Opc1;
-  Mostrar << "Opcion 2:", Dinero_Opc2;
-  Mostrar << "Opcion 3:", Dinero_Opc3;
-  Mostrar << "Opcion 4:", Dinero_Opc4;
-  Mostrar << "Opcion 5:", Dinero_Opc5;
-  Mostrar << "Opcion 6:", Dinero_Opc6;
-  Mostrar << "Para un total de todas las opciones de: ", Dinero_Todas_Opcs;
 Fin_Procedimiento
