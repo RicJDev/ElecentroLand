@@ -22,6 +22,7 @@ Inicio
   Var nombres_titulares[500], email[500]: Cadena ;
   Var cantidad_titulares[500], huespedes_total[500], telefono[500], edad_usuario[500], cedula[500]: Entero;
   Var ingresos_hotel: Real;
+  Var cant_acompañantes = 0, clientes_hotel = 0, cantidad_habitacion1 = 250, cantidad_habitacion2 = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70: Entero;
 
   // Base de datos del Casino
   Var fichas_apostadas: Entero;
@@ -62,7 +63,7 @@ Inicio
         Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino],                                       casino_stock_premios[j_casino], casino_valor_premios[j_casino], casino_premios[i_casino][j_casino]);
         Mostrar << Casino;
       Caso (Opcion_Menu = 2);
-        Hotel(contador_clientes = 0, cant_acompañantes = 0, clientes_hotel = 0, clientes[contador_clientes], cantidad_habitacion1 = 250, cantidad_habitacion2         = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70, id_cliente, dias_hospedaje, telefono, edad_usuario, cedula, id_ingresado,                        validacion_final, id_cliente_reservacion: Entero, total_pagar_habitacion: Real, fecha_llegada, fecha_salida, nombre_apellido, email);
+        Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2,                           cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente],            id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i_cliente], fecha_salida[i_cliente], nombre_titulares[i_cliente],                        email[i_cliente]);
         Mostrar << Hotel;
       Caso (Opcion_Menu = 3);
         Restaurante(Opcion);
