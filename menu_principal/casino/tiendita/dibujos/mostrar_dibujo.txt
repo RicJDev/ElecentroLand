@@ -246,7 +246,7 @@ Inicio
       Mostrar << "        | \/ |";
       Mostrar << "        \____/";
       Mostrar << "        (____)";
-    Caso (id_dibujo = 10);
+    Otro caso
       Mostrar << "Caballero caballeroso de la caballerosidad";
       Mostrar << " ";
 
@@ -270,9 +270,6 @@ Inicio
       Mostrar << "      |        |  ||  |";
       Mostrar << "      |       _\.:||:./_";
       Mostrar << "      |      /____/\____\";
-    Otro_Caso
-      Mostrar << "Este dibujo lo agregaremos pronto!";
 
-      // Agreguen mas dibujos, pueh!
   Fin_Caso
 Fin_Procedimiento
