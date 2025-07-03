@@ -1,4 +1,4 @@
-Procedimiento Dados(E: saldo_disponible: Entero, apuesta = 0: Entero);
+Procedimiento Dados(E/S: saldo_disponible: Entero, fichas_apostadas, veces_jugadas: Entero);
 Inicio
   Var R: Booleano;
   Var D1, D2, D3: Entero;
@@ -9,11 +9,11 @@ Inicio
     D2 = Aleatorio(1, 6);
     D3 = Aleatorio(1, 6);
     Mostrar << "Ingrese las fichas que desea apostar";
-    Leer >> apuesta;
+    Leer >> fichas_apostadas;
 
-    Mientras (apuesta > saldo_disponible) Hacer;
+    Mientras (fichas_apostadas > saldo_disponible) Hacer;
       Mostrar << "Saldo insuficiente, no puedes jugar";
-      Leer >> apuesta;
+      Leer >> fichas_apostadas;
     Fin_Mientras
 
     Mostrar << "¡Prueben su suerte! Dependiendo de los dados, estos son los premios que puedes conseguir";
@@ -26,11 +26,11 @@ Inicio
     En_Caso (D1 > 0) AND (D2 > 0) AND (D3 > 0) Sea;
       Caso (D1 = 6) AND (D2 = 6) AND (D3 = 6);
         Mostrar << "Excelente";
-        Saldo_Apuesta = Saldo_Apuesta * 2;
-        saldo_disponible = saldo_disponible + Saldo_Apuesta;
+        apuesta = apuesta * 2;
+        saldo_disponible = saldo_disponible + apuesta;
       Caso (D1 = 6 AND D2 = 6) OR (D1 = 6 AND D3 = 6) OR (D2 = 6 AND D3 = 6);
         Mostrar << "Muy bien";
-        apuesta = Saldo_Apuesta * 1.5;
+        apuesta = apuesta * 1.5;
         saldo_disponible = saldo_disponible + apuesta;
       Caso (D1 = 6) OR (D2 = 6) OR (D3 = 6);
         Mostrar << "Regular";
