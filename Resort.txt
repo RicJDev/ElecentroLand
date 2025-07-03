@@ -7,6 +7,7 @@ Inicio
   Var restaurante_ingredientes_precio[18]: Real;
   Var restaurante_ingredientes[34]: Cadena;
   Var restaurante_platillos[18]: Cadena;
+  Var dinero_restaurante: Real;
 
   // Base de datos del Bar
   Var i_bar: Entero;
@@ -14,11 +15,13 @@ Inicio
   Var bar_ingredientes_cantidades[8]: Entero;
   Var bar_contadores[8]: Entero;
   Var bar_ingredientes_precio[8]: Real;
+  Var dinero_bar: Real;
 
   // Base de datos del Hotel
   Var i_clientes: Entero;
   Var nombres_titulares[500], email[500]: Cadena ;
   Var cantidad_titulares[500], huespedes_total[500], telefono[500], edad_usuario[500], cedula[500]: Entero;
+  Var ingresos_hotel: Real;
 
   // Base de datos del Casino
   Var fichas_apostadas: Entero;
@@ -26,6 +29,7 @@ Inicio
   Var casino_premios[100][10]: Booleano;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
+  Var veces_jugadas: Entero;
 
   // Inicializando DB del Restaurante
   init_Restaurante(restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precio[i_restaurante], restaurante_ingredientes[i_restaurante]);
