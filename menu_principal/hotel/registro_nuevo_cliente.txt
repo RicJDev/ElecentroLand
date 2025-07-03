@@ -1,7 +1,18 @@
-Procedimiento registro_nuevo_cliente(E: clientes[contador_clientes], id_cliente: Entero, E/S: contador_clientes = 0, nombre_apellido, email: Cadena, telefono, edad_usuario, cedula, id_cliente, cant_acompañantes, clientes_hotel = 0: Entero);
+Procedimiento registro_nuevo_cliente(e/s:huespedes_total[clientes_hotel],telefono[i_cliente],cedula[i_cliente] ,edad_usuario[i_cliente]:entero,email[i_cliente],nombres_titulares[i_cliente]:cadena);
 Inicio
   Var opc_registro: Entero;
+
+    Mientras (i_cliente <=500 and nueva_id = -1) Hacer;
+    Si (cantidad_titulares[i_cliente] = "no_asignado" Entonces;
+      nueva_id = i_cliente;
+    Fin_Si
+  Fin_Mientras
   
+  Si (nueva_id = -1) Entonces;
+    Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
+    
+    Sino 
+    
   Mostrar << "Bienvenido al Hotel Elecentroland";
   Mostrar << "Estimado usuario se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
   Leer >> opc_registro;
@@ -28,14 +39,12 @@ Inicio
     Leer >> telefono;
     Mostrar << "Ingrese dirección email si tiene";
     Leer >> email;
-    
-    id_cliente_nuevo = generar_id(contador_clientes = 0, clientes[contador_clientes], id_cliente);
-    
+	
     Mostrar << "Datos del cliente";
-    Mostrar << "Nombre y apellido:", nombre_apellido;
-    Mostrar << "Número Telefónico:", telefono;
-    Mostrar << "E-mail:", email;
-    Mostrar << "Usuario registrado con éxito su número de identificación es", id_cliente_nuevo;
+    Mostrar << "Nombre y apellido:", nombre_apellido;//para mostrar el nombre llamo la variable
+    Mostrar << "Número Telefónico:", telefono;//para mostrar el nombre llamo la variable
+    Mostrar << "E-mail:", email;//para mostrar el nombre llamo la variable
+    Mostrar << "Usuario registrado con éxito su número de identificación es", nueva_id;
     
   Sino 
     
@@ -58,7 +67,7 @@ Inicio
     contador_clientes = contador_clientes + 1;
     Mostrar << "Ingrese la cantidad de acompañantes";
     Leer >> cant_acompañantes;
-    id_cliente_nuevo = generar_id(contador_clientes = 0: Entero, clientes[contador_clientes], id_cliente);
+    nueva_id = generar_id(contador_clientes = 0: Entero, clientes[contador_clientes], id_cliente);
     
     Para (I = 1 Hasta I = cant_acompañantes) Hacer;
       Mostrar << "Ingrese su nombre y apellido";
@@ -77,12 +86,23 @@ Inicio
       Leer >> email;
     Fin_Para
     
-    clientes_hotel = clientes_hotel + cant_acompañantes;
-    
+    clientes_hotel= clientes_hotel + cant_acompañantes;
+	
     Mostrar << "Datos de el cliente";
     Mostrar << "Nombre y apellido:", nombre_apellido;
     Mostrar << "Numero Telefonico:", telefono;
     Mostrar << "E-mail:", email;
-    Mostrar << "Usuario registrado con exito su numero de identificacion es", id_cliente_nuevo, "usted es el titular de", cant_acompañantes, "acompañantes";
+    Mostrar << "Usuario registrado con exito su numero de identificacion es", nueva_id, "usted es el titular de", cant_acompañantes, "acompañantes";
+	
+	nombres_titulares[i_cliente] = nombre_registro;
+    huespedes_total[clientes_hotel] = clientes_hotel;
+    email[i_cliente] = email;
+    telefono[i_cliente] = telefono; 
+	edad_usuario[i_cliente] = edad_usuario;
+	cedula[i_cliente] = cedula; 
+	
   Fin_Si
+fin si
+
+
 Fin_Procedimiento
