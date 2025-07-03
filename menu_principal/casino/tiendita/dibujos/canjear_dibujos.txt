@@ -12,13 +12,11 @@ Inicio
       Mostrar << "4. Un retrato de tu madre: ", casino_valor_premios[4];
       Mostrar << "5. Una representacion de como veo al profe cuando hay evaluacion: ", casino_valor_premios[5];
       Mostrar << "6. Mi ex: ", casino_valor_premios[6];
-      Mostrar << "7. Si tienes hambre, come... --Monkey D. Luffy: ", casino_valor_premios[7];
-      Mostrar << "8. sin dibujo: ", casino_valor_premios[8];
-      Mostrar << "9. sin dibujo: ", casino_valor_premios[9];
-      Mostrar << "10. sin dibujo: ", casino_valor_premios[10];
+      Mostrar << "7. Consejo de vida de parte de un personaje muy querido: ", casino_valor_premios[7];
+      Mostrar << "8. Atrapalo antes de que escape: ", casino_valor_premios[8];
+      Mostrar << "9. Un arma para defenderte en San Juan: ", casino_valor_premios[9];
+      Mostrar << "10. Alguien que use el arma por ti, ya que tambien soy informatico y se que ninguno va al gym: ", casino_valor_premios[10];
       Leer >> id_dibujo;
-
-      // Favor de colocar mas dibujos
 
       Mientras (id_dibujo < 1 OR id_dibujo > 10) Hacer;
         Mostrar << "Fuera de rango. Solo hay 10 dibujos";
