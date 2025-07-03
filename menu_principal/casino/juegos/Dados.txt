@@ -2,6 +2,7 @@ Procedimiento Dados(E/S: saldo_disponible: Entero, fichas_apostadas, veces_jugad
 Inicio
   Var R: Booleano;
   Var D1, D2, D3: Entero;
+  Var apuesta: Entero;
 
   Repetir
     Mostrar << "Bienvenidos a la sección de dados del Casino Elecentro Royale";
@@ -9,11 +10,11 @@ Inicio
     D2 = Aleatorio(1, 6);
     D3 = Aleatorio(1, 6);
     Mostrar << "Ingrese las fichas que desea apostar";
-    Leer >> fichas_apostadas;
+    Leer >> apuesta;
 
-    Mientras (fichas_apostadas > saldo_disponible) Hacer;
+    Mientras (apuesta > saldo_disponible) Hacer;
       Mostrar << "Saldo insuficiente, no puedes jugar";
-      Leer >> fichas_apostadas;
+      Leer >> apuesta;
     Fin_Mientras
 
     Mostrar << "¡Prueben su suerte! Dependiendo de los dados, estos son los premios que puedes conseguir";
@@ -42,6 +43,7 @@ Inicio
     Fin_Caso
     Mostrar << "¿Desea volver a jugar? 1: Si, 0: No";
     Leer >> R;
+    fichas_apostadas = fichas_apostadas + apuesta;
     Hasta (R = 0);
   Fin_Repetir
 Fin_Procedimiento
