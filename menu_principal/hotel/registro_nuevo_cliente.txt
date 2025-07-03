@@ -3,7 +3,7 @@ Inicio
   Var opc_registro: Entero;
 
   Mientras (i_cliente <= 500 AND nueva_id = -1) Hacer;
-    Si(cantidad_titulares[i_cliente] = "no_asignado")Entonces;
+    Si(cantidad_titulares[i_cliente] = "no_asignado") Entonces;
       nueva_id = i_cliente;
     Fin_Si
   Fin_Mientras
@@ -25,49 +25,48 @@ Inicio
 
     Si (opc_registro = 1) Entonces;
       Mostrar << "Ingrese su nombre y apellido";
-      Leer >> nombre_apellido;
+      Leer >> nombres_titulares[i_cliente];
       Mostrar << "Ingrese su edad";
-      Leer >> edad_usuario;
+      Leer >> edad_usuario[i_cliente];
 
       //validacion edad para cliente solo
-      Mientras (edad_usuario < 18) Hacer;
+      Mientras (edad_usuario[i_cliente] < 18) Hacer;
         Mostrar << "Personas menores de 18 años necesitan un representante legal para registrarse";
-        Leer >> edad_usuario;
+        Leer >> edad_usuario[i_cliente];
       Fin_Mientras
 
       Mostrar << "Ingrese su número telefónico si tiene";
-      Leer >> telefono;
+      Leer >> telefono[i_cliente];
       Mostrar << "Ingrese dirección email si tiene";
-      Leer >> email;
+      Leer >> email[i_cliente];
 
       Mostrar << "Datos del cliente";
-      Mostrar << "Nombre y apellido:", nombre_apellido;  //para mostrar el nombre llamo la variable
-      Mostrar << "Número Telefónico:", telefono;  //para mostrar el nombre llamo la variable
-      Mostrar << "E-mail:", email;  //para mostrar el nombre llamo la variable
+      Mostrar << "Nombre y apellido:", nombres_titulares[i_cliente];  //para mostrar el nombre llamo la variable
+      Mostrar << "Número Telefónico:", telefono[i_cliente];  //para mostrar el nombre llamo la variable
+      Mostrar << "E-mail:", email[i_cliente];  //para mostrar el nombre llamo la variable
       Mostrar << "Usuario registrado con éxito su número de identificación es", nueva_id;
 
       Sino
 
       Mostrar << "Ingrese los datos del titular del registro";
       Mostrar << "Ingrese su nombre y apellido";
-      Leer >> nombre_apellido;
+      Leer >> nombres_titulares[i_cliente];
       Mostrar << "Ingrese su edad";
-      Leer >> edad_usuario;
+      Leer >> edad_usuario[i_cliente];
 
       //validacion para cliente titular
-      Mientras (edad_usuario < 18) Hacer;
+      Mientras (edad_usuario[i_cliente] < 18) Hacer;
         Mostrar << "Personas menores de 18 años no pueden ser titulares de una reserva";
-        Leer >> edad_usuario;
+        Leer >> edad_usuario[i_cliente];
       Fin_Mientras
 
       Mostrar << "Ingrese su número telefónico";
-      Leer >> telefono;
+      Leer >> telefono[i_cliente];
       Mostrar << "Ingrese dirección email si tiene";
-      Leer >> email;
+      Leer >> email[i_cliente];
       contador_clientes = contador_clientes + 1;
       Mostrar << "Ingrese la cantidad de acompañantes";
       Leer >> cant_acompañantes;
-      nueva_id = generar_id(contador_clientes = 0: Entero, clientes[contador_clientes], id_cliente);
 
       Para (I = 1 Hasta I = cant_acompañantes) Hacer;
         Mostrar << "Ingrese su nombre y apellido";
@@ -75,31 +74,26 @@ Inicio
         Mostrar << "Ingrese su edad";
         Leer >> edad_usuario;
 
-        Mientras (edad_usuario < 0) Hacer;
+        Mientras (edad_usuario[i_cliente] < 0) Hacer;
           Mostrar << "Ingrese una edad válida por favor";
-          Leer >> edad_usuario;
+          Leer >> edad_usuario[i_cliente];
         Fin_Mientras
 
         Mostrar << "Ingrese su número telefónico si tiene";
-        Leer >> telefono;
+        Leer >> telefono[i_cliente];
         Mostrar << "Ingrese dirección email si tiene";
-        Leer >> email;
+        Leer >> email[i_cliente];
       Fin_Para
 
       clientes_hotel = clientes_hotel + cant_acompañantes;
 
-      Mostrar << "Datos de el cliente";
-      Mostrar << "Nombre y apellido:", nombre_apellido;
-      Mostrar << "Numero Telefonico:", telefono;
-      Mostrar << "E-mail:", email;
+      Mostrar << "Datos del cliente";
+      Mostrar << "Nombre y apellido:", nombres_titulares[i_cliente];
+      Mostrar << "Numero Telefonico:", telefono[i_cliente];
+      Mostrar << "E-mail:", email[i_cliente];
       Mostrar << "Usuario registrado con exito su numero de identificacion es", nueva_id, "usted es el titular de", cant_acompañantes, "acompañantes";
 
-      nombres_titulares[i_cliente] = nombre_registro;
       huespedes_total[clientes_hotel] = clientes_hotel;
-      email[i_cliente] = email;
-      telefono[i_cliente] = telefono;
-      edad_usuario[i_cliente] = edad_usuario;
-      cedula[i_cliente] = cedula;
     Fin_Si
   Fin_Si
 Fin_Procedimiento
