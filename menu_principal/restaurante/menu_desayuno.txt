@@ -1,4 +1,4 @@
-Procedimiento Desayuno(E/S: Cantidad: Entero, Cuenta_Cliente: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real);
+Procedimiento Desayuno(E/S: Cantidad: Entero, Cuenta_Cliente, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real);
 Inicio
   Var R: Booleano;
   Var ingrediente_1, ingrediente_2, ingrediente_3: Entero;
@@ -31,9 +31,9 @@ Inicio
           Mostrar << "Error, solo hay ", ingrediente_1, " Panqueques disponibles";
           Leer >> Cantidad;
         Fin_Mientras
-
         precio = restaurante_ingredientes_precio[1];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
         contador = contador + 1;
         restaurante_contadores[1] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
@@ -53,6 +53,7 @@ Inicio
 
         precio = restaurante_ingredientes_precio[2];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
         contador = contador + 1;
         restaurante_contadores[2] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
@@ -61,7 +62,7 @@ Inicio
         restaurante_ingredientes_cantidades[2] = ingrediente_1;
         restaurante_ingredientes_cantidades[3] = ingrediente_2;
         restaurante_ingredientes_cantidades[4] = ingrediente_3;
-      Caso (Desayuno = 3 AND restaurante_ingredientes_cantidades[5] > 0 AND restaurante_ingredientes_cantidades[6] > 0 AND restaurante_ingredientes_cantidades[3] > 0);
+      Caso (Desayuno = 3 AND restaurante_ingredientes_cantidades[5] > 0 AND restaurante_ingredientes_cantidades[6] > 0 AND                                          restaurante_ingredientes_cantidades[3] > 0);
         Mostrar << "¿Cuántos compró?";
         Leer >> Cantidad;
 
@@ -70,12 +71,13 @@ Inicio
         ingrediente_3 = restaurante_ingredientes_cantidades[3];
 
         Mientras (Cantidad > ingrediente_1 OR Cantidad > ingrediente_2 OR Cantidad > ingrediente_3) Hacer;
-          Mostrar << "Error, solo hay ", ingrediente_1, " Panes disponibles y ", ingrediente_2, "Piezas de jamón disponibles y ", ingrediente_3, "Huevos disponibles";
+          Mostrar << "Error, solo hay ", ingrediente_1, " Panes disponibles y ", ingrediente_2, "Piezas de jamón disponibles y ", ingrediente_3, "Huevos                disponibles";
           Leer >> Cantidad;
         Fin_Mientras
 
         precio = restaurante_ingredientes_precio[3];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
         contador = contador + 1;
         restaurante_contadores[3] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
@@ -96,6 +98,7 @@ Inicio
 
         precio = restaurante_ingredientes_precio[4];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
         contador = contador + 1;
         restaurante_contadores[4] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
@@ -112,6 +115,7 @@ Inicio
 
         precio = restaurante_ingredientes_precio[5];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
         contador = contador + 1;
         restaurante_contadores[5] = contador;
         ingrediente_1 = ingrediente_1 – Cantidad;
@@ -128,6 +132,7 @@ Inicio
 
         precio = restaurante_ingredientes_precio[6];
         Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
+        dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
         contador = contador + 1;
         restaurante_contadores[6] = contador;
         ingrediente_1 = ingrediente_1 – 1;
