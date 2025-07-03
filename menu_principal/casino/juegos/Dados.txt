@@ -1,6 +1,7 @@
-Procedimiento Dados(E: Fichas: Entero, E/S: D1, D2, D3, Saldo_Apuesta = 0: Entero);
+Procedimiento Dados(E: saldo_disponible: Entero, apuesta = 0: Entero);
 Inicio
   Var R: Booleano;
+  Var D1, D2, D3: Entero;
 
   Repetir
     Mostrar << "Bienvenidos a la sección de dados del Casino Elecentro Royale";
@@ -26,18 +27,18 @@ Inicio
       Caso (D1 = 6) AND (D2 = 6) AND (D3 = 6);
         Mostrar << "Excelente";
         Saldo_Apuesta = Saldo_Apuesta * 2;
-        Fichas = Fichas + Saldo_Apuesta;
+        saldo_disponible = saldo_disponible + Saldo_Apuesta;
       Caso (D1 = 6 AND D2 = 6) OR (D1 = 6 AND D3 = 6) OR (D2 = 6 AND D3 = 6);
         Mostrar << "Muy bien";
-        Saldo_Apuesta = Saldo_Apuesta * 1.5;
-        Fichas = Fichas + Saldo_Apuesta;
+        apuesta = Saldo_Apuesta * 1.5;
+        saldo_disponible = saldo_disponible + apuesta;
       Caso (D1 = 6) OR (D2 = 6) OR (D3 = 6);
         Mostrar << "Regular";
-        Saldo_Apuesta = Saldo_Apuesta * 1.25;
-        Fichas = Fichas + Saldo_Apuesta;
+        apuesta = apuesta * 1.25;
+        saldo_disponible = saldo_disponible + apuesta;
       Otro_Caso
         Mostrar << "Pésimo";
-        Fichas = Fichas - Saldo_Apuesta;
+        saldo_disponible = saldo_disponible - apuesta;
     Fin_Caso
     Mostrar << "¿Desea volver a jugar? 1: Si, 0: No";
     Leer >> R;
