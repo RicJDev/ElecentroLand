@@ -6,6 +6,7 @@ Inicio
   Var restaurante_contadores[18]: Entero;
   Var restaurante_ingredientes_precio[18]: Real;
   Var restaurante_ingredientes[34]: Cadena;
+  Var restaurante_platillos[18]: Cadena;
 
   // Base de datos del Bar
   Var i_bar: Entero;
@@ -75,7 +76,7 @@ Inicio
   // PDF final
 
   Mostrar << "Estadísticas Finales del Resort Elecentro";
-  Mostrar << "Casino:";
+  Mostrar << "Casino Elecentro Royale:";
   Mostrar << "Fichas Actuales: ", saldo_disponible;
   Mostrar << "Stock de premios: ";
 
@@ -87,21 +88,25 @@ Inicio
   Mostrar << "Total de veces jugadas: ", veces_jugadas;
   Mostrar << "Hotel:";
   Mostrar << "Total de clientes registrados: ", clientes;
-  Mostrar << "Ingresos recibidos: ", ingresos;
-  Mostrar << "Restaurante:";
+  Mostrar << "Ingresos recibidos: ", ingresos_hotel;
+  Mostrar << "Restaurante Sabores Elecentro:";
   Mostrar << "Contadores de las comidas: ";
 
   Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
+    Mostrar << restaurante_platillos[i_restaurante];
+    Mostrar << "Este platillo fue elegido por los clientes un total de:";
     Mostrar << restaurante_contadores[i_restaurante];
   Fin_Para
 
-  Mostrar << "Dinero recaudado: ", dinero_total_opcs;
-  Mostrar << "Bar:";
+  Mostrar << "Dinero recaudado: ", dinero_restaurante;
+  Mostrar << "Bar Elecentro Drinks:";
   Mostrar << "Contadores de los alimentos y bebidas";
 
   Para (i_bar = 1 Hasta i_bar = 8) Hacer;
+    Mostrar << bar_ingredientes[i_bar];
+    Mostrar << "Fue elegido un total de: ";
     Mostrar << bar_contadores[i_bar];
   Fin_Para
 
-  Mostrar << "Dinero recaudado:", dinero_recaudado;
+  Mostrar << "Dinero recaudado:", dinero_bar;
 Fin
