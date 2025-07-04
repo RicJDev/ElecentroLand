@@ -1,79 +1,79 @@
-Procedimiento Resultado_Apuesta_Grupo (E: seleccion, número, grupo1[I], grupo2[I], grupo3[I], grupo4[I], apuesta: Entero, E/S: saldo_disponible: Entero, S: Fichas_Ganadas, Fichas_Perdidas: Entero, S: Partidas_Ganadas_Modo3, Partidas_Perdidas_Modo3: Entero);
+Procedimiento Resultado_Apuesta_Grupo (E: seleccion, número, grupo1[i], grupo2[i], grupo3[i], grupo4[i], apuesta: Entero, E/S: saldo_disponible: Entero, S: fichas_ganadas, fichas_perdidas: Entero, E/S: partidas_ganadas, partidas_perdidas: Entero);
 Inicio
 Var  no_gano = 0, i: Entero
 
 En Caso (seleccion > 0) sea;
   Caso (seleccion = 1) Entonces;
 		  Para (i = 1 Hasta i = 8) Hacer;
-        Si (número != grupo1 [I]) Entonces;
+        Si (número != grupo1 [i]) Entonces;
 				  Mostrar << "Veremos lo que toco pronto";
           no_gano = no_gano + 1;
 			  Sino
   				Mostrar << "Has ganado";
   				saldo_disponible = saldo_disponible + (apuesta * multiplicador);
   				fichas_ganadas = fichas_ganadas + (apuesta * multiplicador);
-          Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+          partidas_ganadas = partidas_ganadas + 1;
         Fin_Si
       Fin_Para
       Si (no_gano = 8) Entonces;
         Mostrar << "Lamentablemente has perdido";
 			  saldo_disponible = saldo_disponible - (apuesta * 1,5);
 			  fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
-			  Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+			  partidas_perdidas = partidas_perdidas + 1;
       Fin_Si
-  Caso (seleccion = 2) ;
+  Caso (seleccion = 2);
     	Para (i = 1 Hasta i = 8) Hacer;
-    		Si (número != grupo2 [I]) Entonces;
+    		Si (número != grupo2 [i]) Entonces;
     			Mostrar << "Veremos lo que toco pronto";
     			no_gano = no_gano + 1;
     		Sino
     			Mostrar << "Has ganado";
           saldo_disponible = saldo_disponible + (apuesta * multiplicador);
     			fichas_ganadas = fichas_ganadas + (Apuesta * Multiplicador);
-          Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+          partidas_ganadas = partidas_ganadas + 1;
         Fin_Si
     	Fin_Para
     	Si (no_gano = 8) entonces;
         Mostrar << "Lamentablemente has perdido";
     		saldo_disponible = saldo_disponible - (apuesta * 1,5);
     		fichas_perdidas = fichas_perdidas - (apuesta * 1,5);
-        Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+        partidas_perdidas = partidas_perdidas + 1;
     	Fin_Si
 	Caso (seleccion = 3);
       Para (i = 1 Hasta i = 8) Hacer;
-    		Si (número != grupo3 [I]) Entonces;
+    		Si (número != grupo3 [i]) Entonces;
     			Mostrar << "Veremos lo que toco pronto";
     			no_gano = no_gano + 1;
     		Sino
     			Mostrar << "Has ganado";
           saldo_disponible = saldo_disponible + (apuesta * multiplicador);
     			fichas_ganadas = fichas_ganadas + (apuesta * multiplicador);
-          Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+          partidas_ganadas = partidas_ganadas + 1;
         Fin_Si
     	Fin_Para
 		  Si (no_gano = 8) Entonces;
         Mostrar << "Lamentablemente has perdido";
 			  saldo_disponible = saldo_disponible - (apuesta * 1,5);
 			  fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
-        Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+        partidas_perdidas = partidas_perdidas + 1;
 		  Fin_Si
   Otro Caso
       Para (i = 1 Hasta i = 8) Hacer;
-		    Si (número != grupo4 [I]) Entonces;
+		    Si (número != grupo4 [i]) Entonces;
 			    Mostrar << "Veremos lo que toco pronto";
 			    no_gano = no_gano + 1;
 		    Sino
 			    Mostrar << "Has ganado";
           saldo_disponible = saldo_disponible + (apuesta * multiplicador);
 				  fichas_ganadas = fichas_ganadas + (apuesta * multiplicador); 
-          Partidas_Ganadas_Modo3 = Partidas_Ganadas_Modo3 + 1;
+          partidas_ganadas = partidas_ganadas + 1;
         Fin_Si
 		  Fin_Para
 		Si (no_gano = 8) Entonces;
       Mostrar << "Lamentablemente has perdido";
 			saldo_disponible = saldo_disponible - (apuesta * 1,5);
-			Fichas_Perdidas = Apuesta - (apuesta * 1,5);
-      Partidas_Perdidas_Modo3 = Partidas_Perdidas_Modo3 + 1;
+			fichas_perdidas = Apuesta - (apuesta * 1,5);
+      partidas_perdidas = partidas_perdidas + 1;
 		Fin_Si
 	Fin_Caso
 Fin_Procedimiento
