@@ -64,11 +64,11 @@ Si ya ha leído la presentación del proyecto es probable que no encuentre casi 
     │   ├── hotel/
     │   │   ├── check_out.txt
     │   │   ├── estadisticas.txt
-    │   │   ├── generar_id.txt
     │   │   ├── Hotel.txt
     │   │   ├── metodo_de_pago.txt
     │   │   ├── registro_nuevo_cliente.txt
-    │   │   └── reserva_habitaciones.txt
+    │   │   ├── reserva_habitaciones.txt
+    │   │   └── validacion_usuario.txt
     │   └── restaurante/
     │       ├── bienvenida.txt
     │       ├── menu_almuerzo.txt
