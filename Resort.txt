@@ -32,6 +32,12 @@ Inicio
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
   Var veces_jugadas: Entero;
 
+  // Variables de la Ruleta
+    Var veces_jugadas_ruleta[3]: Entero;
+    Var partidas_ganadas[3]: Entero;
+    Var partidas_perdidas[3]: Entero;
+    Var Modo_Elegido, apuesta, Seleccion, Multiplicador, Partidas_Ganadas, Partidas_Perdidas, Fichas_Ganadas = 0, Fichas_Perdidas = 0: Entero, Porcentaje_Victorias: Real;
+
   // Inicializando DB del Restaurante
   init_Restaurante(restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precio[i_restaurante], restaurante_ingredientes[i_restaurante]);
 
