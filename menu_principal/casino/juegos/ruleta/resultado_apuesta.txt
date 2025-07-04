@@ -6,10 +6,10 @@ Inicio
   		saldo_disponible = saldo_disponible + (apuesta * multiplicador);
   		fichas_ganadas = fichas_ganadas + (apuesta * multiplicador);
   		Si (modo_elegido = 1) Entonces;
-        Partidas_Ganadas_Modo1 = Partidas_Ganadas_Modo1 + 1;
+        	Partidas_Ganadas_Modo1 = Partidas_Ganadas_Modo1 + 1;
   		Fin_Si
   		Si (modo_elegido = 2) Entonces;
-        Partidas_Ganadas_Modo2 = Partidas_Ganadas_Modo2 + 1;
+        	Partidas_Ganadas_Modo2 = Partidas_Ganadas_Modo2 + 1;
   		Fin_Si
   Sino
   	Mostrar << "Lamentablemente has perdido";
