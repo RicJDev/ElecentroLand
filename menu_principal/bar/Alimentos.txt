@@ -1,7 +1,7 @@
-Procedimiento Alimentos(E/S: OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8]: Entero, Cuenta_Cliente = 0, dinero_bar, bar_ingredientes_precios[8]: Real);
+Procedimiento Alimentos(E/S: OpcionClientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, Cuenta_Cliente, dinero_bar, bar_ingredientes_precios[i_bar]: Real);
 Inicio
   Var R: Booleano;
-  Var ingrediente, contador = 0: Entero;
+  Var ingrediente, contador = 0, cantidad: Entero;
   Var precio: Real;
 
   Repetir
