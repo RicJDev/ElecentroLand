@@ -1,4 +1,4 @@
-Procedimiento Blackjack(E: saldo_disponible: Entero, E/S: fichas_apostadas, veces_jugadas: Entero);
+Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, veces_jugadas: Entero);
 Inicio
   Var Jugador_Cartas[10], Dealer_Cartas[10], Carta_Visible, Suma_Jugador, Suma_Dealer, I, J: Entero, R: Booleano;
   Var apuesta: Entero;
