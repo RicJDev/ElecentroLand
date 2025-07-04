@@ -1,4 +1,4 @@
-Procedimiento Ruleta (E/S: saldo_disponible: Entero, E/S: fichas_apostadas: Entero, Modo_Elegido, Seleccion, Multiplicador, Veces_Jugadas_Modo1 = 0, Veces_Jugadas_Modo2, Veces_Jugadas_Modo3,  Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2, Partidas_Ganadas_Modo3, Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2, Partidas_Perdidas_Modo3, Partidas_Ganadas, Partidas_Perdidas, Fichas_Ganadas, Fichas_Perdidas: Entero, Porcentaje_Victorias: Real);
+Procedimiento Ruleta (E/S: saldo_disponible: Entero, E/S: fichas_apostadas: Entero, modo_elegido, seleccion, multiplicador, veces_jugadas_ruleta,  partidas_ganadas, partidas_perdidas, fichas_ganadas, fichas_perdidas: Entero, porcentaje_victorias: Real);
 Inicio
  Var veces_jugadas_local = 0: Entero;
 Repetir
@@ -7,29 +7,23 @@ Repetir
   Recoleccion(apuesta, seleccion, modo_elegido, multiplicador);
   En Caso (modo_elegido > 0) sea;
     Caso (modo_elegido = 1);
-        veces_jugadas_local = veces_jugadas_ruleta[1];
-        veces_jugadas_local = veces_jugadas_local + 1;
-        veces_jugadas_ruleta[1] = veces_jugadas_local;
+        veces_jugadas_ruleta = veces_jugadas_ruleta + 1;
     		  Mostrar << Recoleccion;
     		  minimo = 1;
         maximo = 2;
     	   número = Aleatorio (minimo, maximo);
-        Resultado_Apuesta (seleccion, número, apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas, Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2,              Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2);
+        Resultado_Apuesta(seleccion, número, apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas, partidas_ganadas, partidas_perdidas);
         Mostrar << Resultado_Apuesta;
     Caso (modo_elegido = 2);
-        veces_jugadas_local = veces_jugadas_ruleta[2];
-        veces_jugadas_local = veces_jugadas_local + 1;
-        veces_jugadas_ruleta[2] = veces_jugadas_local;
+        veces_jugadas_ruleta = veces_jugadas_ruleta + 1;
         Mostrar << Recoleccion;
     		  minimo = 1;
     		  maximo = 32;
     		  número = Aleatorio(minimo, maximo);
-        Resultado_Apuesta (seleccion, número, apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas, Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2,              Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2);
+        Resultado_Apuesta(seleccion, número, apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas, partidas_ganadas, partidas_perdidas);
         Mostrar << Resultado_Apuesta;
     Otro caso
-        veces_jugadas_local = veces_jugadas_ruleta[3];
-        veces_jugadas_local = veces_jugadas_local + 1;
-        veces_jugadas_ruleta[3] = veces_jugadas_local;
+        veces_jugadas_ruleta = veces_jugadas_ruleta + 1;
         Mostrar << Recoleccion;
     		  minimo = 1;
         maximo = 32;
@@ -44,6 +38,6 @@ Repetir
   veces_jugadas = veces_jugadas + 1;
   Hasta (R = 0);
 Fin_Repetir
-  Estadisticas (saldo_disponible, fichas_ganadas, fichas_perdidas, Veces_Jugadas_Modo1, Veces_Jugadas_Modo2, Veces_Jugadas_Modo3, Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2, Partidas_Ganadas_Modo3, Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2, Partidas_Perdidas_Modo3, Partidas_Perdidas, Partidas_Ganadas, Porcentaje_Victorias);
+  Estadisticas (saldo_disponible, fichas_ganadas, fichas_perdidas, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, porcentaje_victorias);
   Mostrar << Estadisticas;
 Fin_Procedimiento
