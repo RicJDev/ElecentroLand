@@ -1,4 +1,4 @@
-Procedimiento Recoleccion (E: modo_elegido, E/S: apuesta, seleccion, multiplicador);
+Procedimiento Recoleccion (E: modo_elegido: Entero, E/S: apuesta, seleccion, multiplicador: Entero);
 Inicio
 	En Caso (modo_elegido > 0) sea;
 		Caso (modo_elegido = 1);
