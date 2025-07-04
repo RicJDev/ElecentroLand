@@ -8,22 +8,22 @@ Repetir
   Recoleccion (apuesta, Seleccion, Modo_Elegido, Multiplicador);
   En Caso (Modo_Elegido > 0) sea;
     Caso (Modo_Elegido = 1);
-            Veces_Jugadas_Modo1 = Veces_Jugadas_Modo1 + 1;
+        Veces_Jugadas_Modo1 = Veces_Jugadas_Modo1 + 1;
     		Mostrar << Recoleccion;
     		Maximo = 2;
     		Minimo = 1;
     	  Número = Aleatorio (Minimo, Maximo);
         Resultado_Apuesta (Seleccion, Número, Apuesta, Fichas, Fichas_Ganadas, Fichas_Perdidas, Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2,                            Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2);
         Mostrar<<Resultado_Apuesta;
-  	Caso (Modo_Elegido = 2);
+    Caso (Modo_Elegido = 2);
         Veces_Jugadas_Modo2 = Veces_Jugadas_Modo2 + 1;
-        Mostrar<<Recoleccion;
+         Mostrar<<Recoleccion;
     		Maximo = 32;
     		Minimo = 1;
     		Número = Aleatorio (Minimo, Maximo);
         Resultado_Apuesta (Seleccion, Número, Apuesta, Fichas, Fichas_Ganadas, Fichas_Perdidas, Partidas_Ganadas_Modo1, Partidas_Ganadas_Modo2,                            Partidas_Perdidas_Modo1, Partidas_Perdidas_Modo2);
         Mostrar<<Resultado_Apuesta;
-  	Otro caso
+    Otro caso
     		Veces_Jugadas_Modo3 = Veces_Jugadas_Modo3 + 1;
         Mostrar<<Recoleccion;
     		Maximo = 32;
