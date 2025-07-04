@@ -1,4 +1,4 @@
-Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas: Entero);
+Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas: Entero);
 Inicio
   Var R: Entero;
   Var apuesta: Entero;
@@ -59,9 +59,10 @@ Inicio
       Leer >> R;
 
       Mientras (R < 1 OR R > 2) hacer;
-      Mostrar << "Error en respuesta enviada, solo puede seleccionar 1 o 2";
+        Mostrar << "Error en respuesta enviada, solo puede seleccionar 1 o 2";
+      Fin_Mientras
+      veces_jugadas = veces_jugadas + 1;
     Fin_Si
-
     Hasta (R = 2);
   Fin_Repetir
 
