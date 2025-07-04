@@ -1,22 +1,16 @@
-Procedimiento grupos_valor(E/S: Grupo1, Grupo2, Grupo3, Grupo4);
+Procedimiento Grupos_Valor (E/S: Grupo1[I], Grupo2[I], Grupo3[I], Grupo4[I]: Entero); 
 Inicio
-  Grupo1[8]: Entero;
+  Var I: Entero;
   Para (I = 1 Hasta I = 8) Hacer;
-    Grupo[I] = I;
+  		Grupo1[I] = I;
   Fin_Para
-
-  Grupo2[8]: Entero;
   Para (I = 1 Hasta I = 8) Hacer;
-    Grupo2[I] = I + 8;
+  		Grupo2[I] = I + 8;
   Fin_Para
-
-  Grupo3[8]: Entero;
   Para (I = 1 Hasta I = 8) Hacer;
-    Grupo3[I] = I + 16;
+  		Grupo3[I] = I + 16;
   Fin_Para
-
-  Grupo4[8]: Entero;
   Para (I = 1 Hasta I = 8) Hacer;
-    Grupo4[I] = I + 24;
+  		Grupo4[I] = I + 24;
   Fin_Para
 Fin_Procedimiento
