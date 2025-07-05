@@ -1,4 +1,4 @@
-Procedimiento Alimentos(E/S: opcion_clientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, cuenta_cliente, dinero_bar, bar_ingredientes_precios[i_bar]: Real);
+Procedimiento Alimentos(E/S: opcion_clientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i_bar]: Real, validacion_pago: Booleano);
 Inicio
   Var R: Booleano;
   Var ingrediente, contador = 0: Entero;
@@ -113,4 +113,7 @@ Inicio
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
+  monto_pago = cuenta_cliente;
+  metodo_pago(monto_pago, validacion_pago);
+  Mostrar << metodo_pago;
 Fin_Procedimiento
