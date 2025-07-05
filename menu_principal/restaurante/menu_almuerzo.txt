@@ -1,4 +1,4 @@
-Procedimiento Almuerzo(E/S: Cantidad: Entero, Cuenta_Cliente, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real);
+Procedimiento Almuerzo(E/S: cantidad: Entero, cuenta_cliente, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18], monto_pago: Real, validacion_pago: Booleano);
 Inicio
   Var quieres_otra: Booleano;
   Var opcion, ingrediente_1, ingrediente_2, ingrediente_3, contador: Entero;
@@ -14,7 +14,7 @@ Inicio
     Mostrar << "Opción 6: Ensalada de Guanábana a la APK y de bebida Whisky Maravilla: 27$";
     Leer >> opcion;
 
-    Mientras (opcion < 1) OR (opcion > 6) Hacer;
+    Mientras (opcion < 1 OR opcion > 6) Hacer;
       Mostrar << "Ha seleccionado una opción fuera del menú, intente nuevamente";
       Leer >> opcion;
     Fin_Mientras
@@ -25,22 +25,22 @@ Inicio
         ingrediente_2 = restaurante_ingredientes[11];
         Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
           Mostrar << "¿Cuántas desea ordenar?";
-          Leer >> Cantidad;
+          Leer >> cantidad;
 
-          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) Hacer;
+          Mientras (cantidad > ingrediente_1) OR (cantidad > ingrediente_2) OR (cantidad > ingrediente_3) Hacer;
             Mostrar << "Solo hay ", ingrediente_1, "Cebollas,  ", ingrediente_2, "Tomates y ", ingrediente_3, "copas de Vinotinto disponibles";
-            Leer >> Cantidad;
+            Leer >> cantidad;
           Fin_Mientras
           Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serían, 32$ por cada unidad que haya ordenado."; // 11 y 10
 
           precio = restaurante_ingredientes_precios[7]
-          ingrediente_1 = ingrediente_1 - 1;
-          ingrediente_2 = ingrediente_2 - 1;
+          ingrediente_1 = ingrediente_1 - cantidad;
+          ingrediente_2 = ingrediente_2 - cantidad;
           contador = restaurante_contadores[7];
           contador = contador + 1;
           restaurante_contadores[7] = contador;
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
+          cuenta_cliente = cuenta_cliente + (cantidad * precio);
+          dinero_restaurante = dinero_restaurante + cuenta_cliente;
           restaurante_ingredientes_cantidades[10] = ingrediente_1;
           restaurante_ingredientes_cantidades[11] = ingrediente_2;
         Sino
@@ -52,11 +52,11 @@ Inicio
         ingrediente_3 = restaurante_ingredientes_cantidades[14];
         Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) AND (ingrediente_3 > 0) Entonces;
           Mostrar << "¿Cuántas desea ordenar?";
-          Leer >> Cantidad;
+          Leer >> cantidad;
 
-          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) OR (Cantidad > ingrediente_3) Hacer;
+          Mientras (cantidad > ingrediente_1) OR (cantidad > ingrediente_2) OR (cantidad > ingrediente_3) Hacer;
             Mostrar << "Solo hay ", ingrediente_1, "Cebollas,  ", ingrediente_2, "Tomates y ", ingrediente_3, "copas de Vinotinto disponibles";
-            Leer >> Cantidad;
+            Leer >> cantidad;
           Fin_Mientras
 
           Mostrar << "Una sopa de Cebolla y tomate y una copa de Vinotinto. Serían, 25$ por cada unidad que haya ordenado.";
@@ -65,11 +65,11 @@ Inicio
           contador = restaurante_contadores[8];
           contador = contador + 1;
           restaurante_contadores[8] = contador;
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
-          ingrediente_1 = ingrediente_1 – Cantidad;
-          ingrediente_2 = ingrediente_2 – Cantidad;
-          ingrediente_3 = ingrediente_3 – Cantidad;
+          cuenta_cliente = cuenta_cliente + (cantidad * precio);
+          dinero_restaurante = dinero_restaurante + cuenta_cliente;
+          ingrediente_1 = ingrediente_1 – cantidad;
+          ingrediente_2 = ingrediente_2 – cantidad;
+          ingrediente_3 = ingrediente_3 – cantidad;
           restaurante_ingredientes_cantidades[12] = ingrediente_1;
           restaurante_ingredientes_cantidades[13] = ingrediente_2;
           restaurante_ingredientes_cantidades[14] = ingrediente_3;
@@ -81,11 +81,11 @@ Inicio
         ingrediente_2 = restaurante_ingredientes_cantidades[16];
         Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
           Mostrar << "¿Cuántas desea ordenar?";
-          Leer >> Cantidad;
+          Leer >> cantidad;
 
-          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+          Mientras (cantidad > ingrediente_1) OR (cantidad > ingrediente_2) Hacer;
             Mostrar << "Solo hay ", ingrediente_1, "Bistecs de Res y ", ingrediente_2, "copas de Bourbon disponibles";
-            Leer >> Cantidad;
+            Leer >> cantidad;
           Fin_Mientras
 
           Mostrar << "Una ración de bistec de res y de bebida una copa de Bourbon. Serían, 22$.";
@@ -94,10 +94,10 @@ Inicio
           contador = restaurante_contadores[9];
           contador = contador + 1;
           restaurante_contadores[9] = contador;
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
-          ingrediente_1 = ingrediente_1 – Cantidad;
-          ingrediente_2 = ingrediente_2 – Cantidad;
+          cuenta_cliente = cuenta_cliente + (cantidad * precio);
+          dinero_restaurante = dinero_restaurante + cuenta_cliente;
+          ingrediente_1 = ingrediente_1 – cantidad;
+          ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[15] = ingrediente_1;
           restaurante_ingredientes_cantidades[16] = ingrediente_2;
         Sino
@@ -108,11 +108,11 @@ Inicio
         ingrediente_2 = restaurante_ingredientes_cantidades[18];
         Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
           Mostrar << "¿Cuántas desea ordenar?";
-          Leer >> Cantidad;
+          Leer >> cantidad;
 
-          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+          Mientras (cantidad > ingrediente_1) OR (cantidad > ingrediente_2) Hacer;
             Mostrar << "Solo hay ", ingrediente_1, "Chuletas de cerdo y ", ingrediente_2, "copas de John Collins disponibles";
-            Leer >> Cantidad;
+            Leer >> cantidad;
           Fin_Mientras
 
           Mostrar << "Chuleta de cerdo a la BBQ y de bebida una copa de John Collins. Serían, 25$ por cada unidad que haya ordenado.";
@@ -121,10 +121,10 @@ Inicio
           contador = restaurante_contadores[10];
           contador = contador + 1;
           restaurante_contadores[10] = contador;
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
-          ingrediente_1 = ingrediente_1 – Cantidad;
-          ingrediente_2 = ingrediente_2 – Cantidad;
+          cuenta_cliente = cuenta_cliente + (cantidad * precio);
+          dinero_restaurante = dinero_restaurante + cuenta_cliente;
+          ingrediente_1 = ingrediente_1 – cantidad;
+          ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[17] = ingrediente_1;
           restaurante_ingredientes_cantidades[18] = ingrediente_2;
         Sino
@@ -135,11 +135,11 @@ Inicio
         ingrediente_2 = restaurante_ingredientes_cantidades[20];
         Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
           Mostrar << "¿Cuántas ordenó?";
-          Leer >> Cantidad;
+          Leer >> cantidad;
 
-          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+          Mientras (cantidad > ingrediente_1) OR (cantidad > ingrediente_2) Hacer;
             Mostrar << "Solo hay ", ingrediente_1, "Pastas Ex’ Reprobada y ", ingrediente_2, "copas de Estracto de Picha disponibles";
-            Leer >> Cantidad;
+            Leer >> cantidad;
           Fin_Mientras
 
           Mostrar << "Una ración de Pasta Ex' Reprobada y de bebida una copa de Estracto de Picha. Serían, 19$ por cada unidad que haya ordenado";
@@ -148,10 +148,10 @@ Inicio
           contador = restaurante_contadores[11];
           contador = contador + 1;
           restaurante_contadores[11] = contador;
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
-          ingrediente_1 = ingrediente_1 – Cantidad;
-          ingrediente_2 = ingrediente_2 – Cantidad;
+          cuenta_cliente = cuenta_cliente + (cantidad * precio);
+          dinero_restaurante = dinero_restaurante + cuenta_cliente;
+          ingrediente_1 = ingrediente_1 – cantidad;
+          ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[19] = ingrediente_1;
           restaurante_ingredientes_cantidades[20] = ingrediente_2;
         Sino
@@ -162,11 +162,11 @@ Inicio
         ingrediente_2 = restaurante_ingredientes_cantidades[22];
         Si (ingrediente_1 > 0) AND (ingrediente_2 > 0) Entonces;
           Mostrar << "¿Cuántas ordenó?";
-          Leer >> Cantidad;
+          Leer >> cantidad;
 
-          Mientras (Cantidad > ingrediente_1) OR (Cantidad > ingrediente_2) Hacer;
+          Mientras (cantidad > ingrediente_1) OR (cantidad > ingrediente_2) Hacer;
             Mostrar << "Solo hay ", ingrediente_1, "Ensaladas de Guanábana a la APK y ", ingrediente_2, "Botellas de Whisky Maravilla disponibles";
-            Leer >> Cantidad;
+            Leer >> cantidad;
           Fin_Mientras
 
           Mostrar << "Una ración de Ensalada de Guanábana a la APK y de bebida una copa de Whisky Maravilla. Serían, 27$ por cada unidad que haya ordenado.";
@@ -175,10 +175,10 @@ Inicio
           contador = restaurante_contadores[12];
           contador = contador + 1;
           restaurante_contadores[12] = contador;
-          Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-          dinero_restaurante = dinero_restaurante + Cuenta_Cliente;
-          ingrediente_1 = ingrediente_1 – Cantidad;
-          ingrediente_2 = ingrediente_2 – Cantidad;
+          cuenta_cliente = cuenta_cliente + (cantidad * precio);
+          dinero_restaurante = dinero_restaurante + cuenta_cliente;
+          ingrediente_1 = ingrediente_1 – cantidad;
+          ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[21] = ingrediente_1;
           restaurante_ingredientes_cantidades[22] = ingrediente_2;
         Sino
@@ -190,4 +190,7 @@ Inicio
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
+  monto_pago = cuenta_cliente;
+  metodo_pago(monto_pago, validacion_pago);
+  Mostrar << metodo_pago;
 Fin_Procedimiento
