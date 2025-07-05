@@ -1,4 +1,4 @@
-Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas, rodillo[I][J]: Entero);
+Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas_tragamonedas, rodillo[I][J]: Entero);
 Inicio
   Var R: Entero;
   Var apuesta: Entero;
