@@ -1,4 +1,4 @@
-Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas_tragamonedas, rodillo[I][J]: Entero);
+Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas_tragamonedas, rodillo[i][j]: Entero);
 Inicio
   Var R: Booleano;
   Var apuesta: Entero;
@@ -45,17 +45,20 @@ Inicio
       Fin_Para
       Mostrar << "_";
     Fin_Para
-
-    Mostrar << "Resultados de la apuesta: usted gana", premio giro, "fichas";
-    saldo_disponible = (saldo_disponible - apuesta) + premio_giro;
+    Si (premio_giro > 0) Entonces;
+      Mostrar << "Resultados de la apuesta: usted gana", premio_giro, "fichas";
+      saldo_disponible = (saldo_disponible - apuesta) + premio_giro;
+    Sino
+      Mostrar << "Resultados de la apuesta: usted pierde";
+      saldo_disponible = (saldo_disponible - apuesta);
+    Fin_Si
     fichas_apostadas = fichas_apostadas + apuesta;
-    Si (saldo_restante < 1) Entonces;
+    Si (saldo_disponible < 1) Entonces;
       Mostrar << "Su saldo es insuficiente para seguir jugando, ¡recargue por favor!";
       Mostrar << "Hasta pronto, ¡Gracias por jugar!";
       R = 2;
 
-      Sino
-
+    Sino
       Mostrar << "Desea realizar otra apuesta, 1: Sí, 0: No";
       Leer >> R;
     Fin_Si
