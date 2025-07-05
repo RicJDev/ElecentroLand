@@ -83,6 +83,11 @@ Inicio
     Leer >> email[nueva_id];
     Mostrar << "Ingrese la cantidad de acompañantes";
     Leer >> cant_acompañantes[nueva_id];
+	
+	Mientras cant_acompañantes[nueva_id]>5 hacer;
+		Mostrar<< "Solo se permiten 5 acompañantes por titular";
+		Leer>>cant_acompañantes[nueva_id];
+	Fin mientras
     
 	//datos acompañantes
     Para (I = 1 Hasta I = cant_acompañantes) Hacer;
