@@ -1,4 +1,4 @@
-Procedimiento Resultado_Apuesta_Grupo (E: seleccion, número, grupo1[i], grupo2[i], grupo3[i], grupo4[i], apuesta: Entero, E/S: saldo_disponible: Entero, S: fichas_ganadas, fichas_perdidas: Entero, E/S: partidas_ganadas, partidas_perdidas: Entero);
+Procedimiento Resultado_Apuesta_Grupo (E: seleccion, número, grupo1[i], grupo2[i], grupo3[i], grupo4[i], apuesta: Entero, E/S: saldo_disponible, fichas_ganadas, fichas_perdidas, partidas_ganadas, partidas_perdidas: Entero);
 Inicio
 Var  no_gano = 0, i: Entero
 
@@ -36,7 +36,7 @@ En Caso (seleccion > 0) sea;
     	Si (no_gano = 8) entonces;
         Mostrar << "Lamentablemente has perdido";
     		saldo_disponible = saldo_disponible - (apuesta * 1,5);
-    		fichas_perdidas = fichas_perdidas - (apuesta * 1,5);
+    		fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
         partidas_perdidas = partidas_perdidas + 1;
     	Fin_Si
 	Caso (seleccion = 3);
@@ -72,7 +72,7 @@ En Caso (seleccion > 0) sea;
 		Si (no_gano = 8) Entonces;
       Mostrar << "Lamentablemente has perdido";
 			saldo_disponible = saldo_disponible - (apuesta * 1,5);
-			fichas_perdidas = Apuesta - (apuesta * 1,5);
+			fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
       partidas_perdidas = partidas_perdidas + 1;
 		Fin_Si
 	Fin_Caso
