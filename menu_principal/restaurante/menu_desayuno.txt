@@ -1,4 +1,4 @@
-Procedimiento Desayuno(E/S: cantidad: Entero, cuenta_cliente, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real);
+Procedimiento Desayuno(E/S: cantidad: Entero, cuenta_cliente, monto_pago, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes[34]: Cadena, restaurante_ingredientes_cantidades[34]: Entero, restaurante_contadores[18]: Entero, restaurante_ingredientes_precios[18]: Real, validacion_pago: Booleano);
 Inicio
   Var R: Booleano;
   Var desayuno, ingrediente_1, ingrediente_2, ingrediente_3: Entero;
@@ -139,10 +139,11 @@ Inicio
         restaurante_ingredientes_cantidades[9] = ingrediente_1;
     Fin_Caso
     Mostrar << "Su cuenta asciende a: ", cuenta_cliente, "$";
-    metodo_pago();
-    Mostrar << metodo_pago;
     Mostrar << "Desea añadir algo más a su menú?, 1: Sí, 0: No ";
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
+  monto_pago = cuenta_cliente;
+  metodo_pago(monto_pago, validacion_pago);
+  Mostrar << metodo_pago;
 Fin_Procedimiento
