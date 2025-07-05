@@ -2,7 +2,7 @@ Procedimiento Almuerzo(E/S: cantidad: Entero, monto_pago, dinero_restaurante: Re
 Inicio
   Var quieres_otra: Booleano;
   Var opcion, ingrediente_1, ingrediente_2, ingrediente_3, contador = 0: Entero;
-  Var precio, cuenta_cliente: Real;
+  Var precio, cuenta_cliente = 0: Real;
   Var R: Booleano;
 
   Repetir
