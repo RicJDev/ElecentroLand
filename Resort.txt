@@ -1,5 +1,7 @@
 Algoritmo Resort
 Inicio
+  //Opciones de todo el resort
+  Var opcion_menu, opcion_restaurante, opcion_inv, opcion_clientes: Entero;
   // Base de datos del Restaurante
   Var i_restaurante: Entero;
   Var restaurante_ingredientes_cantidades[34]: Entero;
@@ -8,6 +10,7 @@ Inicio
   Var restaurante_ingredientes[34]: Cadena;
   Var restaurante_platillos[18]: Cadena;
   Var dinero_restaurante: Real;
+
 
   // Base de datos del Bar
   Var i_bar: Entero;
@@ -75,10 +78,10 @@ Inicio
         Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2,                          cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente],           id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i_cliente], fecha_salida[i_cliente], nombre_titulares[i_cliente],                       email[i_cliente]);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
-        Restaurante(Opcion_Restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante],                     restaurante_ingredientes[i_restaurante], restaurante_ingredientes_precios[i_restaurante]);
+        Restaurante(opcion_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante],                     restaurante_ingredientes[i_restaurante], restaurante_ingredientes_precios[i_restaurante]);
         Mostrar << Restaurante;
       Caso (opcion_menu = 4);
-        Bar(opcion_inv, opcion_clientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, bar_ingredientes_precios[i_bar],                  dinero_bar);
+        Bar(opcion_inv, opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente,                                         bar_ingredientes_precios[i_bar], dinero_bar);
         Mostrar << Bar;
       Otro_Caso
         R = 0;
@@ -115,7 +118,7 @@ Inicio
   Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
     Mostrar << restaurante_platillos[i_restaurante];
     Mostrar << "Este platillo fue elegido por los clientes un total de:";
-    Mostrar << restaurante_contadores[i_restaurante];
+    Mostrar << restaurante_contadores[i_restaurante], "veces";
   Fin_Para
   Para (i_restaurante = 1 Hasta i_restaurante = 34) Hacer;
     Mostrar << "Ingrediente: ";
@@ -130,8 +133,8 @@ Inicio
 
   Para (i_bar = 1 Hasta i_bar = 8) Hacer;
     Mostrar << bar_ingredientes[i_bar];
-    Mostrar << "Fue elegido un total de: ";
-    Mostrar << bar_contadores[i_bar];
+    Mostrar << "Este producto fue elegido por los clientes un total de : ";
+    Mostrar << bar_contadores[i_bar], "veces";
   Fin_Para
 
   Para (i_bar = 1 Hasta i_bar = 8) Hacer;
