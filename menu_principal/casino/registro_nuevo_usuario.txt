@@ -7,6 +7,8 @@ Inicio
     Si (casino_nombres[i_local] = "no_asignado" AND casino_contrasenas[i_local] = "no_asignado") Entonces;
       nueva_id = i_local;
     Fin_Si
+
+    i_local = i_local + 1;
   Fin_Mientras
 
   Si (nueva_id = -1) Entonces;
