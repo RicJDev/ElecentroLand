@@ -1,4 +1,4 @@
-Procedimiento Resultado_Apuesta(E: seleccion, multiplicador, número, E/S: apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas, S: partidas_ganadas, partidas_perdidas);
+Procedimiento Resultado_Apuesta(E: seleccion, multiplicador, número: Entero, E/S: apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas, partidas_ganadas, partidas_perdidas: Entero);
 Inicio
   Mostrar << "Ok, veamos que tocó";
 
@@ -11,8 +11,8 @@ Inicio
     Sino
 
     Mostrar << "Lamentablemente has perdido";
-    saldo_disponible = saldo_disponible -(apuesta * 1, 5);
-    fichas_perdidas = fichas_perdidas + (apuesta * 1, 5);
+    saldo_disponible = saldo_disponible -(apuesta * 1,5);
+    fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
     partidas_perdidas = partidas_perdidas + 1;
   Fin_Si
 Fin_Procedimiento
