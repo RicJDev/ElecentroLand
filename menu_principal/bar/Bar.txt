@@ -1,4 +1,4 @@
-Procedimiento Bar(E/S: Opcion_Inv, Opcion_Clientes: Entero, bar_ingredientes_cantidades[8], bar_contadores[8]: Entero, Cuenta_Cliente = 0, bar_ingredientes_precios[8], dinero_bar: Real);
+Procedimiento Bar(E/S: opcion_inv, opcion_clientes: Entero, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, cuenta_cliente, bar_ingredientes_precios[i_bar], dinero_bar: Real);
 Inicio
   Var R: Booleano;
 
@@ -7,15 +7,19 @@ Inicio
     Mostrar << "¿Qué desea ordenar?";
     Mostrar << "1: Alimentos";
     Mostrar << "2: Bebidas";
-    Leer >> Opcion_Inv;
+    Leer >> opcion_inv;
+    Mientras (opcion_inv < 1 or opcion_inv > 2) Hacer;
+      Mostrar << "Error en datos, ingrese nuevamente";
+      Leer >> opcion_inv;
+    Fin_Mientras
 
-    Si (Opcion_Inv = 1) Entonces;
-      Alimentos(OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8], Cuenta_Cliente = 0, dinero_bar, bar_ingredientes_precios[8]);
+    Si (opcion_inv = 1) Entonces;
+      Alimentos(opcionclientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, dinero_bar, bar_ingredientes_precios[i_bar]);
       Mostrar << Alimentos;
 
     Sino
-      Si (Opcion_Inv = 2) Entonces;
-        Bebidas(OpcionClientes, bar_ingredientes_cantidades[8], bar_contadores[8], Cuenta_Cliente = 0, dinero_bar, bar_ingredientes_precios[8]);
+      Si (opcion_inv = 2) Entonces;
+        Bebidas(opcionclientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, dinero_bar, bar_ingredientes_precios[i_bar]);
         Mostrar << Bebidas;
       Fin_Si
     Fin_Si
