@@ -14,14 +14,12 @@ Inicio
     Fin_Mientras
 
     Si (opcion_inv = 1) Entonces;
-      Alimentos(opcionclientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, dinero_bar, bar_ingredientes_precios[i_bar]);
+      Alimentos(opcion_clientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar,                                  bar_ingredientes_precios[i_bar], validacion_pago);
       Mostrar << Alimentos;
 
     Sino
-      Si (opcion_inv = 2) Entonces;
-        Bebidas(opcionclientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, dinero_bar, bar_ingredientes_precios[i_bar]);
+        Bebidas(opcion_clientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar,                                    bar_ingredientes_precios[i_bar], validacion_pago);
         Mostrar << Bebidas;
-      Fin_Si
     Fin_Si
 
     Mostrar << "¿Desea ingresar otro producto? 1: Sí, 0: No";
