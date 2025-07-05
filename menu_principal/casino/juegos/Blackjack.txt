@@ -1,6 +1,6 @@
 Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, veces_jugadas_blackjack: Entero);
 Inicio
-  Var Jugador_Cartas[10], Dealer_Cartas[10], Carta_Visible, Suma_Jugador, Suma_Dealer, I, J: Entero, R: Booleano;
+  Var jugador_cartas[10], dealer_cartas[10], carta_visible, suma_jugador, suma_dealer, i, j: Entero, R: Booleano;
   Var apuesta: Entero;
 
   Repetir
@@ -13,57 +13,57 @@ Inicio
       Leer >> apuesta;
     Fin_Mientras
 
-    Jugador_Cartas[1] = Aleatorio(1, 12);
-    Jugador_Cartas[2] = Aleatorio(1, 12);
-    I = 3;
-    Dealer_Cartas[1] = Aleatorio(1, 12);
-    Dealer_Carta[2] = Aleatorio(1, 12);
-    J = 3;
-    Suma_Jugador = Jugador_Cartas[1] + Jugador_Carta[2];
-    Suma_Dealer = Dealer_Cartas[1] + Dealer_Carta[2];
-    Carta_Visible = Dealer_Cartas[1];
-    Mostrar << "Tus cartas son: ", Jugador_Cartas[1], "y", Jugador_Cartas[2], "la suma total de puntos es: ", Suma_Jugador;
+    jugador_cartas[1] = Aleatorio(1, 12);
+    jugador_cartas[2] = Aleatorio(1, 12);
+    i = 3;
+    dealer_cartas[1] = Aleatorio(1, 12);
+    dealer_carta[2] = Aleatorio(1, 12);
+    j = 3;
+    suma_jugador = jugador_cartas[1] + jugador_carta[2];
+    suma_dealer = dealer_cartas[1] + dealer_carta[2];
+    carta_visible = dealer_cartas[1];
+    Mostrar << "Tus cartas son: ", jugador_cartas[1], "y", jugador_cartas[2], "la suma total de puntos es: ", suma_jugador;
 
     Repetir
-      Mientras (Suma_Jugador < 21) Hacer;
+      Mientras (suma_jugador < 21) Hacer;
         Mostrar << "¿Quieres otra carta? 1: Sí, 0: No";
         Leer >> R;
 
         Si (R = 1) Entonces;
-          Jugador_Cartas[I] = Aleatorio(1, 12);
-          Suma_Jugador = Suma_Jugador + Jugador_Cartas[I];
-          Mostrar << "Recibiste ", Jugador_Cartas[I], "tu nuevo total es: ", Suma_Jugador;
-          I = I + 1;
+          jugador_cartas[i] = Aleatorio(1, 12);
+          suma_jugador = suma_jugador + jugador_cartas[i];
+          Mostrar << "Recibiste ", jugador_cartas[i], "tu nuevo total es: ", suma_jugador;
+          i = i + 1;
         Fin_Si
       Fin_Mientras
 
       Hasta (R = 0);
     Fin_Repetir
 
-    Mostrar << "Carta visible del dealer: ", Carta_Visible;
+    Mostrar << "Carta visible del dealer: ", carta_visible;
 
-    Mientras (Suma_Dealer < 17) Hacer;
-      Dealer_Cartas[J] = Aleatorio(1, 12);
-      Suma_Dealer = Suma_Dealer + Dealer_Cartas[J];
+    Mientras (suma_dealer < 17) Hacer;
+      dealer_cartas[j] = Aleatorio(1, 12);
+      suma_dealer = suma_dealer + dealer_cartas[j];
       Mostrar << "El dealer toma una carta";
-      J = J + 1;
+      j = j + 1;
     Fin_Mientras
 
-    En_Caso (Suma_Jugador > 0) AND (Suma_Dealer > 0) Sea;
-      Caso (Suma_Jugador > 21) AND (Suma_Dealer <= 21);
+    En_Caso (suma_jugador > 0) AND (suma_dealer > 0) Sea;
+      Caso (suma_jugador > 21) AND (suma_dealer <= 21);
         Mostrar << "Te pasaste de 21. Perdiste";
-        Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
+        Mostrar << "Puntos Dealer: ", suma_dealer, "Puntos Jugador: ", suma_jugador;
         saldo_disponible = saldo_disponible – apuesta;
-      Caso (Suma_Dealer > 21) AND (Suma_Jugador <= 21);
+      Caso (suma_dealer > 21) AND (suma_jugador <= 21);
         Mostrar << "El dealer se ha pasado de 21. ¡Ganaste!";
-        Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
+        Mostrar << "Puntos Dealer: ", suma_dealer, "Puntos Jugador: ", suma_jugador;
         saldo_disponible = saldo_disponible + (apuesta * 2);
-      Caso (Suma_Dealer <= 21) AND (Suma_Dealer > Suma_Jugador);
-        Mostrar << "El dealer gana con: ", Suma_Dealer, "puntos";
-        Mostrar << "Puntos Dealer: ", Suma_Dealer, "Puntos Jugador: ", Suma_Jugador;
+      Caso (suma_dealer <= 21) AND (suma_dealer > suma_jugador);
+        Mostrar << "El dealer gana con: ", suma_dealer, "puntos";
+        Mostrar << "Puntos Dealer: ", suma_dealer, "Puntos Jugador: ", suma_jugador;
         saldo_disponible = saldo_disponible – apuesta;
-      Caso (Suma_Jugador <= 21) AND (Suma_Jugador > Suma_Dealer);
-        Mostrar << "¡Ganaste! con: ", Suma_Jugador, "puntos. El dealer quedó con: ", Suma_Dealer, "puntos.";
+      Caso (suma_jugador <= 21) AND (suma_jugador > suma_dealer);
+        Mostrar << "¡Ganaste! con: ", suma_jugador, "puntos. El dealer quedó con: ", suma_dealer, "puntos.";
         saldo_disponible = saldo_disponible + (apuesta * 2);
       Otro_Caso
         Mostrar << "Empate.";
