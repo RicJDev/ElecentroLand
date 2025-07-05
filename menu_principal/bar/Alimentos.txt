@@ -1,7 +1,7 @@
-Procedimiento Alimentos(E/S: OpcionClientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, Cuenta_Cliente, dinero_bar, bar_ingredientes_precios[i_bar]: Real);
+Procedimiento Alimentos(E/S: opcion_clientes, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, cuenta_cliente, dinero_bar, bar_ingredientes_precios[i_bar]: Real);
 Inicio
   Var R: Booleano;
-  Var ingrediente, contador = 0, cantidad: Entero;
+  Var ingrediente, contador = 0: Entero;
   Var precio: Real;
 
   Repetir
@@ -10,49 +10,49 @@ Inicio
     Mostrar << "2: Mini Hamburguesas 15$ cada bolsa.";
     Mostrar << "3: Empanadillas 10$ cada bolsa.";
     Mostrar << "4: Sándwiches 7$ cada bolsa.";
-    Leer >> OpcionClientes;
+    Leer >> opcion_clientes;
 
-    Mientras (OpcionClientes < 1 OR OpcionClientes > 4) Hacer;
+    Mientras (opcion_clientes < 1 OR opcion_clientes > 4) Hacer;
       Mostrar << "Error en datos, solo datos entre 1-4, intente nuevamente";
-      Leer >> OpcionClientes;
+      Leer >> opcion_clientes;
     Fin_Mientras
 
-    En_Caso (OpcionClientes > 0) Sea;
-      Caso (OpcionClientes = 1 AND bar_ingredientes_cantidades[1] > 0);
+    En_Caso (opcion_clientes > 0) Sea;
+      Caso (opcion_clientes = 1) AND (bar_ingredientes_cantidades[1] > 0);
         ingrediente = bar_ingredientes_cantidades[1];
         Mostrar << "¿Cuántas unidades compró? ";
-        Leer >> Cantidad;
+        Leer >> cantidad;
 
-        Mientras (Cantidad > ingrediente) Hacer;
+        Mientras (cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " bolsas de Papas Fritas disponibles";
-          Leer >> Cantidad;
+          Leer >> cantidad;
         Fin_Mientras
 
         precio = bar_ingredientes_precios[1];
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        dinero_bar = dinero_bar + Cuenta_Cliente;
+        cuenta_cliente = cuenta_cliente + (cantidad * precio);
+        dinero_bar = dinero_bar + cuenta_Cliente;
         contador = bar_contadores[1];
         contador = contador + 1;
         bar_contadores[1] = contador;
-        ingrediente = ingrediente – Cantidad;
+        ingrediente = ingrediente – cantidad;
         bar_ingredientes_cantidades[1] = ingrediente;
 
         Mostrar << "Quedan disponibles ", ingrediente, " bolsas de Papas Fritas";
-      Caso (OpcionClientes = 1 AND bar_ingredientes_cantidades[1] < 1);
+      Caso (opcion_clientes = 1) AND (bar_ingredientes_cantidades[1] < 1);
         Mostrar << "Se agotaron las bolsas de Papas Fritas.";
-      Caso (OpcionClientes = 2 AND bar_ingredientes_cantidades[2] > 0);
+      Caso (opcion_clientes = 2) AND (bar_ingredientes_cantidades[2] > 0);
         ingrediente = bar_ingredientes_cantidades[2];
         Mostrar << "¿Cuántas unidades compró? ";
-        Leer >> Cantidad;
+        Leer >> cantidad;
 
-        Mientras (Cantidad > ingrediente) Hacer;
+        Mientras (cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " bolsas de Mini Hamburguesas disponibles.";
-          Leer >> Cantidad;
+          Leer >> cantidad;
         Fin_Mientras
 
         precio = bar_ingredientes_precios[2];
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        dinero_bar = dinero_bar + Cuenta_Cliente;
+        cuenta_cliente = cuenta_cliente + (cantidad * precio);
+        dinero_bar = dinero_bar + cuenta_cliente;
         contador = bar_contadores[2];
         contador = contador + 1;
         bar_contadores[2] = contador;
@@ -60,43 +60,43 @@ Inicio
         bar_ingredientes_cantidades[2] = ingrediente;
 
         Mostrar << "Quedan disponibles ", ingrediente, " bolsas de Mini Hamburguesas.";
-      Caso (OpcionClientes = 2 AND bar_ingredientes_cantidades[2] < 1);
+      Caso (opcion_clientes = 2) AND (bar_ingredientes_cantidades[2] < 1);
         Mostrar << "Se agotaron las bolsas de Mini Hamburguesas.";
-      Caso (OpcionClientes = 3 AND bar_ingredientes_cantidades[3] > 0);
+      Caso (opcion_clientes = 3) AND (bar_ingredientes_cantidades[3] > 0);
         ingrediente = bar_ingredientes_cantidades[3];
         Mostrar << "¿Cuántas unidades compró? ";
-        Leer >> Cantidad;
+        Leer >> cantidad;
 
-        Mientras (Cantidad > ingrediente) Hacer;
+        Mientras (cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " bolsas de Empanadillas disponibles.";
-          Leer >> Cantidad;
+          Leer >> cantidad;
         Fin_Mientras
 
         precio = bar_ingredientes_precios[3];
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        dinero_bar = dinero_bar + Cuenta_Cliente;
+        cuenta_cliente = cuenta_cliente + (cantidad * precio);
+        dinero_bar = dinero_bar + cuenta_cliente;
         contador = bar_contadores[3];
         contador = contador + 1;
         bar_contadores[3] = contador;
-        ingrediente = ingrediente – Cantidad;
+        ingrediente = ingrediente – cantidad;
         bar_ingredientes_cantidades[3] = ingrediente;
 
         Mostrar << "Quedan disponibles ", ingrediente, " bolsas de Empanadillas.";
-      Caso (OpcionClientes = 3 AND bar_ingredientes_cantidades[3] < 1);
+      Caso (opcion_clientes = 3) AND (bar_ingredientes_cantidades[3] < 1);
         Mostrar << "Se agotaron las bolsas de Empanadillas.";
-      Caso (OpcionClientes = 4 AND bar_ingredientes_cantidades[4] > 0);
+      Caso (opcion_clientes = 4) AND (bar_ingredientes_cantidades[4] > 0);
         ingrediente = bar_ingredientes_cantidades[4];
         Mostrar << "¿Cuántas unidades compró? ";
-        Leer >> Cantidad;
+        Leer >> cantidad;
 
-        Mientras (Cantidad > ingrediente) Hacer;
+        Mientras (cantidad > ingrediente) Hacer;
           Mostrar << "Error, solo hay ", ingrediente, " bolsas de Sándwiches disponibles.";
-          Leer >> Cantidad;
+          Leer >> cantidad;
         Fin_Mientras
 
         precio = bar_ingredientes_precios[4];
-        Cuenta_Cliente = Cuenta_Cliente + (Cantidad * precio);
-        dinero_bar = dinero_bar + Cuenta_Cliente;
+        cuenta_cliente = cuenta_cliente + (cantidad * precio);
+        dinero_bar = dinero_bar + cuenta_cliente;
         contador = bar_contadores[4];
         contador = contador + 1;
         bar_contadores[4] = contador;
@@ -108,8 +108,8 @@ Inicio
         Mostrar << "Se agotaron las bolsas de Sándwiches.";
     Fin_Caso
 
-    Mostrar << "La cuenta acumulada de los clientes es: ", Cuenta_Cliente, "$";
-    Mostrar << "¿Los clientes consumieron otro producto más? 1: Sí, 0: No ";
+    Mostrar << "Su cuenta acumulada es: ", cuenta_cliente, "$";
+    Mostrar << "¿Desea ordenar otro producto más? 1: Sí, 0: No ";
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
