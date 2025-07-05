@@ -2,6 +2,8 @@ Algoritmo Resort
 Inicio
   //Opciones de todo el resort
   Var opcion_menu, opcion_restaurante, opcion_inv, opcion_clientes: Entero;
+
+
   // Base de datos del Restaurante
   Var i_restaurante: Entero;
   Var restaurante_ingredientes_cantidades[34]: Entero;
@@ -78,7 +80,7 @@ Inicio
         Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2,                          cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente],           id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i_cliente], fecha_salida[i_cliente], nombre_titulares[i_cliente],                       email[i_cliente]);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
-        Restaurante(opcion_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante],                     restaurante_ingredientes[i_restaurante], restaurante_ingredientes_precios[i_restaurante]);
+        Restaurante(opcion_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante],                     restaurante_ingredientes_precios[i_restaurante]);
         Mostrar << Restaurante;
       Caso (opcion_menu = 4);
         Bar(opcion_inv, opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente,                                         bar_ingredientes_precios[i_bar], dinero_bar);
@@ -103,7 +105,7 @@ Inicio
     Mostrar << casino_stock_premios[i_casino];
   Fin_Para
 
-  Mostrar << "Apuesta total: ", apuesta;
+  Mostrar << "Apuesta total: ", fichas_apostadas;
   Mostrar << "Veces que se jugó en el blackjack: ", veces_jugadas_blackjack;
   Mostrar << "Veces que se jugó en la tragamonedas: ", veces_jugadas_tragamonedas;
   Mostrar << "Veces que se jugó en la ruleta: ", veces_jugadas_ruleta;
@@ -120,12 +122,14 @@ Inicio
     Mostrar << "Este platillo fue elegido por los clientes un total de:";
     Mostrar << restaurante_contadores[i_restaurante], "veces";
   Fin_Para
+
   Para (i_restaurante = 1 Hasta i_restaurante = 34) Hacer;
     Mostrar << "Ingrediente: ";
     Mostrar << restaurante_ingredientes[i_restaurante];
     Mostrar << "Cantidad de unidades que quedó del ingrediente:";
     Mostrar << restaurante_ingredientes_cantidades[i_restaurante];
   Fin_Para
+  
   Mostrar << "Dinero recaudado del Restaurante Elecentro Sabores: ", dinero_restaurante;
 
   Mostrar << "Bar Elecentro Drinks:";
