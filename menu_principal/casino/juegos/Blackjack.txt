@@ -1,8 +1,10 @@
-Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, veces_jugadas_blackjack: Entero);
+Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, minimo, maximo, veces_jugadas_blackjack: Entero);
 Inicio
   Var jugador_cartas[10], dealer_cartas[10], carta_visible, suma_jugador, suma_dealer, i, j: Entero, R: Booleano;
   Var apuesta: Entero;
 
+  minimo = 1;
+  maximo = 12;
   Repetir
     Mostrar << "Bienvenido al Blackjack";
     Mostrar << "Ingrese las fichas que desea apostar";
@@ -13,11 +15,11 @@ Inicio
       Leer >> apuesta;
     Fin_Mientras
 
-    jugador_cartas[1] = Aleatorio(1, 12);
-    jugador_cartas[2] = Aleatorio(1, 12);
+    jugador_cartas[1] = Aleatorio(minimo, maximo);
+    jugador_cartas[2] = Aleatorio(minimo, maximo);
     i = 3;
-    dealer_cartas[1] = Aleatorio(1, 12);
-    dealer_carta[2] = Aleatorio(1, 12);
+    dealer_cartas[1] = Aleatorio(minimo, maximo);
+    dealer_carta[2] = Aleatorio(minimo, maximo);
     j = 3;
     suma_jugador = jugador_cartas[1] + jugador_carta[2];
     suma_dealer = dealer_cartas[1] + dealer_carta[2];
@@ -30,7 +32,7 @@ Inicio
         Leer >> R;
 
         Si (R = 1) Entonces;
-          jugador_cartas[i] = Aleatorio(1, 12);
+          jugador_cartas[i] = Aleatorio(minimo, maximo);
           suma_jugador = suma_jugador + jugador_cartas[i];
           Mostrar << "Recibiste ", jugador_cartas[i], "tu nuevo total es: ", suma_jugador;
           i = i + 1;
@@ -43,7 +45,7 @@ Inicio
     Mostrar << "Carta visible del dealer: ", carta_visible;
 
     Mientras (suma_dealer < 17) Hacer;
-      dealer_cartas[j] = Aleatorio(1, 12);
+      dealer_cartas[j] = Aleatorio(minimo, maximo);
       suma_dealer = suma_dealer + dealer_cartas[j];
       Mostrar << "El dealer toma una carta";
       j = j + 1;
