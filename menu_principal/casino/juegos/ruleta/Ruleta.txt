@@ -1,4 +1,4 @@
-Procedimiento Ruleta(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, apuesta, minimo, maximo, número, modo_elegido, seleccion, multiplicador, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, fichas_ganadas, fichas_perdidas, grupo1[i], grupo2[i], grupo3[i], grupo4[i]: Entero, porcentaje_victorias: Real);
+Procedimiento Ruleta(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, apuesta, minimo, maximo, número, modo_elegido, seleccion, multiplicador, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, fichas_ganadas, fichas_perdidas, grupo1[i], grupo2[i], grupo3[i], grupo4[i]: Entero);
 Inicio
 
   Repetir
@@ -41,6 +41,6 @@ Inicio
     Hasta (R = 0);
   Fin_Repetir
 
-  Estadisticas(saldo_disponible, fichas_ganadas, fichas_perdidas, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, porcentaje_victorias);
+  Estadisticas(saldo_disponible, fichas_ganadas, fichas_perdidas, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas);
   Mostrar << Estadisticas;
 Fin_Procedimiento
