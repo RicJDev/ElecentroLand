@@ -4,7 +4,7 @@ Inicio
 
   Mostrar << "Bien, estas han sido sus estadisticas";
   Mostrar << "Sus fichas actuales son..", saldo_disponible;
-  Mostrar << "Sus ganancias fueron..(esto solo incluye el dinero ganado no toma en cuenta lo perdido)", fichas_ganadas;
+  Mostrar << "Sus ganancias fueron..(esto solo incluye las fichas ganadas no toma en cuenta lo perdido)", fichas_ganadas;
   Mostrar << "Todo lo que le sacamos jajajaja *sonido de toser* digo sus pobres pérdidas fueron... (esto solo incluye perdidas no cuenta lo ganado)", fichas_perdidas;
   Mostrar << "Las veces que usted participo en la Ruleta Maravillosa fueron...", veces_jugadas_ruleta;
   Mostrar << "Usted Ganó ....", partidas_ganadas, "Veces";
