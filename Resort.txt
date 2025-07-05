@@ -31,6 +31,7 @@ Inicio
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
   Var veces_jugadas: Entero;
+  Var veces_jugadas_blackjack = 0, veces_jugadas_dados = 0, veces_jugadas_tragamonedas = 0: Entero;
 
   // Aleatorio
   Var minimo, maximo, número: Entero;
@@ -86,6 +87,8 @@ Inicio
     Hasta (R = 0);
   Fin_Repetir
 
+  veces_jugadas = (veces_jugadas_ruleta + veces_jugadas_tragamonedas + veces_jugadas_blackjack + veces_jugadas_dados);
+
   // PDF final
 
   Mostrar << "Estadísticas Finales del Resort Elecentro";
@@ -98,6 +101,10 @@ Inicio
   Fin_Para
 
   Mostrar << "Apuesta total: ", apuesta;
+  Mostrar << "Veces que se jugó en el blackjack: ", veces_jugadas_blackjack;
+  Mostrar << "Veces que se jugó en la tragamonedas: ", veces_jugadas_tragamonedas;
+  Mostrar << "Veces que se jugó en la ruleta: ", veces_jugadas_ruleta;
+  Mostrar << "Veces que se jugó en los dados: ", veces_jugadas_dados;
   Mostrar << "Total de veces jugadas: ", veces_jugadas;
   Mostrar << "Hotel:";
   Mostrar << "Total de clientes registrados: ", clientes;
