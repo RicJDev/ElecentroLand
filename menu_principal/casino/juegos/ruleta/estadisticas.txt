@@ -1,5 +1,6 @@
-Procedimiento estadisticas(E/S: saldo_disponible, fichas_ganadas, fichas_perdidas, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, porcentaje_victorias: Entero);
+Procedimiento estadisticas(E/S: saldo_disponible, fichas_ganadas, fichas_perdidas, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas: Entero);
 Inicio
+  Var porcentaje_victorias: Real;
   porcentaje_victorias = (partidas_ganadas / veces_jugadas_ruleta) * 100;
 
   Mostrar << "Bien, estas han sido sus estadisticas";
