@@ -39,6 +39,9 @@ Inicio
   // Aleatorio
   Var minimo, maximo, número: Entero;
 
+  // Tragamonedas
+  Var rodillo[3][3]: Entero;
+
   // Variables de la Ruleta
   Var veces_jugadas_ruleta = 0, partidas_ganadas = 0, partidas_perdidas = 0, fichas_ganadas = 0, fichas_perdidas = 0: Entero;
   Var modo_elegido, apuesta, seleccion, multiplicador: Entero, porcentaje_victorias: Real;
