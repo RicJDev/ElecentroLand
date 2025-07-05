@@ -1,54 +1,30 @@
-Procedimiento Hotel(E/S: contador_clientes = 0, cant_acompañantes = 0, clientes_hotel = 0, clientes[contador_clientes], cantidad_habitacion1 = 250, cantidad_habitacion2 = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70, id_cliente, dias_hospedaje, telefono, edad_usuario, cedula, id_ingresado, validacion_final, id_cliente_reservacion: Entero, total_pagar_habitacion: Real, fecha_llegada, fecha_salida, nombre_apellido, email: Cadena);
-Inicio
-  Var opc_hotel = entero;
-  Repetir
-    Mostrar << "1: Registrar un nuevo cliente";
-    Mostrar << "2: Realizar una reserva";
-    Mostrar << "3: Consulta de estadisticas del hotel";
-    Mostrar << "4: Metodos de Pago";
-    Mostrar << "5: Check-out";
-    Mostrar << "6: Salir del sistema";
-    Leer >> opc_hotel;
+Procedimiento hotel (cantidad_habitacion[4]:entero,fecha_salida[nueva_id]:cadena,fecha_llegada[nueva_id]:cadena,dias_hospedaje[nueva_id]:Entero,total_pagar_habitacion[nuevo_id]:entero,
+opcion_habitacion[nueva_id]:entero,huespedes_total[nueva_id]:entero,telefono[nueva_id]:entero,edad_usuario[nueva_id]:entero,email[nueva_id]:cadena,nombres_titulares[nueva_id]:cadena,
+existe_usuario:Entero,cantidad_titulares[i_cliente]);
 
-    Mientras (opc_hotel < 1 OR opc_hotel > 6) Hacer;
-      Mostrar << "Estimado usuario, error en opcion seleccionada, intente de nuevo";
-      Leer >> opc_hotel;
-    Fin_Mientras
+Repetir
+var opc_hotel=entero
 
-    En_Caso (opc_hotel > 0) Sea;
-      Caso (opc_hotel = 1);
-        registro_nuevo_cliente(huespedes_total[clientes_hotel], telefono[i_cliente], cedula[i_cliente], edad_usuario[i_cliente]: Entero, email[i_cliente], nombres_titulares[i_cliente]);
-        Mostrar << registro_nuevo_cliente;
-      Caso (opc_hotel = 2);
-        reserva_habitaciones(fecha_salida[i_cliente], fecha_llegada[i_cliente], dias_hospedaje[i_cliente], ingresos_hotel);
-        Mostrar << reserva_habitaciones;
-      Caso (opc_hotel = 3);
-        estadisticas(clientes[contador_clientes], clientes_hotel, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4);
-        Mostrar << estadisticas;
-      Caso (opc_hotel = 4);
-        metodo_de_pago(clientes[contador_clientes]);
-        Mostrar << metodo_de_pago;
-      Caso (opc_hotel = 5);
-        check_out(contador_clientes, validacion_final, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado);
-        Mostrar << check_out;
-      Otro_Caso
-        opc_hotel = 6;
-    Fin_Caso
+Mostrar<<"1:Registrar un nuevo cliente";
+Mostrar<<"2:Check-out";
+Mostrar<<"3:salir del sistema";
+Leer>>opc_hotel;
 
-    Hasta (opc_hotel = 6);
-  Fin_Repetir
-Fin_Procedimiento
+	Mientras opc_hotel<1 or opc_hotel>3 hacer;
+		Mostrar<<"Estimado usuario, error en opcion seleccionada, intente de nuevo";
+		Leer>>opc_hotel;
+	Fin mientras
 
-Funcion validacion(id_ingresado, validacion_final, clientes[contador_clientes]: Entero): Booleano;
-Inicio
-  Var I: Entero;
-
-  Mientras (I = 1 Hasta I = contador_clientes) Hacer;
-    Si id_ingresado != clientes[contador_clientes];
-    validacion_final = 0;
-    Sino
-    validacion_final = 1;
-  Fin_Si
-
-  Devolver (validacion_final);
-Fin_Funcion
+	En caso (opc_hotel>0) sea;
+		Caso (opc_hotel=1);
+		registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id],telefono[nueva_id],edad_usuario[nueva_id],email[nueva_id],nombres_titulares[nueva_id]);
+		Mostrar<<registro_nuevo_cliente_habitacion_pago;
+		Caso (opc_hotel=2);
+		check_out(huespedes_total[nueva_id],telefono[nueva_id],edad_usuario[nueva_id],email[nueva_id],nombres_titulares[nueva_id],cantidad_habitacion[4],cantida_titulares[nueva_id])
+		Mostrar<<check_out;
+		Otro caso;
+		opc_hotel=3
+	Fin caso
+	Hasta que opc_hotel=3
+ Fin repetir
+ Fin procedimiento
