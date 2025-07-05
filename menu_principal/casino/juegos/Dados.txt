@@ -1,14 +1,15 @@
-Procedimiento Dados(E/S: saldo_disponible: Entero, fichas_apostadas, veces_jugadas_dados: Entero);
+Procedimiento Dados(E/S: saldo_disponible, minimo, maximo, fichas_apostadas, veces_jugadas_dados: Entero);
 Inicio
   Var R: Booleano;
   Var D1, D2, D3: Entero;
   Var apuesta: Entero;
-
+  minimo = 1;
+  maximo = 6;
   Repetir
     Mostrar << "Bienvenidos a la sección de dados del Casino Elecentro Royale";
-    D1 = Aleatorio(1, 6);
-    D2 = Aleatorio(1, 6);
-    D3 = Aleatorio(1, 6);
+    D1 = Aleatorio(minimo, maximo);
+    D2 = Aleatorio(minimo, maximo);
+    D3 = Aleatorio(minimo, maximo);
     Mostrar << "Ingrese las fichas que desea apostar";
     Leer >> apuesta;
 
