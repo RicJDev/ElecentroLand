@@ -1,4 +1,4 @@
-Procedimiento Resultado_Apuesta_Grupo(E: seleccion, número, grupo1[i], grupo2[i], grupo3[i], grupo4[i], apuesta: Entero, E/S: saldo_disponible, fichas_ganadas, fichas_perdidas, partidas_ganadas, partidas_perdidas: Entero);
+Procedimiento Resultado_Apuesta_Grupo(E: seleccion, multiplicador, número, grupo1[i], grupo2[i], grupo3[i], grupo4[i], apuesta: Entero, E/S: saldo_disponible, fichas_ganadas, fichas_perdidas, partidas_ganadas, partidas_perdidas: Entero);
 Inicio
   Var  no_gano = 0, i: Entero;
 
@@ -9,8 +9,7 @@ Inicio
           Mostrar << "Veremos lo que toco pronto";
           no_gano = no_gano + 1;
 
-          Sino
-
+        Sino
           Mostrar << "Has ganado";
           saldo_disponible = saldo_disponible + (apuesta * multiplicador);
           fichas_ganadas = fichas_ganadas + (apuesta * multiplicador);
@@ -20,8 +19,8 @@ Inicio
 
       Si (no_gano = 8) Entonces;
         Mostrar << "Lamentablemente has perdido";
-        saldo_disponible = saldo_disponible -(apuesta * 1, 5);
-        fichas_perdidas = fichas_perdidas + (apuesta * 1, 5);
+        saldo_disponible = saldo_disponible -(apuesta * 1,5);
+        fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
         partidas_perdidas = partidas_perdidas + 1;
       Fin_Si
     Caso (seleccion = 2);
@@ -30,18 +29,17 @@ Inicio
           Mostrar << "Veremos lo que toco pronto";
           no_gano = no_gano + 1;
 
-          Sino
-
+        Sino
           Mostrar << "Has ganado";
           saldo_disponible = saldo_disponible + (apuesta * multiplicador);
-          fichas_ganadas = fichas_ganadas + (Apuesta * Multiplicador);
+          fichas_ganadas = fichas_ganadas + (apuesta * multiplicador);
           partidas_ganadas = partidas_ganadas + 1;
         Fin_Si
       Fin_Para
       Si (no_gano = 8) Entonces;
         Mostrar << "Lamentablemente has perdido";
-        saldo_disponible = saldo_disponible -(apuesta * 1, 5);
-        fichas_perdidas = fichas_perdidas + (apuesta * 1, 5);
+        saldo_disponible = saldo_disponible -(apuesta * 1,5);
+        fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
         partidas_perdidas = partidas_perdidas + 1;
       Fin_Si
     Caso (seleccion = 3);
@@ -50,8 +48,7 @@ Inicio
           Mostrar << "Veremos lo que toco pronto";
           no_gano = no_gano + 1;
 
-          Sino
-
+        Sino
           Mostrar << "Has ganado";
           saldo_disponible = saldo_disponible + (apuesta * multiplicador);
           fichas_ganadas = fichas_ganadas + (apuesta * multiplicador);
@@ -61,8 +58,8 @@ Inicio
 
       Si (no_gano = 8) Entonces;
         Mostrar << "Lamentablemente has perdido";
-        saldo_disponible = saldo_disponible -(apuesta * 1, 5);
-        fichas_perdidas = fichas_perdidas + (apuesta * 1, 5);
+        saldo_disponible = saldo_disponible -(apuesta * 1,5);
+        fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
         partidas_perdidas = partidas_perdidas + 1;
       Fin_Si
     Otro_Caso
@@ -71,8 +68,7 @@ Inicio
           Mostrar << "Veremos lo que toco pronto";
           no_gano = no_gano + 1;
 
-          Sino
-
+        Sino
           Mostrar << "Has ganado";
           saldo_disponible = saldo_disponible + (apuesta * multiplicador);
           fichas_ganadas = fichas_ganadas + (apuesta * multiplicador);
@@ -82,8 +78,8 @@ Inicio
 
       Si (no_gano = 8) Entonces;
         Mostrar << "Lamentablemente has perdido";
-        saldo_disponible = saldo_disponible -(apuesta * 1, 5);
-        fichas_perdidas = fichas_perdidas + (apuesta * 1, 5);
+        saldo_disponible = saldo_disponible -(apuesta * 1,5);
+        fichas_perdidas = fichas_perdidas + (apuesta * 1,5);
         partidas_perdidas = partidas_perdidas + 1;
       Fin_Si
   Fin_Caso
