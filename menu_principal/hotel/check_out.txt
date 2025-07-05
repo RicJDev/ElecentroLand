@@ -1,46 +1,71 @@
-Procedimiento check_out(E/S: contador_clientes, validacion_final, cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_ingresado: Entero);
+Procedimiento check_out(e/s:huespedes_total[nueva_id],telefono[nueva_id],,edad_usuario[nueva_id]:entero,email[nueva_id],nombres_titulares[nueva_id]:cadena,cantidad_habitacion[4],
+cantida_titulares[nueva_id]:entero)
 Inicio
-  Var validacion_check_out, opcion_habitacion: Entero;
+  Var i_reservacion,I: Entero;
 
   Mostrar << "Gracias por haber elegido a Elecentroland para su visita a San Juan De Los Morros, vuelva pronto";
   Mostrar << "Ingrese su ID, por favor";
-  Leer >> id_ingresado;
+  Leer >> i_reservacion;
 
   Mientras (id_ingresado < 1) Hacer;
     Mostrar << "Por favor ingrese un ID valido";
-    Leer >> id_ingresado;
+    Leer >> id_cliente;
   Fin_Mientras
-
-  validacion_check_out = validacion(id_ingresado, validacion_final, clientes[contador_clientes]);
-
-  Si (validacion_check_out = 0) Entonces;
+  
+  Si (permitir_acceso = 0) Entonces;
     Mostrar << "Error el ID", id_ingresado, "no se encuentra en nuestra base de datos";
-
-    Sino
-
-    contador_clientes = contador_clientes - 1;
-    Mostrar << "Ingrese en que habitacion estaba hospedado";
-    Mostrar << "Listado de habitaciones";
-    Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
-    Mostrar << "2: Habitación Guanábana (habitacion con dual) precio: 20$ por noche";
-    Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
-    Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
-    Leer >> opcion_habitacion;
-
-    Mientras (opcion_habitacion < 1) OR (opcion_habitacion > 4) Hacer;
-      Mostrar << "Error por favor elija una habitacion disponible";
-      Leer >> opcion_habitacion;
-    Fin_Mientras
-
-    En_Caso (opcion_habitacion > 0) Sea;
-      Caso (opcion_habitacion = 1);
-        cantidad_habitacion1 = cantidad_habitacion1 + 1;
-      Caso (opcion_habitacion = 2);
-        cantidad_habitacion2 = cantidad_habitacion2 + 1;
-      Caso (opcion_habitacion = 3);
-        cantidad_habitacion3 = cantidad_habitacion3 + 1;
+  Sino 
+ 
+    Para (cantidad_titulares[i_cliente]=1 hasta cantidad_titulares[i_cliente]=500) hacer;
+	Si cantidad_titulares=i_reservacion entonces ;
+	En caso (opcion_habitacion[nueva_id]>0);
+	
+      Caso (opcion_habitacion[nueva_id] = 1);
+	   
+	    cantida_titulares[nueva_id]=0;
+    	cantidad_habitacion[1]=0; 
+		nombres_titulares[i_cliente]="no asignado";
+		cant_acompañantes[i_cliente] = 0;
+		email[i_cliente] = "no asignado";
+		telefono[i_cliente] = "no asignado"; 
+		edad_usuario[i_cliente] = 0;
+		huespedes_total[nueva_id]= 0;
+		
+	Caso (opcion_habitacion[nueva_id] = 2);
+	   
+	    cantida_titulares[nueva_id]=0;
+    	cantidad_habitacion[2]=0; 
+		nombres_titulares[i_cliente]="no asignado";
+		cant_acompañantes[i_cliente] = 0;
+		email[i_cliente] = "no asignado";
+		telefono[i_cliente] = "no asignado"; 
+		edad_usuario[i_cliente] = 0;
+		huespedes_total[nueva_id]= 0;
+      
+      Caso (opcion_habitacion[nueva_id] = 3);
+	   
+	    cantida_titulares[nueva_id]=0;
+    	cantidad_habitacion[3]=0; 
+		nombres_titulares[i_cliente]="no asignado";
+		cant_acompañantes[i_cliente] = 0;
+		email[i_cliente] = "no asignado";
+		telefono[i_cliente] = "no asignado"; 
+		edad_usuario[i_cliente] = 0;
+		huespedes_total[nueva_id]= 0;
+		
       Otro_Caso
-        cantidad_habitacion4 = cantidad_habitacion4 + 1;
+	  
+	    cantida_titulares[nueva_id]=0;
+    	cantidad_habitacion[4]=0; 
+		nombres_titulares[i_cliente]="no asignado";
+		cant_acompañantes[i_cliente] = 0;
+		email[i_cliente] = "no asignado";
+		telefono[i_cliente] = "no asignado"; 
+		edad_usuario[i_cliente] = 0;
+		total_a_pagar[nueva_id]= 0;
+		huespedes_total[nueva_id]= 0;
+		
     Fin_Caso
   Fin_Si
+
 Fin_Procedimiento
