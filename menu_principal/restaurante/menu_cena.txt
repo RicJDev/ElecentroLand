@@ -2,7 +2,7 @@ Procedimiento Cena(E/S: cantidad: Entero, monto_pago, dinero_restaurante: Real, 
 Inicio
   Var opc, opc_agenda, opc_cena, personas_agenda, i: Entero, R: Booleano;
   Var ingrediente_1, ingrediente_2, ingrediente_3, ingrediente_4, ingrediente_5: Entero;
-  Var precio, cuenta_cliente: Real;
+  Var precio, cuenta_cliente = 0: Real;
   Var contador = 0: Entero;
 
   //Menú de entrada
