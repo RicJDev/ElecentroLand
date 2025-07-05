@@ -1,9 +1,7 @@
 Procedimiento metodo_pago(E: monto_pago: Real, E/S: validacion_pago: Booleano);
 Inicio
-  Var;
-  opc_pago, referencia, digitos_tarjeta, num_tarjeta, cedula: Entero;
+  Var opc_pago, referencia, digitos_tarjeta, num_tarjeta, cedula, clave: Entero;
   tipo_cuenta, fecha_vencimiento: Cadena;
-  monto: Real;
 
   Mostrar << "Estimado usuario a continuacion se muestran los metodos de pago disponibles";
   Mostrar << "1: Tarjeta de debito";
@@ -16,11 +14,11 @@ Inicio
   Mostrar << "8: Euros en efectivo";
   Mostrar << "9: Efectivo en BS";
   Mostrar << "10: Divisas en Efectivo";
-  Leer >> opc_pago ;
+  Leer >> opc_pago;
 
   Mientras (opc_pago < 1 OR opc_pago > 10) Hacer;
     Mostra << "Error en opcion seleccionada, por favor vuelva a intentar";
-    Lee >> opc_pago;
+    Leer >> opc_pago;
   Fin_Mientras
 
   En_Caso (opc_pago > 0) Sea;
@@ -35,7 +33,14 @@ Inicio
 
       Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
       Leer >> tipo_cuenta;
-      Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave secreta";
+      Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave          secreta";
+      Mostrar << "Ingrese su clave secreta";
+      Leer >> clave;
+      Mientras (clave < 0) Hacer;
+        Mostrar << "No puede ser menor a 0";
+        Leer >> clave;
+      Fin_Mientras
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 2);  //opcion 2
       Mostrar << "Ingrese el numero de su tarjeta";
@@ -56,91 +61,91 @@ Inicio
         Leer >> digitos_tarjeta;
       Fin_Mientras
 
-      Mostrar << "Perfecto, datos captados, gracias por su pago";
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 3);  //opcion 3
       Mostrar << "Datos Bancarios Elecentroland";
       Mostrar << "Banco: Banesco";
       Mostrar << "Numero de cuenta: 01340254325200006321";
       Mostrar << "J-10526368-7";
-      Mostrar << "Tipo de cuenta:Corriente";
-      Mostrar << "Ingrese el monto que pagó";
-      Leer >> monto;
+      Mostrar << "Tipo de cuenta: Corriente";
       Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
       Leer >> referencia;
 
-      Mientras (referencia < 0) OR (monto < 1) Hacer;
+      Mientras (referencia < 0) Hacer;
         Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
         Leer >> referencia;
-        Leer >> monto;
       Fin_Mientras
+
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 4);  //opcion 4
       Mostrar << "Datos Bancarios Elecentroland";
       Mostrar << "Banco:Banesco (0134)";
       Mostrar << "J-10526368-7";
       Mostrar << "Numero telefonico: 0412-8628439";
-      Mostrar << "Ingrese el monto que pagó";
-      Leer >> monto;
       Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
       Leer >> referencia;
 
-      Mientras (referencia < 0) OR (monto < 1) Hacer;
+      Mientras (referencia < 0) Hacer;
         Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
         Leer >> referencia;
       Fin_Mientras
+
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
+      validacion_pago = 1;
     Caso (opc_pago = 5);  //opcion 5
       Mostrar << "Datos Bancarios Zelle Elecentroland";
       Mostrar << "Correo electronico: elecentroland@gmail.com";
-      Mostrar << "Ingrese el monto que pagó";
-      Leer >> monto;
       Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
       Leer >> referencia;
 
-      Mientras (referencia < 0) OR (monto < 1) Hacer;
+      Mientras (referencia < 0) Hacer;
         Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
         Leer >> referencia;
-        Leer >> monto;
       Fin_Mientras
+
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 6);  //opcion 6
       Mostrar << "Datos Bancarios Binance Pay Elecentroland";
       Mostrar << "Correo electronico:elecentroland@gmail.com";
       Mostrar << "Numero telefonico:0412-8628439";
       Mostrar << "Numero de ID: 1236548214";
-      Mostrar << "Ingrese el monto que pagó";
-      Leer >> monto;
       Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
       Leer >> referencia;
 
-      Mientras (referencia < 0) OR (monto < 1) Hacer;
+      Mientras (referencia < 0) Hacer;
         Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
         Leer >> referencia;
-        Leer >> monto;
       Fin_Mientras
+
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 7);  //opcion  7
       Mostrar << "Datos Bancarios Zinli Elecentroland";
       Mostrar << "Correo electronico:elecentroland@gmail.com";
-      Mostrar << "Ingrese el monto que pagó";
-      Leer >> monto;
       Mostrar << "Ingrese su numero de referencia por favor (minimo 6 digitos)";
       Leer >> referencia;
 
-      Mientras (referencia < 0) OR (monto < 1) Hacer;
+      Mientras (referencia < 0) Hacer;
         Mostrar << "Error en referencia ingresada, verifique e ingrese nuevamente";
         Leer >> referencia;
-        Leer >> monto;
       Fin_Mientras
+
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 8);  //opcion 8
       Mostrar << "Perfecto estimado usuario, su pago sera en Euros, en taquilla se haran cargo de recibir su pago";
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 9);  //opcion 9
       Mostrar << "Perfecto estimado usuario,su pago sera en Bs en efectivo, en taquilla se haran cargo de recibir su pago";
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Otro_Caso;  //opcion10
       Mostrar << "Perfecto estimado usuario,su pago sera en Divisas en efectivo, en taquilla se haran cargo de recibir su pago";
+      Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
   Fin_Caso
 Fin_Si
