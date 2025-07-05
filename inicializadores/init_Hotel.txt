@@ -1,14 +1,20 @@
-Procedimiento init_Hotel(E/S: nombres_titulares[i_cliente], email[i_cliente]: Cadena, cantidad_titulares[i_cliente], huespedes_total[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente]: Entero);
+Procedimiento init_Hotel(e/s:cantidad_titulares[nueva_id]:entero,nombres_titulares[nueva_id]:cadena,huespedes_total[clientes_hotel]:entero,email[nueva_id]:cadena,telefono[nueva_id]: entero,
+edad_usuario[nueva_id]:entero,cant_acompañantes[nueva_id]:entero);
+
 Inicio
+var I:entero; 
+
   Para (i_cliente = 1 Hasta i_cliente = 500) Hacer;
-    nombres_titulares[i_cliente] = "no_asignado";
-    email[i_cliente] = "no_asignado";
-
-    cantidad_titulares[i_cliente] = 0;
-    huespedes_total[i_cliente] = 0;
-
-    telefono[i_cliente] = 0;
-    edad_usuario[i_cliente] = 0;
-    cedula[i_cliente] = 0;
-  Fin_Para
+ 
+    cantidad_titulares[nueva_id]=0;
+	nombres_titulares[nueva_id] ="no_asignado";
+    huespedes_total[clientes_hotel] = 0;
+    email[nueva_id] = "no_asignado";
+    telefono[nueva_id] = 0; 
+	edad_usuario[nueva_id] = 0;
+	cedula[nueva_id] = 0;
+    cant_acompañantes[nueva_id] = 0;
+	
+ Fin para 
+ 
 Fin_Procedimiento
