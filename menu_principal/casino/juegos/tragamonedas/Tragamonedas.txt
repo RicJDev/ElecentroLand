@@ -1,9 +1,9 @@
 Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas_tragamonedas, rodillo[I][J]: Entero);
 Inicio
-  Var R: Entero;
+  Var R: Booleano;
   Var apuesta: Entero;
   Var premio_giro: Entero;
-  Var I, J: Entero;
+  Var i, j: Entero;
   Mostrar << " ------------------------------------------------------------------";
   Mostrar << "|                 BIENVENIDO A $FRUIT MONEY$                      |";
   Mostrar << "|                           REGLAS                                |";
@@ -21,13 +21,13 @@ Inicio
     Mostrar << " ----------------------------------------------------";
     Leer >> apuesta;
 
-    // Validación de saldo apostado
+    // Validación de apuesta
     Mientras (apuesta < 1) OR (apuesta > 50) Hacer;
       Mostrar << "Error en monto apostado, vuelva a intentar";
       Leer >> apuesta;
     Fin_Mientras
 
-    // validación de saldo apostado
+    // validación de apuesta
     Mientras (apuesta > saldo_disponible) Hacer;
       Mostrar << "No posee suficientes fondos para seguir jugando, recargue por favor";
       Leer >> apuesta;
@@ -35,13 +35,13 @@ Inicio
 
     Mostrar << "Comencemos";
 
-    premio_giro = premio_maquinita(rodillo[3][3], apuesta);
+    premio_giro = premio_maquinita(rodillo[i][j], apuesta);
     Mostrar << "---------------------------";
     Mostrar << "|TRAGAMONEDAS $FRUIT MONEY$|";
     Mostrar << "---------------------------";
-    Para (I = 1 Hasta I = 3) Hacer;
-      Para (J = 1 Hasta J = 3) Hacer;
-        Mostrar << rodillo[I][J], "|";
+    Para (i = 1 Hasta i = 3) Hacer;
+      Para (j = 1 Hasta j = 3) Hacer;
+        Mostrar << rodillo[i][j], "|";
       Fin_Para
       Mostrar << "_";
     Fin_Para
