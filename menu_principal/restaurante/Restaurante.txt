@@ -2,17 +2,17 @@ Procedimiento Restaurante(E/S: Opcion_Restaurante, i_restaurante, restaurante_in
 Inicio
   Var R = 0: Entero;
   Repetir
-    Bienvenida(Opcion_Restaurante);
+    Bienvenida(opcion_restaurante);
     Mostrar << Bienvenida;
 
-    En_Caso (Opcion_Restaurante > 0) Sea;
-      Caso (Opcion_Restaurante = 1);
+    En_Caso (opcion_restaurante > 0) Sea;
+      Caso (opcion_restaurante = 1);
         Desayuno(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18], restaurante_ingredientes_precios[18]);
         Mostrar << Desayuno;
-      Caso (Opcion_Restaurante = 2);
+      Caso (opcion_restaurante = 2);
         Almuerzo(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18], restaurante_ingredientes_precios[18]);
         Mostrar << Almuerzo;
-      Caso (Opcion_Restaurante = 3);
+      Caso (opcion_restaurante = 3);
         Cena(Cantidad, Cuenta_Cliente, i_restaurante, restaurante_ingredientes[34], restaurante_ingredientes_cantidades[34], restaurante_contadores[18], restaurante_ingredientes_precios[18]);
         Mostrar << Cena;
       Otro_Caso
