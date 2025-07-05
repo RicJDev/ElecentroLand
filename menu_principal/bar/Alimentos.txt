@@ -1,8 +1,8 @@
-Procedimiento Alimentos(E/S: opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i_bar]: Real, validacion_pago: Booleano);
+Procedimiento Alimentos(E/S: opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, monto_pago, dinero_bar, bar_ingredientes_precios[i_bar]: Real, validacion_pago: Booleano);
 Inicio
   Var R: Booleano;
   Var ingrediente, contador = 0: Entero;
-  Var precio: Real;
+  Var precio, cuenta_cliente = 0: Real;
 
   Repetir
     Mostrar << "Menú de Alimentos:";
