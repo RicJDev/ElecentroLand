@@ -1,6 +1,5 @@
-Procedimiento Ruleta(E/S: saldo_disponible: Entero, E/S: fichas_apostadas: Entero, modo_elegido, seleccion, multiplicador, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, fichas_ganadas, fichas_perdidas: Entero, porcentaje_victorias: Real);
+Procedimiento Ruleta(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, apuesta, número,, modo_elegido, seleccion, multiplicador, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, fichas_ganadas, fichas_perdidas, grupo1[i], grupo2[i], grupo3[i], grupo4[i]: Entero, porcentaje_victorias: Real);
 Inicio
-  Var veces_jugadas_ruleta = 0: Entero;
 
   Repetir
     Eleccion(modo_elegido);
@@ -31,7 +30,7 @@ Inicio
         número = Aleatorio(minimo, maximo);
         Grupos_Valor(grupo1[i], grupo2[i], grupo3[i], grupo4[i]);
         Mostrar << Grupos_Valor;
-        Resultado_Apuesta_Grupo(seleccion, número, grupo1[8], grupo2[8], grupo3[8], grupo4[8], apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas);
+        Resultado_Apuesta_Grupo(seleccion, número, grupo1[i], grupo2[i], grupo3[i], grupo4[i], apuesta, saldo_disponible, fichas_ganadas, fichas_perdidas);
 
         Mostrar << Resultado_Apuesta_Grupo;
     Fin_Caso
