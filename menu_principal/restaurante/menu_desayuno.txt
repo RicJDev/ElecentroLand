@@ -3,7 +3,7 @@ Inicio
   Var R: Booleano;
   Var ingrediente_1, ingrediente_2, ingrediente_3: Entero;
   Var precio: Real;
-  Var contador: Entero;
+  Var contador = 0: Entero;
 
   Repetir
     Mostrar << "Seleccione el desayuno de su preferencia";
