@@ -3,6 +3,7 @@ Inicio
   Var R: Booleano;
   Var contador = 0, ingrediente: Entero;
   Var precio: Real;
+
   Repetir
     Mostrar << "Menú de Bebidas:";
     Mostrar << "1: Cerveza Duff 1$ cada botella";
@@ -30,6 +31,7 @@ Inicio
         dinero_bar = dinero_bar + cuenta_cliente;
         ingrediente = ingrediente – cantidad;
         bar_ingredientes_cantidades[5] = ingrediente;
+
         Mostrar << "Quedan disponibles ", ingrediente, " botellas de Cerveza.";
       Caso (opcion_clientes = 1) AND (bar_ingredientes_cantidades[5] < 1);
         Mostrar << "Se agotaron las botellas de Cervezas.";
@@ -42,6 +44,7 @@ Inicio
           Mostrar << "Error, solo hay ", ingrediente, " botellas de Vino disponibles.";
           Leer >> cantidad;
         Fin_Mientras
+
         precio = bar_ingredientes_precios[6];
         contador = bar_contadores[6];
         contador = contador + 1;
@@ -50,6 +53,7 @@ Inicio
         dinero_bar = dinero_bar + cuenta_cliente;
         ingrediente = ingrediente – cantidad;
         bar_ingredientes_cantidades[6] = ingrediente;
+
         Mostrar << "Quedan disponibles ", ingrediente, " botellas de Vino.";
       Caso (opcion_clientes = 2) AND (bar_ingredientes_cantidades[6] < 1);
         Mostrar << "Se agotaron las botellas de Vino.";
@@ -62,6 +66,7 @@ Inicio
           Mostrar << "Error, solo hay ", ingrediente, " botellas de Vodka disponibles.";
           Leer >> cantidad;
         Fin_Mientras
+
         precio = bar_ingredientes_precios[7];
         cuenta_cliente = cuenta_cliente + (cantidad * precio);
         dinero_bar = dinero_bar + cuenta_cliente;
@@ -83,6 +88,7 @@ Inicio
           Mostrar << "Error, solo hay ", ingrediente, " copas de Cóctel disponibles.";
           Leer >> cantidad;
         Fin_Mientras
+
         precio = bar_ingredientes_precios[8];
         cuenta_cliente = cuenta_cliente + (cantidad * precio);
         dinero_bar = dinero_bar + cuenta_cliente;
@@ -91,6 +97,7 @@ Inicio
         bar_contadores[8] = contador;
         ingrediente = ingrediente – cantidad;
         bar_ingredientes_cantidades[8] = ingrediente;
+
         Mostrar << "Quedan disponibles ", ingrediente, " copas de Cóctel.";
       Otro_Caso
         Mostrar << "Se agotaron las copas de Cóctel.";
@@ -101,6 +108,7 @@ Inicio
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
+
   monto_pago = cuenta_cliente;
   metodo_pago(monto_pago, validacion_pago);
   Mostrar << metodo_pago;

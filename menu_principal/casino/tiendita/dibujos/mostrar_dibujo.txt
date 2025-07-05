@@ -246,7 +246,7 @@ Inicio
       Mostrar << "        | \/ |";
       Mostrar << "        \____/";
       Mostrar << "        (____)";
-    Otro caso
+    Otro_Caso
       Mostrar << "Caballero caballeroso de la caballerosidad";
       Mostrar << " ";
 
@@ -270,6 +270,5 @@ Inicio
       Mostrar << "      |        |  ||  |";
       Mostrar << "      |       _\.:||:./_";
       Mostrar << "      |      /____/\____\";
-
   Fin_Caso
 Fin_Procedimiento

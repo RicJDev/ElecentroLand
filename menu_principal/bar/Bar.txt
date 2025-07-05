@@ -8,18 +8,19 @@ Inicio
     Mostrar << "1: Alimentos";
     Mostrar << "2: Bebidas";
     Leer >> opcion_inv;
-    Mientras (opcion_inv < 1 or opcion_inv > 2) Hacer;
+
+    Mientras (opcion_inv < 1 OR opcion_inv > 2) Hacer;
       Mostrar << "Error en datos, ingrese nuevamente";
       Leer >> opcion_inv;
     Fin_Mientras
 
     Si (opcion_inv = 1) Entonces;
-      Alimentos(opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar,                        bar_ingredientes_precios[i_bar], validacion_pago);
+      Alimentos(opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i_bar], validacion_pago);
       Mostrar << Alimentos;
 
-    Sino
-        Bebidas(opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar,                          bar_ingredientes_precios[i_bar], validacion_pago);
-        Mostrar << Bebidas;
+      Sino
+      Bebidas(opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i_bar], validacion_pago);
+      Mostrar << Bebidas;
     Fin_Si
 
     Mostrar << "¿Desea ingresar otro producto? 1: Sí, 0: No";
@@ -27,3 +28,4 @@ Inicio
     Hasta (R = 0);
   Fin_Repetir
 Fin_Procedimiento
+

@@ -1,6 +1,7 @@
 Procedimiento estadisticas(E/S: saldo_disponible, fichas_ganadas, fichas_perdidas, veces_jugadas_ruleta, partidas_ganadas, partidas_perdidas, porcentaje_victorias: Entero);
 Inicio
   porcentaje_victorias = (partidas_ganadas / veces_jugadas_ruleta) * 100;
+
   Mostrar << "Bien, estas han sido sus estadisticas";
   Mostrar << "Sus fichas actuales son..", saldo_disponible;
   Mostrar << "Sus ganancias fueron..(esto solo incluye el dinero ganado no toma en cuenta lo perdido)", fichas_ganadas;
@@ -11,3 +12,4 @@ Inicio
   Mostrar << "Usted tuvo un porcentaje de aciertos del... ", porcentaje_victorias, "%";
   Mostrar << "Gracias por Jugar :) ";
 Fin_Procedimiento
+

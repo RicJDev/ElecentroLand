@@ -7,13 +7,13 @@ Inicio
 
     En_Caso (opcion_restaurante > 0) Sea;
       Caso (opcion_restaurante = 1);
-        Desayuno(cantidad, cuenta_cliente, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante],                          restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
+        Desayuno(cantidad, cuenta_cliente, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
         Mostrar << Desayuno;
       Caso (opcion_restaurante = 2);
-        Almuerzo(cantidad, cuenta_cliente, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante],                          restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
+        Almuerzo(cantidad, cuenta_cliente, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
         Mostrar << Almuerzo;
       Caso (opcion_restaurante = 3);
-        Cena(cantidad, cuenta_cliente, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante],                              restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
+        Cena(cantidad, cuenta_cliente, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
         Mostrar << Cena;
       Otro_Caso
         R = 4;

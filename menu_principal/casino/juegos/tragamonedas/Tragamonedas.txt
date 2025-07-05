@@ -53,7 +53,9 @@ Inicio
       Mostrar << "Su saldo es insuficiente para seguir jugando, ¡recargue por favor!";
       Mostrar << "Hasta pronto, ¡Gracias por jugar!";
       R = 2;
-    Sino
+
+      Sino
+
       Mostrar << "Desea realizar otra apuesta, 1: Sí, 0: No";
       Leer >> R;
     Fin_Si

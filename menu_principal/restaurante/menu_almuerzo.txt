@@ -4,6 +4,7 @@ Inicio
   Var opcion, ingrediente_1, ingrediente_2, ingrediente_3, contador: Entero;
   Var precio: Real;
   Var R: Booleano;
+
   Repetir
     Mostrar << "Este es nuestro menú de Almuerzo:";
     Mostrar << "Opción 1: Ensalada Cesar y de bebida Vino Blanco: 32$";
@@ -33,7 +34,7 @@ Inicio
           Fin_Mientras
           Mostrar << "Una ración de Ensalada César y una copa de bebida Vino Blanco. Serían, 32$ por cada unidad que haya ordenado."; // 11 y 10
 
-          precio = restaurante_ingredientes_precios[7]
+          precio = restaurante_ingredientes_precios[7];
           ingrediente_1 = ingrediente_1 - cantidad;
           ingrediente_2 = ingrediente_2 - cantidad;
           contador = restaurante_contadores[7];
@@ -43,8 +44,10 @@ Inicio
           dinero_restaurante = dinero_restaurante + cuenta_cliente;
           restaurante_ingredientes_cantidades[10] = ingrediente_1;
           restaurante_ingredientes_cantidades[11] = ingrediente_2;
-        Sino
-            Mostrar << "Se acabaron los ingredientes";
+
+          Sino
+
+          Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 2);
         ingrediente_1 = restaurante_ingredientes_cantidades[12];
@@ -73,7 +76,9 @@ Inicio
           restaurante_ingredientes_cantidades[12] = ingrediente_1;
           restaurante_ingredientes_cantidades[13] = ingrediente_2;
           restaurante_ingredientes_cantidades[14] = ingrediente_3;
-        Sino
+
+          Sino
+
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 3);
@@ -100,7 +105,9 @@ Inicio
           ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[15] = ingrediente_1;
           restaurante_ingredientes_cantidades[16] = ingrediente_2;
-        Sino
+
+          Sino
+
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 4);
@@ -127,7 +134,9 @@ Inicio
           ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[17] = ingrediente_1;
           restaurante_ingredientes_cantidades[18] = ingrediente_2;
-        Sino
+
+          Sino
+
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 5);
@@ -154,7 +163,9 @@ Inicio
           ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[19] = ingrediente_1;
           restaurante_ingredientes_cantidades[20] = ingrediente_2;
-        Sino
+
+          Sino
+
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Otro_Caso
@@ -181,7 +192,9 @@ Inicio
           ingrediente_2 = ingrediente_2 – cantidad;
           restaurante_ingredientes_cantidades[21] = ingrediente_1;
           restaurante_ingredientes_cantidades[22] = ingrediente_2;
-        Sino
+
+          Sino
+
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
     Fin_Caso
@@ -190,6 +203,7 @@ Inicio
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
+
   monto_pago = cuenta_cliente;
   metodo_pago(monto_pago, validacion_pago);
   Mostrar << metodo_pago;

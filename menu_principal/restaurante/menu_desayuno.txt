@@ -15,7 +15,7 @@ Inicio
     Mostrar << "6: Empanadas 8$";
     Leer >> desayuno;
 
-    Mientras (desayuno < 1 or desayuno > 6) Hacer;
+    Mientras (desayuno < 1 OR desayuno > 6) Hacer;
       Mostrar << "Error, intente nuevamente";
       Leer >> desayuno;
     Fin_Mientras
@@ -62,7 +62,7 @@ Inicio
         restaurante_ingredientes_cantidades[2] = ingrediente_1;
         restaurante_ingredientes_cantidades[3] = ingrediente_2;
         restaurante_ingredientes_cantidades[4] = ingrediente_3;
-      Caso (desayuno = 3) AND (restaurante_ingredientes_cantidades[5] > 0) AND (restaurante_ingredientes_cantidades[6] > 0) AND                                     (restaurante_ingredientes_cantidades[3] > 0);
+      Caso (desayuno = 3) AND (restaurante_ingredientes_cantidades[5] > 0) AND (restaurante_ingredientes_cantidades[6] > 0) AND (restaurante_ingredientes_cantidades[3] > 0);
         Mostrar << "¿Cuántos compró?";
         Leer >> cantidad;
 
@@ -143,6 +143,7 @@ Inicio
     Leer >> R;
     Hasta (R = 0);
   Fin_Repetir
+
   monto_pago = cuenta_cliente;
   metodo_pago(monto_pago, validacion_pago);
   Mostrar << metodo_pago;

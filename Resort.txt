@@ -3,7 +3,6 @@ Inicio
   //Opciones de todo el resort
   Var opcion_menu, opcion_restaurante, opcion_inv, opcion_clientes: Entero;
 
-
   // Base de datos del Restaurante
   Var i_restaurante: Entero;
   Var restaurante_ingredientes_cantidades[34]: Entero;
@@ -12,7 +11,6 @@ Inicio
   Var restaurante_ingredientes[34]: Cadena;
   Var restaurante_platillos[18]: Cadena;
   Var dinero_restaurante: Real;
-
 
   // Base de datos del Bar
   Var i_bar: Entero;
@@ -42,9 +40,9 @@ Inicio
   Var minimo, maximo, número: Entero;
 
   // Variables de la Ruleta
-    Var veces_jugadas_ruleta = 0, partidas_ganadas = 0, partidas_perdidas = 0, fichas_ganadas = 0, fichas_perdidas = 0: Entero;
-    Var modo_elegido, apuesta, seleccion, multiplicador: Entero, porcentaje_victorias: Real;
-    Var grupo1[8], grupo2[8], grupo3[8], grupo4[8]: Entero;
+  Var veces_jugadas_ruleta = 0, partidas_ganadas = 0, partidas_perdidas = 0, fichas_ganadas = 0, fichas_perdidas = 0: Entero;
+  Var modo_elegido, apuesta, seleccion, multiplicador: Entero, porcentaje_victorias: Real;
+  Var grupo1[8], grupo2[8], grupo3[8], grupo4[8]: Entero;
 
   // Inicializando DB del Restaurante
   init_Restaurante(restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precio[i_restaurante], restaurante_ingredientes[i_restaurante]);
@@ -67,23 +65,23 @@ Inicio
     Mostrar << "5: Salir";
     Leer >> opcion_menu;
 
-    Mientras (opcion_menu < 1 or opcion_menu > 5) Hacer;
+    Mientras (opcion_menu < 1 OR opcion_menu > 5) Hacer;
       Mostrar << "Opción inválida, intente nuevamente";
       Leer >> opcion_menu;
     Fin_Mientras
 
     En_Caso (opcion_menu > 0) Sea;
       Caso (opcion_menu = 1);
-        Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino],                                       casino_stock_premios[j_casino], casino_valor_premios[j_casino], casino_premios[i_casino][j_casino]);
+        Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino], casino_premios[i_casino][j_casino]);
         Mostrar << Casino;
       Caso (opcion_menu = 2);
-        Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2,                          cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente],           id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i_cliente], fecha_salida[i_cliente], nombre_titulares[i_cliente],                       email[i_cliente]);
+        Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente], id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i_cliente], fecha_salida[i_cliente], nombre_titulares[i_cliente], email[i_cliente]);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
-        Restaurante(opcion_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante],                     restaurante_ingredientes_precios[i_restaurante]);
+        Restaurante(opcion_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante]);
         Mostrar << Restaurante;
       Caso (opcion_menu = 4);
-        Bar(opcion_inv, opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente,                                         bar_ingredientes_precios[i_bar], dinero_bar);
+        Bar(opcion_inv, opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, bar_ingredientes_precios[i_bar], dinero_bar);
         Mostrar << Bar;
       Otro_Caso
         R = 0;
@@ -129,7 +127,7 @@ Inicio
     Mostrar << "Cantidad de unidades que quedó del ingrediente:";
     Mostrar << restaurante_ingredientes_cantidades[i_restaurante];
   Fin_Para
-  
+
   Mostrar << "Dinero recaudado del Restaurante Elecentro Sabores: ", dinero_restaurante;
 
   Mostrar << "Bar Elecentro Drinks:";

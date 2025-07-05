@@ -1,12 +1,13 @@
-Procedimiento Eleccion (E/S: modo_elegido: Entero);
+Procedimiento Eleccion(E/S: modo_elegido: Entero);
 Inicio
   Mostrar << "Bienvenido a la Ruleta que te hace pobre *sonido de toser*, digo La Ruleta MILLONARIA!!";
   Mostrar << "Ingrese la modalidad de juego seleccionando una de las siguientes: ";
-  Mostrar << "1: Rojo y Negro"; 
-  Mostrar << "2: Grupo de Números"; 
+  Mostrar << "1: Rojo y Negro";
+  Mostrar << "2: Grupo de Números";
   Mostrar << "3: Número a su elección";
   Leer >> modo_elegido;
-  Mientras (modo_elegido < 1 or modo_elegido > 3) Hacer;
+
+  Mientras (modo_elegido < 1 OR modo_elegido > 3) Hacer;
     Mostrar << "Modo de juego elegido incorrecto, Seleccione un modo de juego nuevamente";
     Leer >> modo_elegido;
   Fin_Mientras

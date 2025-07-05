@@ -22,10 +22,10 @@ Inicio
   Fin_Mientras
 
   En_Caso (opc_pago > 0) Sea;
-    Caso (opc_pago = 1); //opcion 1
+    Caso (opc_pago = 1);  //opcion 1
       Mostrar << "Ingrese su numero de cedula";
       Leer >> cedula;
-      
+
       Mientras (cedula < 1000000) Hacer;
         Mostrar << "Por favor ingrese un dato valido";
         Leer >> cedula;
@@ -33,13 +33,15 @@ Inicio
 
       Mostrar << "Ingrese su tipo de cuenta (ahorro o corriente)";
       Leer >> tipo_cuenta;
-      Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave          secreta";
+      Mostrar << "Gracias con estos datos agilizamos su paso por el complejo una vez se encuentre en el mismo en el area de administracion digite su clave secreta";
       Mostrar << "Ingrese su clave secreta";
       Leer >> clave;
+      
       Mientras (clave < 0) Hacer;
         Mostrar << "No puede ser menor a 0";
         Leer >> clave;
       Fin_Mientras
+
       Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
     Caso (opc_pago = 2);  //opcion 2
@@ -148,5 +150,4 @@ Inicio
       Mostrar << "Se ha efectuado el pago de ", monto_pago, "$, muchas gracias por su pago";
       validacion_pago = 1;
   Fin_Caso
-Fin_Si
 Fin_Procedimiento
