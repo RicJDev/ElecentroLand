@@ -106,7 +106,7 @@ Inicio
   Mostrar << "Veces que se jugó en la ruleta: ", veces_jugadas_ruleta;
   Mostrar << "Veces que se jugó en los dados: ", veces_jugadas_dados;
   Mostrar << "Total de veces jugadas: ", veces_jugadas;
-  Mostrar << "Hotel:";
+  Mostrar << "Hotel ElecentroLand:";
   Mostrar << "Total de clientes registrados: ", clientes;
   Mostrar << "Ingresos recibidos: ", ingresos_hotel;
   Mostrar << "Restaurante Sabores Elecentro:";
@@ -117,8 +117,14 @@ Inicio
     Mostrar << "Este platillo fue elegido por los clientes un total de:";
     Mostrar << restaurante_contadores[i_restaurante];
   Fin_Para
+  Para (i_restaurante = 1 Hasta i_restaurante = 34) Hacer;
+    Mostrar << "Ingrediente: ";
+    Mostrar << restaurante_ingredientes[i_restaurante];
+    Mostrar << "Cantidad de unidades que quedó del ingrediente:";
+    Mostrar << restaurante_ingredientes_cantidades[i_restaurante];
+  Fin_Para
+  Mostrar << "Dinero recaudado del Restaurante Elecentro Sabores: ", dinero_restaurante;
 
-  Mostrar << "Dinero recaudado: ", dinero_restaurante;
   Mostrar << "Bar Elecentro Drinks:";
   Mostrar << "Contadores de los alimentos y bebidas";
 
@@ -128,5 +134,12 @@ Inicio
     Mostrar << bar_contadores[i_bar];
   Fin_Para
 
-  Mostrar << "Dinero recaudado:", dinero_bar;
+  Para (i_bar = 1 Hasta i_bar = 8) Hacer;
+    Mostrar << "Ingrediente: ";
+    Mostrar << bar_ingredientes[i_bar];
+    Mostrar << "Cantidad de unidades que quedó del ingrediente:";
+    Mostrar << bar_ingredientes_cantidades[i_bar];
+  Fin_Para
+
+  Mostrar << "Dinero recaudado del Bar Elecentro Drinks:", dinero_bar;
 Fin
