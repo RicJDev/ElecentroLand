@@ -1,10 +1,11 @@
 Procedimiento registro_nuevo_cliente_habitacion_pago(e/s:huespedes_total[nueva_id],telefono[nueva_id],,edad_usuario[nueva_id]:entero,email[nueva_id],nombres_titulares[nueva_id]:cadena);
 Inicio
   Var opc_registro,I: Entero;
+  Var nueva_id = -1: Entero;
 
     i_cliente=1;
 	
-    Mientras (i_cliente <=500 and i_cliente = -1) Hacer;
+    Mientras (i_cliente <=500) and nueva_id = -1) Hacer;
     Si (cantidad_titulares[i_cliente] = "no_asignado" Entonces;
       nueva_id = i_cliente;
 	  
