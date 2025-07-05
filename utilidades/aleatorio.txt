@@ -1,7 +1,7 @@
-Función Aleatorio(Minimo, Maximo): Entero;
+Función Aleatorio(minimo, maximo): Entero;
 Inicio
-  var número: Entero;
-  número = GenerarNumeroAleatorio(Mínimo, Máximo);
+  Var número: Entero;
+  número = GenerarNumeroAleatorio(minimo, maximo);
 
   // No se cuestione la magia detras de esta funcion. Genera numeros aleatorios, y con eso basta: D
 
