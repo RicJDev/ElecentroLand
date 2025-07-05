@@ -2,7 +2,7 @@ Procedimiento Desayuno(E/S: cantidad: Entero, monto_pago, dinero_restaurante: Re
 Inicio
   Var R: Booleano;
   Var desayuno, ingrediente_1, ingrediente_2, ingrediente_3: Entero;
-  Var precio, cuenta_cliente: Real;
+  Var precio, cuenta_cliente = 0: Real;
   Var contador = 0: Entero;
 
   Repetir
