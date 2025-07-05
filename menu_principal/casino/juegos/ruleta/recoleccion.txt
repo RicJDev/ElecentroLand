@@ -1,44 +1,36 @@
-Procedimiento Recoleccion (E: modo_elegido: Entero, E/S: apuesta, seleccion, multiplicador: Entero);
+Procedimiento Recoleccion (E: modo_elegido: Entero, E/S: apuesta, fichas_apostadas, seleccion, multiplicador: Entero);
 Inicio
+  Mostrar << "Ingrese una suma de fichas";
+	Leer >> apuesta;
+  Mostrar << "Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% extra de lo que             aposto al perder";
+	Leer >> multiplicador;
+  Mientras (apuesta < 0) or (multiplicador < 1 or multiplicador > 3) Hacer;
+    Mostrar << "Valores ingresados erróneos, ingréselos nuevamente";
+    Leer >> apuesta;
+    Leer >> multiplicador;
+  Fin_Mientras
+  fichas_apostadas = fichas_apostadas + apuesta;
 	En Caso (modo_elegido > 0) sea;
 		Caso (modo_elegido = 1);
-      Mostrar << "Ingrese una suma de fichas";
-			Leer >> apuesta;
-      Mostrar << "Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% extra de lo que             aposto al perder";
-			Leer >> multiplicador;
       Mostrar << "Ingrese el color al cual apostara (1: Rojo, 2: Negro";
       Leer >> seleccion;
-      Mientras (apuesta < 0) or (seleccion < 1 or seleccion > 2) or (multiplicador < 1 or multiplicador > 3) Hacer;
+      Mientras (seleccion < 1 or seleccion > 2) Hacer;
         Mostrar << "Valores ingresados erróneos, ingreselos nuevamente";
-			  Leer >> apuesta;
 			  Leer >> seleccion;
-			  Leer >> multiplicador;
       Fin_Mientras
     Caso (modo_elegido = 2);
-			Mostrar << "Ingrese una suma de fichas";
-			Leer >> apuesta;	
-      Mostrar << "Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% extra de lo que 	           aposto al perder";
-      Leer >> multiplicador;
       Mostrar << "Ingrese el número específico al cual apostara (del 1 al 32)";
 			Leer >> seleccion;
-      Mientras (apuesta < 0) or (seleccion < 1 or seleccion > 32) or (multiplicador < 1 or multiplicador > 3) Hacer;
+      Mientras (seleccion < 1 or seleccion > 32) Hacer;
         Mostrar << "Valores ingresados erróneos, ingreselos nuevamente";
-			  Leer >> apuesta;
 			  Leer >> seleccion;
-			  Leer >> multiplicador;
       Fin_Mientras
 	  Otro Caso
-			Mostrar << "Ingrese una suma de fichas";
-			Leer >> apuesta;	
-      Mostrar << "Ingrese por cuanto quiere multiplicar su dinero (máximo 3) por cada vez que multiplique su dinero deberá pagar un 150% extra de lo que             aposto al perder";
-      Leer >> multiplicador;
       Mostrar << "Ingrese el grupo numero al cual apostará (1: del 1 al 8, 2: del 9 al 16, 3: del 17 al 24, 4: del 25 al 32)";
 			Leer >> seleccion;
-      Mientras (apuesta < 0) or (seleccion < 1 or seleccion > 4) or (multiplicador < 1 or multiplicador > 3) Hacer;
+      Mientras (seleccion < 1 or seleccion > 4) Hacer;
         Mostrar << "Valores ingresados erróneos, ingreselos nuevamente";
-			  Leer >> apuesta;
 			  Leer >> seleccion;
-			  Leer >> multiplicador;
       Fin_Mientras
 	Fin_Caso
 Fin_Procedimiento
