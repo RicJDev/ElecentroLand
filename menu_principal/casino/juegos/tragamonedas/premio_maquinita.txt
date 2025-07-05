@@ -1,4 +1,4 @@
-Funcion premio_maquinita(rodillo[I][J]: Entero, apuesta: Entero): Entero;
+Funcion premio_maquinita(rodillo[i][j]: Entero, apuesta: Entero): Entero;
 Inicio
   Var premio: Entero;
 
