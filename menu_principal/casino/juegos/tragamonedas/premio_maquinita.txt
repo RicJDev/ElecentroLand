@@ -2,22 +2,22 @@ Funcion premio_maquinita(rodillo[I][J]: Entero, apuesta: Entero): Entero;
 Inicio
   Var premio: Entero;
 
-  En_Caso (rodillo[3, 3] > 0) Sea;
-    Caso (rodillo[1, 1] = rodillo[1, 2]) AND (rodillo[1, 1] = rodillo[1, 3]);
+  En_Caso (rodillo[3][3] > 0) Sea;
+    Caso (rodillo[1][1] = rodillo[1][2]) AND (rodillo[1][1] = rodillo[1][3]);
       premio = apuesta * 5;
-    Caso (rodillo[2, 1] = rodillo[2, 2]) AND (rodillo[2, 1] = rodillo[2, 3]);
+    Caso (rodillo[2][1] = rodillo[2][2]) AND (rodillo[2][1] = rodillo[2][3]);
       premio = apuesta * 5;
-    Caso (rodillo[3, 1] = rodillo[3, 2]) AND (rodillo[3, 1] = rodillo[3, 3]);
+    Caso (rodillo[3][1] = rodillo[3][2]) AND (rodillo[3][1] = rodillo[3][3]);
       premio = apuesta * 5;
-    Caso (rodillo[1, 1] = rodillo[2, 1]) AND (rodillo[1, 1] = rodillo[3, 1]); ;
+    Caso (rodillo[1][1] = rodillo[2][1]) AND (rodillo[1][1] = rodillo[3][1]); ;
       premio = apuesta * 10;
-    Caso (rodillo[1, 2] = rodillo[2, 2]) AND (rodillo[1, 2] = rodillo[3, 2]);
+    Caso (rodillo[1][2] = rodillo[2][2]) AND (rodillo[1][2] = rodillo[3][2]);
       premio = apuesta * 10;
-    Caso (rodillo[1, 3] = rodillo[2, 3]) AND (rodillo[1, 3] = rodillo[3, 3]);
+    Caso (rodillo[1][3] = rodillo[2][3]) AND (rodillo[1][3] = rodillo[3][3]);
       premio = apuesta * 10;
-    Caso (rodillo[1, 1] = rodillo[2, 2]) AND (rodillo[1, 1] = rodillo[3, 3]);
+    Caso (rodillo[1][1] = rodillo[2][2]) AND (rodillo[1][1] = rodillo[3][3]);
       premio = apuesta * 15;
-    Caso (rodillo[3, 1] = rodillo[2, 2]) AND (rodillo[3, 1] = rodillo[1, 3]);
+    Caso (rodillo[3][1] = rodillo[2][2]) AND (rodillo[3][1] = rodillo[1][3]);
       premio = apuesta * 15;
     Otro_Caso
       premio = 0;
