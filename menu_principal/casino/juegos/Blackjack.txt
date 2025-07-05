@@ -1,4 +1,4 @@
-Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, veces_jugadas: Entero);
+Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, veces_jugadas_blackjack: Entero);
 Inicio
   Var Jugador_Cartas[10], Dealer_Cartas[10], Carta_Visible, Suma_Jugador, Suma_Dealer, I, J: Entero, R: Booleano;
   Var apuesta: Entero;
@@ -72,7 +72,7 @@ Inicio
     Mostrar << "Fichas actuales: ", saldo_disponible;
     Mostrar << "¿Quieres jugar de nuevo? 1: Sí, 0: No";
     Leer >> R;
-    veces_jugadas = veces_jugadas + 1;
+    veces_jugadas_blackjack = veces_jugadas_blackjack + 1;
     Hasta (R = 0);
   Fin_Repetir
 Fin_Procedimiento

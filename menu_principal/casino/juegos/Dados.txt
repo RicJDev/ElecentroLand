@@ -1,4 +1,4 @@
-Procedimiento Dados(E/S: saldo_disponible: Entero, fichas_apostadas, veces_jugadas: Entero);
+Procedimiento Dados(E/S: saldo_disponible: Entero, fichas_apostadas, veces_jugadas_dados: Entero);
 Inicio
   Var R: Booleano;
   Var D1, D2, D3: Entero;
@@ -43,6 +43,7 @@ Inicio
     Fin_Caso
     Mostrar << "¿Desea volver a jugar? 1: Si, 0: No";
     Leer >> R;
+    veces_jugadas_dados = veces_jugadas_dados + 1;
     fichas_apostadas = fichas_apostadas + apuesta;
     Hasta (R = 0);
   Fin_Repetir

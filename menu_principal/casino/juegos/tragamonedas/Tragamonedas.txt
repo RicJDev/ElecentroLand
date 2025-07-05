@@ -1,4 +1,4 @@
-Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas, rodillo[I][J]: Entero);
+Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas_tragamonedas, rodillo[I][J]: Entero);
 Inicio
   Var R: Entero;
   Var apuesta: Entero;
@@ -56,8 +56,8 @@ Inicio
     Sino
       Mostrar << "Desea realizar otra apuesta, 1: Sí, 0: No";
       Leer >> R;
-      veces_jugadas = veces_jugadas + 1;
     Fin_Si
+    veces_jugadas_tragamonedas = veces_jugadas_tragamonedas + 1;
     Hasta (R = 0);
   Fin_Repetir
 
