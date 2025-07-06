@@ -30,7 +30,7 @@ Inicio
 
         Sino
           Mostrar << "Listado de Habitaciones:";
-          reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id],                                   cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
+          reserva_habitaciones(fecha_salida[i], fecha_llegada[i], nueva_id, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i],                              total_pagar_habitacion[i], monto_pago, ingresos_hotel, validacion_pago);
           Mostrar << reserva_habitaciones;
           Si (validacion_pago = 1) Entonces;
             registro_nuevo_cliente_habitacion_pago(nueva_id, cant_acompañantes[i], telefono[i], edad_usuario[i], email[i], nombres_titulares[i]);
