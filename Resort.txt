@@ -21,10 +21,10 @@ Inicio
   Var dinero_bar: Real;
 
   // Base de datos del Hotel
-  Var nombres_titulares[500], email[500]: Cadena;
-  Var cantidad_titulares[500], huespedes_total[500], telefono[500], edad_usuario[500], cedula[500]: Entero;
-  Var ingresos_hotel = 0: Real;
-  Var cant_acompañantes = 0, clientes_hotel = 0, cantidad_habitacion1 = 250, cantidad_habitacion2 = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70: Entero;
+  Var nombres_titulares[500], email[500], fecha_salida[500], fecha_llegada[500]: Cadena;
+  Var cantidad_titulares[500], huespedes_total[500], telefono[500], edad_usuario[500], cedula[500], cantidad_habitacion[4], dias_hospedaje[500], opcion_habitacion[4]: Entero;
+  Var ingresos_hotel = 0, total_pagar_habitacion[500]: Real;
+  Var existe_usuario: Booleano;
 
   // Base de datos del Casino
   Var fichas_apostadas: Entero;
