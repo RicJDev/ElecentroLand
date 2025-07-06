@@ -1,4 +1,4 @@
-Procedimiento Restaurante(E/S: opcion_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante]: Entero, restaurante_ingredientes_precios[i_restaurante]: Real);
+Procedimiento Restaurante(E/S: opcion_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i]: Entero, restaurante_ingredientes_precios[i]: Real);
 Inicio
   Var R = 0: Entero;
   Repetir
@@ -7,13 +7,13 @@ Inicio
 
     En_Caso (opcion_restaurante > 0) Sea;
       Caso (opcion_restaurante = 1);
-        Desayuno(cantidad, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
+        Desayuno(cantidad, monto_pago, dinero_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
         Mostrar << Desayuno;
       Caso (opcion_restaurante = 2);
-        Almuerzo(cantidad, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
+        Almuerzo(cantidad, monto_pago, dinero_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
         Mostrar << Almuerzo;
       Caso (opcion_restaurante = 3);
-        Cena(cantidad, monto_pago, dinero_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante], validacion_pago);
+        Cena(cantidad, monto_pago, dinero_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
         Mostrar << Cena;
       Otro_Caso
         R = 4;
