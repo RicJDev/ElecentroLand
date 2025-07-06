@@ -1,0 +1,5 @@
+Procedimiento servicio_habitacion_cliente (E/S: hotel_ingredientes_precios[i]: Real, hotel_platillos_contadores[i], hotel_ingredientes_cantidades[i]: Entero);
+Inicio
+  Var ingrediente_1, ingrediente_2, ingrediente_3, contador = 0: Entero;
+  Var precio: Real;
+  
