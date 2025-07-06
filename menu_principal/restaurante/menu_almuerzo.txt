@@ -1,4 +1,4 @@
-Procedimiento Almuerzo(E/S: cantidad: Entero, monto_pago, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes_cantidades[i_restaurante]: Entero, restaurante_contadores[i_restaurante]: Entero, restaurante_ingredientes_precios[i_restaurante], validacion_pago: Booleano);
+Procedimiento Almuerzo(E/S: i, cantidad: Entero, monto_pago, dinero_restaurante: Real, restaurante_ingredientes_cantidades[i]: Entero, restaurante_contadores[i]: Entero, restaurante_ingredientes_precios[i], validacion_pago: Booleano);
 Inicio
   Var quieres_otra: Booleano;
   Var opcion, ingrediente_1, ingrediente_2, ingrediente_3, contador = 0: Entero;
@@ -45,8 +45,7 @@ Inicio
           restaurante_ingredientes_cantidades[10] = ingrediente_1;
           restaurante_ingredientes_cantidades[11] = ingrediente_2;
 
-          Sino
-
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 2);
@@ -77,8 +76,7 @@ Inicio
           restaurante_ingredientes_cantidades[13] = ingrediente_2;
           restaurante_ingredientes_cantidades[14] = ingrediente_3;
 
-          Sino
-
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 3);
@@ -106,8 +104,7 @@ Inicio
           restaurante_ingredientes_cantidades[15] = ingrediente_1;
           restaurante_ingredientes_cantidades[16] = ingrediente_2;
 
-          Sino
-
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 4);
@@ -135,8 +132,7 @@ Inicio
           restaurante_ingredientes_cantidades[17] = ingrediente_1;
           restaurante_ingredientes_cantidades[18] = ingrediente_2;
 
-          Sino
-
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Caso (opcion = 5);
@@ -164,8 +160,7 @@ Inicio
           restaurante_ingredientes_cantidades[19] = ingrediente_1;
           restaurante_ingredientes_cantidades[20] = ingrediente_2;
 
-          Sino
-
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
       Otro_Caso
@@ -193,8 +188,7 @@ Inicio
           restaurante_ingredientes_cantidades[21] = ingrediente_1;
           restaurante_ingredientes_cantidades[22] = ingrediente_2;
 
-          Sino
-
+        Sino
           Mostrar << "Se acabaron los ingredientes";
         Fin_Si
     Fin_Caso
@@ -207,4 +201,9 @@ Inicio
   monto_pago = cuenta_cliente;
   metodo_pago(monto_pago, validacion_pago);
   Mostrar << metodo_pago;
+  Si (validacion_pago = 1) Entonces;
+    Mostrar << "El pago ha sido realizado correctamente, gracias por confiar en nosotros";
+  Sino
+    Mostrar << "Paga pelabolas.";
+  Fin_Si
 Fin_Procedimiento
