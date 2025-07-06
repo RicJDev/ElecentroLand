@@ -3,7 +3,7 @@ Inicio
   Var cantidad_habitacion: Entero;
   Mostrar << "Seleccione una opción";
   Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
-  Mostrar << "2: habitación Guanabana (habitacion con dual) precio: 20$ por noche";
+  Mostrar << "2: Habitación Guanabana (habitacion con dual) precio: 20$ por noche";
   Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
   Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
   Leer >> opcion_habitacion[nueva_id];
