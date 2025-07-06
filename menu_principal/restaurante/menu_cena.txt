@@ -1,9 +1,8 @@
 Procedimiento Cena(E/S: i, cantidad, ingrediente_1, ingrediente_2, ingrediente_3, contador: Entero, monto_pago, precio, dinero_restaurante: Real, restaurante_ingredientes_cantidades[i], restaurante_contadores[i]: Entero, restaurante_ingredientes_precios[i]: Real, validacion_pago: Booleano);
 Inicio
   Var opc_agenda, opc_cena, personas_agenda: Entero, R: Booleano;
-  Var ingrediente_1, ingrediente_2, ingrediente_3, ingrediente_4, ingrediente_5: Entero;
-  Var precio, cuenta_cliente = 0: Real;
-  Var contador = 0: Entero;
+  Var ingrediente_4, ingrediente_5: Entero;
+  Var cuenta_cliente = 0: Real;
 
   //Menú de entrada
   Mostrar << "Elija una opción para agendar";
