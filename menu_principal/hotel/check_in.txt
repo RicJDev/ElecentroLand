@@ -27,21 +27,42 @@ Inicio
     Fin_Mientras
 
     // Falta ingresar los datos (con sus validaciones) en la base
+    Mostrar << "Ingrese su nombre";
+    Leer >> cliente_nombre;
+    Mostrar << "Ingrese su cédula de identidad";
+    Leer >> cliente_cedula;
+    Mostrar << "Ingrese su email";
+    Leer >> cliente_email;
+    Mostrar << "Ingrese su número telefónico";
+    Leer >> cliente_telefono;
+    Mostrar << "Ingrese la habitación en la que se va a hospedar";
+    Leer >> cliente_habitacion;
+    Mostrar << "¿Se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
+    Leer >> cliente_acompañantes;
+    Mientras (cliente_habitacion < 1 OR cliente_habitacion > 4) OR (cliente_cedula < 0) OR (cliente_acompañantes < 0 OR cliente_acompañantes > 5) Hacer;
+      Mostrar << "Datos inválidos, ingreselos nuevamente";
+      Leer >> cliente_nombre;
+      Leer >> cliente_cedula;
+      Leer >> cliente_email;
+      Leer >> cliente_telefono;
+      Leer >> cliente_habitacion;
+      Leer >> cliente_acompañantes;
+    Fin_Mientras
 
-    Leer >> hotel_clientes_email[id_cliente];
-    Leer >> hotel_clientes_nombre[id_cliente];
-    Leer >> hotel_clientes_habitacion[id_cliente];
-    Leer >> hotel_clientes_acompan[id_cliente];
-    Leer >> hotel_clientes_dias_hospedaje[id_cliente];
-    Leer >> hotel_clientes_telefono[id_cliente];
-    Leer >> hotel_clientes_cedula[id_cliente];
+    hotel_clientes_nombre[id_cliente] = cliente_nombre;
+    hotel_clientes_cedula[id_cliente] = cliente_cedula;
+    hotel_clientes_email[id_cliente] = cliente_email;
+    hotel_clientes_telefono[id_cliente] = cliente_telefono;
+    hotel_clientes_habitacion[id_cliente] = cliente_habitacion;
+    hotel_clientes_acompan[id_cliente] = cliente_acompañantes;
+    hotel_clientes_dias_hospedaje[id_cliente] = cliente_dias_hospedaje;
 
     ingresos_hotel = ingresos_hotel + monto_pago;
 
     habitacion_vacantes = habitacion_vacantes - 1;
     habitacion_contador = habitacion_contador + 1;
 
-    Sino
+  Sino
 
     Mostrar << "Aca no somos caridad. Paga, pelabolas";
   Fin_Si
