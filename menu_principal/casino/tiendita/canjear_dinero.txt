@@ -3,6 +3,7 @@ Inicio
   Var monto_canjeado: Real;
   Var seguir_canje = 1, confirmar_transaccion: Booleano;
   Var cedula, banco, telefono: Cadena;
+  Var cantidad_fichas: entero;
 
   Mientras (seguir_canje = 1) Hacer;
     Si (saldo_disponible >= 10) Entonces;
