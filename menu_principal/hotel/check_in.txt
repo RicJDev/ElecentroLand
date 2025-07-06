@@ -53,6 +53,10 @@ Inicio
     Sino
         cliente_acompañantes = 0;
     Fin_Si
+    Mientras (habitacion_capacidad < clientes_acompañantes) Entonces;
+      Mostrar << "Los acompañantes no caben en esta habitación, ingrese la cantidad de acompañantes que estarán en esta habitación";
+      Leer >> clientes_acompañantes;
+    Fin_Mientras
     Mientras (cliente_habitacion < 1 OR cliente_habitacion > 4) OR (cliente_cedula < 0) Hacer;
       Mostrar << "Datos inválidos, ingreselos nuevamente";
       Leer >> cliente_nombre;
