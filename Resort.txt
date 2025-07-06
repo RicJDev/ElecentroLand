@@ -4,6 +4,7 @@ Inicio
 
   //Opciones de todo el resort
   Var opcion_menu, opcion_restaurante, opcion_inv, opcion_clientes: Entero;
+  Var dinero_total: Real;
 
   // Base de datos del Restaurante
   Var restaurante_ingredientes_cantidades[34]: Entero;
@@ -152,4 +153,6 @@ Inicio
   Fin_Para
 
   Mostrar << "Dinero recaudado del Bar Elecentro Drinks:", dinero_bar;
+  dinero_total = ingresos_hotel + dinero_bar + dinero_restaurante;
+  Mostrar << "El dinero recaudado en todo el resort asciende a: ", dinero_total, "$";
 Fin
