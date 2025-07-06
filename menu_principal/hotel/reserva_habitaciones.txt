@@ -1,4 +1,4 @@
-Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i]: Real);
+Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i], monto_pago: Real, validacion_pago: Booleano);
 Inicio
   Mostrar << "Seleccione una opción";
   Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
@@ -116,4 +116,12 @@ Inicio
       total_pagar_habitacion[nueva_id] = 45 * dias_hospedaje[nueva_id];
       Mostrar << "Estimado cliente usted ha elegido la Habitación Picha";
   Fin_Caso
+  monto_pago = total_pagar_habitacion[nueva_id];
+  metodo_pago(monto_pago, validacion_pago);
+  Mostrar << metodo_pago;
+  Si (validacion_pago = 1) Entonces;
+    Mostrar << "El pago ha sido realizado correctamente, gracias por confiar en nosotros";
+  Sino
+    Mostrar << "Paga pelabolas.";
+  Fin_Si
 Fin_Procedimiento
