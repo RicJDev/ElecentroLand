@@ -33,7 +33,7 @@ Inicio
           reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id],                                   cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
           Mostrar << reserva_habitaciones;
           Si (validacion_pago = 1) Entonces;
-            registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id],                                 nombres_titulares[nueva_id]);
+            registro_nuevo_cliente_habitacion_pago(nueva_id, cant_acompañantes[i], telefono[i], edad_usuario[i], email[i], nombres_titulares[i]);
             Mostrar << registro_nuevo_cliente_habitacion_pago;
           Sino
             Mostrar << "No se ha efectuado el pago correspondiente para poder registrarse en el hotel";
