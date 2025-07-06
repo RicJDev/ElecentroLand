@@ -4,13 +4,14 @@ Inicio
 
   Mostrar << "Gracias por haber elegido a Elecentroland para su visita a San Juan De Los Morros, vuelva pronto";
   Mostrar << "Ingrese su ID, por favor";
-  Leer >> i_reservacion;
+  Leer >> id_ingresado;
 
   Mientras (id_ingresado < 1) Hacer;
     Mostrar << "Por favor ingrese un ID valido";
-    Leer >> id_cliente;
+    Leer >> id_ingresado;
   Fin_Mientras
-  permitir_acceso =  validacion_usuario(id_cliente_reservacion, cantidad_titulares[i_cliente]);
+  permitir_acceso =  validacion_usuario(id_ingresado, cantidad_titulares[i_cliente]);
+
   Si (permitir_acceso = 0) Entonces;
     Mostrar << "Error el ID", id_ingresado, "no se encuentra en nuestra base de datos";
 
