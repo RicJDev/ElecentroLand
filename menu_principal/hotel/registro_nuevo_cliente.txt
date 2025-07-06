@@ -44,6 +44,7 @@ Inicio
     Mostrar << "|Total a pagar:", total_pagar_habitacion[nueva_id], "$", "|";
     Mostrar << "-------------------------------------------------------------------------";
 
+    cantidad_titulares[nueva_id] = 1;
   Sino
     Mostrar << "Ingrese los datos del titular del registro";
     Mostrar << "Ingrese su nombre y apellido";
@@ -85,5 +86,7 @@ Inicio
     Mostrar << "|Total a pagar: ", total_pagar_habitacion[nueva_id], "$", "|";
     Mostrar << "|Usted se ha hospedado con ", cant_acompañantes[nueva_id], "acompañantes", "|";
     Mostrar << "------------------------------------------------------------------------";
+
+    cantidad_titulares[nueva_id] = 1;
   Fin_Si
 Fin_Procedimiento
