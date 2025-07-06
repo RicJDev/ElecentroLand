@@ -67,7 +67,8 @@ Inicio
           Mostrar << "Numero no valido. Intente otra vez";
           Leer >> id_cliente;
         Fin_Mientras
-
+ 
+        // Verificar identidad
         Mostrar << "Ingrese su nombre";
         Leer >> cliente_nombre;
         Mostrar << "Ingrese su cédula de identidad";
@@ -87,6 +88,7 @@ Inicio
           Fin_Si
         Fin_Mientras
 
+        // Liberar el espacio de la base de datos
         Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND (cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
           Mostrar << "Gracias por hospedarse en nuestro hotel. Esperamos vuelva pronto!"
           cliente_habitacion = hotel_clientes_habitacion[id_cliente];
