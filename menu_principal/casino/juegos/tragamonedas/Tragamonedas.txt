@@ -1,9 +1,9 @@
-Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas_tragamonedas, rodillo[i][j]: Entero);
+Procedimiento Tragamoneda(E/S: saldo_disponible, fichas_apostadas, veces_jugadas_tragamonedas, rodillo[i][j], apuesta: Entero);
 Inicio
   Var R: Booleano;
-  Var apuesta: Entero;
   Var premio_giro: Entero;
   Var i, j: Entero;
+  var rodillo[3][3]:entero;
   Mostrar << " ------------------------------------------------------------------";
   Mostrar << "|                 BIENVENIDO A $FRUIT MONEY$                      |";
   Mostrar << "|                           REGLAS                                |";
@@ -15,10 +15,10 @@ Inicio
   Mostrar << "Querido usuario usted tiene", saldo_disponible, "fichas disponibles";
 
   Repetir
-    Mostrar << " ----------------------------------------------------";
+    Mostrar << "------------------------------------------------------";
     Mostrar << "|           ¿Cuanto saldo desea apostar?             |";
     Mostrar << "|    Montos de apuesta: min:1 ficha, max:50 fichas   |";
-    Mostrar << " ----------------------------------------------------";
+    Mostrar << "------------------------------------------------------";
     Leer >> apuesta;
 
     // Validación de apuesta
