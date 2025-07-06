@@ -69,9 +69,17 @@ Inicio
           Leer >> id_cliente;
         Fin_Mientras
 
+        Mostrar << "Ingrese su nombre";
+        Leer >> cliente_nombre;
+        Mostrar << "Ingrese su cédula de identidad";
+        Leer >> cliente_cedula;
+
         cliente_nombre = hotel_clientes_nombre[id_cliente];
         cliente_cedula = hotel_clientes_cedula[id_cliente];
-
+        cliente_nombre = "no asignado";
+        cliente_cedula = 0;
+        hotel_clientes_nombre[id_cliente] = cliente_nombre;
+        hotel_clientes_cedula[id_cliente] = cliente_cedula;
         // Es un numero del 0 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
         // Nota: si el numero es 0 quiere decir que ese espacio no ha sido ocupado o que se ha desocupado antes
 
