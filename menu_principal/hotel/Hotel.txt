@@ -2,7 +2,8 @@ Procedimiento Hotel(E/S: cantidad_habitacion[nueva_id]: Entero, fecha_salida[nue
 Inicio
   Repetir
     Var opc_hotel: Entero;
-
+    Var i_cliente = 1: Entero;
+    Var nueva_id = -1: Entero;
     Mostrar << "1: Registrar un nuevo cliente";
     Mostrar << "2: Check-out";
     Mostrar << "3: Salir del sistema";
@@ -15,10 +16,24 @@ Inicio
 
     En_Caso (opc_hotel > 0) Sea;
       Caso (opc_hotel = 1);
-        reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id],                                   cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
-        Mostrar << reserva_habitaciones;
-        registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id],                                 nombres_titulares[nueva_id]);
-        Mostrar << registro_nuevo_cliente_habitacion_pago;
+        i_cliente = 1;
+        Mientras (i_cliente <= 500) AND nueva_id = -1) Hacer;
+          Si(cantidad_titulares[i_cliente] = "no_asignado") Entonces;
+            nueva_id = i_cliente;
+          Fin_Si
+      
+          i_cliente = i_cliente + 1;
+        Fin_Mientras
+      
+        Si (nueva_id = -1) Entonces;
+          Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
+      
+        Sino
+          reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id],                                   cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
+          Mostrar << reserva_habitaciones;
+          registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id],                                 nombres_titulares[nueva_id]);
+          Mostrar << registro_nuevo_cliente_habitacion_pago;
+        Fin_Si
       Caso (opc_hotel = 2);
         check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4],         cantidad_titulares[nueva_id]);
         Mostrar << check_out;
