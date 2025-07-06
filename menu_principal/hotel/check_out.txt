@@ -1,4 +1,4 @@
-Procedimiento check_out(E/S: huespedes_total[i], telefono[i], edad_usuario[i], cantidad_habitacion[i], cantidad_titulares[i]: Entero, email[i], nombres_titulares[i]: Cadena);
+Procedimiento check_out(E/S: huespedes_total[i], telefono[i], edad_usuario[i], cantidad_habitacion[i], cantidad_titulares[i]: Entero, email[i], nombres_titulares[i]: Cadena, total_pagar_habitacion[i]: Real);
 Inicio
   Var i, id_ingresado: Entero;
 
@@ -28,6 +28,7 @@ Inicio
             telefono[id_ingresado] = 0;
             edad_usuario[id_ingresado] = 0;
             huespedes_total[id_ingresado] = 0;
+            total_pagar_habitacion[id_ingresado] = 0;
           Caso (opcion_habitacion[id_ingresado] = 2);
             cantidad_titulares[id_ingresado] = 0;
             cantidad_habitacion[2] = cantidad_habitacion[2] + 1;
@@ -37,6 +38,7 @@ Inicio
             telefono[id_ingresado] = 0;
             edad_usuario[id_ingresado] = 0;
             huespedes_total[id_ingresado] = 0;
+            total_pagar_habitacion[id_ingresado] = 0;
           Caso (opcion_habitacion[id_ingresado] = 3);
             cantidad_titulares[id_ingresado] = 0;
             cantidad_habitacion[3] = cantidad_habitacion[3] + 1;
@@ -46,6 +48,7 @@ Inicio
             telefono[id_ingresado] = 0;
             edad_usuario[id_ingresado] = 0;
             huespedes_total[id_ingresado] = 0;
+            total_pagar_habitacion[id_ingresado] = 0;
           Otro_Caso
             cantidad_titulares[id_ingresado] = 0;
             cantidad_habitacion[4] = cantidad_habitacion[4] + 1;
@@ -54,8 +57,8 @@ Inicio
             email[id_ingresado] = "no asignado";
             telefono[id_ingresado] = 0;
             edad_usuario[id_ingresado] = 0;
-            total_a_pagar[id_ingresado] = 0;
             huespedes_total[id_ingresado] = 0;
+            total_pagar_habitacion[id_ingresado] = 0;
         Fin_Caso
       Fin_Si
     Fin_Para
