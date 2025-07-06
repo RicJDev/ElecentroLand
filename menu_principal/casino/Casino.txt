@@ -1,7 +1,7 @@
-Procedimiento Casino(E/S: casino_nombres[i], casino_contrasenas[i]: Cadena, casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j]: Entero, casino_premios[i][j]: Booleano);
+Procedimiento Casino(E/S: casino_nombres[i], casino_contrasenas[i]: Cadena, casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], id_usuario: Entero, casino_premios[i][j]: Booleano);
 Inicio
-  var esta_en_registro, permitir_acceso, seguir_casino = 1: Booleano;
-  var id_usuario = -1, edad: Entero;
+  Var esta_en_registro, permitir_acceso, seguir_casino = 1: Booleano;
+  Var edad: Entero;
 
   Mostrar << "Bienvenido al casino.";
 

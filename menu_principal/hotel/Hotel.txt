@@ -28,15 +28,15 @@ Inicio
         Si (nueva_id = -1) Entonces;
           Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
 
-          Sino
+        Sino
           Mostrar << "Listado de Habitaciones:";
-          reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id], cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
+          reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id],                                   cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
           Mostrar << reserva_habitaciones;
-          registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id]);
+          registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id],                                 nombres_titulares[nueva_id]);
           Mostrar << registro_nuevo_cliente_habitacion_pago;
         Fin_Si
       Caso (opc_hotel = 2);
-        check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4], cantidad_titulares[nueva_id]);
+        check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4],         cantidad_titulares[nueva_id]);
         Mostrar << check_out;
       Otro_Caso
         opc_hotel = 3;
