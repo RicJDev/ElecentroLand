@@ -88,7 +88,7 @@ Inicio
         Casino(i, j, casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], casino_premios[i][j]);
         Mostrar << Casino;
       Caso (opcion_menu = 2);
-        Hotel(i, hotel_habitaciones_tipo[i], hotel_clientes_nombre[i], hotel_clientes_email[i],   hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i], hotel_habitaciones_precio[i], ingresos_hotel);
+        Hotel(i, id_cliente, cliente_habitacion, hotel_habitaciones_tipo[i], habitacion_tipo, hotel_clientes_nombre[i], hotel_clientes_email[i],                      habitacion_vacantes, habitacion_capacidad, habitacion_contador, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i],                             hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i],                                   hotel_clientes_telefono[i], hotel_clientes_cedula[i], hotel_habitaciones_precio[i], habitacion_precio, ingresos_hotel);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
         Restaurante(opcion_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i]);
