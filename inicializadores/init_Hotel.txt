@@ -1,17 +1,34 @@
-Procedimiento init_Hotel(E/S: cantidad_titulares[i], huespedes_total[i], telefono[i], edad_usuario[i], cant_acompañantes[i], cantidad_habitacion[i]: Entero, nombres_titulares[i], email[i]: Cadena);
+Procedimiento init_Hotel(E/S: hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i]: Entero, hotel_habitaciones_precio[i]: Real);
 Inicio
+  hotel_habitaciones_tipo[1] = "Elecentro";
+  hotel_habitaciones_tipo[2] = "Guanabana";
+  hotel_habitaciones_tipo[3] = "Maravillas";
+  hotel_habitaciones_tipo[4] = "Picha";
+
+  hotel_habitaciones_vacantes[1] = 90;
+  hotel_habitaciones_vacantes[2] = 50;
+  hotel_habitaciones_vacantes[3] = 40;
+  hotel_habitaciones_vacantes[4] = 25;
+
+  hotel_habitaciones_capacidad[1] = 1;
+  hotel_habitaciones_capacidad[2] = 2;
+  hotel_habitaciones_capacidad[3] = 4;
+  hotel_habitaciones_capacidad[4] = 6;
+
+  hotel_habitaciones_precio[1] = 10;
+  hotel_habitaciones_precio[2] = 20;
+  hotel_habitaciones_precio[3] = 35;
+  hotel_habitaciones_precio[4] = 45;
+
   Para (i = 1 Hasta i = 500) Hacer;
-    cantidad_titulares[i] = 0;
-    nombres_titulares[i] = "no_asignado";
-    huespedes_total[i] = 0;
-    email[i] = "no_asignado";
-    telefono[i] = 0;
-    edad_usuario[i] = 0;
-    cedula[i] = 0;
-    cant_acompañantes[i] = 0;
-  Fin_Para 
-cantidad_habitacion[1] = 90;
-cantidad_habitacion[2] = 50;
-cantidad_habitacion[3] = 40;
-cantidad_habitacion[4] = 25;
+    hotel_usuarios_email[i] = "no_asignado";
+    hotel_usuarios_nombre[i] = "no_asignado";
+    hotel_usuarios_llegada[i] = "no_asignado";
+    hotel_usuarios_salida[i] = "no_asignado";
+
+    hotel_usuarios_acompan[i] = 0;
+    hotel_usuarios_dias_hospedaje[i] = 0;
+    hotel_usuarios_telefono[i] = 0;
+    hotel_usuarios_cedula[i] = 0;
+  Fin_Para
 Fin_Procedimiento

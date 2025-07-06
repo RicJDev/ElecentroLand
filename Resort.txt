@@ -6,7 +6,7 @@ Inicio
   Var opcion_menu, opcion_restaurante, opcion_inv, opcion_clientes: Entero;
   Var dinero_total: Real;
 
-  // Base de datos del Restaurante
+  // Variables del Restaurante
   Var restaurante_ingredientes_cantidades[34]: Entero;
   Var restaurante_contadores[18]: Entero;
   Var restaurante_ingredientes_precio[18]: Real;
@@ -14,20 +14,24 @@ Inicio
   Var restaurante_platillos[18]: Cadena;
   Var dinero_restaurante: Real;
 
-  // Base de datos del Bar
+  // Variables del Bar
   Var bar_ingredientes[8]: Cadena;
   Var bar_ingredientes_cantidades[8]: Entero;
   Var bar_contadores[8]: Entero;
   Var bar_ingredientes_precio[8]: Real;
   Var dinero_bar: Real;
 
-  // Base de datos del Hotel
-  Var nombres_titulares[500], email[500], fecha_salida[500], fecha_llegada[500]: Cadena;
-  Var cantidad_titulares[500], cant_acompañantes[500], telefono[500], edad_usuario[500], cedula[500], cantidad_habitacion[4], dias_hospedaje[500], opcion_habitacion[4]: Entero;
-  Var ingresos_hotel = 0, total_pagar_habitacion[500]: Real;
-  Var existe_usuario: Booleano;
+  // Variables del Hotel
+  Var hotel_habitaciones_tipo[4]: Cadena;
+  Var hotel_habitaciones_vacantes[4], hotel_habitaciones_contadores[4], hotel_habitaciones_capacidad[4]: Entero;
+  Var hotel_habitaciones_precio[4]: Real;
 
-  // Base de datos del Casino
+  Var hotel_usuarios_nombre[500], hotel_usuarios_email[500], hotel_usuarios_llegada[500], hotel_usuarios_salida[500]: Cadena;
+  Var hotel_usuarios_acompan[500], hotel_usuarios_dias_hospedaje[500], hotel_usuarios_telefono[500], hotel_usuarios_cedula[500]: Entero;
+
+  Var ingresos_hotel = 0: Real;
+
+  // Variables del Casino
   Var fichas_apostadas: Entero;
   Var casino_premios[100][10]: Booleano;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
@@ -47,17 +51,17 @@ Inicio
   Var modo_elegido, apuesta, seleccion, multiplicador: Entero, porcentaje_victorias: Real;
   Var grupo1[8], grupo2[8], grupo3[8], grupo4[8]: Entero;
 
-  // Inicializando DB del Restaurante
+  // Inicializando base de datos del Restaurante
   init_Restaurante(restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precio[i], restaurante_ingredientes[i]);
 
-  // Inicializando DB del Bar
+  // Inicializando base de datos del Bar
   init_Bar(bar_ingredientes_cantidades[i], bar_contadores[i], bar_ingredientes[i], bar_ingredientes_precio[i]);
 
-  // Inicializando DB del Casino
+  // Inicializando base de datos del Casino
   init_Casino(casino_premios[i][j], casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j]);
 
-  // Inicializando DB del Hotel
-  init_Hotel(nombres_titulares[i], email[i], cantidad_titulares[i], huespedes_total[i], telefono[i], edad_usuario[i], cedula[i]);
+  // Inicializando base de datos del Hotel
+  init_Hotel(hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i], hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i], hotel_habitaciones_precio[i]);
 
   Repetir
     Mostrar << "¡Bienvenido al Resort ElecentroLand!, ingrese a dónde quiere ir";
@@ -78,7 +82,7 @@ Inicio
         Casino(i, j, casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], casino_premios[i][j]);
         Mostrar << Casino;
       Caso (opcion_menu = 2);
-        Hotel(contador_clientes, cant_acompañantes, i, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i], telefono[i], edad_usuario[i], cedula[i], id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i], fecha_salida[i], nombre_titulares[i], email[i]);
+        Hotel(i, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i], hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i], hotel_habitaciones_precio[i], ingresos_hotel);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
         Restaurante(opcion_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i]);

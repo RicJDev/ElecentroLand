@@ -1,51 +1,59 @@
-Procedimiento Hotel(E/S: cantidad_habitacion[i]: Entero, fecha_salida[i]: Cadena, fecha_llegada[i]: Cadena, dias_hospedaje[i]: Entero, total_pagar_habitacion[i]: Real, opcion_habitacion[i]: Entero, huespedes_total[i]: Entero, telefono[i]: Entero, edad_usuario[i]: Entero, email[i]: Cadena, nombres_titulares[i]: Cadena, existe_usuario: Booleano, cantidad_titulares[i]);
+Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
 Inicio
+  Var habitacion_tipo: Cadena;
+  Var opcion_hotel, opcion_habitacion, habitacion_vacantes, habitacion_capacidad, habitacion_contador: Entero;
+  Var habitacion_precio: Real;
+
   Repetir
-    Var opc_hotel: Entero;
-    Var i = 1: Entero;
-    Var nueva_id = -1: Entero;
-    Mostrar << "1: Registrar un nuevo cliente";
+    Mostrar << "1: Realizar una reservacion";
     Mostrar << "2: Check-out";
     Mostrar << "3: Salir del sistema";
-    Leer >> opc_hotel;
+    Leer >> opcion_hotel;
 
-    Mientras (opc_hotel < 1 OR opc_hotel > 3) Hacer;
-      Mostrar << "Estimado usuario, error en opcion seleccionada, intente de nuevo";
-      Leer >> opc_hotel;
+    Mientras (opcion_hotel < 1 OR opcion_hotel > 3) Hacer;
+      Mostrar << "Estimado usuario, error en opcion seleccionada. Intente de nuevo";
+      Leer >> opcion_hotel;
     Fin_Mientras
 
-    En_Caso (opc_hotel > 0) Sea;
-      Caso (opc_hotel = 1);
-        i = 1;
-        Mientras (i <= 500) AND nueva_id = -1) Hacer;
-          Si(cantidad_titulares[i] = "no_asignado")Entonces;
-            nueva_id = i;
-          Fin_Si
+    En_Caso (opcion_hotel > 0) Sea;
+      Caso (opcion_hotel = 1);
+        Mostrar << "Seleccione una opción";
+        Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
+        Mostrar << "2: Habitación Guanabana (habitacion con dual) precio: 20$ por noche";
+        Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
+        Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
+        Leer >> opcion_habitacion;
 
-          i = i + 1;
+        Mientras (opcion_habitacion < 1 OR opcion_habitacion > 4) Hacer;
+          Mostrar << "Error por favor elija una habitacion disponible";
+          Leer >> opcion_habitacion;
         Fin_Mientras
 
-        Si (nueva_id = -1) Entonces;
-          Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
+        habitacion_tipo = hotel_habitaciones_tipo[opcion_habitacion];
+        habitacion_capacidad = hotel_habitaciones_capacidad[opcion_habitacion];
+        habitacion_precio = hotel_habitaciones_precio[opcion_habitacion];
+        habitacion_vacantes = hotel_habitaciones_vacantes[opcion_habitacion];
+        habitacion_contador = hotel_habitaciones_contadores[opcion_habitacion];
 
-        Sino
-          Mostrar << "Listado de Habitaciones:";
-          reserva_habitaciones(fecha_salida[i], fecha_llegada[i], nueva_id, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i],                              total_pagar_habitacion[i], monto_pago, ingresos_hotel, validacion_pago);
-          Mostrar << reserva_habitaciones;
-          Si (validacion_pago = 1) Entonces;
-            registro_nuevo_cliente_habitacion_pago(nueva_id, cant_acompañantes[i], telefono[i], edad_usuario[i], email[i], nombres_titulares[i]);
-            Mostrar << registro_nuevo_cliente_habitacion_pago;
+        Si (habitacion_vacantes > 0) Entonces;
+          // Por hacer
+          // 1. Cobrar
+          // 2. Registrar
+
           Sino
-            Mostrar << "No se ha efectuado el pago correspondiente para poder registrarse en el hotel";
-          Fin_Si
+          
+          Mostrar << "Lo sentimos. Todas las habitaciones de ese tipo ya han sido ocupadas"
         Fin_Si
-      Caso (opc_hotel = 2);
-        check_out(cant_acompañantes[i], telefono[i], edad_usuario[i], cantidad_habitacion[i], cantidad_titulares[i], email[i], nombres_titulares[i],                    total_pagar_habitacion[i]);
+
+        hotel_habitaciones_vacantes[opcion_habitacion] = habitacion_vacantes;
+        hotel_habitaciones_contadores[opcion_habitacion] = habitacion_contador;
+      Caso (opcion_hotel = 2);
+        check_out(cant_acompañantes[i], telefono[i], edad_usuario[i], cantidades_habitaciones[i], cantidad_titulares[i], email[i], nombres_titulares[i], total_pagar_habitacion[i]);
         Mostrar << check_out;
       Otro_Caso
-        opc_hotel = 3;
+        opcion_hotel = 3;
     Fin_Caso
 
-    Hasta (opc_hotel = 3);
+    Hasta (opcion_hotel = 3);
   Fin_Repetir
 Fin_Procedimiento
