@@ -1,11 +1,11 @@
-Procedimiento hotel(cantidad_habitacion[4]: entero, fecha_salida[nueva_id]: cadena, fecha_llegada[nueva_id]: cadena, dias_hospedaje[nueva_id]: Entero, total_pagar_habitacion[nuevo_id]: entero, opcion_habitacion[nueva_id]: entero, huespedes_total[nueva_id]: entero, telefono[nueva_id]: entero, edad_usuario[nueva_id]: entero, email[nueva_id]: cadena, nombres_titulares[nueva_id]: cadena, existe_usuario: Entero, cantidad_titulares[i_cliente]);
+Procedimiento hotel(E/S: cantidad_habitacion[i]: Entero, fecha_salida[nueva_id]: Cadena, fecha_llegada[nueva_id]: Cadena, dias_hospedaje[nueva_id]: Entero, total_pagar_habitacion[nuevo_id]: Real, opcion_habitacion[nueva_id]: Entero, huespedes_total[nueva_id]: Entero, telefono[nueva_id]: Entero, edad_usuario[nueva_id]: Entero, email[nueva_id]: Cadena, nombres_titulares[nueva_id]: Cadena, existe_usuario: Entero, cantidad_titulares[i_cliente]);
 Inicio
   Repetir
-    var opc_hotel = entero;
+    Var opc_hotel: Entero;
 
-    Mostrar << "1:Registrar un nuevo cliente";
-    Mostrar << "2:Check-out";
-    Mostrar << "3:salir del sistema";
+    Mostrar << "1: Registrar un nuevo cliente";
+    Mostrar << "2: Check-out";
+    Mostrar << "3: Salir del sistema";
     Leer >> opc_hotel;
 
     Mientras (opc_hotel < 1 OR opc_hotel > 3) Hacer;
@@ -15,10 +15,10 @@ Inicio
 
     En_Caso (opc_hotel > 0) Sea;
       Caso (opc_hotel = 1);
-        registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id]);
+        registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id],                                 nombres_titulares[nueva_id]);
         Mostrar << registro_nuevo_cliente_habitacion_pago;
       Caso (opc_hotel = 2);
-        check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4], cantida_titulares[nueva_id]);
+        check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4],         cantidad_titulares[nueva_id]);
         Mostrar << check_out;
       Otro_Caso
         opc_hotel = 3;
