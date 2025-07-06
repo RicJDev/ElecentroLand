@@ -4,10 +4,9 @@ Inicio
   Var cliente_nombre, cliente_email: Cadena;
   Var cliente_edad, cliente_habitacion, cliente_dias_hospedaje: Entero;
 
-  Var validacion_pago: Booleano;
   Var habitacion_tipo: Cadena;
   Var opcion_hotel, opcion_habitacion, habitacion_vacantes, habitacion_capacidad, habitacion_contador: Entero;
-  Var habitacion_precio, monto_pago: Real;
+  Var habitacion_precio: Real;
 
   Repetir
     Mostrar << "1: Realizar una reservacion";
@@ -28,7 +27,7 @@ Inicio
         Si (cliente_edad < 18) Entonces;
           Mostrar << "Lo sentimos. Necesitas un representante mayor de edad para proseguir";
 
-          Sino
+        Sino
 
           Mostrar << "Seleccione una opción";
           Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
@@ -52,7 +51,7 @@ Inicio
             check_in(i, habitacion_tipo, habitacion_capacidad, habitacion_precio, habitacion_contador, habitacion_vacantes, hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]);
             Mostrar << check_in;
 
-            Sino
+          Sino
 
             Mostrar << "Lo sentimos. Todas las habitaciones de ese tipo ya han sido ocupadas";
           Fin_Si
@@ -73,13 +72,22 @@ Inicio
         Leer >> cliente_nombre;
         Mostrar << "Ingrese su cédula de identidad";
         Leer >> cliente_cedula;
+        Mientras (cliente_nombre != hotel_clientes_nombre[id_cliente]) AND cliente_cedula != hotel_clientes_cedula[id_cliente]) Hacer;
+          Mostrar << "Datos incorrectos, intente nuevamente";
+          Mostrar << "Ingrese su ID";
+          Leer >> id_cliente;
+          Mostrar << "Ingrese su nombre";
+          Leer >> cliente_nombre;
+          Mostrar << "Ingrese su cédula de identidad";
+          Leer >> cliente_cedula;
+        Fin_Mientras
+        Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
+          cliente_nombre = "no asignado";
+          cliente_cedula = 0;
+          hotel_clientes_nombre[id_cliente] = cliente_nombre;
+          hotel_clientes_cedula[id_cliente] = cliente_cedula;
+        Fin_Si
 
-        cliente_nombre = hotel_clientes_nombre[id_cliente];
-        cliente_cedula = hotel_clientes_cedula[id_cliente];
-        cliente_nombre = "no asignado";
-        cliente_cedula = 0;
-        hotel_clientes_nombre[id_cliente] = cliente_nombre;
-        hotel_clientes_cedula[id_cliente] = cliente_cedula;
         // Es un numero del 0 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
         // Nota: si el numero es 0 quiere decir que ese espacio no ha sido ocupado o que se ha desocupado antes
 
