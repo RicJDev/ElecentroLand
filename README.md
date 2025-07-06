@@ -17,6 +17,35 @@ Finalmente, este repositorio cuenta como documentación, ya que incluye la infor
 
 Si ya ha leído la presentación del proyecto es probable que no encuentre casi nada nuevo en este README. Sin embargo, se ha tratado de condensar y resumir lo más relevante para evitar repeticiones.
 
+## Diagrama de flujo general
+
+```mermaid
+flowchart TD
+    Inicio([Inicio])
+    Bienvenida[Mostrar pantalla de bienvenida]
+    Menu{¿A qué área deseas ir?}
+    Hotel[Módulo Hotel]
+    Casino[Módulo Casino]
+    Restaurante[Módulo Restaurante]
+    Bar[Módulo Bar]
+    Repetir{¿Desea ir a otra área?}
+    Salir([Salir del sistema])
+
+    Inicio --> Bienvenida --> Menu
+    Menu --> Hotel
+    Menu --> Casino
+    Menu --> Restaurante
+    Menu --> Bar
+
+    Hotel --> Repetir
+    Casino --> Repetir
+    Restaurante --> Repetir
+    Bar --> Repetir
+
+    Repetir -- Sí --> Menu
+    Repetir -- No --> Salir
+```
+
 ## Representación del proyecto como árbol de archivos
 
 ```
