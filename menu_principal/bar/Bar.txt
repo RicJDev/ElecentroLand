@@ -1,4 +1,4 @@
-Procedimiento Bar(E/S: opcion_inv, opcion_clientes, cantidad: Entero, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, cuenta_cliente, bar_ingredientes_precios[i_bar], dinero_bar: Real);
+Procedimiento Bar(E/S: opcion_inv, opcion_clientes, cantidad: Entero, bar_ingredientes_cantidades[i], bar_contadores[i]: Entero, cuenta_cliente, bar_ingredientes_precios[i], dinero_bar: Real);
 Inicio
   Var R: Booleano;
 
@@ -15,11 +15,11 @@ Inicio
     Fin_Mientras
 
     Si (opcion_inv = 1) Entonces;
-      Alimentos(opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i_bar], validacion_pago);
+      Alimentos(opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i], validacion_pago);
       Mostrar << Alimentos;
 
       Sino
-      Bebidas(opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i_bar], validacion_pago);
+      Bebidas(opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i], validacion_pago);
       Mostrar << Bebidas;
     Fin_Si
 

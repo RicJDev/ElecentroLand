@@ -1,4 +1,4 @@
-Procedimiento dibujos_usuario(E: premios_canjeados[j_casino]: Booleano, nombre: Cadena);
+Procedimiento dibujos_usuario(E: premios_canjeados[j]: Booleano, nombre: Cadena);
 Inicio
   var status = 0, seguir_viendo = 1: Booleano;
   var id_dibujo, c_dibujos = 0: Entero;
@@ -17,10 +17,10 @@ Inicio
     Mostrar << "10. Alguien que use el arma por ti, ya que tambien soy informatico y se que ninguno va al gym";
 
     Mostrar << "De los cuales tienes: ";
-    Para (j_casino = 1 Hasta j_casino = 10) Hacer;
-      status = premios_canjeados[j_casino];
+    Para (j = 1 Hasta j = 10) Hacer;
+      status = premios_canjeados[j];
       Si (status = 1) Entonces;
-        Mostrar << "Dibujo: ", j_casino;
+        Mostrar << "Dibujo: ", j;
         c_dibujos = c_dibujos + 1;
       Fin_Si
     Fin_Para

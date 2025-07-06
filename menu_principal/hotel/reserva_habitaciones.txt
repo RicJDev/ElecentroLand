@@ -1,4 +1,4 @@
-Procedimiento reserva_habitaciones(E/S: fecha_salida[nueva_id], fecha_llegada[nueva_id]: Cadena, dias_hospedaje[nueva_id], opcion_habitacion[nueva_id], cantidad_habitacion[nueva_id]: Entero, total_pagar_habitacion[nueva_id]: Real);
+Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i]: Real);
 Inicio
   Mostrar << "Seleccione una opción";
   Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";

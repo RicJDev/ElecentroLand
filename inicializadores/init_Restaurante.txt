@@ -1,4 +1,4 @@
-Procedimiento init_Restaurante(E/S: restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante]: Entero, restaurante_ingredientes_precio[i_restaurante]: Real, restaurante_ingredientes[i_restaurante], restaurante_platillos[i_restaurante]: Cadena);
+Procedimiento init_Restaurante(E/S: restaurante_ingredientes_cantidades[i], restaurante_contadores[i]: Entero, restaurante_ingredientes_precio[i]: Real, restaurante_ingredientes[i], restaurante_platillos[i]: Cadena);
 Inicio
   restaurante_ingredientes[1] = "panqueques";
   restaurante_ingredientes[2] = "patatas";
@@ -114,7 +114,7 @@ Inicio
   restaurante_ingredientes_precio[17] = 10;
   restaurante_ingredientes_precio[18] = 15;
 
-  Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
-    restaurante_contadores[i_restaurante] = 0;
+  Para (i = 1 Hasta i = 18) Hacer;
+    restaurante_contadores[i] = 0;
   Fin_Para
 Fin_Procedimiento

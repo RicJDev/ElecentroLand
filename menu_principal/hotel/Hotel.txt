@@ -1,8 +1,8 @@
-Procedimiento Hotel(E/S: cantidad_habitacion[nueva_id]: Entero, fecha_salida[nueva_id]: Cadena, fecha_llegada[nueva_id]: Cadena, dias_hospedaje[nueva_id]: Entero, total_pagar_habitacion[nueva_id]: Real, opcion_habitacion[nueva_id]: Entero, huespedes_total[nueva_id]: Entero, telefono[nueva_id]: Entero, edad_usuario[nueva_id]: Entero, email[nueva_id]: Cadena, nombres_titulares[nueva_id]: Cadena, existe_usuario: Booleano, cantidad_titulares[i_cliente]);
+Procedimiento Hotel(E/S: cantidad_habitacion[i]: Entero, fecha_salida[i]: Cadena, fecha_llegada[i]: Cadena, dias_hospedaje[i]: Entero, total_pagar_habitacion[i]: Real, opcion_habitacion[i]: Entero, huespedes_total[i]: Entero, telefono[i]: Entero, edad_usuario[i]: Entero, email[i]: Cadena, nombres_titulares[i]: Cadena, existe_usuario: Booleano, cantidad_titulares[i]);
 Inicio
   Repetir
     Var opc_hotel: Entero;
-    Var i_cliente = 1: Entero;
+    Var i = 1: Entero;
     Var nueva_id = -1: Entero;
     Mostrar << "1: Registrar un nuevo cliente";
     Mostrar << "2: Check-out";
@@ -16,27 +16,27 @@ Inicio
 
     En_Caso (opc_hotel > 0) Sea;
       Caso (opc_hotel = 1);
-        i_cliente = 1;
-        Mientras (i_cliente <= 500) AND nueva_id = -1) Hacer;
-          Si(cantidad_titulares[i_cliente] = "no_asignado") Entonces;
-            nueva_id = i_cliente;
+        i = 1;
+        Mientras (i <= 500) AND nueva_id = -1) Hacer;
+          Si(cantidad_titulares[i] = "no_asignado")Entonces;
+            nueva_id = i;
           Fin_Si
-      
-          i_cliente = i_cliente + 1;
+
+          i = i + 1;
         Fin_Mientras
-      
+
         Si (nueva_id = -1) Entonces;
           Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
-      
-        Sino
+
+          Sino
           Mostrar << "Listado de Habitaciones:";
-          reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id],                                   cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
+          reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id], cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
           Mostrar << reserva_habitaciones;
-          registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id],                                 nombres_titulares[nueva_id]);
+          registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id]);
           Mostrar << registro_nuevo_cliente_habitacion_pago;
         Fin_Si
       Caso (opc_hotel = 2);
-        check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4],         cantidad_titulares[nueva_id]);
+        check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4], cantidad_titulares[nueva_id]);
         Mostrar << check_out;
       Otro_Caso
         opc_hotel = 3;

@@ -1,4 +1,4 @@
-Procedimiento menu_juegos(E/S: casino_nombres[i_casino]: Cadena, casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]: Entero, casino_premios[i_casino][j_casino]: Booleano, id_usuario: Entero);
+Procedimiento menu_juegos(E/S: casino_nombres[i]: Cadena, casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j]: Entero, casino_premios[i][j]: Booleano, id_usuario: Entero);
 Inicio
   var opcion_juegos: Entero;
   var nombre: Cadena;
@@ -8,8 +8,8 @@ Inicio
   nombre = casino_nombres[id_usuario];
   saldo_disponible = casino_saldos_fichas[id_usuario];
 
-  Para (j_casino = 1 Hasta j_casino = 10) Hacer;
-    premios_canjeados[j_casino] = casino_premios[id_usuario][j_casino];
+  Para (j = 1 Hasta j = 10) Hacer;
+    premios_canjeados[j] = casino_premios[id_usuario][j];
   Fin_Para
 
   Mostrar << "Bienvenido seas, ", nombre;
@@ -40,11 +40,11 @@ Inicio
       Caso (opcion_juegos = 4);
         Tragamonedas(saldo_disponible);
       Otro_Caso(opcion_juegos = 5);
-        Tiendita(nombre, saldo_disponible, premios_canjeados[j_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]);
+        Tiendita(nombre, saldo_disponible, premios_canjeados[j], casino_stock_premios[j], casino_valor_premios[j]);
     Fin_Caso
 
-    Para (j_casino = 1 Hasta j_casino = 10) Hacer;
-      casino_premios[id_usuario][j_casino] = premios_canjeados[j_casino];
+    Para (j = 1 Hasta j = 10) Hacer;
+      casino_premios[id_usuario][j] = premios_canjeados[j];
     Fin_Para
 
     casino_saldos_fichas[id_usuario] = saldo_disponible;

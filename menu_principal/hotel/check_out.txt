@@ -1,6 +1,6 @@
-Procedimiento check_out(E/S: huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id]: Entero, email[nueva_id], nombres_titulares[nueva_id]: Cadena, cantidad_habitacion[nueva_id], cantidad_titulares[nueva_id]: entero);
+Procedimiento check_out(E/S: huespedes_total[i], telefono[i], edad_usuario[i]: Entero, email[i], nombres_titulares[i]: Cadena, cantidad_habitacion[i], cantidad_titulares[i]: entero);
 Inicio
-  Var i_reservacion, I: Entero;
+  Var i, I: Entero;
 
   Mostrar << "Gracias por haber elegido a Elecentroland para su visita a San Juan De Los Morros, vuelva pronto";
   Mostrar << "Ingrese su ID, por favor";
@@ -10,14 +10,14 @@ Inicio
     Mostrar << "Por favor ingrese un ID valido";
     Leer >> id_ingresado;
   Fin_Mientras
-  permitir_acceso =  validacion_usuario(id_ingresado, cantidad_titulares[i_cliente]);
+  permitir_acceso =  validacion_usuario(id_ingresado, cantidad_titulares[i]);
 
   Si (permitir_acceso = 0) Entonces;
     Mostrar << "Error el ID", id_ingresado, "no se encuentra en nuestra base de datos";
 
   Sino
-    Para (i_cliente = 1 Hasta i_cliente = 500) Hacer;
-      Si (cantidad_titulares[i_cliente] = id_ingresado) Entonces;
+    Para (i = 1 Hasta i = 500) Hacer;
+      Si (cantidad_titulares[i] = id_ingresado) Entonces;
         En_Caso (opcion_habitacion[id_ingresado] > 0) Sea;
           Caso (opcion_habitacion[id_ingresado] = 1);
             cantidad_titulares[id_ingresado] = 0;

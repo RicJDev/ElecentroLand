@@ -1,4 +1,4 @@
-Procedimiento inicio_sesion(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]: Booleano, id_usuario: Entero, S: permitir_acceso: Booleano);
+Procedimiento inicio_sesion(E/S: casino_nombres[i], casino_contrasenas[i]: Cadena, casino_edades[i], casino_saldos_fichas[i]: Entero, casino_premios[i][j]: Booleano, id_usuario: Entero, S: permitir_acceso: Booleano);
 Inicio
   var nombre_busqueda, contrasena_asociada, contrasena_comparacion: Cadena;
   var existe_nombre = 0: Booleano;
@@ -7,10 +7,10 @@ Inicio
   Mostrar << "Ingrese su nombre";
   Leer >> nombre_busqueda;
 
-  Para (i_casino = 1 Hasta i_casino = 100) Hacer;
-    Si (nombre_busqueda = casino_nombres[i_casino]) Entonces;
+  Para (i = 1 Hasta i = 100) Hacer;
+    Si (nombre_busqueda = casino_nombres[i]) Entonces;
       existe_nombre = 1;
-      id_usuario = i_casino;
+      id_usuario = i;
     Fin_Si
   Fin_Para
 

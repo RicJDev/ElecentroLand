@@ -1,4 +1,4 @@
-Procedimiento init_Bar(E/S: bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar]: Entero, bar_ingredientes[i_bar]: Cadena, bar_ingredientes_precio[i_bar]: Real);
+Procedimiento init_Bar(E/S: bar_ingredientes_cantidades[i], bar_contadores[i]: Entero, bar_ingredientes[i]: Cadena, bar_ingredientes_precio[i]: Real);
 Inicio
   bar_ingredientes[1] = "papas fritas";
   bar_ingredientes[2] = "mini hamburguesas";
@@ -30,7 +30,7 @@ Inicio
   bar_ingredientes_precio[7] = 8;
   bar_ingredientes_precio[8] = 5;
 
-  Para (i_bar = 1 Hasta i_bar = 8) Hacer;
-    bar_contadores[i_bar] = 0;
+  Para (i = 1 Hasta i = 8) Hacer;
+    bar_contadores[i] = 0;
   Fin_Para
 Fin_Procedimiento

@@ -1,4 +1,4 @@
-Procedimiento Casino(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]: Entero, casino_premios[i_casino][j_casino]: Booleano);
+Procedimiento Casino(E/S: casino_nombres[i], casino_contrasenas[i]: Cadena, casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j]: Entero, casino_premios[i][j]: Booleano);
 Inicio
   var esta_en_registro, permitir_acceso, seguir_casino = 1: Booleano;
   var id_usuario = -1, edad: Entero;
@@ -11,17 +11,17 @@ Inicio
     Leer >> esta_en_registro;
 
     Si (esta_en_registro = 1) Entonces;
-      inicio_sesion(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario, permitir_acceso);
+      inicio_sesion(casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_premios[i][j], id_usuario, permitir_acceso);
       Mostrar << inicio_sesion;
 
       Si (permitir_acceso = 1) Entonces;
-        menu_juegos(casino_nombres[i_casino], casino_saldos_fichas[i_casino], casino_premios[i_casino][j_casino], id_usuario);
+        menu_juegos(casino_nombres[i], casino_saldos_fichas[i], casino_premios[i][j], id_usuario);
         Mostrar << menu_juegos;
       Fin_Si
     Fin_Si
 
     Si (esta_en_registro = 0) Entonces;
-      registro_nuevo_usuario(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino]);
+      registro_nuevo_usuario(casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i]);
       Mostrar << registro_nuevo_usuario;
     Fin_Si
 

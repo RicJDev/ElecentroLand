@@ -1,14 +1,14 @@
-Procedimiento registro_nuevo_usuario(E/S: casino_nombres[i_casino], casino_contrasenas[i_casino]: Cadena, casino_edades[i_casino], casino_saldos_fichas[i_casino]: Entero, casino_premios[i_casino][j_casino]: Cadena, id_usuario: Entero);
+Procedimiento registro_nuevo_usuario(E/S: casino_nombres[i], casino_contrasenas[i]: Cadena, casino_edades[i], casino_saldos_fichas[i]: Entero, casino_premios[i][j]: Cadena, id_usuario: Entero);
 Inicio
   var nombre_registro, contrasena_registro: Cadena;
-  var i_local = 1, nueva_id = -1, edad_registro: Entero;
+  var i = 1, nueva_id = -1, edad_registro: Entero;
 
-  Mientras (i_local <= 100 AND nueva_id = -1) Hacer;
-    Si (casino_nombres[i_local] = "no_asignado" AND casino_contrasenas[i_local] = "no_asignado") Entonces;
-      nueva_id = i_local;
+  Mientras (i <= 100 AND nueva_id = -1) Hacer;
+    Si (casino_nombres[i] = "no_asignado" AND casino_contrasenas[i] = "no_asignado") Entonces;
+      nueva_id = i;
     Fin_Si
 
-    i_local = i_local + 1;
+    i = i + 1;
   Fin_Mientras
 
   Si (nueva_id = -1) Entonces;

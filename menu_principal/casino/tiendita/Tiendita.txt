@@ -1,4 +1,4 @@
-Procedimiento Tiendita(E/S: nombre: Cadena, saldo_disponible: Entero, premios_canjeados[j_casino]: Booleano, casino_stock_premios[j_casino], casino_valor_premios[j_casino]: Entero);
+Procedimiento Tiendita(E/S: nombre: Cadena, saldo_disponible: Entero, premios_canjeados[j]: Booleano, casino_stock_premios[j], casino_valor_premios[j]: Entero);
 Inicio
   Var opcion_tiendita = 0: Entero;
 
@@ -24,9 +24,9 @@ Inicio
       Caso (opcion_tiendita = 2);
         canjear_dinero(saldo_disponible, nombre);
       Caso (opcion_tiendita = 3);
-        canjear_dibujos(saldo_disponible, nombre, casino_valor_premios[j_casino], casino_stock_premios[j_casino], premios_canjeados[j_casino]);
+        canjear_dibujos(saldo_disponible, nombre, casino_valor_premios[j], casino_stock_premios[j], premios_canjeados[j]);
       Caso (opcion_tiendita = 4);
-        dibujos_usuario(premios_canjeados[j_casino], nombre);
+        dibujos_usuario(premios_canjeados[j], nombre);
       Otro_Caso
         Mostrar << "Chau. Nos vemos";
     Fin_Caso

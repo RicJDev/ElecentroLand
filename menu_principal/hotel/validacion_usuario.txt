@@ -1,9 +1,9 @@
-Funcion validacion_usuario(id_ingresado, cantidad_titulares[i_cliente]: Entero): Booleano;
+Funcion validacion_usuario(id_ingresado, cantidad_titulares[i]: Entero): Booleano;
 Inicio
   Var existe_usuario = 0: Booleano;
 
-  Para (i_cliente = 1 Hasta i_cliente = 500) Hacer;
-    Si (id_ingresado = cantidad_titulares[i_cliente]) Entonces;
+  Para (i = 1 Hasta i = 500) Hacer;
+    Si (id_ingresado = cantidad_titulares[i]) Entonces;
       existe_usuario = 1;
     Fin_Si
   Fin_Para

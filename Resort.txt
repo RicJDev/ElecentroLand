@@ -1,10 +1,11 @@
 Algoritmo Resort
 Inicio
+  Var i, j: Entero;
+
   //Opciones de todo el resort
   Var opcion_menu, opcion_restaurante, opcion_inv, opcion_clientes: Entero;
 
   // Base de datos del Restaurante
-  Var i_restaurante: Entero;
   Var restaurante_ingredientes_cantidades[34]: Entero;
   Var restaurante_contadores[18]: Entero;
   Var restaurante_ingredientes_precio[18]: Real;
@@ -13,7 +14,6 @@ Inicio
   Var dinero_restaurante: Real;
 
   // Base de datos del Bar
-  Var i_bar: Entero;
   Var bar_ingredientes[8]: Cadena;
   Var bar_ingredientes_cantidades[8]: Entero;
   Var bar_contadores[8]: Entero;
@@ -21,7 +21,6 @@ Inicio
   Var dinero_bar: Real;
 
   // Base de datos del Hotel
-  Var i_clientes: Entero;
   Var nombres_titulares[500], email[500]: Cadena ;
   Var cantidad_titulares[500], huespedes_total[500], telefono[500], edad_usuario[500], cedula[500]: Entero;
   Var ingresos_hotel: Real;
@@ -29,7 +28,6 @@ Inicio
 
   // Base de datos del Casino
   Var fichas_apostadas: Entero;
-  Var i_casino, j_casino: Entero;
   Var casino_premios[100][10]: Booleano;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
@@ -48,16 +46,16 @@ Inicio
   Var grupo1[8], grupo2[8], grupo3[8], grupo4[8]: Entero;
 
   // Inicializando DB del Restaurante
-  init_Restaurante(restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precio[i_restaurante], restaurante_ingredientes[i_restaurante]);
+  init_Restaurante(restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precio[i], restaurante_ingredientes[i]);
 
   // Inicializando DB del Bar
-  init_Bar(bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], bar_ingredientes[i_bar], bar_ingredientes_precio[i_bar]);
+  init_Bar(bar_ingredientes_cantidades[i], bar_contadores[i], bar_ingredientes[i], bar_ingredientes_precio[i]);
 
   // Inicializando DB del Casino
-  init_Casino(casino_premios[i_casino][j_casino], casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino]);
+  init_Casino(casino_premios[i][j], casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j]);
 
   // Inicializando DB del Hotel
-  init_Hotel(nombres_titulares[i_cliente], email[i_cliente], cantidad_titulares[i_cliente], huespedes_total[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente]);
+  init_Hotel(nombres_titulares[i], email[i], cantidad_titulares[i], huespedes_total[i], telefono[i], edad_usuario[i], cedula[i]);
 
   Repetir
     Mostrar << "¡Bienvenido al Resort ElecentroLand!, ingrese a dónde quiere ir";
@@ -75,16 +73,16 @@ Inicio
 
     En_Caso (opcion_menu > 0) Sea;
       Caso (opcion_menu = 1);
-        Casino(casino_nombres[i_casino], casino_contrasenas[i_casino], casino_edades[i_casino], casino_saldos_fichas[i_casino], casino_stock_premios[j_casino], casino_valor_premios[j_casino], casino_premios[i_casino][j_casino]);
+        Casino(casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], casino_premios[i][j]);
         Mostrar << Casino;
       Caso (opcion_menu = 2);
-        Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i_cliente], telefono[i_cliente], edad_usuario[i_cliente], cedula[i_cliente], id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i_cliente], fecha_salida[i_cliente], nombre_titulares[i_cliente], email[i_cliente]);
+        Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i], telefono[i], edad_usuario[i], cedula[i], id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i], fecha_salida[i], nombre_titulares[i], email[i]);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
-        Restaurante(opcion_restaurante, i_restaurante, restaurante_ingredientes_cantidades[i_restaurante], restaurante_contadores[i_restaurante], restaurante_ingredientes_precios[i_restaurante]);
+        Restaurante(opcion_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i]);
         Mostrar << Restaurante;
       Caso (opcion_menu = 4);
-        Bar(opcion_inv, opcion_clientes, cantidad, bar_ingredientes_cantidades[i_bar], bar_contadores[i_bar], cuenta_cliente, bar_ingredientes_precios[i_bar], dinero_bar);
+        Bar(opcion_inv, opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, bar_ingredientes_precios[i], dinero_bar);
         Mostrar << Bar;
       Otro_Caso
         R = 0;
@@ -102,8 +100,8 @@ Inicio
   Mostrar << "Fichas Actuales: ", saldo_disponible;
   Mostrar << "Stock de premios: ";
 
-  Para (i_casino = 1 Hasta i_casino = 10) Hacer;
-    Mostrar << casino_stock_premios[i_casino];
+  Para (i = 1 Hasta i = 10) Hacer;
+    Mostrar << casino_stock_premios[i];
   Fin_Para
 
   Mostrar << "Apuesta total: ", fichas_apostadas;
@@ -118,17 +116,17 @@ Inicio
   Mostrar << "Restaurante Sabores Elecentro:";
   Mostrar << "Contadores de las comidas: ";
 
-  Para (i_restaurante = 1 Hasta i_restaurante = 18) Hacer;
-    Mostrar << restaurante_platillos[i_restaurante];
+  Para (i = 1 Hasta i = 18) Hacer;
+    Mostrar << restaurante_platillos[i];
     Mostrar << "Este platillo fue elegido por los clientes un total de:";
-    Mostrar << restaurante_contadores[i_restaurante], "veces";
+    Mostrar << restaurante_contadores[i], "veces";
   Fin_Para
 
-  Para (i_restaurante = 1 Hasta i_restaurante = 34) Hacer;
+  Para (i = 1 Hasta i = 34) Hacer;
     Mostrar << "Ingrediente: ";
-    Mostrar << restaurante_ingredientes[i_restaurante];
+    Mostrar << restaurante_ingredientes[i];
     Mostrar << "Cantidad de unidades que quedó del ingrediente:";
-    Mostrar << restaurante_ingredientes_cantidades[i_restaurante];
+    Mostrar << restaurante_ingredientes_cantidades[i];
   Fin_Para
 
   Mostrar << "Dinero recaudado del Restaurante Elecentro Sabores: ", dinero_restaurante;
@@ -136,17 +134,17 @@ Inicio
   Mostrar << "Bar Elecentro Drinks:";
   Mostrar << "Contadores de los alimentos y bebidas";
 
-  Para (i_bar = 1 Hasta i_bar = 8) Hacer;
-    Mostrar << bar_ingredientes[i_bar];
+  Para (i = 1 Hasta i = 8) Hacer;
+    Mostrar << bar_ingredientes[i];
     Mostrar << "Este producto fue elegido por los clientes un total de : ";
-    Mostrar << bar_contadores[i_bar], "veces";
+    Mostrar << bar_contadores[i], "veces";
   Fin_Para
 
-  Para (i_bar = 1 Hasta i_bar = 8) Hacer;
+  Para (i = 1 Hasta i = 8) Hacer;
     Mostrar << "Ingrediente: ";
-    Mostrar << bar_ingredientes[i_bar];
+    Mostrar << bar_ingredientes[i];
     Mostrar << "Cantidad de unidades que quedó del ingrediente:";
-    Mostrar << bar_ingredientes_cantidades[i_bar];
+    Mostrar << bar_ingredientes_cantidades[i];
   Fin_Para
 
   Mostrar << "Dinero recaudado del Bar Elecentro Drinks:", dinero_bar;
