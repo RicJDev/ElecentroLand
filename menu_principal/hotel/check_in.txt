@@ -38,18 +38,29 @@ Inicio
     Mostrar << "Ingrese la habitación en la que se va a hospedar";
     Leer >> cliente_habitacion;
     Mostrar << "¿Se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
-    Leer >> cliente_acompañantes;
-
-    Mientras (cliente_habitacion < 1 OR cliente_habitacion > 4) OR (cliente_cedula < 0) OR (cliente_acompañantes < 0 OR cliente_acompañantes > 5) Hacer;
+    Leer >> cliente_opcion;
+    Mientras (cliente_opcion < 1 OR cliente_opcion > 2) Hacer;
+      Mostrar << "Error en dato, ingrese nuevamente";
+      Leer >> cliente_opcion;
+    Fin_Mientras
+    Si (cliente_opcion = 1) Entonces;
+      Mostrar << "¿Cuántos acompañantes tiene?";
+      Leer >> cliente_acompañantes;
+      Mientras (cliente_acompañantes < 1 OR cliente_acompañantes > 5) Hacer;
+        Mostrar << "Error en dato de acompañante, intente nuevamente";
+        Leer >> cliente_acompañantes;
+      Fin_Mientras
+    Sino
+        cliente_acompañantes = 0;
+    Fin_Si
+    Mientras (cliente_habitacion < 1 OR cliente_habitacion > 4) OR (cliente_cedula < 0) Hacer;
       Mostrar << "Datos inválidos, ingreselos nuevamente";
       Leer >> cliente_nombre;
       Leer >> cliente_cedula;
       Leer >> cliente_email;
       Leer >> cliente_telefono;
       Leer >> cliente_habitacion;
-      Leer >> cliente_acompañantes;
     Fin_Mientras
-
     hotel_clientes_nombre[id_cliente] = cliente_nombre;
     hotel_clientes_cedula[id_cliente] = cliente_cedula;
     hotel_clientes_email[id_cliente] = cliente_email;
