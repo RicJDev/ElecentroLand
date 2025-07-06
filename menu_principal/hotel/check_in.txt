@@ -27,7 +27,6 @@ Inicio
       i = i + 1;
     Fin_Mientras
 
-    // Falta ingresar los datos (con sus validaciones) en la base
     Mostrar << "Ingrese su nombre";
     Leer >> cliente_nombre;
     Mostrar << "Ingrese su cédula de identidad";
@@ -40,6 +39,7 @@ Inicio
     Leer >> cliente_habitacion;
     Mostrar << "¿Se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
     Leer >> cliente_acompañantes;
+
     Mientras (cliente_habitacion < 1 OR cliente_habitacion > 4) OR (cliente_cedula < 0) OR (cliente_acompañantes < 0 OR cliente_acompañantes > 5) Hacer;
       Mostrar << "Datos inválidos, ingreselos nuevamente";
       Leer >> cliente_nombre;
@@ -63,7 +63,7 @@ Inicio
     habitacion_vacantes = habitacion_vacantes - 1;
     habitacion_contador = habitacion_contador + 1;
 
-  Sino
+    Sino
 
     Mostrar << "Aca no somos caridad. Paga, pelabolas";
   Fin_Si

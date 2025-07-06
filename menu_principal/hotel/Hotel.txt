@@ -25,7 +25,7 @@ Inicio
         Si (cliente_edad < 18) Entonces;
           Mostrar << "Lo sentimos. Necesitas un representante mayor de edad para proseguir";
 
-        Sino
+          Sino
 
           Mostrar << "Seleccione una opción";
           Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
@@ -49,7 +49,7 @@ Inicio
             check_in(i, habitacion_tipo, habitacion_capacidad, habitacion_precio, habitacion_contador, habitacion_vacantes, hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]);
             Mostrar << check_in;
 
-          Sino
+            Sino
 
             Mostrar << "Lo sentimos. Todas las habitaciones de ese tipo ya han sido ocupadas";
           Fin_Si
@@ -70,6 +70,7 @@ Inicio
         Leer >> cliente_nombre;
         Mostrar << "Ingrese su cédula de identidad";
         Leer >> cliente_cedula;
+
         Mientras (cliente_nombre != hotel_clientes_nombre[id_cliente]) AND (cliente_cedula != hotel_clientes_cedula[id_cliente]) Hacer;
           Mostrar << "Datos incorrectos, intente nuevamente";
           Mostrar << "Ingrese su ID";
@@ -79,14 +80,15 @@ Inicio
           Mostrar << "Ingrese su cédula de identidad";
           Leer >> cliente_cedula;
         Fin_Mientras
+
         Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND (cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
           cliente_nombre = "no asignado";
           cliente_cedula = 0;
-          hotel_clientes_nombre[id_cliente] = "no asignado"; 
+          hotel_clientes_nombre[id_cliente] = "no asignado";
           hotel_clientes_email[id_cliente] = "no asignado";
-          hotel_clientes_acompan[id_cliente] = 0; 
+          hotel_clientes_acompan[id_cliente] = 0;
           hotel_clientes_habitacion[id_cliente] = 0;
-          hotel_clientes_dias_hospedaje[id_cliente] = 0; 
+          hotel_clientes_dias_hospedaje[id_cliente] = 0;
           hotel_clientes_telefono[id_cliente] = 0;
           hotel_clientes_cedula[id_cliente] = 0;
           habitacion_vacantes = hotel_habitaciones_vacantes[opcion_habitacion];
@@ -94,15 +96,9 @@ Inicio
           hotel_habitaciones_vacantes[opcion_habitacion] = habitacion_vacantes;
         Fin_Si
 
-        // Es un numero del 0 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
-        // Nota: si el numero es 0 quiere decir que ese espacio no ha sido ocupado o que se ha desocupado antes
-
-        cliente_habitacion = hotel_clientes_habitacion[id_cliente];  
-
-        // 1. Comprobar que se trata del mismo cliente solicitando su cedula y su nombre
-        // 2. Recuperar sus datos de los vectores para clientes
-        // 3. Actualizar los valores en esa posicion
+        cliente_habitacion = hotel_clientes_habitacion[id_cliente];
       Otro_Caso
+        Mostrar << "Bye, bye. Vuelva pronto!";
         opcion_hotel = 3;
     Fin_Caso
 
