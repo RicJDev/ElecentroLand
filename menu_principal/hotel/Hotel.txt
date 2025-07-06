@@ -46,7 +46,7 @@ Inicio
           habitacion_contador = hotel_habitaciones_contadores[opcion_habitacion];
 
           Si (habitacion_vacantes > 0) Entonces;
-            check_in(i, habitacion_tipo, habitacion_capacidad, habitacion_precio, habitacion_contador, habitacion_vacantes, hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]);
+            check_in(habitacion_tipo, habitacion_capacidad, cliente_habitacion, habitacion_precio, i, id_cliente, habitacion_contador, habitacion_vacantes,               hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i],                 hotel_clientes_telefono[i], hotel_clientes_cedula[i], monto_pago, ingresos_hotel, validacion_pago);
             Mostrar << check_in;
 
             Sino
