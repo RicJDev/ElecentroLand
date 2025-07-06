@@ -1,4 +1,4 @@
-Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, nueva_id, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i], monto_pago: Real, validacion_pago: Booleano);
+Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, nueva_id, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i], monto_pago, ingresos_hotel: Real, validacion_pago: Booleano);
 Inicio
   Var cantidad_habitacion: Entero;
   Mostrar << "Seleccione una opción";
@@ -38,7 +38,7 @@ Inicio
       Mostrar << "Señale su fecha de salida DD-MM-AA";
       Leer >> fecha_salida[nueva_id];
       total_pagar_habitacion[nueva_id] = 10 * dias_hospedaje[nueva_id];
-
+      ingresos_hotel = ingresos_hotel + total_pagar_habitacion[nueva_id];
       Mostrar << "Estimado cliente usted ha elegido la habitacion Elecentro";
 
     Caso (opcion_habitacion[nueva_id] = 2);
@@ -65,6 +65,7 @@ Inicio
       Mostrar << "Señale su fecha de salida DD-MM-AA";
       Leer >> fecha_salida[nueva_id];
       total_pagar_habitacion[nueva_id] = 20 * dias_hospedaje[nueva_id];
+      ingresos_hotel = ingresos_hotel + total_pagar_habitacion[nueva_id];
 
       Mostrar << "Estimado cliente usted ha elegido la habitacion Guanábana";
 
@@ -92,6 +93,7 @@ Inicio
       Mostrar << "Señale su fecha de salida DD-MM-AA";
       Leer >> fecha_salida[nueva_id];
       total_pagar_habitacion[nueva_id] = 35 * dias_hospedaje[nueva_id];
+      ingresos_hotel = ingresos_hotel + total_pagar_habitacion[nueva_id];
 
       Mostrar << "Estimado cliente usted ha elegido la Habitación Maravillas";
 
@@ -119,6 +121,7 @@ Inicio
       Mostrar << "Señale su fecha de salida DD-MM-AA";
       Leer >> fecha_salida[nueva_id];
       total_pagar_habitacion[nueva_id] = 45 * dias_hospedaje[nueva_id];
+      ingresos_hotel = ingresos_hotel + total_pagar_habitacion[nueva_id];
       Mostrar << "Estimado cliente usted ha elegido la Habitación Picha";
   Fin_Caso
   monto_pago = total_pagar_habitacion[nueva_id];
