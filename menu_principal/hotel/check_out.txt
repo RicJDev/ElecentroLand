@@ -1,4 +1,4 @@
-Procedimiento check_out(E/S: huespedes_total[i], telefono[i], edad_usuario[i], cantidad_habitacion[i], cantidad_titulares[i]: Entero, email[i], nombres_titulares[i]: Cadena, total_pagar_habitacion[i]: Real);
+Procedimiento check_out(E/S: huespedes_total[i], cant_acompañantes[i], telefono[i], edad_usuario[i], cantidad_habitacion[i], cantidad_titulares[i]: Entero, email[i], nombres_titulares[i]: Cadena, total_pagar_habitacion[i]: Real);
 Inicio
   Var i, id_ingresado: Entero;
 
