@@ -21,9 +21,9 @@ Inicio
   Var dinero_bar: Real;
 
   // Base de datos del Hotel
-  Var nombres_titulares[500], email[500]: Cadena ;
+  Var nombres_titulares[500], email[500]: Cadena;
   Var cantidad_titulares[500], huespedes_total[500], telefono[500], edad_usuario[500], cedula[500]: Entero;
-  Var ingresos_hotel: Real;
+  Var ingresos_hotel = 0: Real;
   Var cant_acompañantes = 0, clientes_hotel = 0, cantidad_habitacion1 = 250, cantidad_habitacion2 = 100, cantidad_habitacion3 = 80, cantidad_habitacion4 = 70: Entero;
 
   // Base de datos del Casino
@@ -31,6 +31,7 @@ Inicio
   Var casino_premios[100][10]: Booleano;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
+  Var id_usuario = -1: Entero;
   Var veces_jugadas: Entero;
   Var veces_jugadas_blackjack = 0, veces_jugadas_dados = 0, veces_jugadas_tragamonedas = 0: Entero;
 
@@ -73,16 +74,16 @@ Inicio
 
     En_Caso (opcion_menu > 0) Sea;
       Caso (opcion_menu = 1);
-        Casino(casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], casino_premios[i][j]);
+        Casino(i, j, casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], casino_premios[i][j]);
         Mostrar << Casino;
       Caso (opcion_menu = 2);
-        Hotel(contador_clientes, cant_acompañantes, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i], telefono[i], edad_usuario[i], cedula[i], id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i], fecha_salida[i], nombre_titulares[i], email[i]);
+        Hotel(contador_clientes, cant_acompañantes, i, clientes_hotel, clientes[contador_clientes], cantidad_habitacion1, cantidad_habitacion2, cantidad_habitacion3, cantidad_habitacion4, id_cliente, dias_hospedaje[i], telefono[i], edad_usuario[i], cedula[i], id_ingresado, validacion_final, total_pagar_habitacion, fecha_llegada[i], fecha_salida[i], nombre_titulares[i], email[i]);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
         Restaurante(opcion_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i]);
         Mostrar << Restaurante;
       Caso (opcion_menu = 4);
-        Bar(opcion_inv, opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, bar_ingredientes_precios[i], dinero_bar);
+        Bar(opcion_inv, opcion_clientes, cantidad, i, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, bar_ingredientes_precios[i], dinero_bar);
         Mostrar << Bar;
       Otro_Caso
         R = 0;
