@@ -81,7 +81,7 @@ Inicio
           Mostrar << "Ingrese su cédula de identidad";
           Leer >> cliente_cedula;
         Fin_Mientras
-        Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
+        Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND (cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
           cliente_nombre = "no asignado";
           cliente_cedula = 0;
           hotel_clientes_nombre[id_cliente] = cliente_nombre;
