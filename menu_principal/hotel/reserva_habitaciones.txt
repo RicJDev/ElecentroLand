@@ -1,112 +1,119 @@
-Procedimiento reserva_habitaciones(e/s: fecha_salida[i_cliente], fecha_llegada[i_cliente]: cadena, dias_hospedaje[i_cliente]: Entero, e/s: total_pagar_habitacion[nuevo_id], e/s: opcion_habitacion: entero, E/S: cantidad_habitacion[4]: entero);
+Procedimiento reserva_habitaciones(E/S: fecha_salida[nueva_id], fecha_llegada[nueva_id]: Cadena, dias_hospedaje[nueva_id], opcion_habitacion[nueva_id], cantidad_habitacion[nueva_id]: Entero, total_pagar_habitacion[nueva_id]: Real);
 Inicio
-  Mostrar << "Seleccione una opcion";
-  Mostrar << "1:Habitacion Elecentro (Habitación individual: Diseñada para una persona, con cama individua) precio 10$ por noche";
-  Mostrar << "2:habitacion Guanabana (habitacion con dual )precio: 20$ por noche";
-  Mostrar << "3:Habitacion Maravillas (hasta 4 personas) precio: 35$ por noche";
-  Mostrar << "4:Habitacion Picha (hasta 6 personas) precio: 45$ por noche";
-  Leer >> opcion_habitacion[nuevo_id];
+  Mostrar << "Seleccione una opción";
+  Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
+  Mostrar << "2: habitación Guanabana (habitacion con dual) precio: 20$ por noche";
+  Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
+  Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
+  Leer >> opcion_habitacion[nueva_id];
 
-  Mientras (opcion_habitacion[nuevo_id] < 1) OR (opcion_habitacion[nuevo_id] > 4) Hacer;
+  Mientras (opcion_habitacion[nueva_id] < 1 OR opcion_habitacion[nueva_id] > 4) Hacer;
     Mostrar << "Error por favor elija una habitacion disponible";
-    Leer >> opcion_habitacion;
+    Leer >> opcion_habitacion[nueva_id];
   Fin_Mientras
 
-  En_Caso (opcion_habitacion > 0) Sea;
-    Caso (opcion_habitacion[nuevo_id] = 1);
-      cantidad_habitacion[1] = cantidad_habitacion;
-      cantidad_habitacion = cantidad_habitacion-1;
+  En_Caso (opcion_habitacion[nueva_id] > 0) Sea;
+    Caso (opcion_habitacion[nueva_id] = 1);
 
       Mientras (cantidad_habitacion[1] < 1) Hacer;
         Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
-        Leer >> opcion_habitacion;
+        Leer >> opcion_habitacion[nueva_id];
       Fin_Mientras
 
-      Mostrar << "¿Cuantos dias desea hospedarse?";
-      Leer >> dias_hospedaje[nuevo_id];
+      cantidad_habitacion = cantidad_habitacion[1];
+      cantidad_habitacion = cantidad_habitacion - 1;
 
-      Mientras (dias_hospedaje[nuevo_id] < 1) Hacer;
+      Mostrar << "¿Cuantos dias desea hospedarse?";
+      Leer >> dias_hospedaje[nueva_id];
+
+      Mientras (dias_hospedaje[nueva_id] < 1) Hacer;
         Mostrar << "Por favor ingrese una cantidad valida";
-        Leer >> dias_hospedaje[nuevo_id];
+        Leer >> dias_hospedaje[nueva_id];
       Fin_Mientras
 
       Mostrar << "Señale su fecha de llegada DD-MM-AA";
-      Leer >> fecha_llegada[nuevo_id];
+      Leer >> fecha_llegada[nueva_id];
       Mostrar << "Señale su fecha de salida DD-MM-AA";
-      Leer >> fecha_salida[nuevo_id];
-      total_pagar_habitacion[nuevo_id] = 10 * dias_hospedaje;
+      Leer >> fecha_salida[nueva_id];
+      total_pagar_habitacion[nueva_id] = 10 * dias_hospedaje[nueva_id];
 
       Mostrar << "Estimado cliente usted ha elegido la habitacion Elecentro";
+
     Caso (opcion_habitacion[nueva_id] = 2);
-      cantidad_habitacion[2] = cantidad_habitacion;
-      cantidad_habitacion = cantidad_habitacion-1;
 
       Mientras (cantidad_habitacion[2] < 1) Hacer;
         Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
-        Leer >> opcion_habitacion;
+        Leer >> opcion_habitacion[nueva_id];
       Fin_Mientras
 
-      Mostrar << "¿Cuantos dias desea hospedarse?";
-      Leer >> dias_hospedaje[nuevo_id];
+      cantidad_habitacion = cantidad_habitacion[2];
+      cantidad_habitacion = cantidad_habitacion - 1;
 
-      Mientras (dias_hospedaje[nuevo_id] < 1) Hacer;
+      Mostrar << "¿Cuantos dias desea hospedarse?";
+      Leer >> dias_hospedaje[nueva_id];
+
+      Mientras (dias_hospedaje[nueva_id] < 1) Hacer;
         Mostrar << "Por favor ingrese una cantidad valida";
-        Leer >> dias_hospedaje[nuevo_id];
+        Leer >> dias_hospedaje[nueva_id];
       Fin_Mientras
 
       Mostrar << "Señale su fecha de llegada DD-MM-AA";
-      Leer >> fecha_llegada[nuevo_id];
+      Leer >> fecha_llegada[nueva_id];
       Mostrar << "Señale su fecha de salida DD-MM-AA";
-      Leer >> fecha_salida[nuevo_id];
-      total_pagar_habitacion[nuevo_id] = 20 * dias_hospedaje[nuevo_id];
+      Leer >> fecha_salida[nueva_id];
+      total_pagar_habitacion[nueva_id] = 20 * dias_hospedaje[nueva_id];
 
-      Mostrar << "Estimado cliente usted ha elegido la habitacion Guanabana";
+      Mostrar << "Estimado cliente usted ha elegido la habitacion Guanábana";
+
     Caso (opcion_habitacion[nueva_id] = 3);
-      cantidad_habitacion[3] = cantidad_habitacion;
-      cantidad_habitacion = cantidad_habitacion-1;
 
       Mientras (cantidad_habitacion[3] < 1) Hacer;
-        Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
+        Mostrar << "Disculpe, la habitación seleccionada ya esta llena";
         Leer >> opcion_habitacion;
       Fin_Mientras
 
-      Mostrar << "¿Cuantos dias desea hospedarse?";
-      Leer >> dias_hospedaje[nuevo_id];
+      cantidad_habitacion = cantidad_habitacion[3];
+      cantidad_habitacion = cantidad_habitacion - 1;
 
-      Mientras (dias_hospedaje[nuevo_id] < 1) Hacer;
+      Mostrar << "¿Cuantos dias desea hospedarse?";
+      Leer >> dias_hospedaje[nueva_id];
+
+      Mientras (dias_hospedaje[nueva_id] < 1) Hacer;
         Mostrar << "Por favor ingrese una cantidad valida";
-        Leer >> dias_hospedaje[nuevo_id];
+        Leer >> dias_hospedaje[nueva_id];
       Fin_Mientras
 
       Mostrar << "Señale su fecha de llegada DD-MM-AA";
-      Leer >> fecha_llegada[nuevo_id];
+      Leer >> fecha_llegada[nueva_id];
       Mostrar << "Señale su fecha de salida DD-MM-AA";
-      Leer >> fecha_salida[nuevo_id];
-      total_pagar_habitacion[nuevo_id] = 35 * dias_hospedaje[nuevo_id];
+      Leer >> fecha_salida[nueva_id];
+      total_pagar_habitacion[nueva_id] = 35 * dias_hospedaje[nueva_id];
 
-      Mostrar << "Estimado cliente usted ha elegido la habitacion Maravillas";
+      Mostrar << "Estimado cliente usted ha elegido la Habitación Maravillas";
+
     Otro_Caso
-      cantidad_habitacion[4] = cantidad_habitacion;
-      cantidad_habitacion = cantidad_habitacion-1;
 
       Mientras (cantidad_habitacion[4] < 1) Hacer;
         Mostrar << "Disculpe la habitacion seleccionada ya esta llena";
         Leer >> opcion_habitacion;
       Fin_Mientras
 
-      Mostrar << "¿Cuantos dias desea hospedarse?";
-      Leer >> dias_hospedaje[nuevo_id];
+      cantidad_habitacion = cantidad_habitacion[4];
+      cantidad_habitacion = cantidad_habitacion - 1;
 
-      Mientras (dias_hospedaje[nuevo_id] < 1) Hacer;
+      Mostrar << "¿Cuantos dias desea hospedarse?";
+      Leer >> dias_hospedaje[nueva_id];
+
+      Mientras (dias_hospedaje[nueva_id] < 1) Hacer;
         Mostrar << "Por favor ingrese una cantidad valida";
-        Leer >> dias_hospedaje[nuevo_id];
+        Leer >> dias_hospedaje[nueva_id];
       Fin_Mientras
 
       Mostrar << "Señale su fecha de llegada DD-MM-AA";
-      Leer >> fecha_llegada[nuevo_id];
+      Leer >> fecha_llegada[nueva_id];
       Mostrar << "Señale su fecha de salida DD-MM-AA";
-      Leer >> fecha_salida[nuevo_id];
-      total_pagar_habitacion[nuevo_id] = 45 * dias_hospedaje[nuevo_id];
-      Mostrar << "Estimado cliente usted ha elegido la habitacion Picha";
+      Leer >> fecha_salida[nueva_id];
+      total_pagar_habitacion[nueva_id] = 45 * dias_hospedaje[nueva_id];
+      Mostrar << "Estimado cliente usted ha elegido la Habitación Picha";
   Fin_Caso
 Fin_Procedimiento
