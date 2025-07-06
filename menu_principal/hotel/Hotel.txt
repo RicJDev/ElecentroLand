@@ -38,7 +38,7 @@ Inicio
             Mostrar << "Error por favor elija una habitacion disponible";
             Leer >> opcion_habitacion;
           Fin_Mientras
-
+          cliente_habitacion = opcion_habitacion;
           habitacion_tipo = hotel_habitaciones_tipo[opcion_habitacion];
           habitacion_capacidad = hotel_habitaciones_capacidad[opcion_habitacion];
           habitacion_precio = hotel_habitaciones_precio[opcion_habitacion];
