@@ -27,7 +27,7 @@ Inicio
 
       i = i + 1;
     Fin_Mientras
-    
+    Mostrar << "Su ID asignado es: ", id_cliente, "anotelo en un cuaderno para el día en que quiera retirarse del hotel";
     Mostrar << "Ingrese su nombre";
     Leer >> cliente_nombre;
     Mostrar << "Ingrese su cédula de identidad";
