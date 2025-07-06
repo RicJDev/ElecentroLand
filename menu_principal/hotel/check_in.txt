@@ -1,7 +1,7 @@
 Procedimiento check_in(E: habitacion_tipo: Cadena, habitacion_capacidad, cliente_habitacion: Entero, habitacion_precio: Real, E/S: i, habitacion_contador, habitacion_vacantes: Entero, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, monto_pago: Real, validacion_pago: Booleano);
 Inicio
   Var cliente_nombre, cliente_email: Cadena;
-  Var cliente_telefono, cliente_cedula, cliente_opcion, clientes_acompañantes, cliente_dias_hospedaje, id_cliente: Entero;
+  Var cliente_telefono, cliente_cedula, clientes_acompañantes, cliente_dias_hospedaje, id_cliente: Entero;
 
   Mostrar << "Usted ha seleccionado la habitacion ", habitacion_tipo, ". Con capacidad hasta para ", habitacion_capacidad, " persona(s)";
   Mostrar << "Cuantos dias planea hospedarse en el hotel?";
@@ -36,32 +36,20 @@ Inicio
     Leer >> cliente_email;
     Mostrar << "Ingrese su número telefónico";
     Leer >> cliente_telefono;
-    Mostrar << "¿Se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
-    Leer >> cliente_opcion;
-    Mientras (cliente_opcion < 1 OR cliente_opcion > 2) Hacer;
-      Mostrar << "Error en dato, ingrese nuevamente";
-      Leer >> cliente_opcion;
-    Fin_Mientras
-    Si (cliente_opcion = 2) Entonces;
-      Mostrar << "¿Cuántos acompañantes tiene?";
-      Leer >> cliente_acompañantes;
-      Mientras (cliente_acompañantes < 1 OR cliente_acompañantes > 5) Hacer;
-        Mostrar << "Error en dato de acompañante, intente nuevamente";
-        Leer >> cliente_acompañantes;
-      Fin_Mientras
-    Sino
-        cliente_acompañantes = 0;
-    Fin_Si
+    Mostrar << "¿Cuántos acompañantes tiene? (Nota: Marque 0 en caso de que vaya solo)";
+    Leer >> cliente_acompañantes;
+
     Mientras (habitacion_capacidad < clientes_acompañantes) Entonces;
       Mostrar << "Los acompañantes no caben en esta habitación, ingrese la cantidad de acompañantes que estarán en esta habitación";
       Leer >> clientes_acompañantes;
     Fin_Mientras
-    Mientras (cliente_cedula < 0) Hacer;
+    Mientras (cliente_cedula < 0) OR (cliente_acompañantes < 0 OR cliente_acompañantes > 5) Hacer;
       Mostrar << "Datos inválidos, ingreselos nuevamente";
       Leer >> cliente_nombre;
       Leer >> cliente_cedula;
       Leer >> cliente_email;
       Leer >> cliente_telefono;
+      Leer >> cliente_acompañantes;
     Fin_Mientras
     hotel_clientes_nombre[id_cliente] = cliente_nombre;
     hotel_clientes_cedula[id_cliente] = cliente_cedula;
