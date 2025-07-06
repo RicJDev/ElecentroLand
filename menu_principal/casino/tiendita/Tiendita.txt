@@ -3,7 +3,7 @@ Inicio
   Var opcion_tiendita = 0: Entero;
 
   Mostrar << "Bienvenido seas, ", nombre, "!";
-  Mientras (seguir_tiendita != 5) Hacer;
+  Mientras (opcion_tiendita= 5) Hacer;
     Mostrar << "Elije una opcion";
     Mostrar << "1. Comprar fichas";
     Mostrar << "2. Canjear fichas por dinero";
