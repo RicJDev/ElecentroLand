@@ -1,9 +1,8 @@
 Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], habitacion_tipo, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, habitacion_vacantes, habitacion_capacidad, habitacion_contador, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], habitacion_precio, ingresos_hotel: Real);
 Inicio
-  Var id_cliente, cliente_cedula: Entero;
+  Var id_cliente, id_habitacion, cliente_cedula: Entero;
   Var cliente_nombre: Cadena;
   Var cliente_edad, cliente_habitacion: Entero;
-
   Var opcion_hotel, opcion_habitacion: Entero;
 
   Repetir
@@ -58,6 +57,7 @@ Inicio
           hotel_habitaciones_contadores[opcion_habitacion] = habitacion_contador;
         Fin_Si
       Caso (opcion_hotel = 2);
+        // Check-out
         Mostrar << "Ingrese el numero de identificacion que se le dio en el registro";
         Leer >> id_cliente;
 
@@ -81,6 +81,8 @@ Inicio
           Leer >> cliente_cedula;
         Fin_Mientras
 
+        id_habitacion = hotel_clientes_habitacion[id_cliente]
+
         Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND (cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
           cliente_nombre = "no asignado";
           cliente_cedula = 0;
@@ -91,9 +93,10 @@ Inicio
           hotel_clientes_dias_hospedaje[id_cliente] = 0;
           hotel_clientes_telefono[id_cliente] = 0;
           hotel_clientes_cedula[id_cliente] = 0;
-          habitacion_vacantes = hotel_habitaciones_vacantes[opcion_habitacion];
+
+          habitacion_vacantes = hotel_habitaciones_vacantes[id_habitacion];
           habitacion_vacantes = habitacion_vacantes + 1;
-          hotel_habitaciones_vacantes[opcion_habitacion] = habitacion_vacantes;
+          hotel_habitaciones_vacantes[id_habitacion] = habitacion_vacantes;
         Fin_Si
 
         cliente_habitacion = hotel_clientes_habitacion[id_cliente];
