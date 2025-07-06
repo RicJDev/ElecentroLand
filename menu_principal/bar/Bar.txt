@@ -18,7 +18,7 @@ Inicio
       Alimentos(opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i], validacion_pago);
       Mostrar << Alimentos;
 
-      Sino
+    Sino
       Bebidas(opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, monto_pago, dinero_bar, bar_ingredientes_precios[i], validacion_pago);
       Mostrar << Bebidas;
     Fin_Si
@@ -28,4 +28,3 @@ Inicio
     Hasta (R = 0);
   Fin_Repetir
 Fin_Procedimiento
-
