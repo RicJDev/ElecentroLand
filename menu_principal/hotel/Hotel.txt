@@ -1,12 +1,10 @@
-Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], habitacion_tipo, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, habitacion_vacantes, habitacion_capacidad, habitacion_contador, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
+Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], habitacion_tipo, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, habitacion_vacantes, habitacion_capacidad, habitacion_contador, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], habitacion_precio, ingresos_hotel: Real);
 Inicio
   Var id_cliente, cliente_cedula: Entero;
-  Var cliente_nombre, cliente_email: Cadena;
-  Var cliente_edad, cliente_habitacion, cliente_dias_hospedaje: Entero;
+  Var cliente_nombre: Cadena;
+  Var cliente_edad, cliente_habitacion: Entero;
 
-  Var habitacion_tipo: Cadena;
-  Var opcion_hotel, opcion_habitacion, habitacion_vacantes, habitacion_capacidad, habitacion_contador: Entero;
-  Var habitacion_precio: Real;
+  Var opcion_hotel, opcion_habitacion: Entero;
 
   Repetir
     Mostrar << "1: Realizar una reservacion";
