@@ -1,7 +1,7 @@
-Procedimiento Almuerzo(E/S: i, cantidad: Entero, monto_pago, dinero_restaurante: Real, restaurante_ingredientes_cantidades[i]: Entero, restaurante_contadores[i]: Entero, restaurante_ingredientes_precios[i], validacion_pago: Booleano);
+Procedimiento Almuerzo(E/S: i, cantidad, ingrediente_1, ingrediente_2, ingrediente_3, contador: Entero, monto_pago, precio, dinero_restaurante: Real, restaurante_ingredientes_cantidades[i]: Entero, restaurante_contadores[i]: Entero, restaurante_ingredientes_precios[i], validacion_pago: Booleano);
 Inicio
-  Var opcion, ingrediente_1, ingrediente_2, ingrediente_3, contador = 0: Entero;
-  Var precio, cuenta_cliente = 0: Real;
+  Var opcion: Entero;
+  Var cuenta_cliente = 0: Real;
   Var R: Booleano;
 
   Repetir
