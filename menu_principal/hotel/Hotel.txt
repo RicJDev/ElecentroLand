@@ -86,6 +86,13 @@ Inicio
           cliente_cedula = 0;
           hotel_clientes_nombre[id_cliente] = cliente_nombre;
           hotel_clientes_cedula[id_cliente] = cliente_cedula;
+          hotel_clientes_nombre[id_cliente] = "no asignado"; 
+          hotel_clientes_email[id_cliente] = "no asignado";
+          hotel_clientes_acompan[id_cliente] = 0; 
+          hotel_clientes_habitacion[id_cliente] = 0;
+          hotel_clientes_dias_hospedaje[id_cliente] = 0; 
+          hotel_clientes_telefono[id_cliente] = 0;
+          hotel_clientes_cedula[id_cliente] = 0;
         Fin_Si
 
         // Es un numero del 0 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
