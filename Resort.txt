@@ -112,6 +112,9 @@ Inicio
   Mostrar << "Veces que se jugó en los dados: ", veces_jugadas_dados;
   Mostrar << "Total de veces jugadas: ", veces_jugadas;
   Mostrar << "Hotel ElecentroLand:";
+  Para (i = 1 Hasta i = 500) Hacer;
+    clientes = clientes + (cant_acompañantes[i] + cantidad_titulares[i]);
+  Fin_Para
   Mostrar << "Total de clientes registrados: ", clientes;
   Mostrar << "Ingresos recibidos: ", ingresos_hotel;
   Mostrar << "Restaurante Sabores Elecentro:";
