@@ -36,7 +36,7 @@ Inicio
           Mostrar << registro_nuevo_cliente_habitacion_pago;
         Fin_Si
       Caso (opc_hotel = 2);
-        check_out(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id], nombres_titulares[nueva_id], cantidad_habitacion[4],         cantidad_titulares[nueva_id]);
+        check_out(huespedes_total[i], cant_acompañantes[i], telefono[i], edad_usuario[i], cantidad_habitacion[i], cantidad_titulares[i], email[i],                      nombres_titulares[i], total_pagar_habitacion[i]);
         Mostrar << check_out;
       Otro_Caso
         opc_hotel = 3;
