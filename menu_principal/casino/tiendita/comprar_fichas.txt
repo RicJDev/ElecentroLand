@@ -1,8 +1,7 @@
-Procedimiento comprar_fichas(E/S: nombre: Cadena, saldo_disponible: Entero);
+Procedimiento comprar_fichas(E/S: nombre: Cadena, saldo_disponible: Entero, monto_pago: Real, validacion_pago:Booleano);
 Inicio
   var cantidad_fichas: Entero;
-  var monto_pago: Real;
-  var validacion_pago, seguir_comprando = 1: Booleano;
+  var seguir_comprando = 1: Booleano;
 
   Mientras (seguir_comprando = 1) Hacer;
     Mostrar << "Ingrese la cantidad de fichas que quiere comprar";
