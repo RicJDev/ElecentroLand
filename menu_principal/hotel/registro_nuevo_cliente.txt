@@ -1,111 +1,95 @@
 Procedimiento registro_nuevo_cliente_habitacion_pago(E/S: huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id]: Entero, email[nueva_id], nombres_titulares[nueva_id]: cadena);
 Inicio
-  Var opc_registro, i: Entero;
-  Var nueva_id = -1: Entero;
+  Var opc_registro: Entero;
 
-  i_cliente = 1;
+  Mostrar << "Bienvenido al Hotel Elecentroland";
+  Mostrar << "Estimado usuario se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
+  Leer >> opc_registro;
 
-  Mientras (i_cliente <= 500) AND nueva_id = -1) Hacer;
-    Si(cantidad_titulares[i_cliente] = "no_asignado") Entonces;
-      nueva_id = i_cliente;
-    Fin_Si
-
-    i_cliente = i_cliente + 1;
+  // validación de la opción
+  Mientras (opc_registro < 1 OR opc_registro > 2) Hacer;
+    Mostrar << "Error en datos, intente nuevamente";
+    Leer >> opc_registro;
   Fin_Mientras
 
-  Si (nueva_id = -1) Entonces;
-    Mostrar << "Lo siento. Hemos alcanzado la capacidad maxima de registros";
+  Si (opc_registro = 1) Entonces;
+    Mostrar << "Ingrese su nombre y apellido";
+    Leer >> nombres_titulares[nueva_id];
+    Mostrar << "Ingrese su edad";
+    Leer >> edad_usuario[nueva_id];
 
-  Sino
-    Mostrar << "Bienvenido al Hotel Elecentroland";
-    Mostrar << "Estimado usuario se hospedará solo o con acompañantes? 1: Solo, 2: Con acompañantes";
-    Leer >> opc_registro;
-
-    // validación de la opción
-    Mientras (opc_registro < 1 OR opc_registro > 2) Hacer;
-      Mostrar << "Error en datos, intente nuevamente";
-      Leer >> opc_registro;
+    // validacion edad para cliente solo
+    Mientras (edad_usuario[nueva_id] < 18) Hacer;
+      Mostrar << "Personas menores de 18 años necesitan un representante legal para registrarse";
+      Leer >> edad_usuario[nueva_id];
     Fin_Mientras
 
-    Si (opc_registro = 1) Entonces;
-      Mostrar << "Ingrese su nombre y apellido";
-      Leer >> nombres_titulares[nueva_id];
-      Mostrar << "Ingrese su edad";
+    Mostrar << "Ingrese su número telefónico si tiene";
+    Leer >> telefono[nueva_id];
+    Mostrar << "Ingrese dirección email si tiene";
+    Leer >> email[nueva_id];
+
+    Mostrar << "Listado de habitaciones";
+    Mostrar << reserva_habitaciones(fecha_salida[i_cliente], fecha_llegada[i_cliente], dias_hospedaje[i_cliente], total_pagar_habitacion[nuevo_id], opcion_habitacion);
+
+    Mostrar << "------------------------------------------------------------------------";
+    Mostrar << "|"                           ELECENTROLAND                             "|";
+    Mostrar << "-------------------------------------------------------------------------";
+    Mostrar << "|                          Datos del cliente                          ,"|";
+    Mostrar << "|Nombre y apellido:", nombres_titulares[nueva_id], "|";
+    Mostrar << "|Número Telefónico:", telefono[nueva_id], "|";
+    Mostrar << "|E-mail:", email[nueva_id], "|";
+    Mostrar << "|su número de identificación es", nueva_id, "|";
+    Mostrar << "|Habitacion seleccionada:", opcion_habitacion[nueva_id], "|";
+    Mostrar << "|Dias de reservacion:", dias_hospedaje[nueva_id], "|";
+    Mostrar << "|Fecha de llegada:", fecha_llegada[nueva_id], "|";
+    Mostrar << "|Fecha de salida:", fecha_salida[nueva_id], "|";
+    Mostrar << "|Total a pagar:", total_pagar_habitacion[nueva_id], "$", "|";
+    Mostrar << "-------------------------------------------------------------------------";
+
+  Sino
+    Mostrar << "Ingrese los datos del titular del registro";
+    Mostrar << "Ingrese su nombre y apellido";
+    Leer >> nombres_titulares[nueva_id];
+    Mostrar << "Ingrese su edad";
+    Leer >> edad_usuario[nueva_id];
+
+    // validacion para cliente titular
+    Mientras (edad_usuario[nueva_id] < 18) Hacer;
+      Mostrar << "Personas menores de 18 años no pueden ser titulares de una reserva";
       Leer >> edad_usuario[nueva_id];
+    Fin_Mientras
 
-      // validacion edad para cliente solo
-      Mientras (edad_usuario[nueva_id] < 18) Hacer;
-        Mostrar << "Personas menores de 18 años necesitan un representante legal para registrarse";
-        Leer >> edad_usuario[nueva_id];
-      Fin_Mientras
+    Mostrar << "Ingrese su número telefónico";
+    Leer >> telefono[nueva_id];
+    Mostrar << "Ingrese dirección email si tiene";
+    Leer >> email[nueva_id];
+    Mostrar << "Ingrese la cantidad de acompañantes";
+    Leer >> cant_acompañantes[nueva_id];
 
-      Mostrar << "Ingrese su número telefónico si tiene";
-      Leer >> telefono[nueva_id];
-      Mostrar << "Ingrese dirección email si tiene";
-      Leer >> email[nueva_id];
-
-      Mostrar << "Listado de habitaciones";
-      Mostrar << reserva_habitaciones(fecha_salida[i_cliente], fecha_llegada[i_cliente], dias_hospedaje[i_cliente], total_pagar_habitacion[nuevo_id], opcion_habitacion);
-
-      Mostrar << "------------------------------------------------------------------------";
-      Mostrar << "|"                           ELECENTROLAND                             "|";
-      Mostrar << "-------------------------------------------------------------------------";
-      Mostrar << "|                          Datos del cliente                          ,"|";
-      Mostrar << "|Nombre y apellido:", nombres_titulares[nueva_id], "|";
-      Mostrar << "|Número Telefónico:", telefono[nueva_id], "|";
-      Mostrar << "|E-mail:", email[nueva_id], "|";
-      Mostrar << "|su número de identificación es", nueva_id, "|";
-      Mostrar << "|Habitacion seleccionada:", opcion_habitacion[nueva_id], "|";
-      Mostrar << "|Dias de reservacion:", dias_hospedaje[nueva_id], "|";
-      Mostrar << "|Fecha de llegada:", fecha_llegada[nueva_id], "|";
-      Mostrar << "|Fecha de salida:", fecha_salida[nueva_id], "|";
-      Mostrar << "|Total a pagar:", total_pagar_habitacion[nueva_id], "$", "|";
-      Mostrar << "-------------------------------------------------------------------------";
-
-    Sino
-      Mostrar << "Ingrese los datos del titular del registro";
-      Mostrar << "Ingrese su nombre y apellido";
-      Leer >> nombres_titulares[nueva_id];
-      Mostrar << "Ingrese su edad";
-      Leer >> edad_usuario[nueva_id];
-
-      // validacion para cliente titular
-      Mientras (edad_usuario[nueva_id] < 18) Hacer;
-        Mostrar << "Personas menores de 18 años no pueden ser titulares de una reserva";
-        Leer >> edad_usuario[nueva_id];
-      Fin_Mientras
-
-      Mostrar << "Ingrese su número telefónico";
-      Leer >> telefono[nueva_id];
-      Mostrar << "Ingrese dirección email si tiene";
-      Leer >> email[nueva_id];
-      Mostrar << "Ingrese la cantidad de acompañantes";
+    Mientras (cant_acompañantes[nueva_id] > 5) Hacer;
+      Mostrar << "Solo se permiten 5 acompañantes por titular";
       Leer >> cant_acompañantes[nueva_id];
+    Fin_Mientras
 
-      Mientras (cant_acompañantes[nueva_id] > 5) Hacer;
-        Mostrar << "Solo se permiten 5 acompañantes por titular";
-        Leer >> cant_acompañantes[nueva_id];
-      Fin_Mientras
+   
+    Mostrar << "Listado de habitaciones: ";
+    Mostrar << reserva_habitaciones(fecha_salida[i_cliente], fecha_llegada[i_cliente], dias_hospedaje[i_cliente], total_pagar_habitacion[nuevo_id], opcion_habitacion);
 
-     
-      Mostrar << "Listado de habitaciones: ";
-      Mostrar << reserva_habitaciones(fecha_salida[i_cliente], fecha_llegada[i_cliente], dias_hospedaje[i_cliente], total_pagar_habitacion[nuevo_id], opcion_habitacion);
-
-      Mostrar << "------------------------------------------------------------------------";
-      Mostrar << "|"                           ELECENTROLAND                             "|";
-      Mostrar << "-------------------------------------------------------------------------";
-      Mostrar << "|                          Datos del cliente                          ,"|";
-      Mostrar << "|Nombre y apellido:", nombres_titulares[nueva_id], "|";
-      Mostrar << "|Número Telefónico:", telefono[nueva_id], "|";
-      Mostrar << "|E-mail:", email[nueva_id], "|";
-      Mostrar << "|su número de identificación es", nueva_id, "|";
-      Mostrar << "|Habitacion seleccionada:", opción_habitacion[nueva_id], "|";
-      Mostrar << "|Dias de reservacion:", dias_hospedaje[nueva_id], "|";
-      Mostrar << "|Fecha de llegada:", fecha_llegada[nueva_id], "|";
-      Mostrar << "|Fecha de salida:", fecha_salida[nueva_id], "|";
-      Mostrar << "|Total a pagar: ", total_pagar_habitacion[nueva_id], "$", "|";
-      Mostrar << "|Usted se ha hospedado con ", cant_acompañantes[nueva_id], "acompañantes", "|";
-      Mostrar << "------------------------------------------------------------------------";
-    Fin_Si
+    Mostrar << "------------------------------------------------------------------------";
+    Mostrar << "|"                           ELECENTROLAND                             "|";
+    Mostrar << "-------------------------------------------------------------------------";
+    Mostrar << "|                          Datos del cliente                          ,"|";
+    Mostrar << "|Nombre y apellido:", nombres_titulares[nueva_id], "|";
+    Mostrar << "|Número Telefónico:", telefono[nueva_id], "|";
+    Mostrar << "|E-mail:", email[nueva_id], "|";
+    Mostrar << "|su número de identificación es", nueva_id, "|";
+    Mostrar << "|Habitacion seleccionada:", opción_habitacion[nueva_id], "|";
+    Mostrar << "|Dias de reservacion:", dias_hospedaje[nueva_id], "|";
+    Mostrar << "|Fecha de llegada:", fecha_llegada[nueva_id], "|";
+    Mostrar << "|Fecha de salida:", fecha_salida[nueva_id], "|";
+    Mostrar << "|Total a pagar: ", total_pagar_habitacion[nueva_id], "$", "|";
+    Mostrar << "|Usted se ha hospedado con ", cant_acompañantes[nueva_id], "acompañantes", "|";
+    Mostrar << "------------------------------------------------------------------------";
   Fin_Si
 Fin_Procedimiento
