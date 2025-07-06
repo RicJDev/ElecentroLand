@@ -2,7 +2,7 @@ Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], habitacion_tipo,
 Inicio
   Var id_cliente, cliente_cedula: Entero;
   Var cliente_nombre: Cadena;
-  Var cliente_edad, cliente_habitacion: Entero;
+  Var cliente_edad, cliente_cedula, cliente_habitacion: Entero;
   Var opcion_hotel, opcion_habitacion: Entero;
   Var seguir_intentando = 1: Booleano;
 
