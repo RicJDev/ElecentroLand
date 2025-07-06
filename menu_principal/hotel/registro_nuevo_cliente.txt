@@ -1,4 +1,4 @@
-Procedimiento registro_nuevo_cliente_habitacion_pago(E/S: nueva_id, huespedes_total[i], telefono[i], edad_usuario[i]: Entero, email[i], nombres_titulares[i]: cadena);
+Procedimiento registro_nuevo_cliente_habitacion_pago(E/S: nueva_id, cant_acompañantes[i], telefono[i], edad_usuario[i]: Entero, email[i], nombres_titulares[i]: Cadena);
 Inicio
   Var opc_registro: Entero;
 
@@ -28,9 +28,6 @@ Inicio
     Leer >> telefono[nueva_id];
     Mostrar << "Ingrese dirección email si tiene";
     Leer >> email[nueva_id];
-
-    Mostrar << "Listado de habitaciones";
-    Mostrar << reserva_habitaciones(fecha_salida[i], fecha_llegada[i], dias_hospedaje[i], total_pagar_habitacion[nuevo_id], opcion_habitacion);
 
     Mostrar << "------------------------------------------------------------------------";
     Mostrar << "|"                           ELECENTROLAND                             "|";
@@ -71,10 +68,7 @@ Inicio
       Mostrar << "Solo se permiten 5 acompañantes por titular";
       Leer >> cant_acompañantes[nueva_id];
     Fin_Mientras
-
    
-    Mostrar << "Listado de habitaciones: ";
-    Mostrar << reserva_habitaciones(fecha_salida[i], fecha_llegada[i], dias_hospedaje[i], total_pagar_habitacion[nueva_id], opcion_habitacion);
 
     Mostrar << "------------------------------------------------------------------------";
     Mostrar << "|"                           ELECENTROLAND                             "|";
