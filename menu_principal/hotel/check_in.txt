@@ -44,7 +44,7 @@ Inicio
       Mostrar << "Error en dato, ingrese nuevamente";
       Leer >> cliente_opcion;
     Fin_Mientras
-    Si (cliente_opcion = 1) Entonces;
+    Si (cliente_opcion = 2) Entonces;
       Mostrar << "¿Cuántos acompañantes tiene?";
       Leer >> cliente_acompañantes;
       Mientras (cliente_acompañantes < 1 OR cliente_acompañantes > 5) Hacer;
