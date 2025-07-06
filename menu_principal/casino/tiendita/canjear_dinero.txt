@@ -7,7 +7,7 @@ Inicio
 
   Mientras (seguir_canje = 1) Hacer;
     Si (saldo_disponible >= 10) Entonces;
-      Mostrar << "Cuantas fichas quieres canjear? Recuerda que tienes ", fichas, " disponibles";
+      Mostrar << "Cuantas fichas quieres canjear? Recuerda que tienes ", saldo_disponible, "fichas disponibles";
       Leer >> cantidad_fichas;
 
       Mientras (cantidad_fichas < 1 OR cantidad_fichas > saldo_disponible) Hacer;
