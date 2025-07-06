@@ -1,4 +1,4 @@
-Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, nueva_id, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i], monto_pago, ingresos_hotel: Real, validacion_pago: Booleano);
+Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, nueva_id, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i], monto_pago, ingresos_hotel: Real, S: validacion_pago: Booleano);
 Inicio
   Var cantidad_habitacion: Entero;
   Mostrar << "Seleccione una opción";
