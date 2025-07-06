@@ -1,4 +1,4 @@
-Procedimiento check_in(E: habitacion_tipo: Cadena, habitacion_capacidad, cliente_habitacion: Entero, habitacion_precio: Real, E/S: i, habitacion_contador, habitacion_vacantes: Entero, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, monto_pago: Real, validacion_pago: Booleano);
+Procedimiento check_in(E: habitacion_tipo: Cadena, habitacion_capacidad, cliente_habitacion: Entero, habitacion_precio: Real, E/S: i, habitacion_contador, habitacion_vacantes: Entero, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, monto_pago, ingresos_hotel: Real, validacion_pago: Booleano);
 Inicio
   Var cliente_nombre, cliente_email: Cadena;
   Var cliente_telefono, cliente_cedula, clientes_acompañantes, cliente_dias_hospedaje, id_cliente: Entero;
