@@ -1,9 +1,9 @@
-Procedimiento init_Hotel(e/s: cantidad_titulares[i]: entero, nombres_titulares[i]: cadena, huespedes_total[clientes_hotel]: entero, email[i]: cadena, telefono[i]: entero, edad_usuario[i]: entero, cant_acompañantes[i]: entero);
+Procedimiento init_Hotel(E/S: cantidad_titulares[i], huespedes_total[i], telefono[i], edad_usuario[i], cant_acompañantes[i]: Entero, nombres_titulares[i], email[i]: Cadena);
 Inicio
   Para (i = 1 Hasta i = 500) Hacer;
     cantidad_titulares[i] = 0;
     nombres_titulares[i] = "no_asignado";
-    huespedes_total[clientes_hotel] = 0;
+    huespedes_total[i] = 0;
     email[i] = "no_asignado";
     telefono[i] = 0;
     edad_usuario[i] = 0;
