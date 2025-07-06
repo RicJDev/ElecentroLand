@@ -37,13 +37,14 @@ Inicio
   Var habitacion_precio: Real;
   Var ingresos_hotel = 0: Real;
   Var habitacion_tipo: Cadena;
+
   // Variables del Casino
   Var fichas_apostadas: Entero;
   Var casino_premios[100][10]: Booleano;
   Var casino_nombres[100], casino_contrasenas[100]: Cadena;
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
   Var id_usuario = -1: Entero;
-  Var veces_jugadas: Entero;
+  Var veces_jugadas, apuesta, saldo_disponible: Entero;
   Var veces_jugadas_blackjack = 0, veces_jugadas_dados = 0, veces_jugadas_tragamonedas = 0: Entero;
 
   // Aleatorio
