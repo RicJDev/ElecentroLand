@@ -1,4 +1,4 @@
-Procedimiento registro_nuevo_cliente_habitacion_pago(E/S: huespedes_total[i], telefono[i], edad_usuario[i]: Entero, email[i], nombres_titulares[i]: cadena);
+Procedimiento registro_nuevo_cliente_habitacion_pago(E/S: nueva_id, huespedes_total[i], telefono[i], edad_usuario[i]: Entero, email[i], nombres_titulares[i]: cadena);
 Inicio
   Var opc_registro: Entero;
 
@@ -74,7 +74,7 @@ Inicio
 
    
     Mostrar << "Listado de habitaciones: ";
-    Mostrar << reserva_habitaciones(fecha_salida[i], fecha_llegada[i], dias_hospedaje[i], total_pagar_habitacion[nuevo_id], opcion_habitacion);
+    Mostrar << reserva_habitaciones(fecha_salida[i], fecha_llegada[i], dias_hospedaje[i], total_pagar_habitacion[nueva_id], opcion_habitacion);
 
     Mostrar << "------------------------------------------------------------------------";
     Mostrar << "|"                           ELECENTROLAND                             "|";
@@ -84,7 +84,7 @@ Inicio
     Mostrar << "|Número Telefónico:", telefono[nueva_id], "|";
     Mostrar << "|E-mail:", email[nueva_id], "|";
     Mostrar << "|su número de identificación es", nueva_id, "|";
-    Mostrar << "|Habitacion seleccionada:", opción_habitacion[nueva_id], "|";
+    Mostrar << "|Habitacion seleccionada:", opcion_habitacion[nueva_id], "|";
     Mostrar << "|Dias de reservacion:", dias_hospedaje[nueva_id], "|";
     Mostrar << "|Fecha de llegada:", fecha_llegada[nueva_id], "|";
     Mostrar << "|Fecha de salida:", fecha_salida[nueva_id], "|";
