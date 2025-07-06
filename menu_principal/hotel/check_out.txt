@@ -1,6 +1,6 @@
-Procedimiento check_out(E/S: huespedes_total[i], telefono[i], edad_usuario[i]: Entero, email[i], nombres_titulares[i]: Cadena, cantidad_habitacion[i], cantidad_titulares[i]: entero);
+Procedimiento check_out(E/S: huespedes_total[i], telefono[i], edad_usuario[i], cantidad_habitacion[i], cantidad_titulares[i]: entero, email[i], nombres_titulares[i]: Cadena);
 Inicio
-  Var i, I: Entero;
+  Var i: Entero;
 
   Mostrar << "Gracias por haber elegido a Elecentroland para su visita a San Juan De Los Morros, vuelva pronto";
   Mostrar << "Ingrese su ID, por favor";
