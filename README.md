@@ -79,3 +79,28 @@ Si ya ha leído la presentación del proyecto es probable que no encuentre casi 
         ├── aleatorio.txt
         └── metodo_pago.txt
 ```
+
+```mermaid
+graph LR
+    Resort[Resort.txt]
+    HotelMod[Hotel]
+    RestauranteMod[Restaurante]
+    BarMod[Bar]
+    CasinoMod[Casino]
+
+    Resort --> HotelMod
+    Resort --> RestauranteMod
+    Resort --> BarMod
+    Resort --> CasinoMod
+
+    CasinoMod --> Juegos["Juegos de Casino"]
+    Juegos --> Blackjack
+    Juegos --> Dados
+    Juegos --> Tragamonedas
+    Juegos --> Ruleta
+
+    RestauranteMod --> Inventario[Inventario Ingredientes]
+    RestauranteMod --> Reservaciones[Reservas]
+    BarMod --> MenuBar[Menú de Bar]
+    HotelMod --> Habitaciones[Gestión de Habitaciones]
+```
