@@ -10,7 +10,7 @@ Inicio
         Desayuno(cantidad, monto_pago, dinero_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
         Mostrar << Desayuno;
       Caso (opcion_restaurante = 2);
-        Almuerzo(cantidad, monto_pago, dinero_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
+        Almuerzo(i, cantidad, ingrediente_1, ingrediente_2, ingrediente_3, contador, monto_pago, precio, dinero_restaurante, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
         Mostrar << Almuerzo;
       Caso (opcion_restaurante = 3);
         Cena(cantidad, monto_pago, dinero_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
