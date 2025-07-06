@@ -13,6 +13,7 @@ Inicio
   Var restaurante_ingredientes[34]: Cadena;
   Var restaurante_platillos[18]: Cadena;
   Var dinero_restaurante: Real;
+  Var ingrediente_1, ingrediente_2, ingrediente_3: Entero;
 
   // Variables del Bar
   Var bar_ingredientes[8]: Cadena;
@@ -21,6 +22,10 @@ Inicio
   Var bar_ingredientes_precio[8]: Real;
   Var dinero_bar: Real;
 
+  //Bar y Restaurante
+  Var precio: Real;
+  Var contador = 0: Entero;
+  
   // Variables del Hotel
   Var hotel_habitaciones_tipo[4]: Cadena;
   Var hotel_habitaciones_vacantes[4], hotel_habitaciones_contadores[4], hotel_habitaciones_capacidad[4]: Entero;
