@@ -1,4 +1,4 @@
-Procedimiento dibujos_usuario(E: premios_canjeados[j]: Booleano, nombre: Cadena);
+Procedimiento dibujos_usuario(E: premios_canjeados[j]: Booleano, nombre: Cadena, id_dibujo:entero);
 Inicio
   var status = 0, seguir_viendo = 1: Booleano;
   var id_dibujo, c_dibujos = 0: Entero;
