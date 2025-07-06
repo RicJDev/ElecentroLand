@@ -1,4 +1,4 @@
-Procedimiento init_Hotel(E/S: hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i]: Entero, hotel_habitaciones_precio[i]: Real);
+Procedimiento init_Hotel(E/S:i: Entero, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_habitacion[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i]: Entero, hotel_habitaciones_precio[i]: Real);
 Inicio
   hotel_habitaciones_tipo[1] = "Elecentro";
   hotel_habitaciones_tipo[2] = "Guanabana";
@@ -26,6 +26,7 @@ Inicio
     hotel_usuarios_llegada[i] = "no_asignado";
     hotel_usuarios_salida[i] = "no_asignado";
 
+    hotel_usuarios_habitacion = 0;
     hotel_usuarios_acompan[i] = 0;
     hotel_usuarios_dias_hospedaje[i] = 0;
     hotel_usuarios_telefono[i] = 0;

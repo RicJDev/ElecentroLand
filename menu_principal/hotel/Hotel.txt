@@ -1,4 +1,4 @@
-Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
+Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_habitacion[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
 Inicio
   Var habitacion_tipo: Cadena;
   Var opcion_hotel, opcion_habitacion, habitacion_vacantes, habitacion_capacidad, habitacion_contador: Entero;
