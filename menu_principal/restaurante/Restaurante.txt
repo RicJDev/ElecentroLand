@@ -7,7 +7,7 @@ Inicio
 
     En_Caso (opcion_restaurante > 0) Sea;
       Caso (opcion_restaurante = 1);
-        Desayuno(cantidad, monto_pago, dinero_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
+        Desayuno(cantidad, ingrediente_1, ingrediente_2, ingrediente_3, contador, monto_pago, precio, dinero_restaurante, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
         Mostrar << Desayuno;
       Caso (opcion_restaurante = 2);
         Almuerzo(i, cantidad, ingrediente_1, ingrediente_2, ingrediente_3, contador, monto_pago, precio, dinero_restaurante, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i], validacion_pago);
