@@ -1,6 +1,6 @@
 Procedimiento Cena(E/S: cantidad: Entero, monto_pago, dinero_restaurante: Real, restaurante_ingredientes_cantidades[i], restaurante_contadores[i]: Entero, restaurante_ingredientes_precios[i]: Real, validacion_pago: Booleano);
 Inicio
-  Var opc, opc_agenda, opc_cena, personas_agenda, i: Entero, R: Booleano;
+  Var opc_agenda, opc_cena, personas_agenda, i: Entero, R: Booleano;
   Var ingrediente_1, ingrediente_2, ingrediente_3, ingrediente_4, ingrediente_5: Entero;
   Var precio, cuenta_cliente = 0: Real;
   Var contador = 0: Entero;
@@ -13,7 +13,7 @@ Inicio
   Leer >> opc_agenda;
 
   //validacion del menu
-  Mientras (opc < 1 OR opc > 2) Hacer;
+  Mientras (opc_agenda < 1 OR opc_agenda > 2) Hacer;
     Mostrar << "Error en datos, vuelva a intentar";
     Leer >> opc_agenda;
   Fin_Mientras
