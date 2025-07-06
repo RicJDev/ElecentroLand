@@ -51,60 +51,56 @@ flowchart TD
 ```
 .
 └── ElecentroLand/
-    ├── Resort.txt
+    ├── Resort
     ├── inicializadores/
-    │   ├── init_Bar.txt
-    │   ├── init_Casino.txt
-    │   ├── init_Hotel.txt
-    │   └── init_Restaurante.txt
+    │   ├── init_Bar
+    │   ├── init_Casino
+    │   ├── init_Hotel
+    │   └── init_Restaurante
     ├── menu_principal/
     │   ├── bar/
-    │   │   ├── Alimentos.txt
-    │   │   ├── Bar.txt
-    │   │   └── Bebidas.txt
+    │   │   ├── Alimentos
+    │   │   ├── Bar
+    │   │   └── Bebidas
     │   ├── casino/
-    │   │   ├── Casino.txt
-    │   │   ├── inicio_sesion.txt
-    │   │   ├── menu_juegos.txt
-    │   │   ├── registro_nuevo_usuario.txt
+    │   │   ├── Casino
+    │   │   ├── inicio_sesion
+    │   │   ├── menu_juegos
+    │   │   ├── registro_nuevo_usuario
     │   │   ├── juegos/
-    │   │   │   ├── Blackjack.txt
-    │   │   │   ├── Dados.txt
+    │   │   │   ├── Blackjack
+    │   │   │   ├── Dados
     │   │   │   ├── ruleta/
-    │   │   │   │   ├── eleccion.txt
-    │   │   │   │   ├── estadisticas.txt
-    │   │   │   │   ├── grupos_valor.txt
-    │   │   │   │   ├── recoleccion.txt
-    │   │   │   │   ├── resultado_apuesta.txt
-    │   │   │   │   ├── resultado_apuesta_grupo.txt
-    │   │   │   │   └── Ruleta.txt
+    │   │   │   │   ├── eleccion
+    │   │   │   │   ├── estadisticas
+    │   │   │   │   ├── grupos_valor
+    │   │   │   │   ├── recoleccion
+    │   │   │   │   ├── resultado_apuesta
+    │   │   │   │   ├── resultado_apuesta_grupo
+    │   │   │   │   └── Ruleta
     │   │   │   └── tragamonedas/
-    │   │   │       ├── asignar_figura.txt
-    │   │   │       ├── premio_maquinita.txt
-    │   │   │       └── Tragamonedas.txt
+    │   │   │       ├── asignar_figura
+    │   │   │       ├── premio_maquinita
+    │   │   │       └── Tragamonedas
     │   │   └── tiendita/
-    │   │       ├── canjear_dinero.txt
-    │   │       ├── comprar_fichas.txt
-    │   │       ├── Tiendita.txt
+    │   │       ├── canjear_dinero
+    │   │       ├── comprar_fichas
+    │   │       ├── Tiendita
     │   │       └── dibujos/
-    │   │           ├── canjear_dibujos.txt
-    │   │           ├── dibujos_usuario.txt
-    │   │           └── mostrar_dibujo.txt
+    │   │           ├── canjear_dibujos
+    │   │           ├── dibujos_usuario
+    │   │           └── mostrar_dibujo
     │   ├── hotel/
-    │   │   ├── check_out.txt
-    │   │   ├── estadisticas.txt
-    │   │   ├── Hotel.txt
-    │   │   ├── metodo_de_pago.txt
-    │   │   ├── registro_nuevo_cliente.txt
-    │   │   ├── reserva_habitaciones.txt
-    │   │   └── validacion_usuario.txt
+    │   │   ├── check_in
+    │   │   ├── check_out
+    │   │   └── Hotel
     │   └── restaurante/
-    │       ├── bienvenida.txt
-    │       ├── menu_almuerzo.txt
-    │       ├── menu_cena.txt
-    │       ├── menu_desayuno.txt
-    │       └── Restaurante.txt
+    │       ├── bienvenida
+    │       ├── menu_almuerzo
+    │       ├── menu_cena
+    │       ├── menu_desayuno
+    │       └── Restaurante
     └── utilidades/
-        ├── aleatorio.txt
-        └── metodo_pago.txt
+        ├── aleatorio
+        └── metodo_pago
 ```
