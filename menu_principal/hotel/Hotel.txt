@@ -1,8 +1,6 @@
-Procedimiento Hotel(E/S: i, id_cliente, cliente_habitacion: Entero, hotel_habitaciones_tipo[i], habitacion_tipo, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, habitacion_vacantes, habitacion_capacidad, habitacion_contador, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], habitacion_precio, ingresos_hotel: Real);
+Procedimiento Hotel(E/S: i, id_cliente, cliente_habitacion, cliente_cedula: Entero, hotel_habitaciones_tipo[i], habitacion_tipo, hotel_clientes_nombre[i], hotel_clientes_email[i], cliente_nombre: Cadena, habitacion_vacantes, habitacion_capacidad, habitacion_contador, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], habitacion_precio, ingresos_hotel: Real);
 Inicio
-  Var cliente_cedula: Entero;
-  Var cliente_nombre: Cadena;
-  Var cliente_edad, cliente_cedula: Entero;
+  Var cliente_edad: Entero;
   Var opcion_hotel, opcion_habitacion: Entero;
   Var seguir_intentando = 1: Booleano;
 
