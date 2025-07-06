@@ -84,8 +84,6 @@ Inicio
         Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND (cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
           cliente_nombre = "no asignado";
           cliente_cedula = 0;
-          hotel_clientes_nombre[id_cliente] = cliente_nombre;
-          hotel_clientes_cedula[id_cliente] = cliente_cedula;
           hotel_clientes_nombre[id_cliente] = "no asignado"; 
           hotel_clientes_email[id_cliente] = "no asignado";
           hotel_clientes_acompan[id_cliente] = 0; 
