@@ -1,8 +1,7 @@
-Procedimiento Dados(E/S: saldo_disponible, minimo, maximo, fichas_apostadas, veces_jugadas_dados: Entero);
+Procedimiento Dados(E/S: saldo_disponible, minimo, maximo, fichas_apostadas, veces_jugadas_dados,apuesta: Entero);
 Inicio
   Var R: Booleano;
   Var D1, D2, D3: Entero;
-  Var apuesta: Entero;
   minimo = 1;
   maximo = 6;
   Repetir
