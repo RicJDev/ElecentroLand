@@ -17,6 +17,7 @@ Inicio
   Mostrar << metodo_pago;
 
   Si (validacion_pago = 1) Entonces;
+    ingresos_hotel = ingresos_hotel + monto_pago;
     id_cliente = -1;
     i = 1;
     Mientras (i <= 500 AND id_cliente = -1) Hacer;
@@ -26,7 +27,7 @@ Inicio
 
       i = i + 1;
     Fin_Mientras
-
+    
     Mostrar << "Ingrese su nombre";
     Leer >> cliente_nombre;
     Mostrar << "Ingrese su cédula de identidad";
