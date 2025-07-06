@@ -94,7 +94,7 @@ Inicio
         Restaurante(opcion_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i]);
         Mostrar << Restaurante;
       Caso (opcion_menu = 4);
-        Bar(opcion_inv, opcion_clientes, cantidad, i, bar_ingredientes_cantidades[i], bar_contadores[i], cuenta_cliente, bar_ingredientes_precios[i], dinero_bar);
+        Bar(opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i], bar_ingredientes_precios[i], dinero_bar);
         Mostrar << Bar;
       Otro_Caso
         R = 0;
