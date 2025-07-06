@@ -91,7 +91,7 @@ Inicio
         // Liberar el espacio de la base de datos
         Si (cliente_nombre = hotel_clientes_nombre[id_cliente]) AND (cliente_cedula = hotel_clientes_cedula[id_cliente]) Entonces;
           Mostrar << "Gracias por hospedarse en nuestro hotel. Esperamos vuelva pronto!"
-          cliente_habitacion = hotel_clientes_habitacion[id_cliente];
+          hotel_clientes_habitacion[id_cliente] = 0;
 
           hotel_clientes_nombre[id_cliente] = "no asignado";
           hotel_clientes_email[id_cliente] = "no asignado";
