@@ -1,4 +1,4 @@
-Procedimiento Desayuno(E/S: cantidad: Entero, monto_pago, dinero_restaurante: Real, i_restaurante: Entero, restaurante_ingredientes_cantidades[i_restaurante]: Entero, restaurante_contadores[i_restaurante]: Entero, restaurante_ingredientes_precios[i_restaurante]: Real, validacion_pago: Booleano);
+Procedimiento Desayuno(E/S: cantidad: Entero, monto_pago, dinero_restaurante: Real, restaurante_ingredientes_cantidades[i]: Entero, restaurante_contadores[i]: Entero, restaurante_ingredientes_precios[i]: Real, validacion_pago: Booleano);
 Inicio
   Var R: Booleano;
   Var desayuno, ingrediente_1, ingrediente_2, ingrediente_3: Entero;
