@@ -1,5 +1,9 @@
-Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_habitacion[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
+Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_llegada[i], hotel_clientes_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
 Inicio
+  Var id_cliente, cliente_cedula: Entero;
+  Var cliente_nombre: Cadena;
+  Var cliente_habitacion: Entero;
+
   Var habitacion_tipo: Cadena;
   Var opcion_hotel, opcion_habitacion, habitacion_vacantes, habitacion_capacidad, habitacion_contador: Entero;
   Var habitacion_precio: Real;
@@ -41,15 +45,28 @@ Inicio
           // 2. Registrar
 
           Sino
-          
-          Mostrar << "Lo sentimos. Todas las habitaciones de ese tipo ya han sido ocupadas"
+
+          Mostrar << "Lo sentimos. Todas las habitaciones de ese tipo ya han sido ocupadas";
         Fin_Si
 
         hotel_habitaciones_vacantes[opcion_habitacion] = habitacion_vacantes;
         hotel_habitaciones_contadores[opcion_habitacion] = habitacion_contador;
       Caso (opcion_hotel = 2);
-        check_out(cant_acompañantes[i], telefono[i], edad_usuario[i], cantidades_habitaciones[i], cantidad_titulares[i], email[i], nombres_titulares[i], total_pagar_habitacion[i]);
-        Mostrar << check_out;
+        Mostrar << "Ingrese el numero de identificacion que se le dio en el registro";
+        Leer >> id_cliente;
+
+        Mientras (id_cliente < 1 OR id_cliente > 500) Hacer;
+          Mostrar << "Numero no valido. Intente otra vez";
+          Leer >> id_cliente;
+        Fin_Mientras
+
+        cliente_nombre = hotel_clientes_nombre[id_cliente]
+        cliente_cedula = hotel_clientes_cedula[id_cliente]
+        cliente_habitacion = hotel_clientes_habitacion[id_cliente]; // es un numero del 1 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
+
+        // 1. Comprobar que se trata del mismo cliente solicitando su cedula y su nombre
+        // 2. Recuperar sus datos de los vectores para clientes
+        // 3. Actualizar los valores en esa posicion
       Otro_Caso
         opcion_hotel = 3;
     Fin_Caso

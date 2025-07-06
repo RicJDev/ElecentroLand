@@ -26,8 +26,8 @@ Inicio
   Var hotel_habitaciones_vacantes[4], hotel_habitaciones_contadores[4], hotel_habitaciones_capacidad[4]: Entero;
   Var hotel_habitaciones_precio[4]: Real;
 
-  Var hotel_usuarios_nombre[500], hotel_usuarios_email[500], hotel_usuarios_llegada[500], hotel_usuarios_salida[500]: Cadena;
-  Var hotel_usuarios_acompan[500], hotel_usuarios_habitacion[500], hotel_usuarios_dias_hospedaje[500], hotel_usuarios_telefono[500], hotel_usuarios_cedula[500]: Entero;
+  Var hotel_clientes_nombre[500], hotel_clientes_email[500], hotel_clientes_llegada[500], hotel_clientes_salida[500]: Cadena;
+  Var hotel_clientes_acompan[500], hotel_clientes_habitacion[500], hotel_clientes_dias_hospedaje[500], hotel_clientes_telefono[500], hotel_clientes_cedula[500]: Entero;
 
   Var ingresos_hotel = 0: Real;
 
@@ -61,7 +61,7 @@ Inicio
   init_Casino(casino_premios[i][j], casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j]);
 
   // Inicializando base de datos del Hotel
-  init_Hotel(i, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i], hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_habitacion[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i], hotel_habitaciones_precio[i]);
+  init_Hotel(i, hotel_habitaciones_tipo[i], hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_llegada[i], hotel_clientes_salida[i], hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i], hotel_habitaciones_precio[i]);
 
   Repetir
     Mostrar << "¡Bienvenido al Resort ElecentroLand!, ingrese a dónde quiere ir";
@@ -82,7 +82,7 @@ Inicio
         Casino(i, j, casino_nombres[i], casino_contrasenas[i], casino_edades[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], casino_premios[i][j]);
         Mostrar << Casino;
       Caso (opcion_menu = 2);
-        Hotel(i, hotel_habitaciones_tipo[i], hotel_usuarios_nombre[i], hotel_usuarios_email[i], hotel_usuarios_llegada[i], hotel_usuarios_salida[i], hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_usuarios_acompan[i], hotel_usuarios_habitacion[i], hotel_usuarios_dias_hospedaje[i], hotel_usuarios_telefono[i], hotel_usuarios_cedula[i], hotel_habitaciones_precio[i], ingresos_hotel);
+        Hotel(i, hotel_habitaciones_tipo[i], hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_llegada[i], hotel_clientes_salida[i], hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i], hotel_habitaciones_precio[i], ingresos_hotel);
         Mostrar << Hotel;
       Caso (opcion_menu = 3);
         Restaurante(opcion_restaurante, i, restaurante_ingredientes_cantidades[i], restaurante_contadores[i], restaurante_ingredientes_precios[i]);
