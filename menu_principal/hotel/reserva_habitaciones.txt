@@ -1,5 +1,6 @@
 Procedimiento reserva_habitaciones(E/S: fecha_salida[i], fecha_llegada[i]: Cadena, nueva_id, dias_hospedaje[i], opcion_habitacion[i], cantidad_habitacion[i]: Entero, total_pagar_habitacion[i], monto_pago: Real, validacion_pago: Booleano);
 Inicio
+  Var cantidad_habitacion: Entero;
   Mostrar << "Seleccione una opción";
   Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
   Mostrar << "2: habitación Guanabana (habitacion con dual) precio: 20$ por noche";
@@ -22,6 +23,7 @@ Inicio
 
       cantidad_habitacion = cantidad_habitacion[1];
       cantidad_habitacion = cantidad_habitacion - 1;
+      cantidad_habitacion[1] = cantidad_habitacion;
 
       Mostrar << "¿Cuantos dias desea hospedarse?";
       Leer >> dias_hospedaje[nueva_id];
@@ -48,6 +50,7 @@ Inicio
 
       cantidad_habitacion = cantidad_habitacion[2];
       cantidad_habitacion = cantidad_habitacion - 1;
+      cantidad_habitacion[2] = cantidad_habitacion;
 
       Mostrar << "¿Cuantos dias desea hospedarse?";
       Leer >> dias_hospedaje[nueva_id];
@@ -74,6 +77,7 @@ Inicio
 
       cantidad_habitacion = cantidad_habitacion[3];
       cantidad_habitacion = cantidad_habitacion - 1;
+      cantidad_habitacion[3] = cantidad_habitacion;
 
       Mostrar << "¿Cuantos dias desea hospedarse?";
       Leer >> dias_hospedaje[nueva_id];
@@ -100,6 +104,7 @@ Inicio
 
       cantidad_habitacion = cantidad_habitacion[4];
       cantidad_habitacion = cantidad_habitacion - 1;
+      cantidad_habitacion[4] = cantidad_habitacion;
 
       Mostrar << "¿Cuantos dias desea hospedarse?";
       Leer >> dias_hospedaje[nueva_id];
