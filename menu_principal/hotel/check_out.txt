@@ -1,4 +1,4 @@
-Procedimiento check_out(e/s: huespedes_total[nueva_id], telefono[nueva_id], , edad_usuario[nueva_id]: entero, email[nueva_id], nombres_titulares[nueva_id]: cadena, cantidad_habitacion[4], cantida_titulares[nueva_id]: entero);
+Procedimiento check_out(E/S: huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id]: Entero, email[nueva_id], nombres_titulares[nueva_id]: Cadena, cantidad_habitacion[nueva_id], cantidad_titulares[nueva_id]: entero);
 Inicio
   Var i_reservacion, I: Entero;
 
@@ -10,22 +10,21 @@ Inicio
     Mostrar << "Por favor ingrese un ID valido";
     Leer >> id_cliente;
   Fin_Mientras
-
+  permitir_acceso =  validacion_usuario(id_cliente_reservacion, cantidad_titulares[i_cliente]);
   Si (permitir_acceso = 0) Entonces;
     Mostrar << "Error el ID", id_ingresado, "no se encuentra en nuestra base de datos";
 
-    Sino
-
+  Sino
     Para (cantidad_titulares[i_cliente] = 1 Hasta cantidad_titulares[i_cliente] = 500) Hacer;
       Si (cantidad_titulares = i_reservacion) Entonces;
         En_Caso (opcion_habitacion[nueva_id] > 0) Sea;
           Caso (opcion_habitacion[nueva_id] = 1);
-            cantida_titulares[nueva_id] = 0;
-            cantidad_habitacion[1] = 0;
+            cantidad_titulares[nueva_id] = 0;
+            cantidad_habitacion[1] = cantidad_habitacion[1] + 1;
             nombres_titulares[i_cliente] = "no asignado";
             cant_acompañantes[i_cliente] = 0;
             email[i_cliente] = "no asignado";
-            telefono[i_cliente] = "no asignado";
+            telefono[i_cliente] = 0;
             edad_usuario[i_cliente] = 0;
             huespedes_total[nueva_id] = 0;
           Caso (opcion_habitacion[nueva_id] = 2);
