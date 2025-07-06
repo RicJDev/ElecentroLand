@@ -1,8 +1,7 @@
-Procedimiento Bebidas(E/S: opcion_clientes, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i]: Entero, monto_pago, dinero_bar, bar_ingredientes_precios[i]: Real, validacion_pago: Booleano);
+Procedimiento Bebidas(E/S: opcion_clientes, ingrediente, contador, cantidad, bar_ingredientes_cantidades[i], bar_contadores[i]: Entero, monto_pago, precio, dinero_bar, bar_ingredientes_precios[i]: Real, validacion_pago: Booleano);
 Inicio
   Var R: Booleano;
-  Var contador = 0, ingrediente: Entero;
-  Var precio, cuenta_cliente = 0: Real;
+  Var cuenta_cliente = 0: Real;
 
   Repetir
     Mostrar << "Menú de Bebidas:";
