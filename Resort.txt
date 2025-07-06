@@ -21,6 +21,7 @@ Inicio
   Var bar_contadores[8]: Entero;
   Var bar_ingredientes_precio[8]: Real;
   Var dinero_bar: Real;
+  Var ingrediente: Entero;
 
   //Bar y Restaurante
   Var precio: Real;
