@@ -31,12 +31,12 @@ Inicio
   Var hotel_habitaciones_tipo[4]: Cadena;
   Var hotel_habitaciones_vacantes[4], hotel_habitaciones_contadores[4], hotel_habitaciones_capacidad[4]: Entero;
   Var hotel_habitaciones_precio[4]: Real;
-  Var cliente_habitacion, habitacion_vacante, habitacion_capacidad: Entero;
+  Var cliente_habitacion, habitacion_vacante, habitacion_capacidad, habitacion_contador: Entero;
   Var hotel_clientes_nombre[500], hotel_clientes_email[500]: Cadena;
   Var hotel_clientes_acompan[500], hotel_clientes_habitacion[500], hotel_clientes_dias_hospedaje[500], hotel_clientes_telefono[500], hotel_clientes_cedula[500]: Entero;
   Var habitacion_precio: Real;
   Var ingresos_hotel = 0: Real;
-
+  Var habitacion_tipo: Cadena;
   // Variables del Casino
   Var fichas_apostadas: Entero;
   Var casino_premios[100][10]: Booleano;
