@@ -10,8 +10,8 @@ Inicio
     cedula[i] = 0;
     cant_acompañantes[i] = 0;
   Fin_Para 
-cantidad_habitacion[1] = 250;
-cantidad_habitacion[2] = 100;
-cantidad_habitacion[3] = 80;
-cantidad_habitacion[4] = 70;
+cantidad_habitacion[1] = 90;
+cantidad_habitacion[2] = 50;
+cantidad_habitacion[3] = 40;
+cantidad_habitacion[4] = 25;
 Fin_Procedimiento
