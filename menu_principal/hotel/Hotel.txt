@@ -89,6 +89,9 @@ Inicio
           hotel_clientes_dias_hospedaje[id_cliente] = 0; 
           hotel_clientes_telefono[id_cliente] = 0;
           hotel_clientes_cedula[id_cliente] = 0;
+          habitacion_vacantes = hotel_habitaciones_vacantes[opcion_habitacion];
+          habitacion_vacantes = habitacion_vacantes + 1;
+          hotel_habitaciones_vacantes[opcion_habitacion] = habitacion_vacantes;
         Fin_Si
 
         // Es un numero del 0 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
