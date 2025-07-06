@@ -1,4 +1,4 @@
-Procedimiento hotel(E/S: cantidad_habitacion[i]: Entero, fecha_salida[nueva_id]: Cadena, fecha_llegada[nueva_id]: Cadena, dias_hospedaje[nueva_id]: Entero, total_pagar_habitacion[nuevo_id]: Real, opcion_habitacion[nueva_id]: Entero, huespedes_total[nueva_id]: Entero, telefono[nueva_id]: Entero, edad_usuario[nueva_id]: Entero, email[nueva_id]: Cadena, nombres_titulares[nueva_id]: Cadena, existe_usuario: Entero, cantidad_titulares[i_cliente]);
+Procedimiento Hotel(E/S: cantidad_habitacion[nueva_id]: Entero, fecha_salida[nueva_id]: Cadena, fecha_llegada[nueva_id]: Cadena, dias_hospedaje[nueva_id]: Entero, total_pagar_habitacion[nueva_id]: Real, opcion_habitacion[nueva_id]: Entero, huespedes_total[nueva_id]: Entero, telefono[nueva_id]: Entero, edad_usuario[nueva_id]: Entero, email[nueva_id]: Cadena, nombres_titulares[nueva_id]: Cadena, existe_usuario: Booleano, cantidad_titulares[i_cliente]);
 Inicio
   Repetir
     Var opc_hotel: Entero;
@@ -15,6 +15,8 @@ Inicio
 
     En_Caso (opc_hotel > 0) Sea;
       Caso (opc_hotel = 1);
+        reserva_habitaciones(fecha_salida[nueva_id], fecha_llegada[nueva_id], dias_hospedaje[nueva_id], opcion_habitacion[nueva_id],                                   cantidad_habitacion[nueva_id], total_pagar_habitacion[nueva_id]);
+        Mostrar << reserva_habitaciones;
         registro_nuevo_cliente_habitacion_pago(huespedes_total[nueva_id], telefono[nueva_id], edad_usuario[nueva_id], email[nueva_id],                                 nombres_titulares[nueva_id]);
         Mostrar << registro_nuevo_cliente_habitacion_pago;
       Caso (opc_hotel = 2);
