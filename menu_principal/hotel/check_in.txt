@@ -1,0 +1,48 @@
+Procedimiento check_in(E: i: Entero, habitacion_tipo: Cadena, habitacion_capacidad: Entero, habitacion_precio: Real, E/S: habitacion_contador, habitacion_vacantes: Entero, hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero);
+Inicio
+  Var cliente_nombre, cliente_email: Cadena;
+  Var cliente_edad, cliente_habitacion, cliente_dias_hospedaje: Entero;
+
+  Mostrar << "Usted ha seleccionado la habitacion ", habitacion_tipo, ". Con capacidad hasta para ", habitacion_capacidad, " persona(s)";
+  Mostrar << "Cuantos dias planea hospedarse en el hotel?";
+  Leer >> cliente_dias_hospedaje;
+
+  Mientras (cliente_dias_hospedaje < 1) Hacer;
+    Mostrar << "Cantidad no valida";
+    Leer >> cliente_dias_hospedaje;
+  Fin_Mientras
+
+  monto_pago = cliente_dias_hospedaje * habitacion_precio;
+  metodo_pago(monto_pago, validacion_pago);
+  Mostrar << metodo_pago;
+
+  Si (validacion_pago = 1) Entonces;
+    id_cliente = -1;
+    Mientras (i <= 500 AND id_cliente = -1) Hacer;
+      Si (hotel_clientes_habitacion[i] = 0) Entonces;
+        id_cliente = i;
+      Fin_Si
+
+      i = i + 1;
+    Fin_Mientras
+
+    // Falta ingresar los datos (con sus validaciones) en la base
+
+    Leer >> hotel_clientes_email[id_cliente];
+    Leer >> hotel_clientes_nombre[id_cliente];
+    Leer >> hotel_clientes_habitacion[id_cliente];
+    Leer >> hotel_clientes_acompan[id_cliente];
+    Leer >> hotel_clientes_dias_hospedaje[id_cliente];
+    Leer >> hotel_clientes_telefono[id_cliente];
+    Leer >> hotel_clientes_cedula[id_cliente];
+
+    ingresos_hotel = ingresos_hotel + monto_pago;
+
+    habitacion_vacantes = habitacion_vacantes - 1;
+    habitacion_contador = habitacion_contador + 1;
+
+    Sino
+
+    Mostrar << "Aca no somos caridad. Paga, pelabolas";
+  Fin_Si
+Fin_Procedimiento

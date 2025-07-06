@@ -1,12 +1,13 @@
-Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_llegada[i], hotel_clientes_salida[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
+Procedimiento Hotel(E/S: i: Entero, hotel_habitaciones_tipo[i], hotel_clientes_nombre[i], hotel_clientes_email[i]: Cadena, hotel_habitaciones_vacantes[i], hotel_habitaciones_contadores[i], hotel_habitaciones_capacidad[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]: Entero, hotel_habitaciones_precio[i], ingresos_hotel: Real);
 Inicio
   Var id_cliente, cliente_cedula: Entero;
-  Var cliente_nombre: Cadena;
-  Var cliente_habitacion: Entero;
+  Var cliente_nombre, cliente_email: Cadena;
+  Var cliente_edad, cliente_habitacion, cliente_dias_hospedaje: Entero;
 
+  Var validacion_pago: Booleano;
   Var habitacion_tipo: Cadena;
   Var opcion_hotel, opcion_habitacion, habitacion_vacantes, habitacion_capacidad, habitacion_contador: Entero;
-  Var habitacion_precio: Real;
+  Var habitacion_precio, monto_pago: Real;
 
   Repetir
     Mostrar << "1: Realizar una reservacion";
@@ -21,36 +22,44 @@ Inicio
 
     En_Caso (opcion_hotel > 0) Sea;
       Caso (opcion_hotel = 1);
-        Mostrar << "Seleccione una opción";
-        Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
-        Mostrar << "2: Habitación Guanabana (habitacion con dual) precio: 20$ por noche";
-        Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
-        Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
-        Leer >> opcion_habitacion;
+        Mostrar << "Ingrese su edad";
+        Leer >> cliente_edad;
 
-        Mientras (opcion_habitacion < 1 OR opcion_habitacion > 4) Hacer;
-          Mostrar << "Error por favor elija una habitacion disponible";
-          Leer >> opcion_habitacion;
-        Fin_Mientras
-
-        habitacion_tipo = hotel_habitaciones_tipo[opcion_habitacion];
-        habitacion_capacidad = hotel_habitaciones_capacidad[opcion_habitacion];
-        habitacion_precio = hotel_habitaciones_precio[opcion_habitacion];
-        habitacion_vacantes = hotel_habitaciones_vacantes[opcion_habitacion];
-        habitacion_contador = hotel_habitaciones_contadores[opcion_habitacion];
-
-        Si (habitacion_vacantes > 0) Entonces;
-          // Por hacer
-          // 1. Cobrar
-          // 2. Registrar
+        Si (cliente_edad < 18) Entonces;
+          Mostrar << "Lo sentimos. Necesitas un representante mayor de edad para proseguir";
 
           Sino
 
-          Mostrar << "Lo sentimos. Todas las habitaciones de ese tipo ya han sido ocupadas";
-        Fin_Si
+          Mostrar << "Seleccione una opción";
+          Mostrar << "1: Habitación Elecentro (Habitación individual: Diseñada para una persona, con cama individual) precio 10$ por noche";
+          Mostrar << "2: Habitación Guanabana (habitacion con dual) precio: 20$ por noche";
+          Mostrar << "3: Habitación Maravillas (hasta 4 personas) precio: 35$ por noche";
+          Mostrar << "4: Habitación Picha (hasta 6 personas) precio: 45$ por noche";
+          Leer >> opcion_habitacion;
 
-        hotel_habitaciones_vacantes[opcion_habitacion] = habitacion_vacantes;
-        hotel_habitaciones_contadores[opcion_habitacion] = habitacion_contador;
+          Mientras (opcion_habitacion < 1 OR opcion_habitacion > 4) Hacer;
+            Mostrar << "Error por favor elija una habitacion disponible";
+            Leer >> opcion_habitacion;
+          Fin_Mientras
+
+          habitacion_tipo = hotel_habitaciones_tipo[opcion_habitacion];
+          habitacion_capacidad = hotel_habitaciones_capacidad[opcion_habitacion];
+          habitacion_precio = hotel_habitaciones_precio[opcion_habitacion];
+          habitacion_vacantes = hotel_habitaciones_vacantes[opcion_habitacion];
+          habitacion_contador = hotel_habitaciones_contadores[opcion_habitacion];
+
+          Si (habitacion_vacantes > 0) Entonces;
+            check_in(i, habitacion_tipo, habitacion_capacidad, habitacion_precio, habitacion_contador, habitacion_vacantes, hotel_clientes_nombre[i], hotel_clientes_email[i], hotel_clientes_acompan[i], hotel_clientes_habitacion[i], hotel_clientes_dias_hospedaje[i], hotel_clientes_telefono[i], hotel_clientes_cedula[i]);
+            Mostrar << check_in;
+
+            Sino
+
+            Mostrar << "Lo sentimos. Todas las habitaciones de ese tipo ya han sido ocupadas";
+          Fin_Si
+
+          hotel_habitaciones_vacantes[opcion_habitacion] = habitacion_vacantes;
+          hotel_habitaciones_contadores[opcion_habitacion] = habitacion_contador;
+        Fin_Si
       Caso (opcion_hotel = 2);
         Mostrar << "Ingrese el numero de identificacion que se le dio en el registro";
         Leer >> id_cliente;
@@ -60,9 +69,13 @@ Inicio
           Leer >> id_cliente;
         Fin_Mientras
 
-        cliente_nombre = hotel_clientes_nombre[id_cliente]
-        cliente_cedula = hotel_clientes_cedula[id_cliente]
-        cliente_habitacion = hotel_clientes_habitacion[id_cliente]; // es un numero del 1 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
+        cliente_nombre = hotel_clientes_nombre[id_cliente];
+        cliente_cedula = hotel_clientes_cedula[id_cliente];
+
+        // Es un numero del 0 al 4. Representa la habitacion seleccionada por el cliente. Con esto se puede actualizar la cantidad de vacantes por habitacion
+        // Nota: si el numero es 0 quiere decir que ese espacio no ha sido ocupado o que se ha desocupado antes
+
+        cliente_habitacion = hotel_clientes_habitacion[id_cliente];  
 
         // 1. Comprobar que se trata del mismo cliente solicitando su cedula y su nombre
         // 2. Recuperar sus datos de los vectores para clientes
