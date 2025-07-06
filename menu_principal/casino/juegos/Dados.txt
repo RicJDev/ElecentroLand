@@ -3,7 +3,8 @@ Inicio
   Var R: Booleano;
   Var D1, D2, D3: Entero;
   minimo = 1;
-  maximo = 6;
+  maximo = 6; 
+  premio: real
   Repetir
     Mostrar << "Bienvenidos a la sección de dados del Casino Elecentro Royale";
     D1 = Aleatorio(minimo, maximo);
@@ -27,15 +28,15 @@ Inicio
     En_Caso (D1 > 0) AND (D2 > 0) AND (D3 > 0) Sea;
       Caso (D1 = 6) AND (D2 = 6) AND (D3 = 6);
         Mostrar << "Excelente";
-        apuesta = apuesta * 2;
+        premio = apuesta * 2;
         saldo_disponible = saldo_disponible + apuesta;
       Caso (D1 = 6 AND D2 = 6) OR (D1 = 6 AND D3 = 6) OR (D2 = 6 AND D3 = 6);
         Mostrar << "Muy bien";
-        apuesta = apuesta * 1.5;
+        premio = apuesta * 1.5;
         saldo_disponible = saldo_disponible + apuesta;
       Caso (D1 = 6) OR (D2 = 6) OR (D3 = 6);
         Mostrar << "Regular";
-        apuesta = apuesta * 1.25;
+        premio = apuesta * 1.25;
         saldo_disponible = saldo_disponible + apuesta;
       Otro_Caso
         Mostrar << "Pésimo";
