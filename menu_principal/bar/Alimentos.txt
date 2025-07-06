@@ -30,7 +30,7 @@ Inicio
 
         precio = bar_ingredientes_precios[1];
         cuenta_cliente = cuenta_cliente + (cantidad * precio);
-        dinero_bar = dinero_bar + cuenta_Cliente;
+        dinero_bar = dinero_bar + cuenta_cliente;
         contador = bar_contadores[1];
         contador = contador + 1;
         bar_contadores[1] = contador;
@@ -116,4 +116,9 @@ Inicio
   monto_pago = cuenta_cliente;
   metodo_pago(monto_pago, validacion_pago);
   Mostrar << metodo_pago;
+  Si (validacion_pago = 1) Entonces;
+    Mostrar << "El pago ha sido realizado correctamente, gracias por confiar en nosotros";
+  Sino
+    Mostrar << "Paga pelabolas.";
+  Fin_Si
 Fin_Procedimiento
