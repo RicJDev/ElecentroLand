@@ -45,6 +45,7 @@ Inicio
   Var casino_edades[100], casino_saldos_fichas[100], casino_stock_premios[10], casino_valor_premios[10]: Entero;
   Var id_usuario = -1: Entero;
   Var veces_jugadas, apuesta, saldo_disponible: Entero;
+  Var nombre: Cadena;
   Var veces_jugadas_blackjack = 0, veces_jugadas_dados = 0, veces_jugadas_tragamonedas = 0: Entero;
 
   // Aleatorio
