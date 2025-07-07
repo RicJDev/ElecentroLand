@@ -56,7 +56,7 @@ Inicio
     Si (saldo_disponible < 1) Entonces;
       Mostrar << "Su saldo es insuficiente para seguir jugando, ¡recargue por favor!";
       Mostrar << "Hasta pronto, ¡Gracias por jugar!";
-      R = 2;
+      R = 0;
 
     Sino
       Mostrar << "Desea realizar otra apuesta, 1: Sí, 0: No";
