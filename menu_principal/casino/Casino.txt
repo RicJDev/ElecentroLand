@@ -15,7 +15,7 @@ Inicio
       Mostrar << inicio_sesion;
 
       Si (permitir_acceso = 1) Entonces;
-        menu_juegos(casino_nombres[i], casino_saldos_fichas[i], casino_premios[i][j], id_usuario);
+        menu_juegos(casino_nombres[i], casino_saldos_fichas[i], casino_stock_premios[j], casino_valor_premios[j], casino_premios[i][j], id_usuario);
         Mostrar << menu_juegos;
       Fin_Si
     Fin_Si
