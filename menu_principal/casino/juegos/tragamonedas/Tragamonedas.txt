@@ -3,7 +3,7 @@ Inicio
   Var R: Booleano;
   Var premio_giro: Entero;
   Var i, j: Entero;
-  var rodillo[3][3]:entero;
+
   Mostrar << " ------------------------------------------------------------------";
   Mostrar << "|                 BIENVENIDO A $FRUIT MONEY$                      |";
   Mostrar << "|                           REGLAS                                |";
