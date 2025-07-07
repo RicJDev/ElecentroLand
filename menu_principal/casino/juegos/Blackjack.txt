@@ -1,10 +1,10 @@
-Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, minimo, maximo, veces_jugadas_blackjack: Entero);
+Procedimiento Blackjack(E/S: saldo_disponible: Entero, E/S: fichas_apostadas, minimo, maximo, veces_jugadas_blackjack,apuesta: Entero);
 Inicio
   Var jugador_cartas[10], dealer_cartas[10], carta_visible, suma_jugador, suma_dealer, i, j: Entero, R: Booleano;
-  Var apuesta: Entero;
 
   minimo = 1;
   maximo = 12;
+
   Repetir
     Mostrar << "Bienvenido al Blackjack";
     Mostrar << "Ingrese las fichas que desea apostar";
